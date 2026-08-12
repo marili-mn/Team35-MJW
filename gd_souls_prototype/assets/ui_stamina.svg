@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="32" viewBox="0 0 300 32">
+  <defs>
+    <linearGradient id="staminaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00ff88"/>
+      <stop offset="50%" stop-color="#00aa55"/>
+      <stop offset="100%" stop-color="#005522"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="32" fill="#041108" rx="4" stroke="#00ff88" stroke-width="2"/>
+  <rect x="4" y="4" width="292" height="24" fill="url(#staminaGrad)" rx="2"/>
+  <rect x="4" y="4" width="292" height="10" fill="#ffffff" opacity="0.2" rx="2"/>
+</svg>

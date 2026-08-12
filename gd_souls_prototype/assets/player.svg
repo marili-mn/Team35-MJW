@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <!-- Aura Glow -->
+    <radialGradient id="aura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d2ff" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#0066ff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0000ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Sword Glow -->
+    <linearGradient id="swordGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#0088ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Blue Soul Aura -->
+  <circle cx="64" cy="64" r="54" fill="url(#aura)"/>
+
+  <!-- Shadow -->
+  <ellipse cx="64" cy="118" rx="36" ry="8" fill="#000000" opacity="0.5"/>
+
+  <!-- Knight Body & Armor -->
+  <!-- Cape -->
+  <path d="M42 44 L30 110 L70 110 L58 44 Z" fill="#1e2238" stroke="#101220" stroke-width="2"/>
+
+  <!-- Legs -->
+  <rect x="46" y="80" width="12" height="34" rx="4" fill="#3a3d52"/>
+  <rect x="62" y="80" width="12" height="34" rx="4" fill="#2c2f42"/>
+
+  <!-- Torso / Cuirass -->
+  <path d="M42 40 L80 40 L74 82 L46 82 Z" fill="#5a607a" stroke="#2a2d3d" stroke-width="3"/>
+  <!-- Gold Trim -->
+  <path d="M42 40 L80 40 L61 82 Z" fill="#7882a4" opacity="0.6"/>
+  <path d="M61 40 L61 82" stroke="#ffcc00" stroke-width="2"/>
+
+  <!-- Helmet -->
+  <path d="M44 14 C44 6, 76 6, 76 14 L76 40 L44 40 Z" fill="#484e68" stroke="#252836" stroke-width="3"/>
+  <!-- Visor Slit -->
+  <rect x="52" y="24" width="22" height="5" rx="2" fill="#00e5ff"/>
+  <rect x="52" y="24" width="22" height="5" rx="2" fill="#ffffff" opacity="0.7"/>
+
+  <!-- Shoulders / Pauldrons -->
+  <circle cx="40" cy="44" r="10" fill="#6e7696" stroke="#2a2d3d" stroke-width="2"/>
+  <circle cx="78" cy="44" r="10" fill="#585f7a" stroke="#2a2d3d" stroke-width="2"/>
+
+  <!-- Shield (Left arm) -->
+  <path d="M26 44 C26 44 42 44 42 64 C42 84 26 94 26 94 C26 94 10 84 10 64 C10 44 26 44 26 44 Z" fill="#2a304a" stroke="#ffcc00" stroke-width="3"/>
+  <!-- Shield Emblem -->
+  <path d="M26 50 L34 64 L26 78 L18 64 Z" fill="#00e5ff"/>
+
+  <!-- Sword (Right arm) -->
+  <!-- Hilt -->
+  <rect x="84" y="60" width="16" height="4" rx="1" fill="#ffcc00"/>
+  <rect x="90" y="64" width="4" height="12" fill="#4a3010"/>
+  <circle cx="92" cy="78" r="4" fill="#ffcc00"/>
+  <!-- Blade -->
+  <path d="M89 60 L92 4 L95 60 Z" fill="url(#swordGrad)" stroke="#ffffff" stroke-width="1"/>
+  <!-- Blade Glow -->
+  <path d="M89 60 L92 4 L95 60 Z" fill="#00e5ff" opacity="0.5"/>
+</svg>

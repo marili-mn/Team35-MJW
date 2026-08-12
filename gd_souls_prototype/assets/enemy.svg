@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <!-- Enemy Aura Glow -->
+    <radialGradient id="enemyAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff0044" stop-opacity="0.7"/>
+      <stop offset="70%" stop-color="#880022" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Enemy Sword Glow -->
+    <linearGradient id="redSword" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#ff0044"/>
+      <stop offset="100%" stop-color="#990000"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Red Aura -->
+  <circle cx="64" cy="64" r="56" fill="url(#enemyAura)"/>
+
+  <!-- Shadow -->
+  <ellipse cx="64" cy="118" rx="40" ry="9" fill="#000000" opacity="0.6"/>
+
+  <!-- Dark Cape -->
+  <path d="M38 40 L20 114 L88 114 L70 40 Z" fill="#2b0a14" stroke="#120207" stroke-width="2"/>
+
+  <!-- Legs -->
+  <rect x="42" y="78" width="14" height="36" rx="4" fill="#1f1522"/>
+  <rect x="62" y="78" width="14" height="36" rx="4" fill="#170f1a"/>
+
+  <!-- Torso / Dark Armor -->
+  <path d="M36 36 L82 36 L76 80 L42 80 Z" fill="#362238" stroke="#1c0f1f" stroke-width="3"/>
+  <path d="M59 36 L59 80" stroke="#ff0044" stroke-width="3"/>
+
+  <!-- Horned Helmet -->
+  <path d="M40 16 C40 8, 78 8, 78 16 L78 38 L40 38 Z" fill="#29182b" stroke="#150a17" stroke-width="3"/>
+  <!-- Left Horn -->
+  <path d="M40 20 Q20 10 16 -4 Q26 4 36 14 Z" fill="#ff0044"/>
+  <!-- Right Horn -->
+  <path d="M78 20 Q98 10 102 -4 Q92 4 82 14 Z" fill="#ff0044"/>
+
+  <!-- Glowing Crimson Eyes -->
+  <circle cx="50" cy="26" r="4" fill="#ff0044"/>
+  <circle cx="50" cy="26" r="2" fill="#ffffff"/>
+  <circle cx="68" cy="26" r="4" fill="#ff0044"/>
+  <circle cx="68" cy="26" r="2" fill="#ffffff"/>
+
+  <!-- Spiky Shoulders -->
+  <path d="M26 34 L38 28 L40 46 Z" fill="#541b2f" stroke="#1c0f1f" stroke-width="2"/>
+  <path d="M92 34 L80 28 L78 46 Z" fill="#541b2f" stroke="#1c0f1f" stroke-width="2"/>
+
+  <!-- Heavy Greatsword (Right arm) -->
+  <rect x="20" y="58" width="20" height="6" rx="1" fill="#444444"/>
+  <rect x="28" y="64" width="5" height="14" fill="#222222"/>
+  <!-- Blade -->
+  <path d="M26 58 L28 -10 L34 -10 L36 58 Z" fill="url(#redSword)" stroke="#ffffff" stroke-width="1"/>
+</svg>

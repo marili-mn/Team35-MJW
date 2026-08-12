@@ -1,0 +1,487 @@
+{
+  "firstLayout": "Arena",
+  "gdVersion": {
+    "build": 276,
+    "major": 5,
+    "minor": 6,
+    "revision": 0
+  },
+  "initialGDVersion": "5.6.276",
+  "properties": {
+    "adaptGameResolutionAtRuntime": true,
+    "antialiasingMode": "MSAA",
+    "antialisingEnabledOnMobile": false,
+    "folderProject": false,
+    "orientation": "default",
+    "packageName": "com.example.gd_souls_prototype",
+    "pixelsRounding": false,
+    "projectUuid": "cf8d7258-4e04-4547-8f2d-609c219916e9",
+    "scaleMode": "linear",
+    "sizeOnStartupMode": "adaptWidth",
+    "templateSlug": "",
+    "version": "1.0.0",
+    "name": "gd_souls_prototype",
+    "description": "Dark Souls Prototype in GDevelop",
+    "author": "",
+    "windowWidth": 1280,
+    "windowHeight": 720,
+    "latestCompilationDirectory": "",
+    "maxFPS": 60,
+    "minFPS": 20,
+    "verticalSync": false,
+    "platformSpecificAssets": {},
+    "loadingScreen": {
+      "backgroundColor": 0,
+      "backgroundFadeInDuration": 0.2,
+      "backgroundImageResourceName": "",
+      "gdevelopLogoStyle": "light",
+      "logoAndProgressFadeInDuration": 0.2,
+      "logoAndProgressLogoFadeInDelay": 0,
+      "minDuration": 1.5,
+      "progressBarColor": 16777215,
+      "progressBarHeight": 20,
+      "progressBarMaxWidth": 200,
+      "progressBarMinWidth": 40,
+      "progressBarWidthPercent": 30,
+      "showGDevelopSplash": true,
+      "showProgressBar": true
+    },
+    "watermark": {
+      "placement": "bottom-left",
+      "showWatermark": false
+    },
+    "authorIds": [],
+    "authorUsernames": [],
+    "categories": [],
+    "playableDevices": [],
+    "extensionProperties": [],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "name": "player.svg",
+        "file": "assets/player.svg",
+        "kind": "image",
+        "metadata": ""
+      },
+      {
+        "name": "enemy.svg",
+        "file": "assets/enemy.svg",
+        "kind": "image",
+        "metadata": ""
+      },
+      {
+        "name": "bg.svg",
+        "file": "assets/bg.svg",
+        "kind": "image",
+        "metadata": ""
+      },
+      {
+        "name": "ui_health.svg",
+        "file": "assets/ui_health.svg",
+        "kind": "image",
+        "metadata": ""
+      },
+      {
+        "name": "ui_stamina.svg",
+        "file": "assets/ui_stamina.svg",
+        "kind": "image",
+        "metadata": ""
+      }
+    ]
+  },
+  "objects": [],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "objectsGroups": [],
+  "variables": [],
+  "layouts": [
+    {
+      "name": "Arena",
+      "b": 240,
+      "r": 240,
+      "v": 240,
+      "title": "",
+      "mangledName": "Arena",
+      "stopSoundsOnStartup": true,
+      "standardSortMethod": true,
+      "uiSettings": {
+        "grid": false,
+        "gridB": 255,
+        "gridG": 180,
+        "gridR": 158,
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "snap": false,
+        "zoomFactor": 1
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 720,
+          "width": 1280,
+          "layer": "",
+          "name": "BG",
+          "persistentUuid": "11111111-1111-1111-1111-111111111111",
+          "x": 0,
+          "y": 0,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 128,
+          "width": 128,
+          "layer": "",
+          "name": "Player",
+          "persistentUuid": "22222222-2222-2222-2222-222222222222",
+          "x": 200,
+          "y": 420,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 128,
+          "width": 128,
+          "layer": "",
+          "name": "Enemy",
+          "persistentUuid": "33333333-3333-3333-3333-333333333333",
+          "x": 600,
+          "y": 420,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 32,
+          "width": 300,
+          "layer": "UI",
+          "name": "HealthBar",
+          "persistentUuid": "44444444-4444-4444-4444-444444444444",
+          "x": 8,
+          "y": 8,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 32,
+          "width": 300,
+          "layer": "UI",
+          "name": "StaminaBar",
+          "persistentUuid": "55555555-5555-5555-5555-555555555555",
+          "x": 8,
+          "y": 48,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "name": "Player",
+          "type": "Sprite",
+          "variables": [
+            {
+              "name": "Health",
+              "value": "100"
+            },
+            {
+              "name": "MaxHealth",
+              "value": "100"
+            },
+            {
+              "name": "Stamina",
+              "value": "100"
+            },
+            {
+              "name": "MaxStamina",
+              "value": "100"
+            },
+            {
+              "name": "InvincibleTimer",
+              "value": "0"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "loop": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "player.svg",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Enemy",
+          "type": "Sprite",
+          "variables": [
+            {
+              "name": "Health",
+              "value": "60"
+            },
+            {
+              "name": "MaxHealth",
+              "value": "60"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "loop": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "enemy.svg",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BG",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "loop": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "bg.svg",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HealthBar",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "loop": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "ui_health.svg",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "StaminaBar",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "loop": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "ui_stamina.svg",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": "const dt = runtimeScene.getTimeManager().getTimeScale() * (1 / 60);\n\nif (!window.soulsGame) {\n  window.soulsGame = {\n    isInitialized: false,\n    playerStats: {\n      health: 100, maxHealth: 100, stamina: 100, maxStamina: 100, staminaRegen: 25,\n      invincibleTimer: 0, facing: 1, velocityY: 0, isGrounded: true,\n      isAttacking: false, attackTimer: 0, isDodging: false, dodgeTimer: 0, dodgeDir: 1\n    },\n    enemyStats: {\n      health: 60, maxHealth: 60, facing: -1, patrolDir: -1, patrolMinX: 450, patrolMaxX: 950,\n      attackCooldown: 0, isHitTimer: 0, isDead: false\n    },\n    keysDown: {},\n    keysJustPressed: {}\n  };\n\n  window.addEventListener('keydown', (e) => {\n    const code = e.code || e.key;\n    if (!window.soulsGame.keysDown[code]) {\n      window.soulsGame.keysJustPressed[code] = true;\n    }\n    window.soulsGame.keysDown[code] = true;\n  });\n\n  window.addEventListener('keyup', (e) => {\n    const code = e.code || e.key;\n    window.soulsGame.keysDown[code] = false;\n    window.soulsGame.keysJustPressed[code] = false;\n  });\n\n  const container = document.createElement('div');\n  container.id = 'souls-ui-container';\n  container.style.position = 'absolute';\n  container.style.top = '0';\n  container.style.left = '0';\n  container.style.width = '100%';\n  container.style.height = '100%';\n  container.style.pointerEvents = 'none';\n  container.style.fontFamily = \"'Segoe UI', Arial, sans-serif\";\n  container.style.zIndex = '9999';\n  container.innerHTML = `<div style=\"position: absolute; top: 16px; left: 16px; display: flex; flex-direction: column; gap: 8px;\">\n      <div style=\"display: flex; align-items: center; gap: 10px;\">\n        <span style=\"color: #ff4455; font-weight: bold; width: 70px; font-size: 14px;\">SALUD</span>\n        <div style=\"width: 300px; height: 18px; background: rgba(0,0,0,0.6); border: 2px solid #ff4455; border-radius: 4px; overflow: hidden;\">\n          <div id=\"hp-bar-fill\" style=\"width: 100%; height: 100%; background: linear-gradient(90deg, #ff2244, #ff6688); transition: width 0.1s ease-out;\"></div>\n        </div>\n        <span id=\"hp-text\" style=\"color: #ffffff; font-weight: bold; font-size: 14px;\">100 / 100</span>\n      </div>\n      <div style=\"display: flex; align-items: center; gap: 10px;\">\n        <span style=\"color: #00ff88; font-weight: bold; width: 70px; font-size: 14px;\">STAMINA</span>\n        <div style=\"width: 300px; height: 18px; background: rgba(0,0,0,0.6); border: 2px solid #00ff88; border-radius: 4px; overflow: hidden;\">\n          <div id=\"stamina-bar-fill\" style=\"width: 100%; height: 100%; background: linear-gradient(90deg, #00aa55, #00ff88); transition: width 0.1s ease-out;\"></div>\n        </div>\n        <span id=\"stamina-text\" style=\"color: #ffffff; font-weight: bold; font-size: 14px;\">100 / 100</span>\n      </div>\n    </div>\n    <div id=\"enemy-hud\" style=\"position: absolute; top: 16px; right: 24px; display: flex; flex-direction: column; align-items: flex-end; gap: 4px;\">\n      <span style=\"color: #ff3344; font-weight: bold; font-size: 16px; text-shadow: 0 0 8px #000;\">BOSS: DEMON KNIGHT</span>\n      <div style=\"width: 320px; height: 16px; background: rgba(0,0,0,0.7); border: 2px solid #ff2244; border-radius: 4px; overflow: hidden;\">\n        <div id=\"enemy-hp-fill\" style=\"width: 100%; height: 100%; background: linear-gradient(90deg, #990022, #ff0044); transition: width 0.1s ease-out;\"></div>\n      </div>\n    </div>\n    <div style=\"position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); background: rgba(10, 10, 20, 0.85); border: 1px solid #444466; padding: 10px 24px; border-radius: 8px; color: #ddddff; font-size: 14px; text-align: center;\">\n      <strong style=\"color: #ffcc00;\">CONTROLES:</strong> &nbsp;\n      <span style=\"background: #2a2a40; padding: 2px 8px; border-radius: 4px;\">A / D</span> o <span style=\"background: #2a2a40; padding: 2px 8px; border-radius: 4px;\">← / →</span> Mover &nbsp;|&nbsp;\n      <span style=\"background: #2a2a40; padding: 2px 8px; border-radius: 4px;\">ESPACIO</span> Saltar &nbsp;|&nbsp;\n      <span style=\"background: #ffaa00; color: #000; padding: 2px 8px; border-radius: 4px; font-weight: bold;\">J</span> Atacar (20 Stamina) &nbsp;|&nbsp;\n      <span style=\"background: #00d2ff; color: #000; padding: 2px 8px; border-radius: 4px; font-weight: bold;\">K</span> Rodar (30 Stamina)\n    </div>\n    <div id=\"status-modal\" style=\"position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 10000; text-align: center;\">\n      <h1 id=\"status-title\" style=\"font-size: 56px; font-weight: 900; letter-spacing: 4px; margin: 0;\"></h1>\n      <p id=\"status-sub\" style=\"font-size: 20px; color: #cccccc; margin-top: 12px;\"></p>\n      <button onclick=\"window.location.reload()\" style=\"margin-top: 20px; padding: 12px 28px; background: #ffaa00; border: none; border-radius: 6px; color: #000; font-weight: bold; font-size: 16px; cursor: pointer; pointer-events: auto;\">REINTENTAR</button>\n    </div>`;\n  document.body.appendChild(container);\n}\n\nconst state = window.soulsGame;\nconst keys = state.keysDown;\nconst just = state.keysJustPressed;\nconst pStats = state.playerStats;\nconst eStats = state.enemyStats;\n\nconst playerObjects = runtimeScene.getObjects(\"Player\");\nconst enemyObjects = runtimeScene.getObjects(\"Enemy\");\nconst bgObjects = runtimeScene.getObjects(\"BG\");\n\nconst player = playerObjects && playerObjects.length > 0 ? playerObjects[0] : null;\nconst enemy = enemyObjects && enemyObjects.length > 0 ? enemyObjects[0] : null;\nconst bg = bgObjects && bgObjects.length > 0 ? bgObjects[0] : null;\n\nif (bg) {\n  bg.setX(0); bg.setY(0); bg.setWidth(1280); bg.setHeight(720);\n}\n\nif (player && pStats.health > 0) {\n  let px = player.getX();\n  let py = player.getY();\n\n  if (!pStats.isDodging) {\n    if (keys['KeyA'] || keys['ArrowLeft']) {\n      px -= 320 * dt; pStats.facing = -1; player.flipX(true);\n    } else if (keys['KeyD'] || keys['ArrowRight']) {\n      px += 320 * dt; pStats.facing = 1; player.flipX(false);\n    }\n    if ((just['Space'] || keys['Space']) && pStats.isGrounded) {\n      pStats.velocityY = -550; pStats.isGrounded = false;\n    }\n  }\n\n  px = Math.max(20, Math.min(1140, px));\n\n  if (!pStats.isGrounded) {\n    pStats.velocityY += 1400 * dt; py += pStats.velocityY * dt;\n    if (py >= 410) { py = 410; pStats.velocityY = 0; pStats.isGrounded = true; }\n  } else { py = 410; }\n\n  if ((just['KeyJ'] || just['Keyj']) && !pStats.isAttacking && !pStats.isDodging) {\n    if (pStats.stamina >= 20) {\n      pStats.stamina -= 20; pStats.isAttacking = true; pStats.attackTimer = 0.25;\n      if (enemy && !eStats.isDead) {\n        const distToEnemy = Math.abs((px + 64) - (enemy.getX() + 64));\n        if (distToEnemy <= 150 && Math.sign((enemy.getX() + 64) - (px + 64)) === pStats.facing) {\n          eStats.health -= 25; eStats.isHitTimer = 0.3;\n          enemy.setX(enemy.getX() + pStats.facing * 35);\n        }\n      }\n    }\n  }\n\n  if (pStats.isAttacking) {\n    pStats.attackTimer -= dt;\n    if (pStats.attackTimer <= 0) pStats.isAttacking = false;\n  }\n\n  if ((just['KeyK'] || just['Keyk']) && !pStats.isDodging && !pStats.isAttacking) {\n    if (pStats.stamina >= 30) {\n      pStats.stamina -= 30; pStats.isDodging = true; pStats.dodgeTimer = 0.35;\n      pStats.dodgeDir = pStats.facing; pStats.invincibleTimer = 0.45;\n    }\n  }\n\n  if (pStats.isDodging) {\n    pStats.dodgeTimer -= dt;\n    px += pStats.dodgeDir * 600 * dt;\n    px = Math.max(20, Math.min(1140, px));\n    if (pStats.dodgeTimer <= 0) pStats.isDodging = false;\n  }\n\n  if (pStats.invincibleTimer > 0) {\n    pStats.invincibleTimer -= dt; player.setOpacity(140);\n  } else { player.setOpacity(255); }\n\n  if (!pStats.isAttacking && !pStats.isDodging && pStats.stamina < pStats.maxStamina) {\n    pStats.stamina = Math.min(pStats.maxStamina, pStats.stamina + pStats.staminaRegen * dt);\n  }\n\n  player.setX(px); player.setY(py);\n}\n\nif (enemy) {\n  if (eStats.health <= 0) {\n    if (!eStats.isDead) {\n      eStats.isDead = true; enemy.hide(true);\n      const m = document.getElementById('status-modal');\n      const t = document.getElementById('status-title');\n      const s = document.getElementById('status-sub');\n      if (m) { m.style.display = 'flex'; t.style.color = '#ffcc00'; t.innerText = 'VICTORIA LOGRADA'; s.innerText = 'Has derrotado al Caballero Demoníaco.'; }\n    }\n  } else if (player && pStats.health > 0) {\n    let ex = enemy.getX(), ey = 410;\n    const playerCenterX = player.getX() + 64, enemyCenterX = ex + 64;\n    const distToPlayer = Math.abs(enemyCenterX - playerCenterX);\n\n    if (eStats.isHitTimer > 0) { eStats.isHitTimer -= dt; enemy.setOpacity(150); }\n    else { enemy.setOpacity(255); }\n\n    if (distToPlayer < 380) {\n      eStats.facing = playerCenterX > enemyCenterX ? 1 : -1;\n      enemy.flipX(eStats.facing === -1);\n      if (distToPlayer > 80) { ex += eStats.facing * 140 * dt; }\n      else {\n        if (eStats.attackCooldown <= 0) {\n          eStats.attackCooldown = 1.4;\n          if (pStats.invincibleTimer <= 0) {\n            pStats.health -= 18;\n            if (pStats.health <= 0) {\n              pStats.health = 0; player.hide(true);\n              const m = document.getElementById('status-modal');\n              const t = document.getElementById('status-title');\n              const s = document.getElementById('status-sub');\n              if (m) { m.style.display = 'flex'; t.style.color = '#ff2244'; t.innerText = 'HAS MUERTO'; s.innerText = 'Tu alma ha sido consumida.'; }\n            }\n          }\n        }\n      }\n    } else {\n      ex += eStats.patrolDir * 90 * dt;\n      if (ex <= eStats.patrolMinX) { eStats.patrolDir = 1; enemy.flipX(false); }\n      else if (ex >= eStats.patrolMaxX) { eStats.patrolDir = -1; enemy.flipX(true); }\n    }\n\n    if (eStats.attackCooldown > 0) eStats.attackCooldown -= dt;\n    enemy.setX(ex); enemy.setY(ey);\n  }\n}\n\nconst hpFill = document.getElementById('hp-bar-fill');\nconst hpText = document.getElementById('hp-text');\nconst staminaFill = document.getElementById('stamina-bar-fill');\nconst staminaText = document.getElementById('stamina-text');\nconst enemyHpFill = document.getElementById('enemy-hp-fill');\n\nif (hpFill) hpFill.style.width = `${Math.max(0, (pStats.health / pStats.maxHealth) * 100)}%`;\nif (hpText) hpText.innerText = `${Math.max(0, Math.ceil(pStats.health))} / ${pStats.maxHealth}`;\nif (staminaFill) staminaFill.style.width = `${Math.max(0, (pStats.stamina / pStats.maxStamina) * 100)}%`;\nif (staminaText) staminaText.innerText = `${Math.max(0, Math.ceil(pStats.stamina))} / ${pStats.maxStamina}`;\nif (enemyHpFill) enemyHpFill.style.width = `${Math.max(0, (eStats.health / eStats.maxHealth) * 100)}%`;\n\nfor (let k in just) { just[k] = false; }\n",
+          "parameterObjects": ""
+        }
+      ],
+      "layers": [
+        {
+          "name": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": [],
+          "isLightingLayer": false,
+          "followBaseLayerCamera": false,
+          "ambientLightColorR": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorB": 200
+        },
+        {
+          "name": "UI",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": [],
+          "isLightingLayer": false,
+          "followBaseLayerCamera": false,
+          "ambientLightColorR": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorB": 200
+        }
+      ],
+      "behaviorsSharedData": []
+    }
+  ],
+  "externalEvents": [],
+  "eventsFunctionsExtensions": [],
+  "externalLayouts": []
+}
