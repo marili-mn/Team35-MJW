@@ -139,6 +139,14 @@
   .gallery figcaption{padding:5px 10px;font-size:9.5pt;color:var(--muted);
     border-top:1px solid var(--line);background:#fdfaf3}
   .gallery figcaption b{color:var(--night)}
+  /* Concept sheets (wizard) */
+  .conceptSheet{background:#fff;border:1px solid var(--line);border-radius:6px;
+    padding:4mm;margin:3mm 0;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .conceptSheet img{max-width:100%;height:auto;image-rendering:pixelated;
+    background:repeating-conic-gradient(#faf6ea 0% 25%, #fff 0% 50%) 0/16px 16px;
+    border-radius:4px}
+  .conceptSheet figcaption{margin-top:3mm;font-size:9.5pt;color:var(--muted)}
+  .conceptSheet figcaption b{color:var(--night)}
   /* Live box (link) */
   .liveBox{
     background:#fff;border:1px solid var(--line);border-left:5px solid var(--crimson);
@@ -276,7 +284,7 @@
       <div class="field"><b>Edad</b><span>19 años</span></div>
       <div class="field"><b>Rol</b><span>Ninja guardián / Protagonista</span></div>
       <div class="field"><b>Clan</b><span>Shinobi (superviviente)</span></div>
-      <div class="field"><b>Habilidad</b><span>Manipulación de Cuerpos Gravitatorios — invierte su propia gravedad en tiempo real usando el sello del pergamino.</span></div>
+      <div class="field"><b>Habilidad</b><span>Manipulación de Cuerpos Gravitatorios — invierte su propia gravedad en tiempo real usando el sello del pergamino. <b>Consume stamina</b> (paralelo al recurso de magia del Mago).</span></div>
       <div class="field"><b>Motivación</b><span>Redimir la caída de su templo y evitar la destrucción de las leyes naturales.</span></div>
       <div class="field"><b>Armas</b><span>Katana japonesa (dorso), daga corta (cinto), shuriken hira (bolsa)</span></div>
     </div>
@@ -290,8 +298,8 @@
     <div class="card">
       <h3>Stats de juego</h3>
       <div class="field"><b>Vida</b><span>3 corazones (reinicio instantáneo)</span></div>
-      <div class="field"><b>Energía Grav.</b><span>Barra que se gasta al invertir gravedad</span></div>
-      <div class="field"><b>Recarga</b><span>Automática lenta + gemas</span></div>
+      <div class="field"><b>Stamina</b><span>Barra que se gasta al invertir gravedad y correr rápido — equivalente conceptual a la <i>Magia</i> del Mago (Personaje B)</span></div>
+      <div class="field"><b>Recarga</b><span>Automática lenta + gemas de energía</span></div>
       <div class="field"><b>Velocidad</b><span>Constante (runner)</span></div>
     </div>
     <div class="card">
@@ -327,6 +335,48 @@
   <div class="callout" style="margin-top:8mm">
     <b>Animaciones CAMINAR y SALTAR</b> — en producción. Se agregarán al documento
     una vez generadas con el pipeline AI de sprite-ai.art (Walk + Jump, 8 frames c/u).
+  </div>
+
+  <h2 style="margin-top:10mm">3.5 · Personaje B — Mago (en exploración)</h2>
+  <p>Segundo personaje en fase de diseño. <b>Rol por definir</b>: se está evaluando
+  si será <b>jugable alterno</b> (elección de clase al iniciar el nivel) o
+  <b>enemigo/mid-boss</b> del clan Kuroshini. La base de comportamiento y ciclos de
+  animación es <b>la misma que la de Kaito</b>: idle, walk, jump/dash y un ataque
+  ejecutable con recurso.</p>
+
+  <div class="card" style="margin-top:4mm">
+    <h3>Adaptación cruzada — Kaito vs Mago</h3>
+    <table>
+      <tr><th>Aspecto</th><th>Kaito (Ninja)</th><th>Mago (en exploración)</th></tr>
+      <tr><td>Recurso</td><td><b>Stamina</b> — se gasta al invertir gravedad y correr rápido</td><td><b>Magia</b> — se gasta al lanzar hechizos</td></tr>
+      <tr><td>Ataque</td><td>Katana / dash</td><td>Proyectil elemental (ver frames de ataque)</td></tr>
+      <tr><td>Regeneración</td><td>Recolectando gemas / con el tiempo</td><td>Recolectando cristales / con el tiempo</td></tr>
+      <tr><td>Silueta</td><td>Compacta, oscura, ágil</td><td>Alta, capa larga, gestos amplios</td></tr>
+      <tr><td>Rol posible</td><td>Protagonista fijo</td><td>Jugable alterno <b>o</b> mini-boss del clan rival</td></tr>
+    </table>
+  </div>
+
+  <h3 style="margin-top:8mm">Concept · CAMINAR y poses base</h3>
+  <p>Hoja de referencia de idle, walking y posturas de ataque. Se usará como base para
+  extraer los frames finales del spritesheet una vez definido el rol.</p>
+  <div class="conceptSheet">
+    <img src="wizardConcept2.png" alt="Hoja de referencia Mago — idle, walk, attack">
+    <figcaption><b>Concept sheet — 4 filas:</b> idle, walk cycle, ataque con báculo (frontal), ataque cargado (lateral).</figcaption>
+  </div>
+
+  <h3 style="margin-top:8mm">Concept · ATAQUE (efectos mágicos)</h3>
+  <p>Secuencia de casteo con efectos elementales (viento / hielo). Este poder se
+  <b>reemplaza en Kaito por dash de stamina</b> — misma silueta de gesto, sin partículas
+  mágicas, con estelas de velocidad.</p>
+  <div class="conceptSheet">
+    <img src="wizardConcept.png" alt="Concept de ataque mágico — 16 frames">
+    <figcaption><b>Concept de ataque:</b> 16 frames de casting con proyectil elemental que se disipa al impactar.</figcaption>
+  </div>
+
+  <div class="callout" style="margin-top:6mm;background:#fdf5f6;border-left-color:var(--crimson)">
+    <b>Estado del personaje B:</b> concept aprobado, rol y balance <b>en discusión</b>.
+    La decisión enemy/playable definirá si obtiene stats de progresión o pool de
+    hechizos con enfriamiento.
   </div>
 
   <div class="footer"><span>Gravity Runner: Dash</span><span>3 · Animaciones</span></div>
