@@ -138,14 +138,12 @@
   .gallery figcaption{padding:5px 10px;font-size:9.5pt;color:var(--muted);
     border-top:1px solid var(--line);background:#fdfaf3}
   .gallery figcaption b{color:var(--night)}
-  /* Live box (QR + link) */
+  /* Live box (link) */
   .liveBox{
-    display:grid;grid-template-columns:32mm 1fr;gap:6mm;align-items:center;
     background:#fff;border:1px solid var(--line);border-left:5px solid var(--crimson);
     border-radius:6px;padding:5mm 6mm;margin-top:5mm;
     box-shadow:0 1px 3px rgba(0,0,0,.06)
   }
-  .liveBox .qr{width:32mm;height:32mm;image-rendering:pixelated;border:1px solid var(--line);border-radius:4px;background:#fff}
   .liveBox .liveLink{font-family:'JetBrains Mono',monospace;font-size:11pt;
     color:var(--crimson);font-weight:700;text-decoration:none;
     background:#fdf5f6;padding:3px 8px;border-radius:3px;border:1px solid #f0d5da}
@@ -188,11 +186,10 @@
   </div>
 
   <div class="liveBox">
-    <img src="qr-live-demo.png" alt="QR — GDD online" class="qr">
     <div>
       <h4 style="margin:0 0 2mm">GDD publicado online</h4>
       <p style="margin:0 0 2mm;font-size:10pt;color:var(--muted)">
-        Escaneá el QR o abrí el link para ver este documento con las animaciones activas.
+        Versión web de este documento con animaciones activas:
       </p>
       <a href="https://team35-mjw.vercel.app/" class="liveLink">https://team35-mjw.vercel.app/</a>
       <div style="margin-top:3mm;font-size:8.5pt;color:var(--muted)">
