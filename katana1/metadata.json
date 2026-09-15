@@ -1,0 +1,29 @@
+{
+  "group_id": "1a27e9a1-53c2-4790-b194-e16c39b23dde",
+  "objects": [
+    {
+      "id": "72c6a2d5-6d31-4f35-b9e9-7eae77da34ef",
+      "name": "base",
+      "prompt": "Japanese katana sword, Kill Bill style, traditional curved blade, yellow and black handle, 64x64 pixel art, game asset sprite, isolated on solid black background",
+      "size": {
+        "width": 68,
+        "height": 68
+      },
+      "directions": 8,
+      "view": "low top-down",
+      "rotations": {
+        "south": "rotations/south.png",
+        "south-east": "rotations/south-east.png",
+        "east": "rotations/east.png",
+        "north-east": "rotations/north-east.png",
+        "north": "rotations/north.png",
+        "north-west": "rotations/north-west.png",
+        "west": "rotations/west.png",
+        "south-west": "rotations/south-west.png"
+      },
+      "animations": {}
+    }
+  ],
+  "export_version": "1.1",
+  "export_date": "2026-09-11T02:04:41.069410"
+}
