@@ -163,18 +163,24 @@
   .gallery.two{grid-template-columns:1fr 1fr}
   .gallery figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;
     box-shadow:0 1px 3px rgba(0,0,0,.06)}
-  .gallery img{display:block;width:100%;height:auto;object-fit:cover;max-height:80mm}
-  .gallery.two img{max-height:55mm}
+  .gallery img{display:block;width:100%;height:auto;object-fit:contain;max-height:90mm;background:#fdfaf3}
+  .gallery.two img{max-height:110mm}
+  /* Antagonistas: retratos verticales que ocupan bien la hoja */
+  .gallery.antagonistas{gap:10mm}
+  .gallery.antagonistas img{width:100%;height:auto;max-height:none;background:#0b0d15;object-fit:contain}
+  /* Espaciador para centrar visualmente la sección de antagonistas */
+  .antagonistPad{padding-top:20mm}
   .gallery figcaption{padding:5px 10px;font-size:9.5pt;color:var(--muted);
     border-top:1px solid var(--line);background:#fdfaf3}
   .gallery figcaption b{color:var(--night)}
   /* Concept sheets (wizard) */
   .conceptSheet{background:#fff;border:1px solid var(--line);border-radius:6px;
     padding:4mm;margin:3mm 0;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.05)}
-  .conceptSheet img{max-width:100%;max-height:85mm;height:auto;
-    object-fit:contain;image-rendering:pixelated;
+  .conceptSheet img{width:100%;height:auto;max-height:200mm;
+    object-fit:contain;image-rendering:auto;
     background:repeating-conic-gradient(#faf6ea 0% 25%, #fff 0% 50%) 0/16px 16px;
     border-radius:4px}
+  .pageBreak{break-before:page;page-break-before:always}
   .conceptSheet figcaption{margin-top:3mm;font-size:9.5pt;color:var(--muted)}
   .conceptSheet figcaption b{color:var(--night)}
   /* Live box (link) */
@@ -394,7 +400,7 @@
     <figcaption><b>Concept sheet — 4 filas:</b> idle, walk cycle, ataque con báculo (frontal), ataque cargado (lateral).</figcaption>
   </div>
 
-  <h3 style="margin-top:8mm">Concept · ATAQUE (efectos mágicos)</h3>
+  <h3 class="pageBreak" style="margin-top:8mm">Concept · ATAQUE (efectos mágicos)</h3>
   <p>Secuencia de casteo con efectos elementales (viento / hielo). Este poder se
   <b>reemplaza en Kaito por dash de stamina</b> — misma silueta de gesto, sin partículas
   mágicas, con estelas de velocidad.</p>
@@ -638,18 +644,22 @@
     </figure>
   </div>
 
-  <div class="gallery two">
+  <div class="footer"><span>Gravity Runner: Dash</span><span>9 · Galería (1/4)</span></div>
+</section>
+
+<section class="page antagonistPad">
+  <h3 style="text-align:center;margin-bottom:6mm">Concepts · Antagonistas femeninas</h3>
+  <div class="gallery two antagonistas">
     <figure>
-      <img src="gallery/art-03-p2.png" alt="Character concept 1">
-      <figcaption><b>Concept · Antagonista femenina A</b></figcaption>
+      <img src="gallery/art-03-p2.png" alt="Antagonista femenina A">
+      <figcaption><b>Antagonista femenina A</b> — noble del clan rival</figcaption>
     </figure>
     <figure>
-      <img src="gallery/art-04-p2.png" alt="Character concept 2">
-      <figcaption><b>Concept · Antagonista femenina B (geisha del clan Kuroshini)</b></figcaption>
+      <img src="gallery/art-04-p2.png" alt="Antagonista femenina B">
+      <figcaption><b>Antagonista femenina B</b> — geisha del clan Kuroshini</figcaption>
     </figure>
   </div>
-
-  <div class="footer"><span>Gravity Runner: Dash</span><span>9 · Galería (1/3)</span></div>
+  <div class="footer"><span>Gravity Runner: Dash</span><span>9 · Galería (2/4)</span></div>
 </section>
 
 <section class="page">
@@ -679,7 +689,7 @@
     </figure>
   </div>
 
-  <div class="footer"><span>Gravity Runner: Dash</span><span>9 · Galería (2/3)</span></div>
+  <div class="footer"><span>Gravity Runner: Dash</span><span>9 · Galería (3/4)</span></div>
 </section>
 
 <section class="page">
@@ -735,7 +745,7 @@
     <p style="color:var(--muted);margin-top:2mm">Fin del documento</p>
   </div>
 
-  <div class="footer"><span>Gravity Runner: Dash</span><span>9 · Galería (3/3)</span></div>
+  <div class="footer"><span>Gravity Runner: Dash</span><span>9 · Galería (4/4)</span></div>
 </section>
 
 <script>
