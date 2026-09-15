@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Gravity Runner: Dash — Game Design Document</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f1e6;
+    --paper:#fdfaf3;
+    --ink:#1c1a17;
+    --muted:#5b544a;
+    --line:#d9cfbb;
+    --gold:#a8802c;
+    --gold-dk:#7a5b18;
+    --night:#1e2740;
+    --crimson:#8b1e2b;
+    --jade:#3a6b5a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;font-size:12pt;line-height:1.5}
+  h1,h2,h3,h4{font-family:'Cinzel',serif;color:var(--night);letter-spacing:.02em;margin:0 0 .4em}
+  h1{font-size:34pt;line-height:1.05}
+  h2{font-size:20pt;border-bottom:2px solid var(--gold);padding-bottom:.2em;margin-top:0}
+  h3{font-size:14pt;color:var(--gold-dk)}
+  h4{font-size:12pt;color:var(--night)}
+  p{margin:.35em 0 .7em}
+  code,.mono{font-family:'JetBrains Mono',monospace;font-size:.9em;background:#efe6d1;padding:1px 5px;border-radius:3px}
+  a{color:var(--gold-dk)}
+  .page{
+    width:210mm;min-height:297mm;padding:18mm 16mm;margin:0 auto 8mm;
+    background:var(--paper);
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    page-break-after:always;
+    position:relative;
+    border-top:6px solid var(--night);
+  }
+  .page::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:6px;
+    background:linear-gradient(90deg,var(--night) 0 30%,var(--gold) 30% 32%,var(--night) 32% 68%,var(--gold) 68% 70%,var(--night) 70% 100%);
+  }
+  .footer{position:absolute;bottom:8mm;left:16mm;right:16mm;
+    display:flex;justify-content:space-between;font-size:9pt;color:var(--muted);
+    border-top:1px solid var(--line);padding-top:4mm}
+  .stamp{
+    display:inline-block;font-family:'Cinzel',serif;font-weight:700;
+    color:var(--crimson);border:2px solid var(--crimson);
+    padding:4px 10px;border-radius:4px;transform:rotate(-4deg);
+    letter-spacing:.15em;font-size:10pt
+  }
+  .kanji{font-family:serif;color:var(--crimson);font-size:44pt;line-height:1}
+  .pixel{image-rendering:pixelated;image-rendering:crisp-edges}
+  .grid{display:grid;gap:10mm}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:1fr 1fr 1fr}
+  .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:8mm}
+  .tag{display:inline-block;background:var(--night);color:#fff;font-size:9pt;
+    padding:2px 8px;border-radius:99px;margin-right:4px;letter-spacing:.05em}
+  .field{display:grid;grid-template-columns:38mm 1fr;gap:6px;padding:5px 0;border-bottom:1px dashed var(--line)}
+  .field:last-child{border-bottom:0}
+  .field b{color:var(--night)}
+  .paletteRow{display:grid;grid-template-columns:repeat(5,1fr);gap:6mm;margin-top:4mm}
+  .swatch{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff}
+  .swatch .chip{height:34mm}
+  .swatch .meta{padding:6px 8px;font-size:9pt}
+  .swatch .meta b{display:block;color:var(--night);font-size:10pt}
+  .stripFrames{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;background:#fff;
+    border:1px solid var(--line);border-radius:6px;padding:6px}
+  .stripFrames .cell{width:88px;height:88px;display:flex;align-items:center;justify-content:center;
+    background:repeating-conic-gradient(#f0e8d5 0% 25%, #fff 0% 50%) 0/14px 14px;border-radius:3px}
+  .stripFrames .cell img{max-width:100%;max-height:100%}
+  .anim{
+    width:200px;height:200px;background-repeat:no-repeat;background-size:auto 200px;
+    image-rendering:pixelated;image-rendering:crisp-edges;
+    border:1px solid var(--line);border-radius:6px;background-color:#fff;
+    box-shadow:0 2px 6px rgba(0,0,0,.08)
+  }
+  .anim.idle{background-image:url("ninja-with-katana-idle-pose-607a-spritesheet.png");
+    animation:idleA 1.2s steps(8) infinite}
+  .anim.walk{background-image:url("anim/ninja-walk-spritesheet.png");
+    animation:walkA .7s steps(8) infinite}
+  .anim.jump{background-image:url("anim/ninja-jump-spritesheet.png");
+    animation:jumpA 1s steps(8) infinite}
+  @keyframes idleA{to{background-position-x:-1600px}}
+  @keyframes walkA{to{background-position-x:-1600px}}
+  @keyframes jumpA{to{background-position-x:-1600px}}
+  @media print{
+    .anim{animation:none !important;background-position-x:0 !important}
+  }
+  .heroWrap{display:flex;gap:12mm;align-items:center;margin-top:8mm}
+  .heroBig{width:280px;height:280px;background:url("ninja-with-katana-idle-pose-607a-spritesheet.png") no-repeat;
+    background-size:auto 280px;image-rendering:pixelated;
+    border:1px solid var(--line);border-radius:8px;background-color:#fff;
+    animation:heroA 1.2s steps(8) infinite;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+  @keyframes heroA{to{background-position-x:-2240px}}
+  table{width:100%;border-collapse:collapse;font-size:10.5pt}
+  th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#efe6d1;color:var(--night);font-family:'Cinzel',serif}
+  .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm;margin-top:4mm}
+  .step{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);
+    border-radius:4px;padding:8px 10px;font-size:10pt}
+  .step .n{font-family:'Cinzel',serif;color:var(--crimson);font-weight:700;margin-right:6px}
+  .cover{display:flex;flex-direction:column;justify-content:space-between;height:calc(297mm - 36mm)}
+  .cover .title{text-align:center;margin-top:10mm}
+  .cover .sub{text-align:center;color:var(--muted);font-size:14pt;font-family:'Cinzel',serif;letter-spacing:.15em}
+  .cover .art{text-align:center;margin:6mm 0}
+  .coverBig{width:280px;height:280px;background:url("ninja-with-katana-idle-pose-607a-spritesheet.png") no-repeat;
+    background-size:auto 280px;image-rendering:pixelated;display:inline-block;
+    background-color:transparent}
+  .team{display:grid;grid-template-columns:1fr 1fr;gap:2mm 8mm;margin-top:4mm;font-size:11pt}
+  .team div{padding:4px 0;border-bottom:1px dashed var(--line)}
+  .meta-block{display:flex;justify-content:space-between;gap:8mm}
+  .meta-block .card{flex:1}
+  .badges{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 10px}
+  .callout{background:#fff8e6;border-left:4px solid var(--gold);padding:8px 12px;border-radius:4px;margin:6px 0}
+  ul.tight{margin:.2em 0 .6em;padding-left:1.2em}
+  ul.tight li{margin:2px 0}
+  .rotGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:3mm}
+  .rotGrid .cell{background:#fff;border:1px solid var(--line);border-radius:4px;padding:4px;text-align:center}
+  .rotGrid .cell img{width:64px;height:64px;image-rendering:pixelated}
+  .rotGrid .cell small{display:block;color:var(--muted);font-size:8.5pt;margin-top:2px}
+  .assetShowcase{display:flex;gap:8mm;align-items:center}
+  .assetShowcase .box{background:#fff;border:1px solid var(--line);border-radius:6px;padding:8mm;text-align:center}
+  .assetShowcase img{image-rendering:pixelated}
+  .decisionTree{background:#fff;border:1px solid var(--line);border-radius:6px;padding:6mm;text-align:center;font-family:'JetBrains Mono',monospace;font-size:10pt;white-space:pre;color:var(--night)}
+  .warn{color:var(--crimson);font-weight:700}
+  .good{color:var(--jade);font-weight:700}
+  @page{size:A4;margin:0}
+  /* Gallery */
+  .gallery{display:grid;gap:5mm;margin:4mm 0}
+  .gallery.big{grid-template-columns:1fr}
+  .gallery.two{grid-template-columns:1fr 1fr}
+  .gallery figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .gallery img{display:block;width:100%;height:auto;object-fit:cover;max-height:110mm}
+  .gallery.two img{max-height:75mm}
+  .gallery figcaption{padding:5px 10px;font-size:9.5pt;color:var(--muted);
+    border-top:1px solid var(--line);background:#fdfaf3}
+  .gallery figcaption b{color:var(--night)}
+</style>
+</head>
+<body>
+
+<!-- ================= PORTADA ================= -->
+<section class="page cover">
+  <div class="title">
+    <div class="kanji">影の道</div>
+    <h1 style="margin-top:6mm">Gravity Runner: Dash</h1>
+    <div class="sub">GAME DESIGN DOCUMENT · GDD EXPRESS</div>
+    <div style="margin-top:6mm"><span class="stamp">DOC · v1.0</span></div>
+  </div>
+
+  <div class="art">
+    <div class="coverBig"></div>
+    <p style="color:var(--muted);margin-top:4mm">Kaito, el Caminante de las Sombras</p>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4mm">
+      <div>
+        <h3 style="margin:0">Grupo 35 — Multimedia y Juegos en Web</h3>
+        <small style="color:var(--muted)">Actividad: Personaje, Assets y Animaciones (Pixel Art / Piskel)</small>
+      </div>
+      <div class="badges">
+        <span class="tag">Pixel Art</span>
+        <span class="tag">GDevelop</span>
+        <span class="tag">Web</span>
+      </div>
+    </div>
+    <div class="team">
+      <div>Nahuel Marcilli</div>
+      <div>Jorgelina Elizabeth Mendieta</div>
+      <div>Taoufik Saidi</div>
+      <div>Delcy Adalis Villalba Olmedo</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Grupo 35 · Multimedia y Juegos en Web</span>
+    <span>Portada</span>
+  </div>
+</section>
+
+<!-- ================= VISION ================= -->
+<section class="page">
+  <h2>1 · Visión del Juego</h2>
+
+  <div class="badges">
+    <span class="tag">Plataformas / Runner</span>
+    <span class="tag">Pixel Art</span>
+    <span class="tag">Dark Fantasy Japonés</span>
+    <span class="tag">Web / PC (GDevelop)</span>
+    <span class="tag">Casual</span>
+  </div>
+
+  <div class="card">
+    <h3>Sinopsis</h3>
+    <p>En el Japón feudal de las sombras, el templo secreto del clan Shinobi custodia el
+    <b>Pergamino del Equilibrio Gravitatorio</b>, una reliquia ancestral capaz de alterar la
+    atracción terrestre. Una noche, el clan rival <b>Kuroshini</b> asalta el templo, rompe el
+    sello sagrado y roba el pergamino. Las fortalezas flotan, los techos se vuelven suelos
+    y el caos reina.</p>
+    <p><b>Kaito</b>, único superviviente del ataque, debe recuperar las hojas del pergamino
+    antes de que el líder enemigo absorba su poder y destruya la realidad.</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:6mm">
+    <div class="card">
+      <h3>Género y plataforma</h3>
+      <div class="field"><b>Género</b><span>Plataformas / Runner por niveles</span></div>
+      <div class="field"><b>Motor</b><span>GDevelop</span></div>
+      <div class="field"><b>Plataforma</b><span>Web / PC (navegador)</span></div>
+      <div class="field"><b>Público</b><span>Jugadores casuales</span></div>
+      <div class="field"><b>Duración</b><span>Tutorial + 3 niveles</span></div>
+    </div>
+    <div class="card">
+      <h3>Pilares de diseño</h3>
+      <ul class="tight">
+        <li><b>Gravedad como verbo:</b> invertirla es el único poder.</li>
+        <li><b>Ritmo:</b> decidir en fracciones de segundo (risk vs. reward).</li>
+        <li><b>Estética japonesa oscura:</b> silueta ninja, paleta contenida.</li>
+        <li><b>Legibilidad:</b> siluetas claras, hitbox honestos.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:6mm">
+    <b>Bucle de juego (Core Loop):</b> Correr → Invertir gravedad (<span class="mono">Espacio</span>)
+    → Esquivar / Recolectar → Alcanzar meta o superar récord.
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash</span><span>1 · Visión</span></div>
+</section>
+
+<!-- ================= FICHA PERSONAJE ================= -->
+<section class="page">
+  <h2>2 · Ficha del Personaje — Kaito</h2>
+
+  <div class="heroWrap">
+    <div class="heroBig"></div>
+    <div style="flex:1">
+      <div class="field"><b>Nombre</b><span>Kaito (カイト) — <i>El Caminante de las Sombras</i></span></div>
+      <div class="field"><b>Edad</b><span>19 años</span></div>
+      <div class="field"><b>Rol</b><span>Ninja guardián / Protagonista</span></div>
+      <div class="field"><b>Clan</b><span>Shinobi (superviviente)</span></div>
+      <div class="field"><b>Habilidad</b><span>Manipulación de Cuerpos Gravitatorios — invierte su propia gravedad en tiempo real usando el sello del pergamino.</span></div>
+      <div class="field"><b>Motivación</b><span>Redimir la caída de su templo y evitar la destrucción de las leyes naturales.</span></div>
+      <div class="field"><b>Armas</b><span>Katana japonesa (dorso), daga corta (cinto), shuriken hira (bolsa)</span></div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:8mm">Apariencia visual</h3>
+  <p>Traje ninja negro con detalles carmesí, armadura de placas en hombros y torso, protectores metálicos
+  en antebrazos y piernas, capucha ninja con máscara facial. Katana envainada en la espalda con contrapeso dorado.</p>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3>Stats de juego</h3>
+      <div class="field"><b>Vida</b><span>3 corazones (reinicio instantáneo)</span></div>
+      <div class="field"><b>Energía Grav.</b><span>Barra que se gasta al invertir gravedad</span></div>
+      <div class="field"><b>Recarga</b><span>Automática lenta + gemas</span></div>
+      <div class="field"><b>Velocidad</b><span>Constante (runner)</span></div>
+    </div>
+    <div class="card">
+      <h3>Controles</h3>
+      <div class="field"><b>Espacio / Clic</b><span>Invertir gravedad</span></div>
+      <div class="field"><b>← →</b><span>Ajuste fino (opcional)</span></div>
+      <div class="field"><b>Esc</b><span>Pausa</span></div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash</span><span>2 · Ficha del Personaje</span></div>
+</section>
+
+<!-- ================= ANIMACIONES ================= -->
+<section class="page">
+  <h2>3 · Animaciones del Personaje</h2>
+  <p>Sprites en formato <b>128×128 px</b>, escalables a 32×32 para in-game.
+  Animaciones diseñadas para leerse a distancia con siluetas simples.</p>
+
+  <h3>IDLE — 8 frames · loop 1.2s</h3>
+  <div style="display:flex;gap:8mm;align-items:center;margin-bottom:4mm">
+    <div class="anim idle"></div>
+    <div style="flex:1">
+      <p>Respiración calma, katana lista al costado. Se reproduce mientras el jugador no
+      ejecuta ninguna acción o durante pantallas de espera.</p>
+      <div class="badges">
+        <span class="tag">8 frames</span><span class="tag">128×128</span><span class="tag">Loop</span>
+      </div>
+    </div>
+  </div>
+  <div class="stripFrames" id="idleStrip"></div>
+
+  <div class="callout" style="margin-top:8mm">
+    <b>Animaciones CAMINAR y SALTAR</b> — en producción. Se agregarán al documento
+    una vez generadas con el pipeline AI de sprite-ai.art (Walk + Jump, 8 frames c/u).
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash</span><span>3 · Animaciones</span></div>
+</section>
+
+<!-- ================= ASSETS ================= -->
+<section class="page">
+  <h2>4 · Assets del Proyecto</h2>
+
+  <h3>Katana japonesa — 8 rotaciones</h3>
+  <p>Arma característica del clan Shinobi. Sprite rotado en las 8 direcciones cardinales,
+  listo para orientar en cualquier ángulo de disparo/ataque.</p>
+  <div class="rotGrid">
+    <div class="cell"><img class="pixel" src="katana1/Japanese_katana_sword_Kill_Bi/rotations/north.png"><small>N</small></div>
+    <div class="cell"><img class="pixel" src="katana1/Japanese_katana_sword_Kill_Bi/rotations/north-east.png"><small>NE</small></div>
+    <div class="cell"><img class="pixel" src="katana1/Japanese_katana_sword_Kill_Bi/rotations/east.png"><small>E</small></div>
+    <div class="cell"><img class="pixel" src="katana1/Japanese_katana_sword_Kill_Bi/rotations/south-east.png"><small>SE</small></div>
+    <div class="cell"><img class="pixel" src="katana1/Japanese_katana_sword_Kill_Bi/rotations/south.png"><small>S</small></div>
+    <div class="cell"><img class="pixel" src="katana1/Japanese_katana_sword_Kill_Bi/rotations/south-west.png"><small>SW</small></div>
+    <div class="cell"><img class="pixel" src="katana1/Japanese_katana_sword_Kill_Bi/rotations/west.png"><small>W</small></div>
+    <div class="cell"><img class="pixel" src="katana1/Japanese_katana_sword_Kill_Bi/rotations/north-west.png"><small>NW</small></div>
+  </div>
+
+  <h3 style="margin-top:8mm">Shuriken (Hira-shuriken) — asset extra</h3>
+  <p>Estrella clásica de 4 puntas. <b>Cumple con la consigna:</b> "diseñar otro asset
+  que sea parte del proyecto". Usado por el enemigo <i>Lanzador de Shurikens</i> y como
+  proyectil coleccionable de puntaje.</p>
+  <div class="assetShowcase">
+    <div class="box">
+      <img class="pixel" src="katana_estrella/Estrella clasica de 4 puntas (Hira-shuriken).png" style="width:160px;height:160px">
+      <div style="margin-top:4mm"><span class="tag">Formato 32×32</span> <span class="tag">Pixel Art</span></div>
+    </div>
+    <div style="flex:1">
+      <h4>Usos in-game</h4>
+      <ul class="tight">
+        <li>Proyectil enemigo (patrón rítmico de 2s).</li>
+        <li>Coleccionable de puntaje (+50 pts).</li>
+        <li>Icono en HUD para conteo de vidas/munición.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash</span><span>4 · Assets</span></div>
+</section>
+
+<!-- ================= PALETA ================= -->
+<section class="page">
+  <h2>5 · Paleta de Colores</h2>
+  <p>Paleta contenida, dark fantasy japonés. Aplicada de forma consistente en fondos,
+  sombras, detalles metálicos y focos narrativos.</p>
+
+  <div class="paletteRow">
+    <div class="swatch"><div class="chip" style="background:#0f1626"></div>
+      <div class="meta"><b>Negro azulado</b><code>#0F1626</code><br><small>Fondo principal</small></div></div>
+    <div class="swatch"><div class="chip" style="background:#1e2740"></div>
+      <div class="meta"><b>Azul noche</b><code>#1E2740</code><br><small>Ruinas · sombras</small></div></div>
+    <div class="swatch"><div class="chip" style="background:#a8802c"></div>
+      <div class="meta"><b>Dorado viejo</b><code>#A8802C</code><br><small>Bordes · títulos</small></div></div>
+    <div class="swatch"><div class="chip" style="background:#f2ead3"></div>
+      <div class="meta"><b>Marfil</b><code>#F2EAD3</code><br><small>Texto · UI</small></div></div>
+    <div class="swatch"><div class="chip" style="background:#3a6b5a"></div>
+      <div class="meta"><b>Jade tenue</b><code>#3A6B5A</code><br><small>Magia / foco</small></div></div>
+  </div>
+
+  <div class="paletteRow" style="grid-template-columns:repeat(3,1fr);margin-top:8mm">
+    <div class="swatch"><div class="chip" style="background:#8b1e2b"></div>
+      <div class="meta"><b>Carmesí Shinobi</b><code>#8B1E2B</code><br><small>Acentos · sangre · botones</small></div></div>
+    <div class="swatch"><div class="chip" style="background:#5b544a"></div>
+      <div class="meta"><b>Piedra ceniza</b><code>#5B544A</code><br><small>Plataformas · roca</small></div></div>
+    <div class="swatch"><div class="chip" style="background:#c9a04a"></div>
+      <div class="meta"><b>Ámbar sagrado</b><code>#C9A04A</code><br><small>Gemas · pergamino</small></div></div>
+  </div>
+
+  <h3 style="margin-top:8mm">Regla de aplicación</h3>
+  <ul class="tight">
+    <li>Máximo 5 tonos por escena.</li>
+    <li>Dorado reservado para elementos interactivos y coleccionables.</li>
+    <li>Carmesí solo para peligro o decisión narrativa importante.</li>
+    <li>Jade solo cuando aparece el sello del pergamino (evento único).</li>
+  </ul>
+
+  <div class="footer"><span>Gravity Runner: Dash</span><span>5 · Paleta</span></div>
+</section>
+
+<!-- ================= CAMINO DEL HÉROE ================= -->
+<section class="page">
+  <h2>6 · Camino del Héroe (12 Etapas)</h2>
+  <p>La narrativa sigue el <b>Monomito</b> de Campbell, mapeado a la progresión
+  Tutorial + 3 niveles.</p>
+
+  <div class="flow">
+    <div class="step"><span class="n">01</span>Mundo Ordinario — entrenamiento en el templo.</div>
+    <div class="step"><span class="n">02</span>Llamado — el templo es atacado y el pergamino robado.</div>
+    <div class="step"><span class="n">03</span>Rechazo — Kaito duda, herido.</div>
+    <div class="step"><span class="n">04</span>Mentor — el gran maestro le entrega el fragmento central.</div>
+    <div class="step"><span class="n">05</span>Umbral — cruza el Portal del Equilibrio.</div>
+    <div class="step"><span class="n">06</span><b>Tutorial:</b> Patio Distorsionado (Espacio para gravedad).</div>
+    <div class="step"><span class="n">07</span><b>Nivel 1:</b> Templo Caótico — gravedad básica.</div>
+    <div class="step"><span class="n">08</span><b>Nivel 2:</b> Cueva de Cristal — velocidad y sincronización.</div>
+    <div class="step"><span class="n">09</span><b>Nivel 3:</b> Fortaleza de las Sombras — prueba suprema.</div>
+    <div class="step"><span class="n">10</span>Regreso — huida a máxima velocidad.</div>
+    <div class="step"><span class="n">11</span>Resurrección — salto de gravedad definitivo.</div>
+    <div class="step"><span class="n">12</span>Elixir — restaura la gravedad, se vuelve Gran Maestro.</div>
+  </div>
+
+  <h3 style="margin-top:8mm">Decisión narrativa final</h3>
+  <div class="decisionTree">
+[ ¿Qué hacer con el Pergamino? ]
+              |
+   +----------+----------+
+   |                     |
+[ A: Restaurar ]   [ B: Absorber ]
+   |                     |
+ Final Bueno        Final Oscuro
+ Gran Maestro       Guardián Supremo
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash</span><span>6 · Camino del Héroe</span></div>
+</section>
+
+<!-- ================= MECÁNICAS / ENEMIGOS ================= -->
+<section class="page">
+  <h2>7 · Mecánicas, Enemigos y Decisiones</h2>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3>Condiciones</h3>
+      <div class="field"><b><span class="good">Victoria</span></b><span>Alcanzar la bandera del nivel o eliminar a todos los enemigos.</span></div>
+      <div class="field"><b><span class="warn">Derrota</span></b><span>Colisión con pincho o caída al abismo → reinicio instantáneo.</span></div>
+    </div>
+    <div class="card">
+      <h3>Recurso: Energía Gravitatoria</h3>
+      <p>Barra que se consume al invertir gravedad. Se recarga sola lentamente o al recoger gemas.
+      Introduce decisión de ritmo: <i>¿gasto ahora o guardo para el abismo?</i></p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:8mm">Enemigos</h3>
+  <table>
+    <tr><th>Tipo</th><th>Comportamiento</th><th>Interacción</th></tr>
+    <tr>
+      <td><b>Ninja Patrullero</b></td>
+      <td>Patrulla izquierda-derecha en plataforma (extensión GDevelop <i>Platformer Enemy Patrolling</i>).</td>
+      <td class="warn">Contacto lateral/inferior = pierde vida.</td>
+    </tr>
+    <tr>
+      <td><b>Archimandrita de las Sombras</b></td>
+      <td>Estático en techo o suelo, lanza shuriken/esfera cada 2 s.</td>
+      <td class="warn">Proyectil impacta = daño.</td>
+    </tr>
+    <tr>
+      <td><b>Muro de Caos</b> <small>(Nivel 3)</small></td>
+      <td>Pared oscura que avanza desde la izquierda constantemente.</td>
+      <td class="warn">Alcance = game over. Obliga a no detenerse.</td>
+    </tr>
+  </table>
+
+  <h3 style="margin-top:8mm">Decisiones en tiempo real (Risk vs. Reward)</h3>
+  <table>
+    <tr><th>Ruta</th><th>Riesgo</th><th>Recompensa</th></tr>
+    <tr><td><b>Ruta Alta (techo)</b></td><td>Menos obstáculos.</td><td>Sin coleccionables.</td></tr>
+    <tr><td><b>Ruta Baja (suelo)</b></td><td>Pinchos, patrullas.</td><td>Reliquias y Cristales de Poder (+ final alternativo).</td></tr>
+  </table>
+
+  <div class="footer"><span>Gravity Runner: Dash</span><span>7 · Mecánicas</span></div>
+</section>
+
+<!-- ================= ARTE / AUDIO ================= -->
+<section class="page">
+  <h2>8 · Arte, Efectos y Audio</h2>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3>Estilo visual</h3>
+      <ul class="tight">
+        <li>Pixel Art minimalista, escala 32×32 en juego.</li>
+        <li>Dark fantasy japonesa. Fondos pintados semi-realistas detrás.</li>
+        <li>UI elegante: negro, azul noche, dorado, crema.</li>
+        <li>Silueta primero — legibilidad a distancia.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Efectos (FX)</h3>
+      <ul class="tight">
+        <li>Niebla ambiente</li>
+        <li>Partículas de polvo</li>
+        <li>Chispas mágicas al invertir gravedad</li>
+        <li>Brillo tenue en coleccionables</li>
+        <li>Transición fundido entre niveles</li>
+        <li>Destello sobre decisiones importantes</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:6mm">Plan de sonido</h3>
+  <table>
+    <tr><th>Evento</th><th>Tipo</th><th>Origen</th></tr>
+    <tr><td>Cambio de gravedad</td><td>Woosh / impulso corto</td><td>GDevelop SFX (sfxr)</td></tr>
+    <tr><td>Recoger gema</td><td>Chime agudo</td><td>GDevelop SFX (sfxr)</td></tr>
+    <tr><td>Muerte / choque</td><td>Golpe seco</td><td>GDevelop SFX (sfxr)</td></tr>
+    <tr><td>Victoria</td><td>Fanfarria positiva</td><td>GDevelop SFX (sfxr)</td></tr>
+    <tr><td>Música de fondo</td><td>Loop chiptune 8-bit</td><td>itch.io (free 8bit music)</td></tr>
+    <tr><td>Ambiente</td><td>Viento, ecos, pasos suaves</td><td>Freesound / itch.io</td></tr>
+  </table>
+
+  <div class="callout" style="margin-top:6mm">
+    <b>Herramientas utilizadas:</b> Piskel (pixel art), Aseprite (frames),
+    GDevelop (engine), Krita/Photopea (retoque). Assets originales del equipo + shuriken de dominio público.
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash</span><span>8 · Arte y Audio</span></div>
+</section>
+
+<!-- ================= GALERÍA DE ARTE ================= -->
+<section class="page">
+  <h2>9 · Galería de Arte Conceptual</h2>
+  <p>Selección de arte conceptual, mockups de nivel y bocetos de personaje generados
+  durante el brainstorming del proyecto. Estas piezas orientan la dirección visual y
+  la atmósfera dark fantasy japonesa que persigue el juego.</p>
+
+  <div class="gallery big">
+    <figure>
+      <img src="gallery/art-01-p2.png" alt="Concepts trio: Gravity Inverted / Ninja Dash / Level Completed">
+      <figcaption><b>Concepts iniciales</b> — Gravity Inverted · Ninja Dash · Level Completed</figcaption>
+    </figure>
+    <figure>
+      <img src="gallery/art-02-p2.png" alt="Concepts: Gravity Temples / Map Scroll / Endless Loot">
+      <figcaption><b>Concepts secundarios</b> — Templos de gravedad, mapa y portal del ocaso</figcaption>
+    </figure>
+  </div>
+
+  <div class="gallery two">
+    <figure>
+      <img src="gallery/art-03-p2.png" alt="Character concept 1">
+      <figcaption><b>Concept · Antagonista femenina A</b></figcaption>
+    </figure>
+    <figure>
+      <img src="gallery/art-04-p2.png" alt="Character concept 2">
+      <figcaption><b>Concept · Antagonista femenina B (geisha del clan Kuroshini)</b></figcaption>
+    </figure>
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash</span><span>9 · Galería (1/3)</span></div>
+</section>
+
+<section class="page">
+  <h2 style="visibility:hidden">.</h2>
+  <div class="gallery big">
+    <figure>
+      <img src="gallery/art-05-p3.png" alt="Título del juego">
+      <figcaption><b>Título / Cover</b> — Gravity Runner: Dash</figcaption>
+    </figure>
+  </div>
+
+  <div class="gallery two">
+    <figure>
+      <img src="gallery/art-06-p3.png" alt="Level Pack menu">
+      <figcaption><b>Menú Level Pack</b> — Beginning · Evolution · Experience</figcaption>
+    </figure>
+    <figure>
+      <img src="gallery/art-07-p3.png" alt="Logo shuriken ninja">
+      <figcaption><b>Logo alternativo</b> — sello ninja con shurikens</figcaption>
+    </figure>
+  </div>
+
+  <div class="gallery big">
+    <figure>
+      <img src="gallery/art-08-p3.png" alt="Retratos de ninjas">
+      <figcaption><b>Grilla de personajes</b> — retratos de la orden Shinobi y clanes aliados</figcaption>
+    </figure>
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash</span><span>9 · Galería (2/3)</span></div>
+</section>
+
+<section class="page">
+  <h2 style="visibility:hidden">.</h2>
+  <div class="gallery big">
+    <figure>
+      <img src="gallery/art-09-p4.png" alt="Loading screen ninja running">
+      <figcaption><b>Loading screen</b> — Kaito corre mientras carga la partida ("CARGANDO...")</figcaption>
+    </figure>
+  </div>
+
+  <div class="gallery two">
+    <figure>
+      <img src="gallery/art-10-p5.png" alt="Mockup Nivel intro">
+      <figcaption><b>Mockup · Llamado a la aventura</b> — el templo bajo ataque</figcaption>
+    </figure>
+    <figure>
+      <img src="gallery/art-11-p6.png" alt="Mockup tutorial">
+      <figcaption><b>Mockup · Tutorial</b> — patio distorsionado</figcaption>
+    </figure>
+    <figure>
+      <img src="gallery/art-12-p6.png" alt="Mockup Nivel 1">
+      <figcaption><b>Mockup · Nivel 1</b> — Templo Caótico</figcaption>
+    </figure>
+    <figure>
+      <img src="gallery/art-13-p7.png" alt="Mockup Nivel 2">
+      <figcaption><b>Mockup · Nivel 2</b> — Cueva de Cristal</figcaption>
+    </figure>
+    <figure>
+      <img src="gallery/art-15-p8.png" alt="Mockup Nivel 3">
+      <figcaption><b>Mockup · Nivel 3</b> — Fortaleza de las Sombras</figcaption>
+    </figure>
+    <figure>
+      <img src="gallery/art-14-p7.png" alt="Game Over screen">
+      <figcaption><b>Game Over</b> — pantalla de derrota "Press Button to Start"</figcaption>
+    </figure>
+  </div>
+
+  <h3 style="margin-top:8mm">Créditos del equipo — Grupo 35</h3>
+  <div class="team">
+    <div><b>Nahuel Marcilli</b> — Diseño, sprites, GDD</div>
+    <div><b>Jorgelina Elizabeth Mendieta</b> — Arte, paleta</div>
+    <div><b>Taoufik Saidi</b> — Narrativa, mecánicas</div>
+    <div><b>Delcy Adalis Villalba Olmedo</b> — Audio, testing</div>
+  </div>
+
+  <div class="callout" style="margin-top:6mm">
+    <b>Materia:</b> Multimedia y Juegos en Web · <b>Grupo:</b> 35 · <b>Motor:</b> GDevelop
+  </div>
+
+  <div style="text-align:center;margin-top:8mm">
+    <span class="kanji">終</span>
+    <p style="color:var(--muted);margin-top:2mm">Fin del documento</p>
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash</span><span>9 · Galería (3/3)</span></div>
+</section>
+
+<script>
+  // Build frame strips by slicing the spritesheets visually
+  function buildStrip(id, url, count, sheetW){
+    const strip = document.getElementById(id);
+    const frameW = sheetW/count;
+    const CELL = 88;
+    for(let i=0;i<count;i++){
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      const img = document.createElement('div');
+      img.style.width = CELL+'px';
+      img.style.height = CELL+'px';
+      img.style.background = `url("${url}") no-repeat`;
+      img.style.backgroundSize = `${(CELL/frameW)*sheetW}px ${CELL}px`;
+      img.style.backgroundPosition = `-${i*CELL}px 0`;
+      img.style.imageRendering = 'pixelated';
+      cell.appendChild(img);
+      strip.appendChild(cell);
+    }
+  }
+  buildStrip('idleStrip','ninja-with-katana-idle-pose-607a-spritesheet.png',8,1024);
+</script>
+
+</body>
+</html>
