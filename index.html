@@ -86,14 +86,43 @@
   @keyframes walkA{to{background-position-x:-1600px}}
   @keyframes jumpA{to{background-position-x:-1600px}}
   @media print{
-    .anim{animation:none !important;background-position-x:0 !important}
+    /* Reset background so shadows/backgrounds print */
+    html,body{background:#fdfaf3 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .anim,.heroBig{animation:none !important;background-position-x:0 !important}
+    /* Sections no longer force min-height 1 page — let content flow */
+    .page{
+      min-height:auto !important;
+      margin:0 auto !important;
+      box-shadow:none !important;
+      padding:12mm 14mm 14mm !important;
+      page-break-after:always;
+      break-after:page;
+      border-top:6px solid var(--night);
+    }
+    .page:last-of-type{page-break-after:auto;break-after:auto}
+    /* Absolute footer is unreliable in print — hide */
+    .footer{display:none !important}
+    /* Cover: no forced height */
+    .cover{padding-bottom:0 !important;gap:4mm !important}
+    /* Keep visual groups together */
+    .card,.stripFrames,.flow,.decisionTree,.conceptSheet,figure,
+    .swatch,.step,.anim,.heroBig,.coverBig,.liveBox,.callout,
+    table,tr,.gallery figure{
+      break-inside:avoid;page-break-inside:avoid
+    }
+    /* Titles glued to next block */
+    h1,h2,h3,h4{break-after:avoid;page-break-after:avoid}
+    /* Slightly tighter typography */
+    body{font-size:11pt;line-height:1.42}
+    h1{font-size:30pt}h2{font-size:18pt}h3{font-size:13pt}
+    .grid{gap:6mm !important}
   }
   .heroWrap{display:flex;gap:12mm;align-items:center;margin-top:8mm}
-  .heroBig{width:280px;height:280px;background:url("ninja-with-katana-idle-pose-607a-spritesheet.png") no-repeat;
-    background-size:auto 280px;image-rendering:pixelated;
+  .heroBig{width:220px;height:220px;background:url("ninja-with-katana-idle-pose-607a-spritesheet.png") no-repeat;
+    background-size:auto 220px;image-rendering:pixelated;
     border:1px solid var(--line);border-radius:8px;background-color:#fff;
     animation:heroA 1.2s steps(8) infinite;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-  @keyframes heroA{to{background-position-x:-2240px}}
+  @keyframes heroA{to{background-position-x:-1760px}}
   table{width:100%;border-collapse:collapse;font-size:10.5pt}
   th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
   th{background:#efe6d1;color:var(--night);font-family:'Cinzel',serif}
@@ -134,15 +163,16 @@
   .gallery.two{grid-template-columns:1fr 1fr}
   .gallery figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;
     box-shadow:0 1px 3px rgba(0,0,0,.06)}
-  .gallery img{display:block;width:100%;height:auto;object-fit:cover;max-height:110mm}
-  .gallery.two img{max-height:75mm}
+  .gallery img{display:block;width:100%;height:auto;object-fit:cover;max-height:80mm}
+  .gallery.two img{max-height:55mm}
   .gallery figcaption{padding:5px 10px;font-size:9.5pt;color:var(--muted);
     border-top:1px solid var(--line);background:#fdfaf3}
   .gallery figcaption b{color:var(--night)}
   /* Concept sheets (wizard) */
   .conceptSheet{background:#fff;border:1px solid var(--line);border-radius:6px;
     padding:4mm;margin:3mm 0;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.05)}
-  .conceptSheet img{max-width:100%;height:auto;image-rendering:pixelated;
+  .conceptSheet img{max-width:100%;max-height:85mm;height:auto;
+    object-fit:contain;image-rendering:pixelated;
     background:repeating-conic-gradient(#faf6ea 0% 25%, #fff 0% 50%) 0/16px 16px;
     border-radius:4px}
   .conceptSheet figcaption{margin-top:3mm;font-size:9.5pt;color:var(--muted)}
@@ -284,9 +314,9 @@
       <div class="field"><b>Edad</b><span>19 años</span></div>
       <div class="field"><b>Rol</b><span>Ninja guardián / Protagonista</span></div>
       <div class="field"><b>Clan</b><span>Shinobi (superviviente)</span></div>
-      <div class="field"><b>Habilidad</b><span>Manipulación de Cuerpos Gravitatorios — invierte su propia gravedad en tiempo real usando el sello del pergamino. <b>Consume stamina</b> (paralelo al recurso de magia del Mago).</span></div>
-      <div class="field"><b>Motivación</b><span>Redimir la caída de su templo y evitar la destrucción de las leyes naturales.</span></div>
-      <div class="field"><b>Armas</b><span>Katana japonesa (dorso), daga corta (cinto), shuriken hira (bolsa)</span></div>
+      <div class="field"><b>Habilidad</b><span>Manipulación de gravedad — invierte su propia gravedad usando el sello del pergamino. <b>Consume stamina</b>.</span></div>
+      <div class="field"><b>Motivación</b><span>Redimir la caída de su templo y restaurar las leyes naturales.</span></div>
+      <div class="field"><b>Armas</b><span>Katana (dorso), daga corta (cinto), shuriken hira (bolsa)</span></div>
     </div>
   </div>
 
@@ -298,8 +328,8 @@
     <div class="card">
       <h3>Stats de juego</h3>
       <div class="field"><b>Vida</b><span>3 corazones (reinicio instantáneo)</span></div>
-      <div class="field"><b>Stamina</b><span>Barra que se gasta al invertir gravedad y correr rápido — equivalente conceptual a la <i>Magia</i> del Mago (Personaje B)</span></div>
-      <div class="field"><b>Recarga</b><span>Automática lenta + gemas de energía</span></div>
+      <div class="field"><b>Stamina</b><span>Se gasta al invertir gravedad y correr rápido — paralelo a la Magia del Mago</span></div>
+      <div class="field"><b>Recarga</b><span>Automática lenta + gemas</span></div>
       <div class="field"><b>Velocidad</b><span>Constante (runner)</span></div>
     </div>
     <div class="card">
