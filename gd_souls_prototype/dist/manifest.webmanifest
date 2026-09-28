@@ -1,0 +1,12 @@
+{
+  "name": "gd_souls_prototype",
+  "short_name": "gd_souls_prototype",
+  "id": "com.example.gd_souls_prototype",
+  "description": "Dark Souls Prototype in GDevelop",
+  "orientation": "any",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}

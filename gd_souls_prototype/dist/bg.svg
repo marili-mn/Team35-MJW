@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a14"/>
+      <stop offset="60%" stop-color="#161626"/>
+      <stop offset="100%" stop-color="#222238"/>
+    </linearGradient>
+
+    <!-- Torch Glow -->
+    <radialGradient id="torchGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffaa00" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#ff4400" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Floor Pattern -->
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d3e56"/>
+      <stop offset="15%" stop-color="#2a2b3d"/>
+      <stop offset="100%" stop-color="#141420"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Sky / Dungeon Wall -->
+  <rect width="1280" height="720" fill="url(#sky)"/>
+
+  <!-- Wall Pillars & Bricks -->
+  <g fill="#1a1b29" stroke="#2c2d42" stroke-width="2" opacity="0.7">
+    <rect x="100" y="50" width="120" height="480" rx="6"/>
+    <rect x="400" y="50" width="120" height="480" rx="6"/>
+    <rect x="760" y="50" width="120" height="480" rx="6"/>
+    <rect x="1060" y="50" width="120" height="480" rx="6"/>
+  </g>
+
+  <!-- Torches & Glows -->
+  <!-- Torch 1 -->
+  <circle cx="160" cy="220" r="140" fill="url(#torchGlow)"/>
+  <rect x="154" y="230" width="12" height="40" fill="#4a2e18" rx="2"/>
+  <path d="M150 220 Q160 190 170 220 Q160 200 150 220 Z" fill="#ffcc00"/>
+
+  <!-- Torch 2 -->
+  <circle cx="820" cy="220" r="140" fill="url(#torchGlow)"/>
+  <rect x="814" y="230" width="12" height="40" fill="#4a2e18" rx="2"/>
+  <path d="M810 220 Q820 190 830 220 Q820 200 810 220 Z" fill="#ffcc00"/>
+
+  <!-- Dungeon Arch / Atmosphere -->
+  <path d="M0 0 L1280 0 L1280 80 Q640 160 0 80 Z" fill="#080810" opacity="0.8"/>
+
+  <!-- Arena Floor / Ground Platform (y=530 to 720) -->
+  <rect x="0" y="530" width="1280" height="190" fill="url(#floorGrad)"/>
+  <line x1="0" y1="530" x2="1280" y2="530" stroke="#797c9a" stroke-width="6"/>
+  <line x1="0" y1="536" x2="1280" y2="536" stroke="#ffaa00" stroke-width="2" opacity="0.6"/>
+
+  <!-- Stone Slab Tiles -->
+  <g stroke="#1a1b26" stroke-width="3" opacity="0.5">
+    <line x1="160" y1="530" x2="160" y2="720"/>
+    <line x1="320" y1="530" x2="320" y2="720"/>
+    <line x1="480" y1="530" x2="480" y2="720"/>
+    <line x1="640" y1="530" x2="640" y2="720"/>
+    <line x1="800" y1="530" x2="800" y2="720"/>
+    <line x1="960" y1="530" x2="960" y2="720"/>
+    <line x1="1120" y1="530" x2="1120" y2="720"/>
+  </g>
+</svg>
