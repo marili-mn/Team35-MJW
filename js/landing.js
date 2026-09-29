@@ -18,3 +18,26 @@ function buildStrip(id, url, count, sheetW){
   }
 }
 buildStrip('idleStrip','ninja-with-katana-idle-pose-607a-spritesheet.png',8,1024);
+
+// Version tabs: switch between v1 (GDD) and v2 (Pre-Alfa) without reloading
+const versionTabs = document.querySelectorAll('.versionTabs [data-target]');
+function showVersion(id) {
+  document.querySelectorAll('.version').forEach(v => { v.hidden = v.id !== id; });
+  versionTabs.forEach(t => t.setAttribute('aria-selected', String(t.dataset.target === id)));
+}
+versionTabs.forEach(t => t.addEventListener('click', () => {
+  showVersion(t.dataset.target);
+  history.replaceState(null, '', '#' + t.dataset.target);
+  window.scrollTo(0, 0);
+}));
+const versionFromHash = () => showVersion(location.hash === '#v1' ? 'v1' : 'v2');
+window.addEventListener('hashchange', versionFromHash);
+versionFromHash();
+
+// Kaito frame animations (frames are <base>_<i>.png)
+document.querySelectorAll('img.kaitoAnim').forEach(img => {
+  const base = img.dataset.src, count = Number(img.dataset.frames), ms = Number(img.dataset.ms) || 90;
+  const frames = Array.from({ length: count }, (_, i) => { const im = new Image(); im.src = `${base}_${i}.png`; return im.src; });
+  let f = 0;
+  setInterval(() => { f = (f + 1) % count; img.src = frames[f]; }, ms);
+});

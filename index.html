@@ -8,6 +8,14 @@
 </head>
 <body>
 
+<nav class="versionTabs" role="tablist" aria-label="Versión del documento">
+  <button type="button" role="tab" data-target="v1" aria-controls="v1">v1 · GDD</button>
+  <button type="button" role="tab" data-target="v2" aria-controls="v2">v2 · Pre-Alfa <span class="tabNew">NUEVO</span></button>
+  <a class="tabPlay" href="https://marilidev.itch.io/gravity-runner-dash" target="_blank" rel="noopener">▶ Jugar en itch.io</a>
+</nav>
+
+<main id="v1" class="version" role="tabpanel">
+
 <!-- ================= PORTADA ================= -->
 <section class="page cover">
   <div class="title">
@@ -559,6 +567,161 @@
 
   <div class="footer"><span>Gravity Runner: Dash</span><span>9 · Galería (4/4)</span></div>
 </section>
+
+</main>
+
+<main id="v2" class="version" role="tabpanel" hidden>
+
+<!-- ================= V2 · PORTADA ================= -->
+<section class="page cover">
+  <div class="title">
+    <div class="kanji">影の道</div>
+    <h1 style="margin-top:6mm">Gravity Runner: Dash</h1>
+    <div class="sub">VERSIÓN PRE-ALFA · ETAPA DE PRUEBAS</div>
+    <div style="margin-top:6mm"><span class="stamp">BUILD · v1.0 α</span></div>
+  </div>
+
+  <div class="art">
+    <img class="kaitoAnim kaitoHero" data-src="GravityRunnerDash/assets/kaito/run" data-frames="8" data-ms="70"
+         src="GravityRunnerDash/assets/kaito/run_0.png" alt="Kaito corriendo">
+    <p style="color:var(--muted);margin-top:2mm">Kaito ya corre, salta e invierte la gravedad</p>
+  </div>
+
+  <div class="liveBox">
+    <h4 style="margin:0 0 2mm">Jugalo ahora en el navegador</h4>
+    <p style="margin:0 0 3mm;font-size:10pt;color:var(--muted)">
+      Build Pre-Alfa publicada en itch.io para las pruebas entre pares del segundo sprint.
+    </p>
+    <a href="https://marilidev.itch.io/gravity-runner-dash" class="liveLink" target="_blank" rel="noopener">https://marilidev.itch.io/gravity-runner-dash</a>
+    <div style="margin-top:3mm;font-size:8.5pt;color:var(--muted)">
+      Probalo, intentá romperlo y dejanos tu feedback en los <b>comentarios de la página de itch.io</b>.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin:0 0 2mm">Grupo 35 — Multimedia y Juegos en Web</h3>
+    <div class="team">
+      <div>Nahuel Marcilli</div>
+      <div>Jorgelina Elizabeth Mendieta</div>
+      <div>Taoufik Saidi</div>
+      <div>Delcy Adalis Villalba Olmedo</div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash · v2 Pre-Alfa</span><span>Portada</span></div>
+</section>
+
+<!-- ================= V2 · ESTADO ================= -->
+<section class="page">
+  <h2>1 · Estado actual del proyecto</h2>
+  <div class="badges">
+    <span class="tag">Pre-Alfa v1.0</span>
+    <span class="tag">GDevelop 5</span>
+    <span class="tag">HTML5</span>
+    <span class="tag">1280 × 720</span>
+  </div>
+  <p>El prototipo ya tiene implementado el <b>core loop</b> completo en el tutorial:
+  moverse, esquivar, juntar energía e invertir la gravedad para llegar a la meta.
+  Los niveles siguientes tienen el escenario armado y su lógica está en desarrollo.</p>
+
+  <table>
+    <tr><th>Sistema</th><th>Estado</th><th>Detalle</th></tr>
+    <tr><td><b>Menú principal</b></td><td><span class="st st-ok">Listo</span></td><td>Jugar, Opciones y Salir.</td></tr>
+    <tr><td><b>Opciones</b></td><td><span class="st st-ok">Listo</span></td><td>Interruptores de sonido y música. El audio se suma en la próxima versión.</td></tr>
+    <tr><td><b>Tutorial</b></td><td><span class="st st-ok">Listo</span></td><td>5 secciones (6400 px) con pistas a lo largo del camino, 24 cristales y 4 puntos de control.</td></tr>
+    <tr><td><b>Movimiento</b></td><td><span class="st st-ok">Listo</span></td><td>Caminar, correr con doble toque y saltar.</td></tr>
+    <tr><td><b>Gravedad invertida</b></td><td><span class="st st-ok">Listo</span></td><td>ALT sube al techo y ALT otra vez baja. Solo funciona bajo un techo.</td></tr>
+    <tr><td><b>Energía y cristales</b></td><td><span class="st st-ok">Listo</span></td><td>Invertir gasta energía; cada cristal la recarga. Contador en pantalla.</td></tr>
+    <tr><td><b>Vidas y reaparición</b></td><td><span class="st st-ok">Listo</span></td><td>3 vidas. Pinchos o caídas restan una y reaparecés en el último punto de control.</td></tr>
+    <tr><td><b>Ataque</b></td><td><span class="st st-wip">En progreso</span></td><td>La animación funciona con F; faltan enemigos que reaccionen.</td></tr>
+    <tr><td><b>Nivel 1</b></td><td><span class="st st-wip">En progreso</span></td><td>Escenario y enemigos colocados; falta la lógica de juego.</td></tr>
+    <tr><td><b>Niveles 2 y 3</b></td><td><span class="st st-todo">Pendiente</span></td><td>Escenarios armados, sin lógica.</td></tr>
+    <tr><td><b>Pantalla de victoria</b></td><td><span class="st st-todo">Pendiente</span></td><td>Se diseña junto con el cierre de la historia.</td></tr>
+  </table>
+
+  <div class="footer"><span>Gravity Runner: Dash · v2 Pre-Alfa</span><span>1 · Estado</span></div>
+</section>
+
+<!-- ================= V2 · CONTROLES Y ANIMACIONES ================= -->
+<section class="page">
+  <h2>2 · Controles y animaciones</h2>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3>Controles</h3>
+      <div class="field"><b><span class="mono">← →</span></b><span>Caminar</span></div>
+      <div class="field"><b><span class="mono">← ←</span> / <span class="mono">→ →</span></b><span>Correr (doble toque y mantener)</span></div>
+      <div class="field"><b><span class="mono">ESPACIO</span></b><span>Saltar</span></div>
+      <div class="field"><b><span class="mono">ALT</span></b><span>Invertir la gravedad (subir y bajar)</span></div>
+      <div class="field"><b><span class="mono">F</span></b><span>Atacar con la katana</span></div>
+      <div class="field"><b>Mouse</b><span>Menú y opciones</span></div>
+    </div>
+    <div class="card">
+      <h3>Pistas del tutorial</h3>
+      <p style="font-size:10.5pt">Las instrucciones dejaron de ser carteles fijos: ahora son <b>textos
+      que aparecen a lo largo del recorrido</b>, justo antes de cada obstáculo que enseñan.
+      Así el jugador aprende una mecánica por vez y la practica enseguida.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:8mm">Animaciones de Kaito</h3>
+  <p>Siete animaciones nuevas generadas a partir de las hojas de sprites del equipo,
+  normalizadas a 128 × 128 px y alineadas por los pies para que no "salten" al cambiar de estado.</p>
+  <div class="animGrid">
+    <figure><img class="kaitoAnim" data-src="GravityRunnerDash/assets/kaito/idle" data-frames="8" data-ms="140" src="GravityRunnerDash/assets/kaito/idle_0.png" alt="Reposo"><figcaption><b>Reposo</b> · 8 cuadros</figcaption></figure>
+    <figure><img class="kaitoAnim" data-src="GravityRunnerDash/assets/kaito/walk" data-frames="8" data-ms="90" src="GravityRunnerDash/assets/kaito/walk_0.png" alt="Caminar"><figcaption><b>Caminar</b> · 8 cuadros</figcaption></figure>
+    <figure><img class="kaitoAnim" data-src="GravityRunnerDash/assets/kaito/run" data-frames="8" data-ms="60" src="GravityRunnerDash/assets/kaito/run_0.png" alt="Correr"><figcaption><b>Correr</b> · 8 cuadros</figcaption></figure>
+    <figure><img class="kaitoAnim" data-src="GravityRunnerDash/assets/kaito/jump" data-frames="8" data-ms="110" src="GravityRunnerDash/assets/kaito/jump_0.png" alt="Salto"><figcaption><b>Salto</b> · 8 cuadros</figcaption></figure>
+    <figure><img class="kaitoAnim" data-src="GravityRunnerDash/assets/kaito/wounded" data-frames="2" data-ms="120" src="GravityRunnerDash/assets/kaito/wounded_0.png" alt="Herido"><figcaption><b>Herido</b> · 2 cuadros</figcaption></figure>
+    <figure><img class="kaitoAnim" data-src="GravityRunnerDash/assets/kaito/death" data-frames="8" data-ms="160" src="GravityRunnerDash/assets/kaito/death_0.png" alt="Muerte"><figcaption><b>Muerte</b> · 8 cuadros</figcaption></figure>
+    <figure><img class="kaitoAnim" data-src="GravityRunnerDash/assets/kaito/attack" data-frames="10" data-ms="70" src="GravityRunnerDash/assets/kaito/attack_0.png" alt="Ataque"><figcaption><b>Ataque</b> · 10 cuadros</figcaption></figure>
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash · v2 Pre-Alfa</span><span>2 · Controles</span></div>
+</section>
+
+<!-- ================= V2 · ETAPA DE PRUEBAS ================= -->
+<section class="page">
+  <h2>3 · Etapa de pruebas Pre-Alfa</h2>
+  <p>En esta fase el juego tiene sus mecánicas principales funcionando. Probarlo no es
+  solo jugarlo: es un control de calidad metódico para encontrar problemas mientras
+  corregirlos todavía es barato.</p>
+
+  <div class="grid g3" style="gap:5mm">
+    <div class="card"><h4>Validar mecánicas</h4><p style="font-size:10pt;margin:0">Movimiento, salto, gravedad y colisiones coherentes, fluidos y sin glitches.</p></div>
+    <div class="card"><h4>Detectar errores</h4><p style="font-size:10pt;margin:0">Zonas donde el jugador se traba, lugares inaccesibles o colisiones que fallan.</p></div>
+    <div class="card"><h4>Escuchar al jugador</h4><p style="font-size:10pt;margin:0">Calibrar la dificultad y la comodidad de los controles con usuarios reales.</p></div>
+  </div>
+
+  <h3 style="margin-top:7mm">Cómo lo publicamos</h3>
+  <div class="flow">
+    <div class="step"><span class="n">01</span>Exportación HTML5 desde GDevelop 5.</div>
+    <div class="step"><span class="n">02</span>ZIP con <span class="mono">index.html</span> en la raíz.</div>
+    <div class="step"><span class="n">03</span>Proyecto HTML en itch.io, jugable en el navegador.</div>
+    <div class="step"><span class="n">04</span>Lienzo de 1280 × 720 y pantalla completa.</div>
+    <div class="step"><span class="n">05</span>Visibilidad pública.</div>
+    <div class="step"><span class="n">06</span>Enlace entregado en el campus.</div>
+  </div>
+
+  <h3 style="margin-top:7mm">Qué te pedimos que pruebes</h3>
+  <ul class="checklist">
+    <li>¿Se entiende cada pista del tutorial antes del obstáculo?</li>
+    <li>¿El doble toque para correr y el salto se sienten cómodos?</li>
+    <li>¿Invertir la gravedad con ALT responde siempre, al subir y al bajar?</li>
+    <li>¿Algún pincho te lastimó sin tocarlo, o traspasaste el piso o el techo?</li>
+    <li>¿Te quedaste trabado en algún lugar? ¿Llegaste al portal y con cuántos cristales?</li>
+  </ul>
+
+  <div class="callout" style="margin-top:5mm">
+    <b>Cómo reportar:</b> dejá un comentario en la página de itch.io contando
+    <b>qué hiciste</b>, <b>qué esperabas</b>, <b>qué pasó</b> y en qué parte del tutorial.
+    Si el navegador te saca del juego, hacé clic sobre el juego para volver a tomar el control.
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash · v2 Pre-Alfa</span><span>3 · Pruebas</span></div>
+</section>
+
+</main>
 
 <script src="js/landing.js"></script>
 

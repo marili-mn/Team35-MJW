@@ -185,3 +185,37 @@ ul.tight li{margin:2px 0}
 .liveBox .liveLink{font-family:'JetBrains Mono',monospace;font-size:11pt;
   color:var(--crimson);font-weight:700;text-decoration:none;
   background:#fdf5f6;padding:3px 8px;border-radius:3px;border:1px solid #f0d5da}
+/* Version tabs (v1 GDD / v2 Pre-Alfa) */
+.versionTabs{position:sticky;top:0;z-index:10;display:flex;gap:6px;align-items:center;justify-content:center;
+  flex-wrap:wrap;padding:8px 12px;margin-bottom:8mm;background:var(--night);box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.versionTabs button{font:700 11pt 'Cinzel',serif;letter-spacing:.05em;color:#f2ead3;background:transparent;
+  border:1px solid rgba(242,234,211,.35);border-radius:4px;padding:6px 14px;cursor:pointer}
+.versionTabs button:hover{border-color:var(--gold)}
+.versionTabs button[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:var(--night)}
+.versionTabs button:focus-visible,.tabPlay:focus-visible{outline:2px solid #f2ead3;outline-offset:2px}
+.tabNew{font:700 7.5pt 'Inter',sans-serif;background:var(--crimson);color:#fff;border-radius:99px;padding:1px 6px;margin-left:4px;vertical-align:2px}
+.tabPlay{font:700 10.5pt 'Inter',sans-serif;color:#fff;background:var(--crimson);text-decoration:none;
+  border-radius:4px;padding:7px 14px;margin-left:8px}
+.tabPlay:hover{background:#a3263a}
+.version[hidden]{display:none}
+/* Status badges */
+.st{display:inline-block;font-size:8.5pt;font-weight:700;border-radius:99px;padding:2px 8px;white-space:nowrap}
+.st-ok{background:#e3efe9;color:var(--jade)}
+.st-wip{background:#f6ecd4;color:var(--gold-dk)}
+.st-todo{background:#ece8e1;color:var(--muted)}
+/* Kaito animations */
+.kaitoHero{width:200px;height:200px;image-rendering:pixelated}
+.animGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:4mm}
+.animGrid figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:6px;padding:3mm;text-align:center}
+.animGrid img{width:110px;height:110px;image-rendering:pixelated;
+  background:repeating-conic-gradient(#f0e8d5 0% 25%, #fff 0% 50%) 0/14px 14px;border-radius:4px}
+.animGrid figcaption{font-size:9pt;color:var(--muted);margin-top:2mm}
+.animGrid figcaption b{color:var(--night)}
+/* Tester checklist */
+ul.checklist{list-style:none;padding:0;margin:3mm 0}
+ul.checklist li{padding:4px 0 4px 26px;position:relative;border-bottom:1px dashed var(--line);font-size:10.5pt}
+ul.checklist li::before{content:"";position:absolute;left:4px;top:8px;width:12px;height:12px;border:2px solid var(--gold);border-radius:3px}
+@media print{
+  .versionTabs{display:none !important}
+  .animGrid figure{break-inside:avoid}
+}
