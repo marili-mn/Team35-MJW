@@ -1,12 +1,11 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 282,
+    "build": 269,
     "major": 5,
     "minor": 6,
     "revision": 0
   },
-  "initialGDVersion": "5.6.282",
   "properties": {
     "adaptGameResolutionAtRuntime": true,
     "antialiasingMode": "MSAA",
@@ -2071,6 +2070,382 @@
         "name": "assets/controles/fondocontroles.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/kaito/idle_0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/idle_0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/idle_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/idle_1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/idle_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/idle_2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/idle_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/idle_3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/idle_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/idle_4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/idle_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/idle_5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/idle_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/idle_6.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/idle_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/idle_7.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/walk_0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/walk_0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/walk_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/walk_1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/walk_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/walk_2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/walk_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/walk_3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/walk_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/walk_4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/walk_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/walk_5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/walk_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/walk_6.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/walk_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/walk_7.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/run_0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/run_0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/run_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/run_1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/run_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/run_2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/run_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/run_3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/run_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/run_4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/run_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/run_5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/run_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/run_6.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/run_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/run_7.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/jump_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/jump_5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/jump_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/jump_6.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/jump_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/jump_7.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/wounded_0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/wounded_0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/wounded_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/wounded_1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/death_0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/death_0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/death_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/death_1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/death_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/death_2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/death_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/death_3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/death_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/death_4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/death_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/death_5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/death_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/death_6.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/death_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/death_7.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/attack_0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/attack_0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/attack_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/attack_1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/attack_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/attack_2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/attack_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/attack_3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/attack_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/attack_4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/attack_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/attack_5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/attack_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/attack_6.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/attack_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/attack_7.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/attack_8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/attack_8.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/kaito/attack_9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/kaito/attack_9.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ]
   },
@@ -2079,7 +2454,18 @@
     "folderName": "__ROOT"
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "name": "SoundOn",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "MusicOn",
+      "type": "number",
+      "value": 1
+    }
+  ],
   "layouts": [
     {
       "b": 255,
@@ -2521,7 +2907,132 @@
           }
         ]
       },
-      "events": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisBouton"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "botonjugar",
+                "MouseX()",
+                "MouseY()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Tutorial\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisBouton"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "botonopciones",
+                "MouseX()",
+                "MouseY()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Opciones\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisBouton"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "botonsalir",
+                "MouseX()",
+                "MouseY()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Quit"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ]
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 200,
@@ -3255,7 +3766,258 @@
           }
         ]
       },
-      "events": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisBouton"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "botonvolver",
+                "MouseX()",
+                "MouseY()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Menu\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisBouton"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "btnOn.Y()",
+                "<",
+                "280"
+              ]
+            },
+            {
+              "type": {
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "btnOn",
+                "MouseX()",
+                "MouseY()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "SoundOn",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisBouton"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "btnOff.Y()",
+                "<",
+                "280"
+              ]
+            },
+            {
+              "type": {
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "btnOff",
+                "MouseX()",
+                "MouseY()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "SoundOn",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisBouton"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "btnOn.Y()",
+                ">=",
+                "280"
+              ]
+            },
+            {
+              "type": {
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "btnOn",
+                "MouseX()",
+                "MouseY()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "MusicOn",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisBouton"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "btnOff.Y()",
+                ">=",
+                "280"
+              ]
+            },
+            {
+              "type": {
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "btnOff",
+                "MouseX()",
+                "MouseY()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "MusicOn",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 200,
@@ -3686,6 +4448,56 @@
           "persistentUuid": "1ae7b82e-cf87-4c92-ad5d-930571230c13",
           "type": "number",
           "value": 1
+        },
+        {
+          "name": "Bajar",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Gemas",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "TotalGemas",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Herido",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Muerto",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Atacando",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Corriendo",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "CheckX",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "name": "CheckY",
+          "type": "number",
+          "value": 496
+        },
+        {
+          "name": "Anim",
+          "type": "string",
+          "value": "idle"
         }
       ],
       "instances": [
@@ -3698,60 +4510,9 @@
           "name": "kaito",
           "persistentUuid": "5da5976b-8669-4359-8d06-eb3d0b5d956d",
           "width": 0,
-          "x": 105,
-          "y": 507,
-          "zOrder": 1,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 719,
-          "keepRatio": true,
-          "layer": "",
-          "name": "fondo",
-          "persistentUuid": "24d65523-7849-4fc8-baac-1f85ff3ef7e2",
-          "width": 1280,
-          "x": 1,
-          "y": 0,
-          "zOrder": 0,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 64,
-          "keepRatio": true,
-          "layer": "",
-          "name": "piso",
-          "persistentUuid": "18caffb1-bcf8-4dca-bad5-c2435d20821f",
-          "width": 1277,
-          "x": 7,
-          "y": 525,
-          "zOrder": -1,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 64,
-          "keepRatio": true,
-          "layer": "",
-          "name": "techo",
-          "persistentUuid": "1bb045a3-f79f-4f93-8f6c-35a82bc194b5",
-          "width": 338,
-          "x": 939,
-          "y": 248,
-          "zOrder": -6,
+          "x": 100,
+          "y": 496,
+          "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3803,380 +4564,6 @@
           "x": -14,
           "y": 518,
           "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1.342281879194631,
-          "height": 200,
-          "keepRatio": true,
-          "layer": "",
-          "name": "indicacion1",
-          "persistentUuid": "f71af6de-0394-451e-9302-c1804a314766",
-          "width": 200,
-          "x": -1,
-          "y": 229,
-          "zOrder": 5,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 52,
-          "keepRatio": true,
-          "layer": "",
-          "name": "cristal",
-          "persistentUuid": "56fcc1d7-4626-4d60-833f-ec50e995cb67",
-          "width": 49,
-          "x": 194,
-          "y": 507,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1.1627906976744187,
-          "height": 137.2093023255814,
-          "keepRatio": true,
-          "layer": "",
-          "name": "indicacion2",
-          "persistentUuid": "729cca00-8e66-4ce5-8274-01d13537fb92",
-          "width": 200,
-          "x": 115,
-          "y": 145,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 52,
-          "keepRatio": true,
-          "layer": "",
-          "name": "cristal",
-          "persistentUuid": "13f3364c-d8f0-410d-9042-075ca4278de5",
-          "width": 49,
-          "x": 236,
-          "y": 508,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 52,
-          "keepRatio": true,
-          "layer": "",
-          "name": "cristal",
-          "persistentUuid": "22faa00e-6fbf-48f4-a994-8675a8a301ae",
-          "width": 49,
-          "x": 276,
-          "y": 507,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 82,
-          "keepRatio": true,
-          "layer": "",
-          "name": "roca",
-          "persistentUuid": "3b4ca4ef-d522-412f-bcc3-8a3774f55beb",
-          "width": 125,
-          "x": 321,
-          "y": 486,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 50,
-          "keepRatio": true,
-          "layer": "",
-          "name": "pinchos",
-          "persistentUuid": "438d509f-ec3a-4cd8-8f84-fc797c37ecae",
-          "width": 150,
-          "x": 431,
-          "y": 518,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0.56,
-          "height": 45.919999999999995,
-          "keepRatio": true,
-          "layer": "",
-          "name": "roca",
-          "persistentUuid": "b67d64ce-11cb-4868-89fd-6ac970e0d521",
-          "width": 70,
-          "x": 576,
-          "y": 520,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 135,
-          "keepRatio": true,
-          "layer": "",
-          "name": "indicacion3",
-          "persistentUuid": "4e9fa6fa-4c4f-42dc-8e87-0f7c02edc71a",
-          "width": 229,
-          "x": 307,
-          "y": 65,
-          "zOrder": 10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 46,
-          "keepRatio": true,
-          "layer": "",
-          "name": "roca",
-          "persistentUuid": "a82c6ff8-6862-4734-a57d-b6ce676ebac5",
-          "width": 98,
-          "x": 628,
-          "y": 516,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 50,
-          "keepRatio": true,
-          "layer": "",
-          "name": "pinchos",
-          "persistentUuid": "265368f3-35c3-48c1-978f-cf79be0c057f",
-          "width": 150,
-          "x": 716,
-          "y": 510,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 133.3333333333334,
-          "keepRatio": true,
-          "layer": "",
-          "name": "pisoflotante",
-          "persistentUuid": "c98c5a0d-d075-4bca-85a9-9ae0efaac612",
-          "width": 400,
-          "x": 530,
-          "y": 122,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 82,
-          "keepRatio": true,
-          "layer": "",
-          "name": "roca",
-          "persistentUuid": "4d3f0487-848c-42d5-b0f0-6321b9d0aaf6",
-          "width": 125,
-          "x": 844,
-          "y": 485,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 200.00000000000006,
-          "keepRatio": true,
-          "layer": "",
-          "name": "puerta",
-          "persistentUuid": "1b86363a-c4a4-4c8c-bcad-fc168460da47",
-          "width": 300,
-          "x": 1003,
-          "y": 367,
-          "zOrder": 12,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 52,
-          "keepRatio": true,
-          "layer": "",
-          "name": "cristal",
-          "persistentUuid": "374a2711-0a22-44de-b574-7828494067d7",
-          "width": 49,
-          "x": 589,
-          "y": 245,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 52,
-          "keepRatio": true,
-          "layer": "",
-          "name": "cristal",
-          "persistentUuid": "96797824-0192-4924-af3a-2aa445b605de",
-          "width": 49,
-          "x": 679,
-          "y": 247,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 52,
-          "keepRatio": true,
-          "layer": "",
-          "name": "cristal",
-          "persistentUuid": "e5830f61-ad7d-480c-a6ca-f677d28cb444",
-          "width": 49,
-          "x": 778,
-          "y": 244,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 52,
-          "keepRatio": true,
-          "layer": "",
-          "name": "cristal",
-          "persistentUuid": "3df322e9-a293-4b1f-95b7-c03904cc48fd",
-          "width": 49,
-          "x": 881,
-          "y": 442,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 77.94922847187655,
-          "keepRatio": true,
-          "layer": "",
-          "name": "indicacion5",
-          "persistentUuid": "7fb30b73-f8b8-45f5-90aa-f586ecb29844",
-          "width": 200,
-          "x": 1034,
-          "y": 290,
-          "zOrder": 13,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 117,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Indicacion4",
-          "persistentUuid": "55802f3f-6c36-4c28-8a23-389b72d23833",
-          "width": 215,
-          "x": 704,
-          "y": 50,
-          "zOrder": 14,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 64,
-          "keepRatio": true,
-          "layer": "",
-          "name": "techo",
-          "persistentUuid": "cf097d42-abff-4822-8892-23a9b59c77b3",
-          "width": 355,
-          "x": 546,
-          "y": 176,
-          "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 50,
-          "keepRatio": true,
-          "layer": "",
-          "name": "pinchos",
-          "persistentUuid": "5c94031a-b408-41cf-bd18-be555b76561e",
-          "width": 150,
-          "x": 949,
-          "y": 509,
-          "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -4249,74 +4636,6 @@
         {
           "angle": 0,
           "customSize": true,
-          "depth": 1,
-          "height": 64,
-          "keepRatio": true,
-          "layer": "",
-          "name": "piso",
-          "persistentUuid": "7171c454-a56c-4233-a82d-db49f16acef7",
-          "width": 73,
-          "x": 349,
-          "y": 468,
-          "zOrder": 17,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 64,
-          "keepRatio": true,
-          "layer": "",
-          "name": "piso",
-          "persistentUuid": "1564b55f-3409-4ef4-bff9-2aba6bce9f25",
-          "width": 60,
-          "x": 650,
-          "y": 491,
-          "zOrder": 18,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 64,
-          "keepRatio": true,
-          "layer": "",
-          "name": "piso",
-          "persistentUuid": "6245394e-32e7-43b7-a724-929b03544ed1",
-          "width": 40,
-          "x": 593,
-          "y": 493,
-          "zOrder": 19,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 64,
-          "keepRatio": true,
-          "layer": "",
-          "name": "piso",
-          "persistentUuid": "e6a1190a-d928-4dbd-81c6-dd005e1c657a",
-          "width": 80,
-          "x": 867,
-          "y": 464,
-          "zOrder": 20,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
           "depth": 0,
           "height": 150,
           "layer": "",
@@ -4333,16 +4652,1154 @@
         {
           "angle": 0,
           "customSize": true,
-          "depth": 1,
+          "height": 719,
+          "keepRatio": true,
+          "layer": "",
+          "name": "fondo",
+          "persistentUuid": "c0cd0014-ef2f-490e-b956-0fc96176dfcc",
+          "width": 1280,
+          "x": 0,
+          "y": 0,
+          "zOrder": -10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "piso",
+          "persistentUuid": "4b2fc34f-0477-492d-9905-e1f7873681c0",
+          "width": 1280,
+          "x": 0,
+          "y": 525,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
           "height": 64,
           "keepRatio": true,
           "layer": "",
           "name": "techo",
-          "persistentUuid": "cd1baa5b-d913-46a7-ad10-94e9f4d05b4e",
+          "persistentUuid": "4dd266b8-8b60-4ce4-9a0d-16c052807fbc",
           "width": 496,
           "x": 5,
-          "y": 241,
-          "zOrder": 15,
+          "y": 248,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "techo",
+          "persistentUuid": "5f2131e5-c342-4bf5-90a1-16da0434b04a",
+          "width": 338,
+          "x": 939,
+          "y": 248,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "flippedX": true,
+          "height": 719,
+          "keepRatio": true,
+          "layer": "",
+          "name": "fondo",
+          "persistentUuid": "899fabe4-606f-46fa-8364-3cbd809639b8",
+          "width": 1280,
+          "x": 1280,
+          "y": 0,
+          "zOrder": -10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "piso",
+          "persistentUuid": "3df743fe-be76-4ee2-9d5d-9e9163d3589d",
+          "width": 1280,
+          "x": 1280,
+          "y": 525,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "techo",
+          "persistentUuid": "09aa1192-8dab-41f3-908b-6f9ba91a97cc",
+          "width": 338,
+          "x": 1283,
+          "y": 248,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "techo",
+          "persistentUuid": "e287edca-1916-44ae-8c88-e41f56fb61dd",
+          "width": 496,
+          "x": 2059,
+          "y": 248,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 719,
+          "keepRatio": true,
+          "layer": "",
+          "name": "fondo",
+          "persistentUuid": "75460d19-e855-4928-bf4f-793cede29370",
+          "width": 1280,
+          "x": 2560,
+          "y": 0,
+          "zOrder": -10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "piso",
+          "persistentUuid": "6537942e-b551-4c30-9458-0cae7b10dbd5",
+          "width": 1280,
+          "x": 2560,
+          "y": 525,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "techo",
+          "persistentUuid": "abbd6d3f-28d7-47af-b09b-c0cb95ccd1aa",
+          "width": 496,
+          "x": 2565,
+          "y": 248,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "techo",
+          "persistentUuid": "10fe34a8-8144-4c29-95cd-533c9d06676f",
+          "width": 338,
+          "x": 3499,
+          "y": 248,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "flippedX": true,
+          "height": 719,
+          "keepRatio": true,
+          "layer": "",
+          "name": "fondo",
+          "persistentUuid": "99c15caa-b047-4872-8019-337ede45a693",
+          "width": 1280,
+          "x": 3840,
+          "y": 0,
+          "zOrder": -10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "piso",
+          "persistentUuid": "7143be76-b6f2-4675-bc33-36981ccc6e44",
+          "width": 1280,
+          "x": 3840,
+          "y": 525,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "techo",
+          "persistentUuid": "013db3b6-a823-4a7d-a757-81898c2d5f31",
+          "width": 338,
+          "x": 3843,
+          "y": 248,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "techo",
+          "persistentUuid": "937d611d-138b-4962-a3ac-00041c0e218b",
+          "width": 496,
+          "x": 4619,
+          "y": 248,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 719,
+          "keepRatio": true,
+          "layer": "",
+          "name": "fondo",
+          "persistentUuid": "784d06d1-47c5-4a71-9c41-0a0240ca0852",
+          "width": 1280,
+          "x": 5120,
+          "y": 0,
+          "zOrder": -10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "piso",
+          "persistentUuid": "c7ab5409-95ce-434b-9a81-c00c100c8df7",
+          "width": 1280,
+          "x": 5120,
+          "y": 525,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "techo",
+          "persistentUuid": "73867b6d-c634-43b3-b63f-4bedd1cc6156",
+          "width": 496,
+          "x": 5125,
+          "y": 248,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "techo",
+          "persistentUuid": "453966f6-8591-4be7-9cd7-844480f06625",
+          "width": 338,
+          "x": 6059,
+          "y": 248,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 133,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pisoflotante",
+          "persistentUuid": "bbecd8a3-33c0-4ff8-8be0-8a557abd6090",
+          "width": 470,
+          "x": 3045,
+          "y": 194,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "techo",
+          "persistentUuid": "a25aecda-3af2-4c5e-b787-cdf04545f807",
+          "width": 438,
+          "x": 3061,
+          "y": 248,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 133,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pisoflotante",
+          "persistentUuid": "4fd7233d-bd20-4b8b-9874-45b339361ba2",
+          "width": 470,
+          "x": 4165,
+          "y": 194,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "techo",
+          "persistentUuid": "7466c297-c5d4-4ddc-a98d-60944ab67b27",
+          "width": 438,
+          "x": 4181,
+          "y": 248,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "piso",
+          "persistentUuid": "9b1e557e-261d-4cad-8ca7-193687710107",
+          "width": 73,
+          "x": 1450,
+          "y": 468,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 50,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pinchos",
+          "persistentUuid": "ce426adc-debd-47c2-9d1c-3db2bd73b6a6",
+          "width": 150,
+          "x": 1700,
+          "y": 509,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 50,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pinchos",
+          "persistentUuid": "cc5e35a7-b788-49cb-aaa4-fb50243ae127",
+          "width": 150,
+          "x": 1900,
+          "y": 509,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 50,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pinchos",
+          "persistentUuid": "47236812-09d1-4595-917b-cb0c54f24a26",
+          "width": 150,
+          "x": 2750,
+          "y": 509,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 50,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pinchos",
+          "persistentUuid": "3a140903-052f-4234-a0c7-51d146658970",
+          "width": 150,
+          "x": 2900,
+          "y": 509,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 50,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pinchos",
+          "persistentUuid": "bffef31c-a9e7-4e00-924a-aef0e4d869bf",
+          "width": 150,
+          "x": 3050,
+          "y": 509,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 50,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pinchos",
+          "persistentUuid": "c0aad422-8ace-441d-bea9-299f4209d85d",
+          "width": 150,
+          "x": 3200,
+          "y": 509,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 50,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pinchos",
+          "persistentUuid": "95a57a1d-c984-48ed-8de8-c4a19aea44c6",
+          "width": 150,
+          "x": 3950,
+          "y": 509,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 50,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pinchos",
+          "persistentUuid": "bed67395-1b2f-4f28-b06e-6d3a754a02cc",
+          "width": 150,
+          "x": 4100,
+          "y": 509,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 50,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pinchos",
+          "persistentUuid": "cbb64024-7155-46a1-9f9a-39548b3304ba",
+          "width": 150,
+          "x": 4850,
+          "y": 509,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 50,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pinchos",
+          "persistentUuid": "f91f2295-b033-4113-aae2-8cbd47c0dfea",
+          "width": 150,
+          "x": 5000,
+          "y": 509,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "flippedY": true,
+          "height": 50,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pinchos",
+          "persistentUuid": "f2802b0f-9d5d-4bc3-b94d-a0e2c3cf863d",
+          "width": 150,
+          "x": 4420,
+          "y": 279,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "eff06aa0-fa67-4130-90fd-67a76ed9984b",
+          "width": 49,
+          "x": 650,
+          "y": 480,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "21cb2b73-3126-4ea4-a887-314607aed794",
+          "width": 49,
+          "x": 720,
+          "y": 480,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "bbec6475-308b-4785-913f-a6f5ec8b8ba9",
+          "width": 49,
+          "x": 790,
+          "y": 480,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "a2ea0bfc-0ff6-48fb-b48a-ee704e75b38f",
+          "width": 49,
+          "x": 860,
+          "y": 480,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "a31ceae4-1b5e-400d-be57-736ad9e0bd28",
+          "width": 49,
+          "x": 930,
+          "y": 480,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "4d0c1c91-f4cb-405a-9d42-4765ba944113",
+          "width": 49,
+          "x": 1000,
+          "y": 480,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "85ca8ac4-c512-4c66-9211-e135711c7807",
+          "width": 49,
+          "x": 1070,
+          "y": 480,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "d5b44566-4f43-494e-9709-2baa2c1911de",
+          "width": 49,
+          "x": 4450,
+          "y": 480,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "ccea991c-1bdd-4631-b6c6-565a266c71e0",
+          "width": 49,
+          "x": 4550,
+          "y": 480,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "471e8e36-ef9b-441b-ada3-9c9932576ad5",
+          "width": 49,
+          "x": 5400,
+          "y": 480,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "cdb6fc19-0049-4f73-9bc2-8df5f669519b",
+          "width": 49,
+          "x": 5500,
+          "y": 480,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "47ec77b3-95f2-461f-93ee-20d46573880e",
+          "width": 49,
+          "x": 5600,
+          "y": 480,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "95bea12c-9b22-4dc1-9660-8889000063e8",
+          "width": 49,
+          "x": 2800,
+          "y": 330,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "42a0ca49-3a22-4297-bdc5-34e1f7b16a82",
+          "width": 49,
+          "x": 2900,
+          "y": 330,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "c077a107-707b-4948-964b-d96d40ec6081",
+          "width": 49,
+          "x": 3000,
+          "y": 330,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "33f67b1b-94e6-42e4-9aec-036830208b06",
+          "width": 49,
+          "x": 3100,
+          "y": 330,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "584f1129-268d-4639-92a0-6b06933eaa7a",
+          "width": 49,
+          "x": 3200,
+          "y": 330,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "b2abaa53-584d-4db7-aa17-82ed865ad24a",
+          "width": 49,
+          "x": 3300,
+          "y": 330,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "24e04dd0-f582-43b4-bade-8d0df96842bb",
+          "width": 49,
+          "x": 4000,
+          "y": 330,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "dfb5860a-6dd6-486c-80f3-3c9d79196933",
+          "width": 49,
+          "x": 4150,
+          "y": 330,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "38cb5de1-df06-4f20-9d57-9aaf9f6a493a",
+          "width": 49,
+          "x": 4900,
+          "y": 330,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "85760a12-b9bc-4a9a-9acb-cf660f4981e4",
+          "width": 49,
+          "x": 5050,
+          "y": 330,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "f215210f-a7ae-4a20-acc3-b1498c3b6aeb",
+          "width": 49,
+          "x": 1775,
+          "y": 380,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "0f2e6924-172d-43a1-a5e6-3fa78e994a6c",
+          "width": 49,
+          "x": 1975,
+          "y": 380,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 200,
+          "keepRatio": true,
+          "layer": "",
+          "name": "puerta",
+          "persistentUuid": "540c7cf8-a03b-48e7-b108-19222772dd84",
+          "width": 300,
+          "x": 6050,
+          "y": 367,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Hint1",
+          "persistentUuid": "2d509976-a8e9-4f75-b8b4-9d4110f6c1c5",
+          "width": 0,
+          "x": 60,
+          "y": 110,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Hint2",
+          "persistentUuid": "1637a6cc-d1a5-4b4a-a42f-ca85c2d13aea",
+          "width": 0,
+          "x": 430,
+          "y": 110,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Hint3",
+          "persistentUuid": "a8902c7f-7bd4-45d4-a8bf-2f1e528ea147",
+          "width": 0,
+          "x": 800,
+          "y": 110,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Hint4",
+          "persistentUuid": "3fe0fcfa-bad3-40db-9677-d1fe8a1dbb29",
+          "width": 0,
+          "x": 1330,
+          "y": 110,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Hint5",
+          "persistentUuid": "8e8bf0fa-77aa-425d-983a-d72441dea41d",
+          "width": 0,
+          "x": 1640,
+          "y": 110,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Hint6",
+          "persistentUuid": "9a2c7265-7c68-4a5f-8066-d494ed16a052",
+          "width": 0,
+          "x": 2580,
+          "y": 110,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Hint7",
+          "persistentUuid": "da25ba56-53d8-4b27-b267-9a818ef55d13",
+          "width": 0,
+          "x": 3380,
+          "y": 110,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Hint8",
+          "persistentUuid": "805a396e-b32f-44d7-9ea0-1f8d547704f0",
+          "width": 0,
+          "x": 3880,
+          "y": 110,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Hint9",
+          "persistentUuid": "49af2868-bcdd-4fa7-a09f-6834352e9e95",
+          "width": 0,
+          "x": 5200,
+          "y": 110,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Hint10",
+          "persistentUuid": "2e8c43d7-53c3-4ff3-8789-78f319ea49bb",
+          "width": 0,
+          "x": 5750,
+          "y": 110,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "HUD",
+          "name": "TextoGemas",
+          "persistentUuid": "bab26126-ad0f-46fa-97fd-54449f4858bb",
+          "width": 0,
+          "x": 440,
+          "y": 34,
+          "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -4350,7 +5807,7 @@
       ],
       "objects": [
         {
-          "adaptCollisionMaskAutomatically": true,
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "kaito",
           "persistentUuid": "1818544e-e5f9-476f-bb50-d0fae2efee67",
@@ -4387,12 +5844,264 @@
               "useMultipleDirections": false,
               "directions": [
                 {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
+                  "looping": true,
+                  "timeBetweenFrames": 0.14,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "assets/NewSprite.png",
+                      "image": "assets/kaito/idle_0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/idle_1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/idle_2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/idle_3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/idle_4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/idle_5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/idle_6.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/idle_7.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4436,12 +6145,11 @@
               "directions": [
                 {
                   "looping": true,
-                  "metadata": "{\"pskl\":{}}",
-                  "timeBetweenFrames": 0.08,
+                  "timeBetweenFrames": 0.09,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "walk17",
+                      "image": "assets/kaito/walk_0.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4477,7 +6185,7 @@
                     },
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "walk18",
+                      "image": "assets/kaito/walk_1.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4513,7 +6221,7 @@
                     },
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "walk19",
+                      "image": "assets/kaito/walk_2.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4549,7 +6257,7 @@
                     },
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "walk20",
+                      "image": "assets/kaito/walk_3.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4585,7 +6293,7 @@
                     },
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "walk21",
+                      "image": "assets/kaito/walk_4.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4621,7 +6329,7 @@
                     },
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "walk22",
+                      "image": "assets/kaito/walk_5.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4657,7 +6365,7 @@
                     },
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "walk23",
+                      "image": "assets/kaito/walk_6.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4693,7 +6401,1195 @@
                     },
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "walk24",
+                      "image": "assets/kaito/walk_7.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "run",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.06,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/run_0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/run_1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/run_2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/run_3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/run_4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/run_5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/run_6.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/run_7.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "jump",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.12,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/jump_5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/jump_6.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "fall",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/jump_7.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "wounded",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/wounded_0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/wounded_1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "death",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.12,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/death_0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/death_1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/death_2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/death_3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/death_4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/death_5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/death_6.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/death_7.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "attack",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.045,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/attack_0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/attack_1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/attack_2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/attack_3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/attack_4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/attack_5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/attack_6.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/attack_7.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/attack_8.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 64,
+                        "y": 64
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 4
+                          },
+                          {
+                            "x": 113,
+                            "y": 124
+                          },
+                          {
+                            "x": 28,
+                            "y": 124
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/kaito/attack_9.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -5900,6 +8796,479 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Hint1",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "← →  CAMINAR",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "← →  CAMINAR",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Hint2",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Doble toque ← ← / → →\npara CORRER",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Doble toque ← ← / → →\npara CORRER",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Hint3",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Juntá CRISTALES\npara recargar energía",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Juntá CRISTALES\npara recargar energía",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Hint4",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "ESPACIO para SALTAR",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "ESPACIO para SALTAR",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Hint5",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "¡Cuidado con los PINCHOS!",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "¡Cuidado con los PINCHOS!",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Hint6",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "ALT invierte la GRAVEDAD\n(solo bajo un techo, gasta energía)",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "ALT invierte la GRAVEDAD\n(solo bajo un techo, gasta energía)",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Hint7",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "ALT otra vez para BAJAR",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "ALT otra vez para BAJAR",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Hint8",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Alterná techo y piso\npara esquivar los pinchos",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Alterná techo y piso\npara esquivar los pinchos",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Hint9",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "F para ATACAR con la katana",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "F para ATACAR con la katana",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Hint10",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "¡Llegá al PORTAL!",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "¡Llegá al PORTAL!",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "TextoGemas",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Cristales: 0",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Cristales: 0",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -5964,6 +9333,39 @@
           },
           {
             "objectName": "detectodetecho"
+          },
+          {
+            "objectName": "Hint1"
+          },
+          {
+            "objectName": "Hint2"
+          },
+          {
+            "objectName": "Hint3"
+          },
+          {
+            "objectName": "Hint4"
+          },
+          {
+            "objectName": "Hint5"
+          },
+          {
+            "objectName": "Hint6"
+          },
+          {
+            "objectName": "Hint7"
+          },
+          {
+            "objectName": "Hint8"
+          },
+          {
+            "objectName": "Hint9"
+          },
+          {
+            "objectName": "Hint10"
+          },
+          {
+            "objectName": "TextoGemas"
           }
         ]
       },
@@ -6044,6 +9446,40 @@
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "FlippedY"
+              },
+              "parameters": [
+                "kaito"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyFromTextJustPressed"
+              },
+              "parameters": [
+                "",
+                "\"LAlt\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Bajar",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
             {
@@ -6060,9 +9496,9 @@
                 "500",
                 "Right",
                 "Left",
-                "0",
-                "0",
-                "0",
+                "99",
+                "99",
+                "99",
                 "no",
                 "yes",
                 "no",
@@ -6079,6 +9515,81 @@
                 "EnTecho",
                 "=",
                 "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Bajar",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlipGravity::Reset"
+              },
+              "parameters": [
+                "",
+                "kaito",
+                "PlatformerObject",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Bajar",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EnTecho",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Bajar",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "kaito",
+                "__FlipGravityExtension.FlippingTrigger",
+                "True"
               ]
             }
           ]
@@ -6114,118 +9625,6 @@
               },
               "parameters": [
                 "EnTecho",
-                "=",
-                "0"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyFromTextPressed"
-              },
-              "parameters": [
-                "",
-                "\"Right\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
-              },
-              "parameters": [
-                "kaito",
-                "Animation",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "FlippableCapability::FlippableBehavior::FlipX"
-              },
-              "parameters": [
-                "kaito",
-                "Flippable",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyFromTextPressed"
-              },
-              "parameters": [
-                "",
-                "\"Left\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
-              },
-              "parameters": [
-                "kaito",
-                "Animation",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "FlippableCapability::FlippableBehavior::FlipX"
-              },
-              "parameters": [
-                "kaito",
-                "Flippable",
-                "yes"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": true,
-                "value": "KeyFromTextPressed"
-              },
-              "parameters": [
-                "",
-                "\"Right\""
-              ]
-            },
-            {
-              "type": {
-                "inverted": true,
-                "value": "KeyFromTextPressed"
-              },
-              "parameters": [
-                "",
-                "\"Left\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
-              },
-              "parameters": [
-                "kaito",
-                "Animation",
                 "=",
                 "0"
               ]
@@ -6489,8 +9888,394 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "if (!window.__gravityAltFix) {",
+            "  window.__gravityAltFix = true;",
+            "  const block = (e) => { if (e.key === 'Alt' || e.code === 'AltLeft' || e.code === 'AltRight') e.preventDefault(); };",
+            "  window.addEventListener('keydown', block, true);",
+            "  window.addEventListener('keyup', block, true);",
+            "}"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Golpe\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "TotalGemas",
+                "=",
+                "Count(cristal)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "energiadebarra",
+                "Resizable",
+                "=",
+                "Variable(EnergiaGravedad) * 1.58"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "TextoGemas",
+                "Text",
+                "=",
+                "\"Cristales: \" + ToString(Variable(Gemas)) + \" / \" + ToString(Variable(TotalGemas))"
+              ]
+            },
+            {
+              "type": {
+                "value": "FixCamera"
+              },
+              "parameters": [
+                "",
+                "kaito",
+                "0",
+                "0",
+                "6400",
+                "720",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "kaito",
+                "cristal",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EnergiaGravedad",
+                "+",
+                "10 * Count(cristal)"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "cristal",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Gemas",
+                "+",
+                "Count(cristal)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EnergiaGravedad",
+                ">",
+                "100"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EnergiaGravedad",
+                "=",
+                "100"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "CheckX",
+                "<",
+                "1320"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "kaito",
+                ">",
+                "1300"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CheckY",
+                "=",
+                "496"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CheckX",
+                "=",
+                "1320"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "CheckX",
+                "<",
+                "2600"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "kaito",
+                ">",
+                "2580"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CheckY",
+                "=",
+                "496"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CheckX",
+                "=",
+                "2600"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "CheckX",
+                "<",
+                "3870"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "kaito",
+                ">",
+                "3850"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CheckY",
+                "=",
+                "496"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CheckX",
+                "=",
+                "3870"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "CheckX",
+                "<",
+                "5160"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "kaito",
+                ">",
+                "5140"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CheckY",
+                "=",
+                "496"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CheckX",
+                "=",
+                "5160"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Golpe\"",
+                ">",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
+                "0"
+              ]
+            },
             {
               "type": {
                 "value": "CollisionNP"
@@ -6502,12 +10287,419 @@
                 "",
                 ""
               ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Golpe\""
+              ]
             },
             {
               "type": {
-                "value": "BuiltinCommonInstructions::Once"
+                "value": "SetNumberVariable"
               },
-              "parameters": []
+              "parameters": [
+                "Herido",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Vidas",
+                "-",
+                "1"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Vidas",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "kaito",
+                    "=",
+                    "Variable(CheckX)",
+                    "=",
+                    "Variable(CheckY)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::SetCurrentSpeed"
+                  },
+                  "parameters": [
+                    "kaito",
+                    "PlatformerObject",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::SetCurrentFallSpeed"
+                  },
+                  "parameters": [
+                    "kaito",
+                    "PlatformerObject",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EnTecho",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlipGravity::Reset"
+                  },
+                  "parameters": [
+                    "",
+                    "kaito",
+                    "PlatformerObject",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Golpe\"",
+                ">",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosY"
+              },
+              "parameters": [
+                "kaito",
+                ">",
+                "760"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Golpe\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Herido",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Vidas",
+                "-",
+                "1"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Vidas",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "kaito",
+                    "=",
+                    "Variable(CheckX)",
+                    "=",
+                    "Variable(CheckY)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::SetCurrentSpeed"
+                  },
+                  "parameters": [
+                    "kaito",
+                    "PlatformerObject",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::SetCurrentFallSpeed"
+                  },
+                  "parameters": [
+                    "kaito",
+                    "PlatformerObject",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EnTecho",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlipGravity::Reset"
+                  },
+                  "parameters": [
+                    "",
+                    "kaito",
+                    "PlatformerObject",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Golpe\"",
+                ">",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosY"
+              },
+              "parameters": [
+                "kaito",
+                "<",
+                "-150"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Golpe\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Herido",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Vidas",
+                "-",
+                "1"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Vidas",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "kaito",
+                    "=",
+                    "Variable(CheckX)",
+                    "=",
+                    "Variable(CheckY)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::SetCurrentSpeed"
+                  },
+                  "parameters": [
+                    "kaito",
+                    "PlatformerObject",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::SetCurrentFallSpeed"
+                  },
+                  "parameters": [
+                    "kaito",
+                    "PlatformerObject",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EnTecho",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlipGravity::Reset"
+                  },
+                  "parameters": [
+                    "",
+                    "kaito",
+                    "PlatformerObject",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Golpe\"",
+                ">",
+                "0.6"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Herido",
+                "=",
+                "1"
+              ]
             }
           ],
           "actions": [
@@ -6516,8 +10708,64 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
+                "Herido",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
                 "Vidas",
-                "-",
+                "<=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Muerte\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlatformBehavior::IgnoreDefaultControls"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
                 "1"
               ]
             }
@@ -6531,9 +10779,48 @@
                 "value": "NumberVariable"
               },
               "parameters": [
-                "Vidas",
-                "<=",
+                "Muerto",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::PlatformerObjectBehavior::SetCurrentSpeed"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject",
+                "=",
                 "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Muerte\"",
+                ">",
+                "1.5"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
+                "1"
               ]
             }
           ],
@@ -6555,62 +10842,36 @@
           "conditions": [
             {
               "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
                 "value": "CollisionNP"
               },
               "parameters": [
                 "kaito",
-                "cristal",
+                "puerta",
                 "",
                 "",
                 ""
               ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "EnergiaGravedad",
-                "<",
-                "95"
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "Delete"
+                "value": "Scene"
               },
               "parameters": [
-                "cristal",
+                "",
+                "\"Nivel1\"",
                 ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "EnergiaGravedad",
-                "+",
-                "5"
-              ]
-            },
-            {
-              "type": {
-                "value": "ResizableCapability::ResizableBehavior::SetWidth"
-              },
-              "parameters": [
-                "energiadebarra",
-                "Resizable",
-                "=",
-                "Variable(EnergiaGravedad) * 1.58"
               ]
             }
           ]
@@ -6620,72 +10881,676 @@
           "conditions": [
             {
               "type": {
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "kaito",
-                "cristal",
-                "",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
                 "value": "NumberVariable"
               },
               "parameters": [
-                "EnergiaGravedad",
-                ">=",
-                "95"
+                "Muerto",
+                "=",
+                "0"
               ]
             },
             {
               "type": {
-                "value": "NumberVariable"
+                "value": "KeyFromTextPressed"
               },
               "parameters": [
-                "EnergiaGravedad",
-                "<",
-                "100"
+                "",
+                "\"Right\""
               ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "Delete"
+                "value": "FlippableCapability::FlippableBehavior::FlipX"
               },
               "parameters": [
-                "cristal",
+                "kaito",
+                "Flippable",
                 ""
               ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
+                "0"
+              ]
             },
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlippableCapability::FlippableBehavior::FlipX"
+              },
+              "parameters": [
+                "kaito",
+                "Flippable",
+                "yes"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextJustPressed"
+              },
+              "parameters": [
+                "",
+                "\"Right\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"TapDer\"",
+                    "<",
+                    "0.3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Corriendo",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"TapDer\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextJustPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"TapIzq\"",
+                    "<",
+                    "0.3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Corriendo",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"TapIzq\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Right\""
+              ]
+            }
+          ],
+          "actions": [
             {
               "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "EnergiaGravedad",
+                "Corriendo",
                 "=",
-                "100"
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Corriendo",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::MaxSpeed"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject",
+                "=",
+                "450"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Corriendo",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::MaxSpeed"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject",
+                "=",
+                "250"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
+                "0"
               ]
             },
             {
               "type": {
-                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                "value": "NumberVariable"
               },
               "parameters": [
-                "energiadebarra",
-                "Resizable",
+                "Atacando",
                 "=",
-                "Variable(EnergiaGravedad) * 1.58"
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyFromTextJustPressed"
+              },
+              "parameters": [
+                "",
+                "\"f\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Atacando",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::Name"
+              },
+              "parameters": [
+                "kaito",
+                "Animation",
+                "=",
+                "\"attack\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+              },
+              "parameters": [
+                "kaito",
+                "Animation"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Atacando",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Atacando",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "Anim",
+                "=",
+                "\"idle\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Right\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "Anim",
+                "=",
+                "\"walk\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "Anim",
+                "=",
+                "\"walk\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Corriendo",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "Anim",
+                "=",
+                "\"run\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsJumping"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "FlippedY"
+              },
+              "parameters": [
+                "kaito"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "Anim",
+                "=",
+                "\"jump\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsFalling"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "FlippedY"
+              },
+              "parameters": [
+                "kaito"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "Anim",
+                "=",
+                "\"fall\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "kaito",
+                "techo",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "FlippedY"
+              },
+              "parameters": [
+                "kaito"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "Anim",
+                "=",
+                "\"fall\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Herido",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "Anim",
+                "=",
+                "\"wounded\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Atacando",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "Anim",
+                "=",
+                "\"attack\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "Anim",
+                "=",
+                "\"death\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "kaito",
+                "Animation",
+                "=",
+                "VariableString(Anim)"
               ]
             }
           ]
