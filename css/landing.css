@@ -69,11 +69,11 @@ a{color:var(--gold-dk)}
   border:1px solid var(--line);border-radius:6px;background-color:#fff;
   box-shadow:0 2px 6px rgba(0,0,0,.08)
 }
-.anim.idle{background-image:url("ninja-with-katana-idle-pose-607a-spritesheet.png");
+.anim.idle{background-image:url("../ninja-with-katana-idle-pose-607a-spritesheet.png");
   animation:idleA 1.2s steps(8) infinite}
-.anim.walk{background-image:url("anim/ninja-walk-spritesheet.png");
+.anim.walk{background-image:url("../anim/ninja-walk-spritesheet.png");
   animation:walkA .7s steps(8) infinite}
-.anim.jump{background-image:url("anim/ninja-jump-spritesheet.png");
+.anim.jump{background-image:url("../anim/ninja-jump-spritesheet.png");
   animation:jumpA 1s steps(8) infinite}
 @keyframes idleA{to{background-position-x:-1600px}}
 @keyframes walkA{to{background-position-x:-1600px}}
@@ -111,7 +111,7 @@ a{color:var(--gold-dk)}
   .grid{gap:6mm !important}
 }
 .heroWrap{display:flex;gap:12mm;align-items:center;margin-top:8mm}
-.heroBig{width:220px;height:220px;background:url("ninja-with-katana-idle-pose-607a-spritesheet.png") no-repeat;
+.heroBig{width:220px;height:220px;background:url("../ninja-with-katana-idle-pose-607a-spritesheet.png") no-repeat;
   background-size:auto 220px;image-rendering:pixelated;
   border:1px solid var(--line);border-radius:8px;background-color:#fff;
   animation:heroA 1.2s steps(8) infinite;box-shadow:0 2px 8px rgba(0,0,0,.08)}
@@ -128,7 +128,7 @@ th{background:#efe6d1;color:var(--night);font-family:'Cinzel',serif}
 .cover .art{flex:0 0 auto}
 .cover .sub{text-align:center;color:var(--muted);font-size:14pt;font-family:'Cinzel',serif;letter-spacing:.15em}
 .cover .art{text-align:center;margin:6mm 0}
-.coverBig{width:220px;height:220px;background:url("ninja-with-katana-idle-pose-607a-spritesheet.png") no-repeat;
+.coverBig{width:220px;height:220px;background:url("../ninja-with-katana-idle-pose-607a-spritesheet.png") no-repeat;
   background-size:auto 220px;image-rendering:pixelated;display:inline-block;
   background-color:transparent}
 .team{display:grid;grid-template-columns:1fr 1fr;gap:2mm 8mm;margin-top:4mm;font-size:11pt}
