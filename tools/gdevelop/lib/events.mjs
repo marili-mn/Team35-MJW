@@ -39,6 +39,42 @@ export function makeEventHelpers(gd) {
   };
 }
 
+// Finds top-level standard events of an events list by what they do, failing loudly when the
+// project changed: predicate(conditions, actions) gets [{ type, params, inverted }] for each list.
+export function makeEventFinder(gd, events, label) {
+  const instrs = (list) => {
+    const out = [];
+    for (let i = 0; i < list.size(); i++) {
+      const x = list.get(i);
+      const params = [];
+      for (let j = 0; j < x.getParametersCount(); j++) params.push(x.getParameter(j).getPlainString());
+      out.push({ type: x.getType(), params, inverted: x.isInverted() });
+    }
+    return out;
+  };
+  const matches = (predicate) => {
+    const found = [];
+    for (let i = 0; i < events.getEventsCount(); i++) {
+      const e = events.getEventAt(i);
+      if (e.getType() !== "BuiltinCommonInstructions::Standard") continue;
+      const s = gd.asStandardEvent(e);
+      if (predicate(instrs(s.getConditions()), instrs(s.getActions()))) found.push({ index: i, event: s });
+    }
+    return found;
+  };
+  const find = (predicate, what) => {
+    const [first] = matches(predicate);
+    if (!first) throw new Error(`${label}: event not found: ${what}`);
+    return first;
+  };
+  const findAll = (predicate, what, count) => {
+    const found = matches(predicate);
+    if (found.length !== count) throw new Error(`${label}: expected ${count} events (${what}), found ${found.length}`);
+    return found;
+  };
+  return { find, findAll };
+}
+
 export function makeLayoutHelpers(gd, layout) {
   const instances = layout.getInitialInstances();
   function allInstances() {

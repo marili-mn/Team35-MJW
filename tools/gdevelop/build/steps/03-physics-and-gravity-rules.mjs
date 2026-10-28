@@ -1,12 +1,14 @@
 // Step 03 — Physics, hitboxes and gravity rules, driven by the playtest (controls 3.43/5, 57% "slippery",
 // floaty jump, unfair spike collisions, flying out of the map with the gravity flip).
-import { makeEventHelpers, makeLayoutHelpers } from "../../lib/events.mjs";
+import { makeEventHelpers, makeEventFinder, makeLayoutHelpers } from "../../lib/events.mjs";
 import { setSpriteMask, useFullImageMask, setBehaviorProperties, cloneTextObject } from "../../lib/objects.mjs";
 
-// Measured in the browser: stops in 8 px walking / 32 px running (was slippery); jump apex 224 px tapped /
-// 278 px held, 224 px long walking (clears a 150 px spike + body). Was ~450 px tapped / ~700 px held.
+// Measured in the browser (open area, frame by frame): stops in 8 px walking / 32 px running (was slippery);
+// jump apex 222 px tapped / 258 px held, 0.82 s in the air, 255 px long walking, so a 150 px spike can be
+// cleared taking off anywhere in a ~73 px window. Was ~450 px tapped / ~700 px held (floaty) and then
+// 1800/1200 (0.67 s in the air, felt like a trampoline).
 export const KAITO_PHYSICS = {
-  Acceleration: 2500, Deceleration: 4000, Gravity: 1800, JumpSpeed: 1200, JumpSustainTime: 0.15, MaxFallingSpeed: 900,
+  Acceleration: 2500, Deceleration: 4000, Gravity: 1000, JumpSpeed: 850, JumpSustainTime: 0.22, MaxFallingSpeed: 650,
 };
 // Body only, symmetric around the 64 px origin so flipping left/right does not move the hitbox
 // (the old one was 28..113, centered 6.5 px to the right). Feet stay at y=124 (floor contact unchanged).
@@ -23,27 +25,7 @@ export default function physicsAndGravityRules({ gd, project }) {
   const events = t.getEvents();
   const { I, NOT, ev, q, setNum, numIs, keyJust, timer, resetTimer } = makeEventHelpers(gd);
   const { addInst } = makeLayoutHelpers(gd, t);
-
-  // ---- helpers to find existing events by what they do (fail loudly if the project changed) ----
-  const instrs = (list) => {
-    const out = [];
-    for (let i = 0; i < list.size(); i++) {
-      const x = list.get(i);
-      const params = [];
-      for (let j = 0; j < x.getParametersCount(); j++) params.push(x.getParameter(j).getPlainString());
-      out.push({ type: x.getType(), params, inverted: x.isInverted() });
-    }
-    return out;
-  };
-  const find = (predicate, label) => {
-    for (let i = 0; i < events.getEventsCount(); i++) {
-      const e = events.getEventAt(i);
-      if (e.getType() !== "BuiltinCommonInstructions::Standard") continue;
-      const s = gd.asStandardEvent(e);
-      if (predicate(instrs(s.getConditions()), instrs(s.getActions()))) return { index: i, event: s };
-    }
-    throw new Error(`step 03: event not found: ${label}`);
-  };
+  const { find } = makeEventFinder(gd, events, "step 03");
 
   // ---- 1. Physics ----
   const applied = setBehaviorProperties(objects.getObject("kaito"), "PlatformerObject", KAITO_PHYSICS);

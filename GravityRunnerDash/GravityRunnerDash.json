@@ -4503,6 +4503,11 @@
           "name": "Anim",
           "type": "string",
           "value": "idle"
+        },
+        {
+          "name": "Invulnerable",
+          "type": "number",
+          "value": 0
         }
       ],
       "instances": [
@@ -5065,7 +5070,7 @@
           "name": "pinchos",
           "persistentUuid": "e652116b-4be9-511d-a229-7929fa951117",
           "width": 150,
-          "x": 1700,
+          "x": 1760,
           "y": 509,
           "zOrder": 2,
           "numberProperties": [],
@@ -5081,7 +5086,7 @@
           "name": "pinchos",
           "persistentUuid": "1793b32d-34df-511c-af6b-a648b004377d",
           "width": 150,
-          "x": 1900,
+          "x": 5780,
           "y": 509,
           "zOrder": 2,
           "numberProperties": [],
@@ -5594,7 +5599,7 @@
           "name": "cristal",
           "persistentUuid": "5c305606-a3d4-53ba-a9d3-930cb0abd518",
           "width": 49,
-          "x": 1775,
+          "x": 1810,
           "y": 380,
           "zOrder": 3,
           "numberProperties": [],
@@ -5610,7 +5615,7 @@
           "name": "cristal",
           "persistentUuid": "c36444b7-2b98-5da2-a100-319d8f09a497",
           "width": 49,
-          "x": 1975,
+          "x": 5830,
           "y": 380,
           "zOrder": 3,
           "numberProperties": [],
@@ -5856,10 +5861,10 @@
             {
               "acceleration": 2500,
               "deceleration": 4000,
-              "gravity": 1800,
-              "jumpSpeed": 1200,
-              "jumpSustainTime": 0.15,
-              "maxFallingSpeed": 900,
+              "gravity": 1000,
+              "jumpSpeed": 850,
+              "jumpSustainTime": 0.22,
+              "maxFallingSpeed": 650,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
               "canGoDownFromJumpthru": true,
@@ -10499,7 +10504,7 @@
                 "",
                 "\"Golpe\"",
                 ">",
-                "1"
+                "1.5"
               ]
             },
             {
@@ -10550,6 +10555,25 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
+                "Invulnerable",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Curacion\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
                 "Vidas",
                 "-",
                 "1"
@@ -10562,69 +10586,56 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "NumberVariable"
+                    "inverted": true,
+                    "value": "FlippedY"
                   },
                   "parameters": [
-                    "Vidas",
-                    ">",
-                    "0"
+                    "kaito"
                   ]
                 }
               ],
               "actions": [
                 {
                   "type": {
-                    "value": "SetXY"
+                    "value": "PlatformBehavior::SimulateJumpKey"
                   },
                   "parameters": [
                     "kaito",
-                    "=",
-                    "Variable(CheckX)",
-                    "=",
-                    "Variable(CheckY)"
+                    "PlatformerObject"
                   ]
                 },
                 {
                   "type": {
-                    "value": "PlatformBehavior::PlatformerObjectBehavior::SetCurrentSpeed"
+                    "value": "PlatformBehavior::SetCanJump"
                   },
                   "parameters": [
                     "kaito",
-                    "PlatformerObject",
-                    "=",
-                    "0"
+                    "PlatformerObject"
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
                 {
                   "type": {
-                    "value": "PlatformBehavior::PlatformerObjectBehavior::SetCurrentFallSpeed"
+                    "value": "FlippedY"
                   },
                   "parameters": [
-                    "kaito",
-                    "PlatformerObject",
-                    "=",
-                    "0"
+                    "kaito"
                   ]
-                },
+                }
+              ],
+              "actions": [
                 {
                   "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "EnTecho",
+                    "Bajar",
                     "=",
-                    "0"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "FlipGravity::Reset"
-                  },
-                  "parameters": [
-                    "",
-                    "kaito",
-                    "PlatformerObject",
-                    ""
+                    "1"
                   ]
                 }
               ]
@@ -10642,7 +10653,7 @@
                 "",
                 "\"Golpe\"",
                 ">",
-                "1"
+                "1.5"
               ]
             },
             {
@@ -10691,6 +10702,25 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
+                "Invulnerable",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Curacion\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
                 "Vidas",
                 "-",
                 "1"
@@ -10783,7 +10813,7 @@
                 "",
                 "\"Golpe\"",
                 ">",
-                "1"
+                "1.5"
               ]
             },
             {
@@ -10825,6 +10855,25 @@
                 "Herido",
                 "=",
                 "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Invulnerable",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Curacion\""
               ]
             },
             {
@@ -12022,6 +12071,235 @@
               },
               "parameters": [
                 "Aviso"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Invulnerable",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "kaito",
+                "Opacity",
+                "=",
+                "100 + 155 * mod(floor(TimerElapsedTime(\"Golpe\") * 10), 2)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Golpe\"",
+                ">",
+                "1.5"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Invulnerable",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "kaito",
+                "Opacity",
+                "=",
+                "255"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Invulnerable",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Vidas",
+                "<",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Curacion\"",
+                ">",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Vidas",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Curacion\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Aviso",
+                "Text",
+                "=",
+                "\"+1 vida\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "Aviso",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Aviso\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Vidas",
+                "+",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "vida",
+                "<",
+                "300 + 41 * Variable(Vidas)"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "vida",
+                "Opacity",
+                "=",
+                "255"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "vida",
+                ">=",
+                "300 + 41 * Variable(Vidas)"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "vida",
+                "Opacity",
+                "=",
+                "60"
               ]
             }
           ]
