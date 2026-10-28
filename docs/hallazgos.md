@@ -1,6 +1,6 @@
 # Hallazgos — estado del proyecto antes del prototipo de 3 niveles
 
-Relevamiento del 27/10/2026, antes de empezar la rama `feat/prototipo-3-niveles`.
+Relevamiento del 27/10/2026, antes de empezar la rama `feat/three-level-prototype`.
 Objetivo: saber de dónde sale cada versión del juego, qué se puede reutilizar y qué falta
 para la entrega del **3 de noviembre**.
 
@@ -130,6 +130,6 @@ Kaito y la hoja del ninja azul. Son candidatos a reutilizar o a limpiar.
   estabilidad (validación automática antes de cada entrega).
 - El IDE de GDevelop se usa **solo para visualizar, comprobar y exportar**. Todo cambio al
   juego se hace por script, así que regenerar escenas no pisa trabajo manual.
-- Flujo: `feat/prototipo-3-niveles` → `develop` → `main` → ZIP nuevo para itch.io con
+- Flujo: `feat/three-level-prototype` → `develop` → `main` → ZIP nuevo para itch.io con
   imagen de portada de 630×500.
 - Organización del grupo en Notion.
