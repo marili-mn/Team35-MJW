@@ -4,6 +4,7 @@
 //   node tools/gdevelop/build.mjs            build, validate and write the project
 //   node tools/gdevelop/build.mjs --check    build and validate, then diff against the committed file (writes nothing)
 //   node tools/gdevelop/build.mjs --until 01 stop after the given step
+//   node tools/gdevelop/build.mjs --export   also export an HTML5 build to tools/gdevelop/.cache/export (for playtests)
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import fs from "node:fs";
@@ -12,6 +13,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { loadEngine, projectFromJSON, projectToJSON } from "./lib/engine.mjs";
 import { validateProject } from "./lib/validate.mjs";
 import { deepDiff, formatDiff } from "./lib/diff.mjs";
+import { exportProject } from "./lib/export.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(HERE, "..", "..");
@@ -68,5 +70,9 @@ if (check) {
 } else {
   fs.writeFileSync(PROJECT_FILE, JSON.stringify(output, null, 2));
   console.log(`written ${path.relative(REPO, PROJECT_FILE)}`);
+}
+if (args.includes("--export")) {
+  const { outDir, extensionScripts, missingResources } = exportProject(gd, project, path.join(HERE, ".cache", "export"));
+  console.log(`exported HTML5 build to ${path.relative(REPO, outDir)} (${extensionScripts} extension scripts, ${missingResources.length} declared resources missing on disk)`);
 }
 process.exit(0);
