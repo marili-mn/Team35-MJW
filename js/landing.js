@@ -17,7 +17,7 @@ function buildStrip(id, url, count, sheetW){
     strip.appendChild(cell);
   }
 }
-buildStrip('idleStrip','ninja-with-katana-idle-pose-607a-spritesheet.png',8,1024);
+buildStrip('idleStrip','assets/anim/ninja-with-katana-idle-pose-607a-spritesheet.png',8,1024);
 
 // Version tabs: switch between v1 (GDD) and v2 (Pre-Alfa) without reloading
 const versionTabs = document.querySelectorAll('.versionTabs [data-target]');
