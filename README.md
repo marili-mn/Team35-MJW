@@ -35,6 +35,11 @@ node tools/gdevelop/build.mjs --export   # además exporta un HTML5 a tools/gdev
 | `03-physics-and-gravity-rules` | Física, hitboxes y reglas para invertir la gravedad (techo y energía). |
 | `04-damage-and-lives` | Daño sin volver al checkpoint, invulnerabilidad, autocuración y corazones. |
 | `05-tutorial-layout-fixes` | Ajustes del tutorial encontrados con el bot de salto. |
+| `06-levels` | Niveles 1, 2 y 3 (16 640, 23 040 y 26 880 px) armados por segmentos, con enemigos que se sortean en cada reinicio y portal que se abre con cristales. |
+| `07-victory-credits` | Pantalla de Victoria con los créditos del equipo. |
+| `08-audio` | Música y efectos de sonido (respetan las opciones del menú). |
+
+La lógica compartida está en `tools/gdevelop/lib/` (`level.mjs` genera los niveles y `boss.mjs` hace a la maga, jefa final del Nivel 3). Los recursos que se generan por script están en `tools/gdevelop/assets/`: `slice-maga.mjs` recorta los sprites de la maga y `make-audio.mjs` sintetiza la música y los efectos.
 
 ## Probarlo en local
 
@@ -45,6 +50,8 @@ npx serve -l 58913 .                              # landing en http://localhost:
 ```
 
 La versión que se sube a itch.io se exporta desde el IDE de GDevelop (File → Export → Web).
+
+`tools/gdevelop/test/bot.js` juega un nivel solo, apretando las mismas teclas que un jugador. Se inyecta en la página del juego con Playwright y se llama con `window.gravityBot.play("Nivel1")`; devuelve si llegó al portal, los golpes recibidos, los cristales y el tiempo.
 
 ## Controles
 
