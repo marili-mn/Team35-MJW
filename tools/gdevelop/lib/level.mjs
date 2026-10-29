@@ -10,6 +10,7 @@ export const TILE = 1280;
 const CEIL_GAP = 277;          // floor line to ceiling line, as in the Tutorial (proven flip distances)
 const KAITO_HALF = 60;         // Kaito's origin is centered: feet at y + 60
 const PIECE_W = 256, PIECE_H = 85, PIECE_STEP = 240;   // floating platform art pieces (3:1 images)
+const FLOOR_PIECE_W = 360, FLOOR_PIECE_H = 120, FLOOR_PIECE_STEP = 340;
 const TUTORIAL_ONLY = ["Hint1", "Hint2", "Hint3", "Hint4", "Hint5", "Hint6", "Hint7", "Hint8", "Hint9", "Hint10",
   "indicacion1", "indicacion2", "indicacion3", "Indicacion4", "indicacion5", "cartelInicio", "InstruccionGravedad", "roca"];
 const HUD_OBJECTS = ["barradeenergia", "energiadebarra", "vida", "TextoGemas", "Aviso"];
@@ -74,10 +75,7 @@ export function captureOriginalObjects(gd, project) {
     obj.serializeTo(el);
     return [n, { type: obj.getType(), element: el }];
   }));
-  return {
-    ...take("Nivel1", ["ninjapatrullero", "ninjapatrullero2", "enemigo", "cierra", "cristaldorado", "techosuperior"]),
-    ...take("Nivel2", ["pisobase"]),
-  };
+  return take("Nivel1", ["ninjapatrullero", "ninjapatrullero2", "enemigo", "cierra", "cristaldorado", "techosuperior"]);
 }
 
 // Enemy kinds created at runtime: size on screen and how far above the floor line their top-left is.
@@ -168,14 +166,16 @@ export function buildLevel({ gd, project }, def, captured) {
   setAnimations(gd, objects.getObject("pisoflotante"), [{ name: "", images: [ensureImageResource(gd, project, def.platform)] }]);
   setAnimations(gd, objects.getObject("puerta"), [{ name: "", images: [ensureImageResource(gd, project, def.portal)] }]);
   if (def.topBorder) insertObjectFrom(gd, project, objects, "techosuperior", captured.techosuperior);
-  if (def.floorArt) insertObjectFrom(gd, project, objects, "pisobase", captured.pisobase);
   setupEnemyObjects(gd, project, objects, captured);
 
   // ---- 3. Instances ----
   for (let i = 0; i < W / TILE; i++) {
     addInst("fondo", i * TILE, 0, TILE, 720, { z: -10, flipX: i % 2 === 1 });
     addInst("piso", i * TILE, F - 31, TILE, 64, { z: 0 });
-    if (def.floorArt) addInst("pisobase", i * TILE - 6, F + def.floorArt.dy, TILE + 12, def.floorArt.h, { z: -5 });
+  }
+  // Backgrounds without a flat floor get one made of the level's platform slabs (slab top on the floor line).
+  if (def.floorSlabTop) {
+    for (let px = -20; px < W; px += FLOOR_PIECE_STEP) addInst("pisoflotante", px, Math.round(F - FLOOR_PIECE_H * def.floorSlabTop), FLOOR_PIECE_W, FLOOR_PIECE_H, { z: -1 });
   }
   if (def.topBorder) for (let x = 0; x < W; x += 920) addInst("techosuperior", x, 0, 928, 50, { z: -4 });
   addInst("techo", 0, -55, W, 64, { z: 0 });                       // safety ceiling over the whole level

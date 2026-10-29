@@ -22,6 +22,35 @@ export const LEVELS = [
       ["jump"], ["enemies", 1100], ["flip", 2], ["open", 400, 3], ["end"],
     ],
   },
+  {
+    name: "Nivel2", title: "NIVEL 2 · Cueva de Cristal", next: "Nivel3",
+    background: "assets/nivel2/fondonivel2.png",
+    platform: "assets/nivel2/pisoflotante1.png", platformBottom: 0.8,
+    portal: "assets/nivel1/assets de escena/puerta.png",
+    floorSlabTop: 0.2,
+    floorLine: 545,
+    crystalsToOpen: 0.6,
+    enemies: { perZone: 2, azul: 30, verde: 30, guardia: 10, sierra: 20, speed: [90, 140], sawSpeed: [120, 180] },
+    segments: [
+      ["start"], ["jump"], ["enemies", 1000], ["flip", 4], ["saw", 800], ["zigzag"], ["enemies", 1100], ["jump2"],
+      ["bonus", 1000], ["flip", 5], ["enemies", 1200], ["saw", 800], ["zigzag"], ["jump2"], ["enemies", 1200],
+      ["flip", 3], ["bonus", 900], ["zigzag"], ["enemies", 1200], ["open", 400, 3], ["end"],
+    ],
+  },
+  {
+    name: "Nivel3", title: "NIVEL 3 · Templo de la Luna Roja", next: "Victoria",
+    background: "assets/nivel3/fondo.png",
+    platform: "assets/nivel3/pisoflotante.png", platformBottom: 0.8,
+    portal: "assets/nivel1/assets de escena/puerta.png",
+    floorLine: 638,
+    crystalsToOpen: 0.6,
+    enemies: { perZone: 2, azul: 25, verde: 35, guardia: 15, sierra: 20, speed: [110, 160], sawSpeed: [150, 210] },
+    segments: [
+      ["start"], ["enemies", 1000], ["zigzag"], ["jump2"], ["enemies", 1200], ["flip", 5], ["saw", 900], ["zigzag"],
+      ["enemies", 1300], ["bonus", 1000], ["flip", 6], ["jump2"], ["enemies", 1300], ["zigzag"], ["saw", 900],
+      ["enemies", 1300], ["flip", 4], ["zigzag"], ["enemies", 1400], ["open", 400, 3], ["end"],
+    ],
+  },
 ];
 
 export default function levels({ gd, project }) {
