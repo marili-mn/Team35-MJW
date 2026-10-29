@@ -2,6 +2,7 @@
 // HUD, with the level's own art, a layout made of segments, procedural enemies that change on every
 // restart, and a portal that opens with crystals.
 import { append, makeEventHelpers, makeEventFinder, makeLayoutHelpers } from "./events.mjs";
+import { addBoss } from "./boss.mjs";
 import {
   setAnimations, spriteFrames, ensureImageResource, insertObjectFrom, declareObjectNumbers, setSpriteMask,
 } from "./objects.mjs";
@@ -52,17 +53,25 @@ const SEGMENTS = {
   enemies: (x, L, w = 900) => { L.zones.push([x + 100, w - 200, "zonaEnemigo"]); return w; },
   saw: (x, L, w = 700) => { L.zones.push([x + 100, w - 200, "zonaSierra"]); return w; },
   end: (x, L) => { L.portal = x + 380; return 800; },
+  // Final boss arena: a ceiling over most of it to dodge her spells upside down, gems up there for energy.
+  arena: (x, L, w = 2400) => {
+    L.ceilings.push([x + 200, w - 500]);
+    for (let gx = x + 400; gx < x + w - 400; gx += 300) L.ceilGems.push(gx);
+    L.arena = { x0: x, x1: x + w - 300 };
+    L.portal = x + w - 220;
+    return w;
+  },
 };
 
 export function layoutLevel(sequence) {
-  const L = { ceilings: [], floorSpikes: [], hangingSpikes: [], floorGems: [], ceilGems: [], airGems: [], zones: [], checkpoints: [], portal: null };
+  const L = { ceilings: [], floorSpikes: [], hangingSpikes: [], floorGems: [], ceilGems: [], airGems: [], zones: [], checkpoints: [], portal: null, arena: null };
   let x = 0, lastCheckpoint = 0;
   for (const [kind, ...args] of sequence) {
     if (!SEGMENTS[kind]) throw new Error(`unknown segment ${kind}`);
     if (x - lastCheckpoint >= 1500) { L.checkpoints.push(x + 40); lastCheckpoint = x; }
     x += SEGMENTS[kind](x, L, ...args);
   }
-  if (L.portal === null) throw new Error("a level needs an 'end' segment");
+  if (L.portal === null) throw new Error("a level needs an 'end' or 'arena' segment");
   return { ...L, length: x, width: Math.ceil(x / TILE) * TILE };
 }
 
@@ -323,14 +332,20 @@ export function buildLevel({ gd, project }, def, captured) {
     ...warn(q(def.title)),
   ]));
   add(ev([numIs("Gemas", "<", "Variable(Requeridas)")], [I("OpacityCapability::OpacityBehavior::SetValue", ["puerta", "Opacity", "=", "110"])]));
-  add(ev([numIs("Gemas", ">=", "Variable(Requeridas)"), numIs("PortalAbierto", "=", "0")], [
+  const bossDown = lay.arena ? [numIs("MagaDerrotada", "=", "1")] : [];
+  add(ev([numIs("Gemas", ">=", "Variable(Requeridas)"), ...bossDown, numIs("PortalAbierto", "=", "0")], [
     setNum("PortalAbierto", "=", "1"),
     I("OpacityCapability::OpacityBehavior::SetValue", ["puerta", "Opacity", "=", "255"]),
     ...warn(q("¡El portal se abrió!")),
   ]));
   add(ev([coll("kaito", "puerta"), numIs("Muerto", "=", "0"), numIs("PortalAbierto", "=", "1")], [I("Scene", ["", q(def.next), ""])]));
-  add(ev([coll("kaito", "puerta"), numIs("PortalAbierto", "=", "0"), timer("Aviso", ">", "1.6")],
+  if (lay.arena) {
+    add(ev([coll("kaito", "puerta"), numIs("MagaDerrotada", "=", "0"), timer("Aviso", ">", "1.6")], warn(q("Derrotá a la Maga para abrir el portal"))));
+  }
+  add(ev([coll("kaito", "puerta"), numIs("PortalAbierto", "=", "0"), numIs("Gemas", "<", "Variable(Requeridas)"), timer("Aviso", ">", "1.6")],
     warn('"Faltan " + ToString(Variable(Requeridas) - Variable(Gemas)) + " cristales para abrir el portal"')));
 
-  return { width: W, length: lay.length, crystals: lay.floorGems.length + lay.ceilGems.length + lay.airGems.length, zones: lay.zones.length, checkpoints: lay.checkpoints.length };
+  if (lay.arena) addBoss({ gd, project }, level, { floorLine: F, ceilingLine: C, arena: lay.arena });
+
+  return { boss: !!lay.arena, width: W, length: lay.length, crystals: lay.floorGems.length + lay.ceilGems.length + lay.airGems.length, zones: lay.zones.length, checkpoints: lay.checkpoints.length };
 }

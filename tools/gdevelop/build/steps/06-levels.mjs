@@ -48,7 +48,7 @@ export const LEVELS = [
     segments: [
       ["start"], ["enemies", 1000], ["zigzag"], ["jump2"], ["enemies", 1200], ["flip", 5], ["saw", 900], ["zigzag"],
       ["enemies", 1300], ["bonus", 1000], ["flip", 6], ["jump2"], ["enemies", 1300], ["zigzag"], ["saw", 900],
-      ["enemies", 1300], ["flip", 4], ["zigzag"], ["enemies", 1400], ["open", 400, 3], ["end"],
+      ["enemies", 1300], ["flip", 4], ["zigzag"], ["enemies", 1400], ["open", 400, 3], ["arena"],
     ],
   },
 ];
@@ -73,5 +73,5 @@ export default function levels({ gd, project }) {
   const acts = retry.event.getActions();
   for (let i = 0; i < acts.size(); i++) if (acts.get(i).getType() === "Scene") acts.get(i).setParameter(1, "GlobalVariableString(NivelActual)");
 
-  return built.map((b) => `${b.name}: ${b.width} px (${b.length} used), ${b.crystals} crystals, ${b.zones} enemy zones, ${b.checkpoints} checkpoints`).join("; ");
+  return built.map((b) => `${b.name}: ${b.width} px (${b.length} used), ${b.crystals} crystals, ${b.zones} enemy zones, ${b.checkpoints} checkpoints${b.boss ? ", final boss" : ""}`).join("; ");
 }

@@ -2447,6 +2447,102 @@
         "name": "assets/kaito/attack_9.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/maga/maga_12.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/maga/maga_12.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/maga/maga_13.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/maga/maga_13.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/maga/maga_14.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/maga/maga_14.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/maga/maga_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/maga/maga_1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/maga/maga_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/maga/maga_2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/maga/maga_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/maga/maga_3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/maga/maga_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/maga/maga_6.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/maga/maga_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/maga/maga_7.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/maga/maga_8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/maga/maga_8.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/maga/maga_0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/maga/maga_0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/maga/hechizo.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/maga/hechizo.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/maga/dragon.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/maga/dragon.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ]
   },
@@ -25042,6 +25138,16 @@
             },
             {
               "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Gemas",
+                "<",
+                "Variable(Requeridas)"
+              ]
+            },
+            {
+              "type": {
                 "value": "CompareTimer"
               },
               "parameters": [
@@ -39821,6 +39927,16 @@
             },
             {
               "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Gemas",
+                "<",
+                "Variable(Requeridas)"
+              ]
+            },
+            {
+              "type": {
                 "value": "CompareTimer"
               },
               "parameters": [
@@ -40112,6 +40228,15 @@
             },
             {
               "name": "cierra"
+            },
+            {
+              "name": "maga"
+            },
+            {
+              "name": "hechizo"
+            },
+            {
+              "name": "dragonSombra"
             }
           ]
         }
@@ -40219,6 +40344,36 @@
         },
         {
           "name": "PortalAbierto",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MagaVida",
+          "type": "number",
+          "value": 12
+        },
+        {
+          "name": "MagaEstado",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MagaAtaque",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MagaDerrotada",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MagaLado",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "MagaHerida",
           "type": "number",
           "value": 0
         }
@@ -41024,12 +41179,44 @@
         {
           "angle": 0,
           "customSize": true,
+          "height": 720,
+          "keepRatio": true,
+          "layer": "",
+          "name": "fondo",
+          "persistentUuid": "3ead528d-29eb-5be7-afc1-288d6fd95697",
+          "width": 1280,
+          "x": 25600,
+          "y": 0,
+          "zOrder": -10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "piso",
+          "persistentUuid": "8b6a9459-288a-5a1a-a0e0-8e8605e56092",
+          "width": 1280,
+          "x": 25600,
+          "y": 607,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
           "height": 64,
           "keepRatio": true,
           "layer": "",
           "name": "techo",
-          "persistentUuid": "f03ce004-db2f-5f0d-a5ed-50e597440887",
-          "width": 25600,
+          "persistentUuid": "a3b70c23-04c6-59c5-acaf-9e8b31e3b584",
+          "width": 26880,
           "x": 0,
           "y": -55,
           "zOrder": 0,
@@ -41044,7 +41231,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "techo",
-          "persistentUuid": "45f2b0a1-0bc3-5f5a-a88e-3c77b681b55b",
+          "persistentUuid": "049b8218-d6f0-5c47-a0da-ab2fb01aa882",
           "width": 1600,
           "x": 1650,
           "y": 330,
@@ -41060,7 +41247,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "8611c55d-217c-571d-abce-69764e3514a9",
+          "persistentUuid": "7b62e058-1aae-5bb6-a393-49b2d6ae4c67",
           "width": 256,
           "x": 1630,
           "y": 295,
@@ -41076,7 +41263,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "3abe5334-7ec0-51cf-a9e1-f04f49d59898",
+          "persistentUuid": "80b8b354-a956-57a3-a93d-7ba9b598fc94",
           "width": 256,
           "x": 1870,
           "y": 295,
@@ -41092,7 +41279,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "7b62e058-1aae-5bb6-a393-49b2d6ae4c67",
+          "persistentUuid": "b01901c6-44bf-57d6-a98a-9d04bca79739",
           "width": 256,
           "x": 2110,
           "y": 295,
@@ -41108,7 +41295,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "80b8b354-a956-57a3-a93d-7ba9b598fc94",
+          "persistentUuid": "aa875215-46d1-5eac-a190-ef45391e892d",
           "width": 256,
           "x": 2350,
           "y": 295,
@@ -41124,7 +41311,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "b01901c6-44bf-57d6-a98a-9d04bca79739",
+          "persistentUuid": "5813a572-f1ed-505a-a184-992180ec3156",
           "width": 256,
           "x": 2590,
           "y": 295,
@@ -41140,7 +41327,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "aa875215-46d1-5eac-a190-ef45391e892d",
+          "persistentUuid": "e04ddce6-641c-52a0-aadd-1614d3a33539",
           "width": 256,
           "x": 2830,
           "y": 295,
@@ -41156,7 +41343,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "5813a572-f1ed-505a-a184-992180ec3156",
+          "persistentUuid": "b7f06f07-a3a8-5a12-aa60-62c8f3be154c",
           "width": 200,
           "x": 3070,
           "y": 295,
@@ -41172,7 +41359,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "techo",
-          "persistentUuid": "e63bd451-922b-521f-af7d-cce6c612846b",
+          "persistentUuid": "4a2050a6-a76d-5b93-a673-28565d730d86",
           "width": 1150,
           "x": 5470,
           "y": 330,
@@ -41188,7 +41375,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "b7f06f07-a3a8-5a12-aa60-62c8f3be154c",
+          "persistentUuid": "f6ce9335-b6d7-5502-a20b-22e5586a7cd3",
           "width": 256,
           "x": 5450,
           "y": 295,
@@ -41204,7 +41391,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "17a67d8f-eca9-5b7f-a113-cf1041f60ed8",
+          "persistentUuid": "501de7d1-afbe-58b2-a46d-d99ff65054d6",
           "width": 256,
           "x": 5690,
           "y": 295,
@@ -41220,7 +41407,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "f6ce9335-b6d7-5502-a20b-22e5586a7cd3",
+          "persistentUuid": "c8ea5375-59c8-53c0-aad5-65e738e91fbe",
           "width": 256,
           "x": 5930,
           "y": 295,
@@ -41236,7 +41423,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "501de7d1-afbe-58b2-a46d-d99ff65054d6",
+          "persistentUuid": "8714de73-8e7e-53bc-a4bd-786f527b4181",
           "width": 256,
           "x": 6170,
           "y": 295,
@@ -41252,7 +41439,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "c8ea5375-59c8-53c0-aad5-65e738e91fbe",
+          "persistentUuid": "d1df581a-3fc9-572d-a261-ca6319e1711f",
           "width": 230,
           "x": 6410,
           "y": 295,
@@ -41268,7 +41455,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "techo",
-          "persistentUuid": "10724bde-6ce6-5335-a498-0581a2e4c8af",
+          "persistentUuid": "f79e913b-368a-5096-a268-82fbf4535438",
           "width": 1600,
           "x": 7620,
           "y": 330,
@@ -41284,7 +41471,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "d1df581a-3fc9-572d-a261-ca6319e1711f",
+          "persistentUuid": "efc4f951-2b16-54ac-abb6-b45fd141ef46",
           "width": 256,
           "x": 7600,
           "y": 295,
@@ -41300,7 +41487,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "e7bc235d-5ae1-5d05-aa64-89bfd1d1d516",
+          "persistentUuid": "c3681ef4-fe0d-5374-afb7-c0108c8bb287",
           "width": 256,
           "x": 7840,
           "y": 295,
@@ -41316,7 +41503,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "efc4f951-2b16-54ac-abb6-b45fd141ef46",
+          "persistentUuid": "08c51df0-12d1-5a06-a0b2-cbda7a92951f",
           "width": 256,
           "x": 8080,
           "y": 295,
@@ -41332,7 +41519,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "c3681ef4-fe0d-5374-afb7-c0108c8bb287",
+          "persistentUuid": "86dffd37-88f4-5090-a7f8-ebd16d06bdfb",
           "width": 256,
           "x": 8320,
           "y": 295,
@@ -41348,7 +41535,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "08c51df0-12d1-5a06-a0b2-cbda7a92951f",
+          "persistentUuid": "2c04bc21-a284-5885-a863-97fde6d61e63",
           "width": 256,
           "x": 8560,
           "y": 295,
@@ -41364,7 +41551,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "86dffd37-88f4-5090-a7f8-ebd16d06bdfb",
+          "persistentUuid": "a89f1bd8-519e-5fbf-a167-4369d648179f",
           "width": 256,
           "x": 8800,
           "y": 295,
@@ -41380,7 +41567,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "2c04bc21-a284-5885-a863-97fde6d61e63",
+          "persistentUuid": "9b416639-4884-515e-a1fd-1ce1071cea8e",
           "width": 200,
           "x": 9040,
           "y": 295,
@@ -41396,7 +41583,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "techo",
-          "persistentUuid": "7dd64258-d018-513c-a0ba-b727e190d0d1",
+          "persistentUuid": "04cd5424-6efd-5637-a18c-285bb65db3a1",
           "width": 900,
           "x": 10670,
           "y": 330,
@@ -41412,7 +41599,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "9b416639-4884-515e-a1fd-1ce1071cea8e",
+          "persistentUuid": "91f00ba6-865f-53fe-a5ef-c78a5be3f1c5",
           "width": 256,
           "x": 10650,
           "y": 295,
@@ -41428,7 +41615,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "be861485-15cf-507e-a77a-e6045854244e",
+          "persistentUuid": "bcda35e4-d234-5ab7-acfb-10dfdbbca03d",
           "width": 256,
           "x": 10890,
           "y": 295,
@@ -41444,7 +41631,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "91f00ba6-865f-53fe-a5ef-c78a5be3f1c5",
+          "persistentUuid": "5f7dcb69-ac74-515e-a043-3ed5177b9dec",
           "width": 256,
           "x": 11130,
           "y": 295,
@@ -41460,7 +41647,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "bcda35e4-d234-5ab7-acfb-10dfdbbca03d",
+          "persistentUuid": "d983e396-30f3-5db1-a50f-bfef59c73d1a",
           "width": 220,
           "x": 11370,
           "y": 295,
@@ -41476,7 +41663,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "techo",
-          "persistentUuid": "ea43f609-e881-5448-aaef-1eb8be65af66",
+          "persistentUuid": "1096ffac-b19b-5f82-a474-4624324d3658",
           "width": 1300,
           "x": 11670,
           "y": 330,
@@ -41492,7 +41679,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "d983e396-30f3-5db1-a50f-bfef59c73d1a",
+          "persistentUuid": "00fc3e77-ccb3-5a5d-a03c-10c67579a230",
           "width": 256,
           "x": 11650,
           "y": 295,
@@ -41508,7 +41695,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "3e28d7f1-ffec-5b16-a022-26dac7eaea73",
+          "persistentUuid": "283e2e90-a1bc-5ff3-a4c0-e8178db8fe47",
           "width": 256,
           "x": 11890,
           "y": 295,
@@ -41524,7 +41711,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "00fc3e77-ccb3-5a5d-a03c-10c67579a230",
+          "persistentUuid": "07d73190-4ace-5445-a6af-3855eded777a",
           "width": 256,
           "x": 12130,
           "y": 295,
@@ -41540,7 +41727,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "283e2e90-a1bc-5ff3-a4c0-e8178db8fe47",
+          "persistentUuid": "935c3260-e0ae-5155-affe-6c58e372d8ed",
           "width": 256,
           "x": 12370,
           "y": 295,
@@ -41556,7 +41743,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "07d73190-4ace-5445-a6af-3855eded777a",
+          "persistentUuid": "7747913d-6330-5043-a506-c26ba9ec83a2",
           "width": 256,
           "x": 12610,
           "y": 295,
@@ -41572,7 +41759,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "935c3260-e0ae-5155-affe-6c58e372d8ed",
+          "persistentUuid": "ba37ef78-1978-58ab-a93a-3945e6f78392",
           "width": 140,
           "x": 12850,
           "y": 295,
@@ -41588,7 +41775,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "techo",
-          "persistentUuid": "db8a882d-d55c-5391-ac21-4df8efd8bc32",
+          "persistentUuid": "fe2ceb78-f3d9-5620-a863-088bcf9eefde",
           "width": 1600,
           "x": 15240,
           "y": 330,
@@ -41604,7 +41791,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "ba37ef78-1978-58ab-a93a-3945e6f78392",
+          "persistentUuid": "2c4f0c19-b30b-541a-a168-4a33c91b909f",
           "width": 256,
           "x": 15220,
           "y": 295,
@@ -41620,7 +41807,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "f171ea33-fd76-5483-acc9-ff3c3f532a12",
+          "persistentUuid": "e35e9410-b1c4-5abe-ac72-726e2d2e6a24",
           "width": 256,
           "x": 15460,
           "y": 295,
@@ -41636,7 +41823,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "2c4f0c19-b30b-541a-a168-4a33c91b909f",
+          "persistentUuid": "b3a1fee4-89d8-55ca-a3d9-f4efdc058602",
           "width": 256,
           "x": 15700,
           "y": 295,
@@ -41652,7 +41839,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "e35e9410-b1c4-5abe-ac72-726e2d2e6a24",
+          "persistentUuid": "854127a1-14a8-5fdd-a154-a65b431048ad",
           "width": 256,
           "x": 15940,
           "y": 295,
@@ -41668,7 +41855,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "b3a1fee4-89d8-55ca-a3d9-f4efdc058602",
+          "persistentUuid": "a4229578-4e5a-562e-ad83-7cf7b263cb5d",
           "width": 256,
           "x": 16180,
           "y": 295,
@@ -41684,7 +41871,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "854127a1-14a8-5fdd-a154-a65b431048ad",
+          "persistentUuid": "a4c467d4-9d82-542e-ad6f-d769061f7b09",
           "width": 256,
           "x": 16420,
           "y": 295,
@@ -41700,7 +41887,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "a4229578-4e5a-562e-ad83-7cf7b263cb5d",
+          "persistentUuid": "320564f6-1cfd-5122-a04f-2e0785ddc203",
           "width": 200,
           "x": 16660,
           "y": 295,
@@ -41716,7 +41903,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "techo",
-          "persistentUuid": "b8d883f3-61c3-5b71-a6e0-b638e9fafd32",
+          "persistentUuid": "1a72c8d1-9c64-5981-a836-1a07fcee5b26",
           "width": 1000,
           "x": 19190,
           "y": 330,
@@ -41732,7 +41919,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "320564f6-1cfd-5122-a04f-2e0785ddc203",
+          "persistentUuid": "45d9f796-4fba-5e14-ae48-e4e6996db462",
           "width": 256,
           "x": 19170,
           "y": 295,
@@ -41748,7 +41935,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "e13e6db3-ac16-5f28-a363-05077e813be3",
+          "persistentUuid": "c258a2d2-bd8b-5775-aab1-0add57e82e82",
           "width": 256,
           "x": 19410,
           "y": 295,
@@ -41764,7 +41951,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "45d9f796-4fba-5e14-ae48-e4e6996db462",
+          "persistentUuid": "c3c5a280-e138-5bc6-af8b-dcab76eafe82",
           "width": 256,
           "x": 19650,
           "y": 295,
@@ -41780,7 +41967,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "c258a2d2-bd8b-5775-aab1-0add57e82e82",
+          "persistentUuid": "615ac492-bc2d-5070-a8e8-cccd243b0619",
           "width": 256,
           "x": 19890,
           "y": 295,
@@ -41796,7 +41983,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "c3c5a280-e138-5bc6-af8b-dcab76eafe82",
+          "persistentUuid": "5a84e26e-bed9-57d5-a397-7bbcd3412217",
           "width": 80,
           "x": 20130,
           "y": 295,
@@ -41812,7 +41999,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "techo",
-          "persistentUuid": "1a3dbc0b-04c7-5fb1-ad87-1c2e0cd38e56",
+          "persistentUuid": "9a2b0ddb-665e-5043-a643-48189faa2ffd",
           "width": 1600,
           "x": 20290,
           "y": 330,
@@ -41828,7 +42015,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "5a84e26e-bed9-57d5-a397-7bbcd3412217",
+          "persistentUuid": "0aeaf766-b2f9-582f-a050-1222568f1c0d",
           "width": 256,
           "x": 20270,
           "y": 295,
@@ -41844,7 +42031,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "d646dca0-dc47-5997-ab1c-8cd15906a46d",
+          "persistentUuid": "0bf9744d-69c2-5097-af65-3b9bd3a2d6ee",
           "width": 256,
           "x": 20510,
           "y": 295,
@@ -41860,7 +42047,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "0aeaf766-b2f9-582f-a050-1222568f1c0d",
+          "persistentUuid": "6c360773-7b80-5aab-a82e-4c1df8bd28a2",
           "width": 256,
           "x": 20750,
           "y": 295,
@@ -41876,7 +42063,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "0bf9744d-69c2-5097-af65-3b9bd3a2d6ee",
+          "persistentUuid": "e189b343-a231-548d-acc0-d943e217f145",
           "width": 256,
           "x": 20990,
           "y": 295,
@@ -41892,7 +42079,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "6c360773-7b80-5aab-a82e-4c1df8bd28a2",
+          "persistentUuid": "236be9d3-f4e5-53c1-a13b-d421ebd31183",
           "width": 256,
           "x": 21230,
           "y": 295,
@@ -41908,7 +42095,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "e189b343-a231-548d-acc0-d943e217f145",
+          "persistentUuid": "f086b45a-401a-5d93-a37e-adf775014098",
           "width": 256,
           "x": 21470,
           "y": 295,
@@ -41924,9 +42111,153 @@
           "keepRatio": true,
           "layer": "",
           "name": "pisoflotante",
-          "persistentUuid": "236be9d3-f4e5-53c1-a13b-d421ebd31183",
+          "persistentUuid": "767ddeac-a629-501b-aebb-1e09c32c9346",
           "width": 200,
           "x": 21710,
+          "y": 295,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "techo",
+          "persistentUuid": "2447b5bb-285c-552a-ac76-01a56a03ceaf",
+          "width": 1900,
+          "x": 23990,
+          "y": 330,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 85,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pisoflotante",
+          "persistentUuid": "b57860b5-e8f9-51f9-ad16-f3fdf0672bb2",
+          "width": 256,
+          "x": 23970,
+          "y": 295,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 85,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pisoflotante",
+          "persistentUuid": "15585e63-b239-59a7-a268-c440e9876774",
+          "width": 256,
+          "x": 24210,
+          "y": 295,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 85,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pisoflotante",
+          "persistentUuid": "cdd3dd26-5489-58bc-ad9a-fc678b1c4acb",
+          "width": 256,
+          "x": 24450,
+          "y": 295,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 85,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pisoflotante",
+          "persistentUuid": "a3749484-3ece-5844-a082-19d7645feb99",
+          "width": 256,
+          "x": 24690,
+          "y": 295,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 85,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pisoflotante",
+          "persistentUuid": "77105927-8065-5c1b-ad50-3ce176895083",
+          "width": 256,
+          "x": 24930,
+          "y": 295,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 85,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pisoflotante",
+          "persistentUuid": "77cf9949-831f-55a4-a528-9e5d7c06ffbe",
+          "width": 256,
+          "x": 25170,
+          "y": 295,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 85,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pisoflotante",
+          "persistentUuid": "4c88bb89-bf6c-52dd-a429-3163e43dd56c",
+          "width": 256,
+          "x": 25410,
+          "y": 295,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 85,
+          "keepRatio": true,
+          "layer": "",
+          "name": "pisoflotante",
+          "persistentUuid": "8903fa47-8bbc-5bd0-af2f-a59bd96abc3a",
+          "width": 256,
+          "x": 25650,
           "y": 295,
           "zOrder": 1,
           "numberProperties": [],
@@ -41940,7 +42271,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "361f2c3e-0e5f-5389-a348-493c557ca214",
+          "persistentUuid": "8735a83c-1280-52ac-a520-60e0fa0ffac8",
           "width": 150,
           "x": 1850,
           "y": 591,
@@ -41956,7 +42287,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "4414fefe-5922-570e-aa02-8922e04a6abb",
+          "persistentUuid": "358a1b38-930e-5327-a926-1d7cf68c0f6e",
           "width": 150,
           "x": 2000,
           "y": 591,
@@ -41972,7 +42303,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "e86d975c-4946-50f2-a06d-c126bcc23f70",
+          "persistentUuid": "de458ee8-c407-5527-a8df-f3946c414877",
           "width": 150,
           "x": 2750,
           "y": 591,
@@ -41988,7 +42319,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "03fc235e-44be-5f9c-a19d-92d908df373d",
+          "persistentUuid": "eb6d7ff1-f859-540c-a80c-2e7efe81992a",
           "width": 150,
           "x": 2900,
           "y": 591,
@@ -42004,7 +42335,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "811cbbda-0292-557c-a038-792a116ff219",
+          "persistentUuid": "e781e3e7-cb82-5551-abd6-5d38b270cf34",
           "width": 150,
           "x": 3535,
           "y": 591,
@@ -42020,7 +42351,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "44096c75-fd26-5128-a97a-03355a0d1238",
+          "persistentUuid": "37460543-ba6d-5481-a66f-96ba3086e075",
           "width": 150,
           "x": 3885,
           "y": 591,
@@ -42036,7 +42367,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "38059b22-4c24-5352-ad37-2adc01e160bb",
+          "persistentUuid": "0a178d28-c1a4-5a81-a110-b0a29acd6e4a",
           "width": 150,
           "x": 5670,
           "y": 591,
@@ -42052,7 +42383,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "bbe52958-9b3b-52c3-ab06-18ea570c6ccf",
+          "persistentUuid": "e53bf134-c027-5282-ae41-e8114f3fcbc5",
           "width": 150,
           "x": 5820,
           "y": 591,
@@ -42068,7 +42399,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "6185ad31-ab5e-5f4d-aa06-bed83180e709",
+          "persistentUuid": "9c24a7ab-8d5b-508f-a22c-bd38d89c2a93",
           "width": 150,
           "x": 5970,
           "y": 591,
@@ -42084,7 +42415,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "f6eef6e4-3adc-5e75-a10d-337fb4fc27f7",
+          "persistentUuid": "98937724-ad75-59fa-abc9-cb0546cbcaf9",
           "width": 150,
           "x": 6120,
           "y": 591,
@@ -42100,7 +42431,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "5771a191-aa4b-5a44-a515-595c090e8621",
+          "persistentUuid": "ebf33698-4f11-5ef9-ac45-437916cd109a",
           "width": 150,
           "x": 6270,
           "y": 591,
@@ -42116,7 +42447,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "8735a83c-1280-52ac-a520-60e0fa0ffac8",
+          "persistentUuid": "f1880d10-26f4-5c4e-a11a-4f2c58bf13ec",
           "width": 150,
           "x": 7820,
           "y": 591,
@@ -42132,7 +42463,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "358a1b38-930e-5327-a926-1d7cf68c0f6e",
+          "persistentUuid": "71a60066-2033-5a8b-a2dc-232b3e50a09a",
           "width": 150,
           "x": 7970,
           "y": 591,
@@ -42148,7 +42479,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "de458ee8-c407-5527-a8df-f3946c414877",
+          "persistentUuid": "aa3c531b-978c-5a17-a4ab-de8d30e0f476",
           "width": 150,
           "x": 8720,
           "y": 591,
@@ -42164,7 +42495,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "eb6d7ff1-f859-540c-a80c-2e7efe81992a",
+          "persistentUuid": "302d096c-1e43-5e98-a1ac-ec27bfec8976",
           "width": 150,
           "x": 8870,
           "y": 591,
@@ -42180,7 +42511,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "e781e3e7-cb82-5551-abd6-5d38b270cf34",
+          "persistentUuid": "c6cb36e1-f184-5e25-af0c-98a056403070",
           "width": 150,
           "x": 11870,
           "y": 591,
@@ -42196,7 +42527,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "37460543-ba6d-5481-a66f-96ba3086e075",
+          "persistentUuid": "8b4b022a-ffcb-564d-ae64-8b2cdb15c33c",
           "width": 150,
           "x": 12020,
           "y": 591,
@@ -42212,7 +42543,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "0a178d28-c1a4-5a81-a110-b0a29acd6e4a",
+          "persistentUuid": "25f3b0f4-2b39-5012-ab4f-ffb0b8cebbfb",
           "width": 150,
           "x": 12170,
           "y": 591,
@@ -42228,7 +42559,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "e53bf134-c027-5282-ae41-e8114f3fcbc5",
+          "persistentUuid": "675d9a6e-37ab-55da-a7ca-c910def7e6a8",
           "width": 150,
           "x": 12320,
           "y": 591,
@@ -42244,7 +42575,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "9c24a7ab-8d5b-508f-a22c-bd38d89c2a93",
+          "persistentUuid": "c8cdfad9-6a25-53fc-ab8f-144e240e536d",
           "width": 150,
           "x": 12470,
           "y": 591,
@@ -42260,7 +42591,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "98937724-ad75-59fa-abc9-cb0546cbcaf9",
+          "persistentUuid": "ba5f2f7d-5f78-583d-a865-1fd9142fc7e4",
           "width": 150,
           "x": 12620,
           "y": 591,
@@ -42276,7 +42607,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "ebf33698-4f11-5ef9-ac45-437916cd109a",
+          "persistentUuid": "87fec2fa-0fdb-5b81-ac92-60ec3bcf54ed",
           "width": 150,
           "x": 13205,
           "y": 591,
@@ -42292,7 +42623,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "f1880d10-26f4-5c4e-a11a-4f2c58bf13ec",
+          "persistentUuid": "b6949d19-02e6-5a43-af32-837eb4836346",
           "width": 150,
           "x": 13555,
           "y": 591,
@@ -42308,7 +42639,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "71a60066-2033-5a8b-a2dc-232b3e50a09a",
+          "persistentUuid": "0ff3b21b-3289-564d-af0c-578c817e7c47",
           "width": 150,
           "x": 15440,
           "y": 591,
@@ -42324,7 +42655,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "aa3c531b-978c-5a17-a4ab-de8d30e0f476",
+          "persistentUuid": "9326340e-b9fa-5deb-ad6f-c20833eae941",
           "width": 150,
           "x": 15590,
           "y": 591,
@@ -42340,7 +42671,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "302d096c-1e43-5e98-a1ac-ec27bfec8976",
+          "persistentUuid": "714ff938-2c05-57fb-af1b-a16e6cac3f1b",
           "width": 150,
           "x": 16340,
           "y": 591,
@@ -42356,7 +42687,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "c6cb36e1-f184-5e25-af0c-98a056403070",
+          "persistentUuid": "5f9a0b30-1424-5332-a395-c09d1610e8c1",
           "width": 150,
           "x": 16490,
           "y": 591,
@@ -42372,7 +42703,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "8b4b022a-ffcb-564d-ae64-8b2cdb15c33c",
+          "persistentUuid": "66259ba0-108b-5e48-a17c-c66eb8844c6a",
           "width": 150,
           "x": 19390,
           "y": 591,
@@ -42388,7 +42719,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "25f3b0f4-2b39-5012-ab4f-ffb0b8cebbfb",
+          "persistentUuid": "8f25959d-f59b-56dd-a85a-423a426d93b1",
           "width": 150,
           "x": 19540,
           "y": 591,
@@ -42404,7 +42735,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "675d9a6e-37ab-55da-a7ca-c910def7e6a8",
+          "persistentUuid": "eac69a67-8d16-5bc8-ac47-5335b25c06ab",
           "width": 150,
           "x": 19690,
           "y": 591,
@@ -42420,7 +42751,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "c8cdfad9-6a25-53fc-ab8f-144e240e536d",
+          "persistentUuid": "6ba0f5ef-b6ec-507f-a593-b50f517d445c",
           "width": 150,
           "x": 19840,
           "y": 591,
@@ -42436,7 +42767,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "ba5f2f7d-5f78-583d-a865-1fd9142fc7e4",
+          "persistentUuid": "b8fa124b-0b73-535f-a1f9-6a0eb1a1eb7b",
           "width": 150,
           "x": 20490,
           "y": 591,
@@ -42452,7 +42783,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "87fec2fa-0fdb-5b81-ac92-60ec3bcf54ed",
+          "persistentUuid": "781da842-74e4-5b95-ae61-72a02e183e4d",
           "width": 150,
           "x": 20640,
           "y": 591,
@@ -42468,7 +42799,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "b6949d19-02e6-5a43-af32-837eb4836346",
+          "persistentUuid": "79e01c1c-999b-5021-a6dc-e84bf10e00f9",
           "width": 150,
           "x": 21390,
           "y": 591,
@@ -42484,7 +42815,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "0ff3b21b-3289-564d-af0c-578c817e7c47",
+          "persistentUuid": "6aa922cd-35ed-594e-a0d0-7e68b0b70fff",
           "width": 150,
           "x": 21540,
           "y": 591,
@@ -42501,7 +42832,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "9326340e-b9fa-5deb-ad6f-c20833eae941",
+          "persistentUuid": "9b0b5143-5add-5f59-a188-8a8d3b3c9a21",
           "width": 150,
           "x": 2380,
           "y": 361,
@@ -42518,7 +42849,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "714ff938-2c05-57fb-af1b-a16e6cac3f1b",
+          "persistentUuid": "b964beae-aeb1-5f5d-a6dd-d2419f43bb56",
           "width": 150,
           "x": 8350,
           "y": 361,
@@ -42535,7 +42866,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "5f9a0b30-1424-5332-a395-c09d1610e8c1",
+          "persistentUuid": "7094fd3d-245d-5410-afdc-af8c4723594c",
           "width": 150,
           "x": 15970,
           "y": 361,
@@ -42552,7 +42883,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "pinchos",
-          "persistentUuid": "66259ba0-108b-5e48-a17c-c66eb8844c6a",
+          "persistentUuid": "2a78dae8-01ed-5d51-a247-cdadfa9b6321",
           "width": 150,
           "x": 21020,
           "y": 361,
@@ -42568,7 +42899,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "7761f792-4fce-5402-ac2f-d6e95b45f494",
+          "persistentUuid": "855cfd67-12b3-5ffb-a152-552eb72521e3",
           "width": 49,
           "x": 260,
           "y": 562,
@@ -42584,7 +42915,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "a2f47bd4-baac-5083-a8f4-ea650c880516",
+          "persistentUuid": "8aff596d-6150-5f00-a569-32bb259d34be",
           "width": 49,
           "x": 330,
           "y": 562,
@@ -42600,7 +42931,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "f9ae44c5-6093-5ccf-a24e-51c851c2afad",
+          "persistentUuid": "80e5aef5-014c-5625-a72b-06cb54e18710",
           "width": 49,
           "x": 400,
           "y": 562,
@@ -42616,7 +42947,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "55392a73-17c9-5ad8-a32c-65faf7e6192a",
+          "persistentUuid": "82f2c9ff-139c-5f86-ad04-86ade6253c71",
           "width": 49,
           "x": 2430,
           "y": 562,
@@ -42632,7 +42963,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "3c53eb7a-5b9f-595b-a333-0bb91b1ac5a4",
+          "persistentUuid": "2d7f0503-1c91-5077-a624-de034671e490",
           "width": 49,
           "x": 8400,
           "y": 562,
@@ -42648,7 +42979,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "b4d92078-fe19-53a3-af24-17a0ec9d2067",
+          "persistentUuid": "7e34fbad-7c05-5200-a938-f0c009bb1583",
           "width": 49,
           "x": 16020,
           "y": 562,
@@ -42664,7 +42995,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "9d5faf95-133f-511f-a96d-92dd81830e75",
+          "persistentUuid": "978c32d7-2766-5849-afd3-96a38a843f19",
           "width": 49,
           "x": 21070,
           "y": 562,
@@ -42680,7 +43011,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "985a94dd-43ec-5e72-acea-9b937ed4c2e3",
+          "persistentUuid": "28e7bfca-d161-5da6-ac91-20448148d9b8",
           "width": 49,
           "x": 23465,
           "y": 562,
@@ -42696,7 +43027,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "1b18c568-c1e3-5ccb-a844-ab78831f377f",
+          "persistentUuid": "0099e361-9d1c-5fe8-a003-7a50a005d73c",
           "width": 49,
           "x": 23565,
           "y": 562,
@@ -42712,7 +43043,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "47a90edd-fe96-5d2d-a187-37c6bca0651c",
+          "persistentUuid": "faf0d827-b1d6-5d4b-a42b-57ccda36f4d5",
           "width": 49,
           "x": 23665,
           "y": 562,
@@ -42728,7 +43059,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "daa6ae73-21a0-527a-a8cc-bc2a2d15dd29",
+          "persistentUuid": "76b8bf8d-8bc8-51fb-ad7b-ad9a783c17dc",
           "width": 49,
           "x": 1880,
           "y": 412,
@@ -42744,7 +43075,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "855cfd67-12b3-5ffb-a152-552eb72521e3",
+          "persistentUuid": "fdae96b1-5c0e-5eb5-ab94-4013c3eed329",
           "width": 49,
           "x": 2020,
           "y": 412,
@@ -42760,7 +43091,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "8aff596d-6150-5f00-a569-32bb259d34be",
+          "persistentUuid": "726aeacf-4955-555b-a667-3619b870a2a1",
           "width": 49,
           "x": 2780,
           "y": 412,
@@ -42776,7 +43107,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "80e5aef5-014c-5625-a72b-06cb54e18710",
+          "persistentUuid": "fda70741-c47f-5787-a757-48b9a2f086dd",
           "width": 49,
           "x": 2920,
           "y": 412,
@@ -42792,7 +43123,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "82f2c9ff-139c-5f86-ad04-86ade6253c71",
+          "persistentUuid": "f450ec1d-b0d3-5a75-acfb-a6dbcad3028f",
           "width": 49,
           "x": 5680,
           "y": 412,
@@ -42808,7 +43139,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "2d7f0503-1c91-5077-a624-de034671e490",
+          "persistentUuid": "baa6db84-505a-5115-a62f-aa83d314706d",
           "width": 49,
           "x": 5790,
           "y": 412,
@@ -42824,7 +43155,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "7e34fbad-7c05-5200-a938-f0c009bb1583",
+          "persistentUuid": "64adcf9d-aa1f-59fe-af00-1f401260b15a",
           "width": 49,
           "x": 5900,
           "y": 412,
@@ -42840,7 +43171,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "978c32d7-2766-5849-afd3-96a38a843f19",
+          "persistentUuid": "c58e34a1-838b-5d84-aa58-72524e9f89fd",
           "width": 49,
           "x": 6010,
           "y": 412,
@@ -42856,7 +43187,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "28e7bfca-d161-5da6-ac91-20448148d9b8",
+          "persistentUuid": "7c85a4fb-54a7-55ad-a691-0d002bd30894",
           "width": 49,
           "x": 6120,
           "y": 412,
@@ -42872,7 +43203,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "0099e361-9d1c-5fe8-a003-7a50a005d73c",
+          "persistentUuid": "27ef513a-539b-567a-aaab-3aba27d6ebd6",
           "width": 49,
           "x": 6230,
           "y": 412,
@@ -42888,7 +43219,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "faf0d827-b1d6-5d4b-a42b-57ccda36f4d5",
+          "persistentUuid": "cb8802a9-5a89-50ec-acff-ca122616bcd4",
           "width": 49,
           "x": 6340,
           "y": 412,
@@ -42904,7 +43235,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "76b8bf8d-8bc8-51fb-ad7b-ad9a783c17dc",
+          "persistentUuid": "7e53f387-0a8d-54e1-ab67-164bdce7cb55",
           "width": 49,
           "x": 7850,
           "y": 412,
@@ -42920,7 +43251,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "fdae96b1-5c0e-5eb5-ab94-4013c3eed329",
+          "persistentUuid": "00ca0772-7293-546f-ad8e-ccbf045d68fd",
           "width": 49,
           "x": 7990,
           "y": 412,
@@ -42936,7 +43267,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "726aeacf-4955-555b-a667-3619b870a2a1",
+          "persistentUuid": "7c676098-9965-521a-a1e1-191246681bc3",
           "width": 49,
           "x": 8750,
           "y": 412,
@@ -42952,7 +43283,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "fda70741-c47f-5787-a757-48b9a2f086dd",
+          "persistentUuid": "4d505b2e-3218-5648-afb1-13ebbe32c8dd",
           "width": 49,
           "x": 8890,
           "y": 412,
@@ -42968,7 +43299,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "f450ec1d-b0d3-5a75-acfb-a6dbcad3028f",
+          "persistentUuid": "4e9580fa-7ab8-5a75-a3fa-94324c46609b",
           "width": 49,
           "x": 10770,
           "y": 412,
@@ -42984,7 +43315,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "baa6db84-505a-5115-a62f-aa83d314706d",
+          "persistentUuid": "e13490be-4a03-5093-af83-4d1cd5d1cc0c",
           "width": 49,
           "x": 10890,
           "y": 412,
@@ -43000,7 +43331,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "64adcf9d-aa1f-59fe-af00-1f401260b15a",
+          "persistentUuid": "a2ac2ab0-bc9c-5887-aa31-56a35bef32c7",
           "width": 49,
           "x": 11010,
           "y": 412,
@@ -43016,7 +43347,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "c58e34a1-838b-5d84-aa58-72524e9f89fd",
+          "persistentUuid": "3690b685-95fd-57b0-a650-93f4aa3933c3",
           "width": 49,
           "x": 11130,
           "y": 412,
@@ -43032,7 +43363,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "7c85a4fb-54a7-55ad-a691-0d002bd30894",
+          "persistentUuid": "a6b6d84e-eb54-57a2-abdd-6a25eb522be2",
           "width": 49,
           "x": 11250,
           "y": 412,
@@ -43048,7 +43379,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "27ef513a-539b-567a-aaab-3aba27d6ebd6",
+          "persistentUuid": "13a4c6de-a041-559b-a357-2824f2180ed7",
           "width": 49,
           "x": 11370,
           "y": 412,
@@ -43064,7 +43395,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "cb8802a9-5a89-50ec-acff-ca122616bcd4",
+          "persistentUuid": "e50c9c18-36e1-5f4d-a1fb-c5cc7948254c",
           "width": 49,
           "x": 11880,
           "y": 412,
@@ -43080,7 +43411,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "7e53f387-0a8d-54e1-ab67-164bdce7cb55",
+          "persistentUuid": "90c0b9fc-19f8-54aa-a146-c8a4e86e2b69",
           "width": 49,
           "x": 11990,
           "y": 412,
@@ -43096,7 +43427,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "00ca0772-7293-546f-ad8e-ccbf045d68fd",
+          "persistentUuid": "46fd04bc-048e-5cc5-a252-b2acabac4ee7",
           "width": 49,
           "x": 12100,
           "y": 412,
@@ -43112,7 +43443,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "7c676098-9965-521a-a1e1-191246681bc3",
+          "persistentUuid": "68f63c4f-0ed8-59e8-ac81-45d76a5d1c36",
           "width": 49,
           "x": 12210,
           "y": 412,
@@ -43128,7 +43459,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "4d505b2e-3218-5648-afb1-13ebbe32c8dd",
+          "persistentUuid": "2cced239-fb77-5da2-aaa1-7d9282e2cefc",
           "width": 49,
           "x": 12320,
           "y": 412,
@@ -43144,7 +43475,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "4e9580fa-7ab8-5a75-a3fa-94324c46609b",
+          "persistentUuid": "3ded54f0-8fc0-5959-aadc-3b3fa8bb1fc1",
           "width": 49,
           "x": 12430,
           "y": 412,
@@ -43160,7 +43491,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "e13490be-4a03-5093-af83-4d1cd5d1cc0c",
+          "persistentUuid": "93659892-5be8-5c42-ac3d-32a63c9ca99e",
           "width": 49,
           "x": 12540,
           "y": 412,
@@ -43176,7 +43507,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "a2ac2ab0-bc9c-5887-aa31-56a35bef32c7",
+          "persistentUuid": "123434d3-be1f-50cf-a350-5077d7b0250a",
           "width": 49,
           "x": 12650,
           "y": 412,
@@ -43192,7 +43523,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "3690b685-95fd-57b0-a650-93f4aa3933c3",
+          "persistentUuid": "51ef6b29-eb68-5ab6-a3c7-254bc1b83ad8",
           "width": 49,
           "x": 12760,
           "y": 412,
@@ -43208,7 +43539,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "a6b6d84e-eb54-57a2-abdd-6a25eb522be2",
+          "persistentUuid": "c5fac37c-9ef0-5fa5-a0a4-5dddd07437d3",
           "width": 49,
           "x": 15470,
           "y": 412,
@@ -43224,7 +43555,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "13a4c6de-a041-559b-a357-2824f2180ed7",
+          "persistentUuid": "de48577f-79b4-5a38-ac02-b8486ad90563",
           "width": 49,
           "x": 15610,
           "y": 412,
@@ -43240,7 +43571,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "e50c9c18-36e1-5f4d-a1fb-c5cc7948254c",
+          "persistentUuid": "95233c0b-c7f1-5ab5-a8ee-9251a3baf79a",
           "width": 49,
           "x": 16370,
           "y": 412,
@@ -43256,7 +43587,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "90c0b9fc-19f8-54aa-a146-c8a4e86e2b69",
+          "persistentUuid": "0c83725b-bbb2-5891-a50f-926aec64523d",
           "width": 49,
           "x": 16510,
           "y": 412,
@@ -43272,7 +43603,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "46fd04bc-048e-5cc5-a252-b2acabac4ee7",
+          "persistentUuid": "1311533e-866f-503d-a088-3dab5e3c6c10",
           "width": 49,
           "x": 19400,
           "y": 412,
@@ -43288,7 +43619,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "68f63c4f-0ed8-59e8-ac81-45d76a5d1c36",
+          "persistentUuid": "3231144d-2b3d-582b-a93c-651256995698",
           "width": 49,
           "x": 19510,
           "y": 412,
@@ -43304,7 +43635,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "2cced239-fb77-5da2-aaa1-7d9282e2cefc",
+          "persistentUuid": "82dfd062-b990-584c-a7d4-b78eef34a7f4",
           "width": 49,
           "x": 19620,
           "y": 412,
@@ -43320,7 +43651,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "3ded54f0-8fc0-5959-aadc-3b3fa8bb1fc1",
+          "persistentUuid": "083d9185-983c-54e3-a80e-080369556244",
           "width": 49,
           "x": 19730,
           "y": 412,
@@ -43336,7 +43667,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "93659892-5be8-5c42-ac3d-32a63c9ca99e",
+          "persistentUuid": "f4eaa295-dc45-5e99-a214-5702b6d2251b",
           "width": 49,
           "x": 19840,
           "y": 412,
@@ -43352,7 +43683,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "123434d3-be1f-50cf-a350-5077d7b0250a",
+          "persistentUuid": "97c9d0af-d639-54bf-acd0-64ad9c783cde",
           "width": 49,
           "x": 19950,
           "y": 412,
@@ -43368,7 +43699,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "51ef6b29-eb68-5ab6-a3c7-254bc1b83ad8",
+          "persistentUuid": "e6025d98-db14-5255-af8d-4ca03e8cdb04",
           "width": 49,
           "x": 20520,
           "y": 412,
@@ -43384,7 +43715,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "c5fac37c-9ef0-5fa5-a0a4-5dddd07437d3",
+          "persistentUuid": "dadbab87-6e63-5886-ad0c-ceeb5b1748c0",
           "width": 49,
           "x": 20660,
           "y": 412,
@@ -43400,7 +43731,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "de48577f-79b4-5a38-ac02-b8486ad90563",
+          "persistentUuid": "acc5c249-8837-5da5-a4c5-621d822db720",
           "width": 49,
           "x": 21420,
           "y": 412,
@@ -43416,7 +43747,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "95233c0b-c7f1-5ab5-a8ee-9251a3baf79a",
+          "persistentUuid": "e3cf1ba1-bc8d-5a5f-a2c2-df9aaa6402a0",
           "width": 49,
           "x": 21560,
           "y": 412,
@@ -43432,7 +43763,103 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "0c83725b-bbb2-5891-a50f-926aec64523d",
+          "persistentUuid": "5558a50a-c8cc-5eb1-a192-c79a9e6e1021",
+          "width": 49,
+          "x": 24190,
+          "y": 412,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "24a2a773-60f0-5a84-a477-390a7b2d35d9",
+          "width": 49,
+          "x": 24490,
+          "y": 412,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "757c6401-6c52-5648-aec0-9d92165bd4a7",
+          "width": 49,
+          "x": 24790,
+          "y": 412,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "f59eb1d9-aa46-5564-a306-686362fb4b3f",
+          "width": 49,
+          "x": 25090,
+          "y": 412,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "173e8764-7d20-59bf-a66a-6b05741dba89",
+          "width": 49,
+          "x": 25390,
+          "y": 412,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "6a4a0514-3721-5575-afe4-01a889e544c8",
+          "width": 49,
+          "x": 25690,
+          "y": 412,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cristal",
+          "persistentUuid": "20885a92-7393-525a-ac6f-bcf5eb1e0b8f",
           "width": 49,
           "x": 3585,
           "y": 462,
@@ -43448,7 +43875,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "1311533e-866f-503d-a088-3dab5e3c6c10",
+          "persistentUuid": "1f203704-e9b1-5279-a491-3db307e2fca7",
           "width": 49,
           "x": 3935,
           "y": 462,
@@ -43464,7 +43891,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "3231144d-2b3d-582b-a93c-651256995698",
+          "persistentUuid": "7b02649f-38c4-5632-a381-c4228a8cb4f2",
           "width": 49,
           "x": 13255,
           "y": 462,
@@ -43480,7 +43907,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "cristal",
-          "persistentUuid": "82dfd062-b990-584c-a7d4-b78eef34a7f4",
+          "persistentUuid": "e41b702e-17e9-59b8-a5d3-36b458ddafc0",
           "width": 49,
           "x": 13605,
           "y": 462,
@@ -43496,7 +43923,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "zonaEnemigo",
-          "persistentUuid": "9fe15400-dcff-5e20-aab6-c66264e461cf",
+          "persistentUuid": "305bb0bf-3033-579f-a626-8307fc54102a",
           "width": 800,
           "x": 700,
           "y": 498,
@@ -43512,7 +43939,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "zonaEnemigo",
-          "persistentUuid": "c092a4d8-7ee5-5b25-a2dc-c0ede1a60433",
+          "persistentUuid": "f650317f-075e-5925-ad74-791c882c8562",
           "width": 1000,
           "x": 4320,
           "y": 498,
@@ -43528,7 +43955,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "zonaSierra",
-          "persistentUuid": "94749197-05d1-5a49-a327-9e55edc442e1",
+          "persistentUuid": "4b0e46dc-915c-548b-aad3-a5ef1bdfadd7",
           "width": 700,
           "x": 6770,
           "y": 498,
@@ -43544,7 +43971,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "zonaEnemigo",
-          "persistentUuid": "928fe3f1-055d-5a50-ad7d-371374312425",
+          "persistentUuid": "5a379a33-4255-5c44-a8b9-e5a5d29f3988",
           "width": 1100,
           "x": 9420,
           "y": 498,
@@ -43560,7 +43987,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "zonaEnemigo",
-          "persistentUuid": "fc9ee12b-75ca-50a8-a5c0-3e0e8e61c4ca",
+          "persistentUuid": "3d4bbfb5-954f-5fb2-abf3-8071f5fb6f2c",
           "width": 1100,
           "x": 13990,
           "y": 498,
@@ -43576,7 +44003,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "zonaSierra",
-          "persistentUuid": "831f4f53-7844-5dde-adf5-9e4ffbba8a03",
+          "persistentUuid": "0db0670c-2454-5cbd-a1fe-62990c6a4ebf",
           "width": 700,
           "x": 17040,
           "y": 498,
@@ -43592,7 +44019,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "zonaEnemigo",
-          "persistentUuid": "cc2a633c-8e48-5aa3-aa34-21397d72a209",
+          "persistentUuid": "2d3d6ede-bb4b-56d1-a789-a126908f37ec",
           "width": 1100,
           "x": 17940,
           "y": 498,
@@ -43608,7 +44035,7 @@
           "keepRatio": true,
           "layer": "",
           "name": "zonaEnemigo",
-          "persistentUuid": "b56cabd3-d0cf-53a1-a4b1-a7b53652b6e8",
+          "persistentUuid": "6f7bdbae-249a-5907-a338-2fcda82fdd97",
           "width": 1200,
           "x": 22090,
           "y": 498,
@@ -43624,11 +44051,59 @@
           "keepRatio": true,
           "layer": "",
           "name": "puerta",
-          "persistentUuid": "b69d27b5-5d24-548d-a8b7-ca10427485f4",
+          "persistentUuid": "cf8ea3c5-dc3d-5f3e-a1f3-b18a8ee8d764",
           "width": 150,
-          "x": 24170,
+          "x": 25970,
           "y": 480,
           "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 265,
+          "keepRatio": true,
+          "layer": "",
+          "name": "maga",
+          "persistentUuid": "3eb33e2f-9e61-547d-a6c2-8a0e1f54cc74",
+          "width": 460,
+          "x": 25630,
+          "y": 638,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "HUD",
+          "name": "TextoMaga",
+          "persistentUuid": "ee583363-02ee-5003-a363-059783c52aae",
+          "width": 0,
+          "x": 820,
+          "y": 34,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 85,
+          "keepRatio": true,
+          "layer": "HUD",
+          "name": "barraMaga",
+          "persistentUuid": "914f3e0f-b42d-5028-ac29-9d97dbc07349",
+          "width": 300,
+          "x": 930,
+          "y": 5,
+          "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -49104,6 +49579,661 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "maga",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.3,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_12.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_13.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_14.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_13.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "cast",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.15,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "summon",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.15,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_6.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_7.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_8.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "hurt",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.2,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "hechizo",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "Vel",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/maga/hechizo.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "dragonSombra",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "Vel",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/maga/dragon.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "barraMaga",
+          "persistentUuid": "8fec87fe-8ffd-43b6-8d7e-155fbd1a8ada",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "NewSprite",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "NewSprite22",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 27
+                          },
+                          {
+                            "x": 62,
+                            "y": 27
+                          },
+                          {
+                            "x": 62,
+                            "y": 39
+                          },
+                          {
+                            "x": 0,
+                            "y": 39
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "TextoMaga",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "MAGA",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "b": 255,
+            "g": 180,
+            "r": 220
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "MAGA",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "220;180;255"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -49171,6 +50301,21 @@
           },
           {
             "objectName": "zonaSierra"
+          },
+          {
+            "objectName": "maga"
+          },
+          {
+            "objectName": "hechizo"
+          },
+          {
+            "objectName": "dragonSombra"
+          },
+          {
+            "objectName": "barraMaga"
+          },
+          {
+            "objectName": "TextoMaga"
           }
         ]
       },
@@ -49798,7 +50943,7 @@
                 "kaito",
                 "0",
                 "0",
-                "25600",
+                "26880",
                 "720",
                 "",
                 "",
@@ -53715,6 +54860,16 @@
                 "value": "NumberVariable"
               },
               "parameters": [
+                "MagaDerrotada",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
                 "PortalAbierto",
                 "=",
                 "0"
@@ -53843,9 +54998,88 @@
                 "value": "NumberVariable"
               },
               "parameters": [
+                "MagaDerrotada",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Aviso\"",
+                ">",
+                "1.6"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Aviso",
+                "Text",
+                "=",
+                "\"Derrotá a la Maga para abrir el portal\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "Aviso",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Aviso\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "kaito",
+                "puerta",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
                 "PortalAbierto",
                 "=",
                 "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Gemas",
+                "<",
+                "Variable(Requeridas)"
               ]
             },
             {
@@ -53888,6 +55122,1573 @@
               "parameters": [
                 "",
                 "\"Aviso\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "TextoMaga"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "barraMaga"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "maga",
+                "Animation",
+                "=",
+                "\"idle\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "kaito",
+                ">",
+                "23910"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "TextoMaga",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "barraMaga",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Aviso",
+                "Text",
+                "=",
+                "\"¡La Maga del Templo! Esquivá sus hechizos y atacala con F\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "Aviso",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Aviso\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                ">=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "barraMaga",
+                "Resizable",
+                "=",
+                "Variable(MagaVida) * 25"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                ">=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "maga",
+                ">",
+                "kaito.X()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlippableCapability::FlippableBehavior::FlipX"
+              },
+              "parameters": [
+                "maga",
+                "Flippable",
+                "yes"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                ">=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "maga",
+                "<=",
+                "kaito.X()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlippableCapability::FlippableBehavior::FlipX"
+              },
+              "parameters": [
+                "maga",
+                "Flippable",
+                "no"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaVida",
+                ">",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\"",
+                ">",
+                "1.6"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaAtaque",
+                "=",
+                "RandomInRange(1, 2)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaVida",
+                "<=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\"",
+                ">",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaAtaque",
+                "=",
+                "RandomInRange(1, 2)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaAtaque",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "maga",
+                "Animation",
+                "=",
+                "\"cast\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaAtaque",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "maga",
+                "Animation",
+                "=",
+                "\"summon\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaAtaque",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\"",
+                ">",
+                "0.55"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "hechizo",
+                "maga.X() - 32",
+                "544",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "hechizo",
+                "Resizable",
+                "=",
+                "64"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetHeight"
+              },
+              "parameters": [
+                "hechizo",
+                "Resizable",
+                "=",
+                "90"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "maga",
+                    ">",
+                    "kaito.X()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "hechizo",
+                    "Vel",
+                    "=",
+                    "-430"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "maga",
+                    "<=",
+                    "kaito.X()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "hechizo",
+                    "Vel",
+                    "=",
+                    "430"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaAtaque",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\"",
+                ">",
+                "0.55"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "dragonSombra",
+                "maga.X() - 24",
+                "353",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "dragonSombra",
+                "Resizable",
+                "=",
+                "48"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetHeight"
+              },
+              "parameters": [
+                "dragonSombra",
+                "Resizable",
+                "=",
+                "118"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "maga",
+                    ">",
+                    "kaito.X()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "dragonSombra",
+                    "Vel",
+                    "=",
+                    "-360"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "maga",
+                    "<=",
+                    "kaito.X()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "dragonSombra",
+                    "Vel",
+                    "=",
+                    "360"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaHerida",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "maga",
+                "Animation",
+                "=",
+                "\"idle\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "hechizo",
+                "+",
+                "hechizo.Variable(Vel) * TimeDelta()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "hechizo",
+                "Vel",
+                "<",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlippableCapability::FlippableBehavior::FlipX"
+              },
+              "parameters": [
+                "hechizo",
+                "Flippable",
+                "yes"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "hechizo",
+                "Vel",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlippableCapability::FlippableBehavior::FlipX"
+              },
+              "parameters": [
+                "hechizo",
+                "Flippable",
+                "no"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "hechizo",
+                "<",
+                "23590"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "hechizo",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "hechizo",
+                ">",
+                "26090"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "hechizo",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "dragonSombra",
+                "+",
+                "dragonSombra.Variable(Vel) * TimeDelta()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "dragonSombra",
+                "Vel",
+                "<",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlippableCapability::FlippableBehavior::FlipX"
+              },
+              "parameters": [
+                "dragonSombra",
+                "Flippable",
+                "no"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "dragonSombra",
+                "Vel",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlippableCapability::FlippableBehavior::FlipX"
+              },
+              "parameters": [
+                "dragonSombra",
+                "Flippable",
+                "yes"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "dragonSombra",
+                "<",
+                "23590"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "dragonSombra",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "dragonSombra",
+                ">",
+                "26090"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "dragonSombra",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                ">=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaDerrotada",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaHerida",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Atacando",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "maga",
+                "kaito",
+                "190",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "FlippableCapability::FlippableBehavior::FlippedX"
+              },
+              "parameters": [
+                "kaito",
+                "Flippable"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "maga",
+                ">=",
+                "kaito.X() - 10"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaVida",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaHerida",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"MagaGolpe\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "maga",
+                "Animation",
+                "=",
+                "\"hurt\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "maga",
+                "=",
+                "49680 - maga.X()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaLado",
+                "=",
+                "-Variable(MagaLado)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                ">=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaDerrotada",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaHerida",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Atacando",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "maga",
+                "kaito",
+                "190",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "FlippableCapability::FlippableBehavior::FlippedX"
+              },
+              "parameters": [
+                "kaito",
+                "Flippable"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "maga",
+                "<=",
+                "kaito.X() + 10"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaVida",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaHerida",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"MagaGolpe\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "maga",
+                "Animation",
+                "=",
+                "\"hurt\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "maga",
+                "=",
+                "49680 - maga.X()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaLado",
+                "=",
+                "-Variable(MagaLado)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaHerida",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "maga",
+                "Opacity",
+                "=",
+                "100 + 155 * mod(floor(TimerElapsedTime(\"MagaGolpe\") * 10), 2)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaHerida",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"MagaGolpe\"",
+                ">",
+                "0.8"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaHerida",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "maga",
+                "Opacity",
+                "=",
+                "255"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaVida",
+                "<=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaDerrotada",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaDerrotada",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "hechizo",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "dragonSombra",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "barraMaga"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "TextoMaga"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Aviso",
+                "Text",
+                "=",
+                "\"¡Derrotaste a la Maga!\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "Aviso",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Aviso\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "maga",
+                "Opacity",
+                "=",
+                "255 - TimerElapsedTime(\"Maga\") * 200"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\"",
+                ">",
+                "1.3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "maga",
+                ""
               ]
             }
           ]
