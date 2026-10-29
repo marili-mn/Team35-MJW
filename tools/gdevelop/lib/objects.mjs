@@ -124,7 +124,7 @@ export function declareObjectNumbers(object, names) {
 }
 
 // Creates a text object by copying another text object's style, then changing text/size/color.
-export function cloneTextObject(gd, project, objects, sourceName, newName, { text = "", size, color } = {}) {
+export function cloneTextObject(gd, project, objects, sourceName, newName, { text = "", size, color, align } = {}) {
   if (objects.hasObjectNamed(newName)) objects.removeObject(newName);
   const template = new gd.SerializerElement();
   objects.getObject(sourceName).serializeTo(template);
@@ -140,6 +140,10 @@ export function cloneTextObject(gd, project, objects, sourceName, newName, { tex
     content.getChild("characterSize").setIntValue(size);
   }
   if (color) content.getChild("color").setStringValue(color);
+  if (align) {
+    el.getChild("textAlignment").setStringValue(align);
+    content.getChild("textAlignment").setStringValue(align);
+  }
   obj.unserializeFrom(project, el);
   obj.setName(newName);
   return obj;
