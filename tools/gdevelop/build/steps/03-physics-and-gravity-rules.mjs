@@ -1,6 +1,6 @@
 // Step 03 — Physics, hitboxes and gravity rules, driven by the playtest (controls 3.43/5, 57% "slippery",
 // floaty jump, unfair spike collisions, flying out of the map with the gravity flip).
-import { makeEventHelpers, makeEventFinder, makeLayoutHelpers } from "../../lib/events.mjs";
+import { append, makeEventHelpers, makeEventFinder, makeLayoutHelpers } from "../../lib/events.mjs";
 import { setSpriteMask, useFullImageMask, setBehaviorProperties, cloneTextObject } from "../../lib/objects.mjs";
 
 // Measured in the browser (open area, frame by frame): stops in 8 px walking / 32 px running (was slippery);
@@ -47,9 +47,9 @@ export default function physicsAndGravityRules({ gd, project }) {
     I("SetY", ["detectodetecho", "=", `kaito.Y() - 60 - ${CEILING_RANGE}`]),
     I("ResizableCapability::ResizableBehavior::SetWidth", ["detectodetecho", "Resizable", "=", "40"]),
     I("ResizableCapability::ResizableBehavior::SetHeight", ["detectodetecho", "Resizable", "=", CEILING_RANGE]),
-  ]) detActions.push_back(a);
+  ]) append(detActions, a);
   const noCeiling = find((c) => c.length === 1 && c[0].inverted && c[0].type === "CollisionNP" && c[0].params[0] === "detectodetecho", "no-ceiling event");
-  noCeiling.event.getActions().push_back(setNum("puedeInvertir", "=", "0"));
+  append(noCeiling.event.getActions(), setNum("puedeInvertir", "=", "0"));
 
   // ---- 4. Energy: flipping up costs FLIP_COST, hanging drains it, it only recharges on the floor ----
   const oldCost = find((c) => c.some((x) => x.type === "KeyFromTextJustPressed" && x.params[1] === '"LAlt"') && c.some((x) => x.params[0] === "EnergiaGravedad"), "old flip cost");
@@ -57,7 +57,7 @@ export default function physicsAndGravityRules({ gd, project }) {
   const regen = find((c) => c.some((x) => x.type === "CompareTimer" && x.params[1] === '"RecuperacionEnergia"'), "energy regen");
   const regenTimer = regen.event.getConditions().get(0);
   regenTimer.setParameter(3, "0.5");
-  regen.event.getConditions().push_back(NOT("FlippedY", ["kaito"]));
+  append(regen.event.getConditions(), NOT("FlippedY", ["kaito"]));
 
   // ---- 5. Warning text (HUD) ----
   cloneTextObject(gd, project, objects, "TextoGemas", "Aviso", { text: "", size: 30, color: "255;214;102" });
@@ -80,8 +80,8 @@ export default function physicsAndGravityRules({ gd, project }) {
   // ---- 7. Rules that run after the extension ----
   const add = (e) => events.insertEvent(e, events.getEventsCount());
   add(ev([I("SceneJustBegins", [""])], [I("Cache", ["Aviso"]), I("Cache", ["detectodetecho"])]));
-  // Sub-events: the code generator evaluates object conditions last, so a "Trigger once" next to
-  // FlippedY would be consumed while Kaito is on the floor and never fire once he is up.
+  // Sub-events of "Kaito is up": the "Trigger once" is only evaluated while he hangs, so it fires once
+  // per flip (a "Trigger once" evaluated every frame would be consumed while he is on the floor).
   add(ev([I("FlippedY", ["kaito"])], [], [
     ev([I("BuiltinCommonInstructions::Once", [])], [setNum("EnergiaGravedad", "-", FLIP_COST), resetTimer("Drenaje")]),
     ev([timer("Drenaje", ">", "0.5")], [setNum("EnergiaGravedad", "-", "1"), resetTimer("Drenaje")]),

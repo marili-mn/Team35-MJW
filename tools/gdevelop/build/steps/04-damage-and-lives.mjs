@@ -2,7 +2,7 @@
 // tutorial impossible to finish). A hit costs a life where Kaito is: he bounces off the spikes and blinks,
 // invulnerable, for INVULNERABLE seconds; only falling out of the level respawns. Lives heal back one by
 // one after HEAL_EVERY seconds without damage, and the HUD hearts finally follow the lives.
-import { makeEventHelpers, makeEventFinder } from "../../lib/events.mjs";
+import { append, makeEventHelpers, makeEventFinder } from "../../lib/events.mjs";
 
 export const INVULNERABLE = 1.5;     // seconds without taking damage after a hit
 export const HEAL_EVERY = 4;         // seconds without damage to get one life back
@@ -30,8 +30,8 @@ export default function damageAndLives({ gd, project }) {
       const c = conds.get(i);
       if (c.getType() === "CompareTimer" && c.getParameter(1).getPlainString() === '"Golpe"') c.setParameter(3, String(INVULNERABLE));
     }
-    event.getActions().push_back(setNum("Invulnerable", "=", "1"));
-    event.getActions().push_back(resetTimer("Curacion"));
+    append(event.getActions(), setNum("Invulnerable", "=", "1"));
+    append(event.getActions(), resetTimer("Curacion"));
   }
 
   // Spikes: no more respawn, bounce away from them instead (up from the floor, down from the ceiling).
@@ -61,7 +61,10 @@ export default function damageAndLives({ gd, project }) {
     resetTimer("Aviso"),
   ]));
 
-  // HUD hearts: the ones beyond the current lives stay faded.
+  // HUD hearts: the ones beyond the current lives stay faded. The team's events hid a heart for good
+  // when a life was lost, so a healed life never showed up again: drop them.
+  const hideHeart = (c) => c.some((x) => x.type === "NumberObjectVariable" && x.params[0] === "vida");
+  for (const { index } of findAll(hideHeart, "heart hiding", 3).reverse()) events.removeEventAt(index);
   const heartsUpTo = `${HEART_X0} + ${HEART_STEP} * Variable(Vidas)`;
   add(ev([I("PosX", ["vida", "<", heartsUpTo])], [opacity("vida", "255")]));
   add(ev([I("PosX", ["vida", ">=", heartsUpTo])], [opacity("vida", "60")]));

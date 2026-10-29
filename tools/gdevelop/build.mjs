@@ -53,10 +53,12 @@ const output = projectToJSON(gd, project);
 
 // libGD gives new instances random UUIDs; derive them from scene/object/index instead so two
 // builds of the same steps produce byte-identical files (clean diffs, reproducible builds).
+// Scenes copied from another one keep its UUIDs: only the first use of a base UUID is kept.
 const baseUuids = new Set(baseJSON.layouts.flatMap((l) => l.instances.map((i) => i.persistentUuid)));
+const kept = new Set();
 for (const layout of output.layouts) {
   layout.instances.forEach((inst, index) => {
-    if (baseUuids.has(inst.persistentUuid)) return;
+    if (baseUuids.has(inst.persistentUuid) && !kept.has(inst.persistentUuid)) { kept.add(inst.persistentUuid); return; }
     const h = createHash("sha1").update(`${layout.name}|${index}|${inst.name}`).digest("hex");
     inst.persistentUuid = `${h.slice(0, 8)}-${h.slice(8, 12)}-5${h.slice(13, 16)}-a${h.slice(17, 20)}-${h.slice(20, 32)}`;
   });

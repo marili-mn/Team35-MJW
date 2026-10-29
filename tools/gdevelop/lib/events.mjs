@@ -1,5 +1,11 @@
 // Small builders for GDevelop events, instructions and scene instances (libGD objects).
 
+// Appends an instruction at the end of an instructions list. libGD's InstructionsList.push_back puts each
+// new instruction before the last one ([A, B, C] comes out as [B, C, A]), so never use it.
+export function append(list, instruction) {
+  list.insert(instruction, list.size());
+}
+
 export function makeEventHelpers(gd) {
   function I(type, params, inverted = false) {
     const instr = new gd.Instruction();
@@ -13,8 +19,8 @@ export function makeEventHelpers(gd) {
   function ev(conds, acts, subs = []) {
     const e = new gd.StandardEvent();
     e.setType("BuiltinCommonInstructions::Standard");
-    conds.forEach((c) => e.getConditions().push_back(c));
-    acts.forEach((a) => e.getActions().push_back(a));
+    conds.forEach((c) => append(e.getConditions(), c));
+    acts.forEach((a) => append(e.getActions(), a));
     subs.forEach((s) => e.getSubEvents().insertEvent(s, e.getSubEvents().getEventsCount()));
     return e;
   }
