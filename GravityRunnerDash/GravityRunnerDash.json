@@ -4791,6 +4791,21 @@
           "name": "Invulnerable",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "Temblor",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "HitStop",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "EnAire",
+          "type": "number",
+          "value": 0
         }
       ],
       "instances": [
@@ -9637,6 +9652,194 @@
             "lineHeight": 0,
             "color": "255;214;102"
           }
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 340,
+          "emitterForceMin": 160,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 24,
+          "name": "fxCristal",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 255,
+          "particleBlue2": 255,
+          "particleColor1": "190;110;255",
+          "particleColor2": "255;220;255",
+          "particleGravityX": 0,
+          "particleGravityY": 120,
+          "particleGreen1": 110,
+          "particleGreen2": 220,
+          "particleLifeTimeMax": 0.7,
+          "particleLifeTimeMin": 0.35,
+          "particleRed1": 190,
+          "particleRed2": 255,
+          "particleSize1": 100,
+          "particleSize2": 20,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 9,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 24,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 6,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 560,
+          "emitterForceMin": 260,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 28,
+          "name": "fxGolpe",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 110,
+          "particleBlue2": 20,
+          "particleColor1": "255;225;110",
+          "particleColor2": "255;70;20",
+          "particleGravityX": 0,
+          "particleGravityY": 900,
+          "particleGreen1": 225,
+          "particleGreen2": 70,
+          "particleLifeTimeMax": 0.5,
+          "particleLifeTimeMin": 0.25,
+          "particleRed1": 255,
+          "particleRed2": 255,
+          "particleSize1": 100,
+          "particleSize2": 20,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 9,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 28,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 6,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 380,
+          "emitterForceMin": 160,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 34,
+          "name": "fxMagia",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 255,
+          "particleBlue2": 100,
+          "particleColor1": "200;110;255",
+          "particleColor2": "60;0;100",
+          "particleGravityX": 0,
+          "particleGravityY": -80,
+          "particleGreen1": 110,
+          "particleGreen2": 0,
+          "particleLifeTimeMax": 0.8,
+          "particleLifeTimeMin": 0.4,
+          "particleRed1": 200,
+          "particleRed2": 60,
+          "particleSize1": 100,
+          "particleSize2": 20,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 11,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 34,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 6,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 150,
+          "emitterForceMax": 160,
+          "emitterForceMin": 60,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 14,
+          "name": "fxPolvo",
+          "particleAlpha1": 170,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 185,
+          "particleBlue2": 95,
+          "particleColor1": "215;200;185",
+          "particleColor2": "120;105;95",
+          "particleGravityX": 0,
+          "particleGravityY": 180,
+          "particleGreen1": 200,
+          "particleGreen2": 105,
+          "particleLifeTimeMax": 0.6,
+          "particleLifeTimeMin": 0.3,
+          "particleRed1": 215,
+          "particleRed2": 120,
+          "particleSize1": 100,
+          "particleSize2": 160,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 11,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 14,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 16,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
         }
       ],
       "objectsFolderStructure": {
@@ -9737,10 +9940,77 @@
           },
           {
             "objectName": "Aviso"
+          },
+          {
+            "objectName": "fxCristal"
+          },
+          {
+            "objectName": "fxGolpe"
+          },
+          {
+            "objectName": "fxMagia"
+          },
+          {
+            "objectName": "fxPolvo"
           }
         ]
       },
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "-",
+                "1"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "HitStop",
+                    "<=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeTimeScale"
+                  },
+                  "parameters": [
+                    "",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
@@ -10431,6 +10701,57 @@
           "conditions": [
             {
               "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "CameraX"
+              },
+              "parameters": [
+                "",
+                "+",
+                "RandomFloatInRange(-1, 1) * Variable(Temblor)",
+                "",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "CameraY"
+              },
+              "parameters": [
+                "",
+                "+",
+                "RandomFloatInRange(-1, 1) * Variable(Temblor) * 0.35",
+                "",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(0, Variable(Temblor) - 40 * TimeDelta())"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "CollisionNP"
               },
               "parameters": [
@@ -10453,6 +10774,28 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxCristal",
+                "cristal.BoundingBoxCenterX()",
+                "cristal.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxCristal",
+                "=",
+                "50"
+              ]
+            },
             {
               "type": {
                 "value": "SetNumberVariable"
@@ -10815,6 +11158,44 @@
                 "",
                 "\"Curacion\""
               ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;90;90"
+              ]
             }
           ],
           "events": [
@@ -10990,6 +11371,44 @@
               "parameters": [
                 "",
                 "\"Curacion\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;90;90"
               ]
             }
           ],
@@ -11179,6 +11598,44 @@
               "parameters": [
                 "",
                 "\"Curacion\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;90;90"
               ]
             }
           ],
@@ -12535,6 +12992,15 @@
                 "=",
                 "255"
               ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;255;255"
+              ]
             }
           ]
         },
@@ -12842,6 +13308,213 @@
                     }
                   ]
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EnAire",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EnAire",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Suelo\"",
+                    ">",
+                    "0.35"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "FlippedY"
+                  },
+                  "parameters": [
+                    "kaito"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "fxPolvo",
+                    "kaito.X()",
+                    "kaito.Y() + 58",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "270"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "50"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Suelo\"",
+                    ">",
+                    "0.35"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlippedY"
+                  },
+                  "parameters": [
+                    "kaito"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "fxPolvo",
+                    "kaito.X()",
+                    "kaito.Y() - 58",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "90"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "50"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Suelo\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EnAire",
+                "=",
+                "1"
               ]
             }
           ]
@@ -13202,6 +13875,21 @@
         },
         {
           "name": "PortalAbierto",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Temblor",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "HitStop",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "EnAire",
           "type": "number",
           "value": 0
         }
@@ -21085,6 +21773,194 @@
               ]
             }
           ]
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 340,
+          "emitterForceMin": 160,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 24,
+          "name": "fxCristal",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 255,
+          "particleBlue2": 255,
+          "particleColor1": "190;110;255",
+          "particleColor2": "255;220;255",
+          "particleGravityX": 0,
+          "particleGravityY": 120,
+          "particleGreen1": 110,
+          "particleGreen2": 220,
+          "particleLifeTimeMax": 0.7,
+          "particleLifeTimeMin": 0.35,
+          "particleRed1": 190,
+          "particleRed2": 255,
+          "particleSize1": 100,
+          "particleSize2": 20,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 9,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 24,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 6,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 560,
+          "emitterForceMin": 260,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 28,
+          "name": "fxGolpe",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 110,
+          "particleBlue2": 20,
+          "particleColor1": "255;225;110",
+          "particleColor2": "255;70;20",
+          "particleGravityX": 0,
+          "particleGravityY": 900,
+          "particleGreen1": 225,
+          "particleGreen2": 70,
+          "particleLifeTimeMax": 0.5,
+          "particleLifeTimeMin": 0.25,
+          "particleRed1": 255,
+          "particleRed2": 255,
+          "particleSize1": 100,
+          "particleSize2": 20,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 9,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 28,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 6,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 380,
+          "emitterForceMin": 160,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 34,
+          "name": "fxMagia",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 255,
+          "particleBlue2": 100,
+          "particleColor1": "200;110;255",
+          "particleColor2": "60;0;100",
+          "particleGravityX": 0,
+          "particleGravityY": -80,
+          "particleGreen1": 110,
+          "particleGreen2": 0,
+          "particleLifeTimeMax": 0.8,
+          "particleLifeTimeMin": 0.4,
+          "particleRed1": 200,
+          "particleRed2": 60,
+          "particleSize1": 100,
+          "particleSize2": 20,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 11,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 34,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 6,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 150,
+          "emitterForceMax": 160,
+          "emitterForceMin": 60,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 14,
+          "name": "fxPolvo",
+          "particleAlpha1": 170,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 185,
+          "particleBlue2": 95,
+          "particleColor1": "215;200;185",
+          "particleColor2": "120;105;95",
+          "particleGravityX": 0,
+          "particleGravityY": 180,
+          "particleGreen1": 200,
+          "particleGreen2": 105,
+          "particleLifeTimeMax": 0.6,
+          "particleLifeTimeMin": 0.3,
+          "particleRed1": 215,
+          "particleRed2": 120,
+          "particleSize1": 100,
+          "particleSize2": 160,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 11,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 14,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 16,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
         }
       ],
       "objectsFolderStructure": {
@@ -21155,10 +22031,77 @@
           },
           {
             "objectName": "zonaSierra"
+          },
+          {
+            "objectName": "fxCristal"
+          },
+          {
+            "objectName": "fxGolpe"
+          },
+          {
+            "objectName": "fxMagia"
+          },
+          {
+            "objectName": "fxPolvo"
           }
         ]
       },
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "-",
+                "1"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "HitStop",
+                    "<=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeTimeScale"
+                  },
+                  "parameters": [
+                    "",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
@@ -21849,6 +22792,57 @@
           "conditions": [
             {
               "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "CameraX"
+              },
+              "parameters": [
+                "",
+                "+",
+                "RandomFloatInRange(-1, 1) * Variable(Temblor)",
+                "",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "CameraY"
+              },
+              "parameters": [
+                "",
+                "+",
+                "RandomFloatInRange(-1, 1) * Variable(Temblor) * 0.35",
+                "",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(0, Variable(Temblor) - 40 * TimeDelta())"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "CollisionNP"
               },
               "parameters": [
@@ -21871,6 +22865,28 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxCristal",
+                "cristal.BoundingBoxCenterX()",
+                "cristal.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxCristal",
+                "=",
+                "50"
+              ]
+            },
             {
               "type": {
                 "value": "SetNumberVariable"
@@ -22012,6 +23028,57 @@
               },
               "parameters": [
                 "",
+                "fxGolpe",
+                "Enemigos.BoundingBoxCenterX()",
+                "Enemigos.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxGolpe",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 6)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
                 "cristaldorado",
                 "Enemigos.BoundingBoxCenterX() - 22",
                 "Enemigos.BoundingBoxBottom() - 70",
@@ -22133,6 +23200,57 @@
               },
               "parameters": [
                 "",
+                "fxGolpe",
+                "Enemigos.BoundingBoxCenterX()",
+                "Enemigos.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxGolpe",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 6)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
                 "cristaldorado",
                 "Enemigos.BoundingBoxCenterX() - 22",
                 "Enemigos.BoundingBoxBottom() - 70",
@@ -22248,6 +23366,57 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxGolpe",
+                "Enemigos.BoundingBoxCenterX()",
+                "Enemigos.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxGolpe",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 6)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
             {
               "type": {
                 "value": "Create"
@@ -22427,6 +23596,44 @@
                 "",
                 "\"Curacion\""
               ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;90;90"
+              ]
             }
           ],
           "events": [
@@ -22602,6 +23809,44 @@
               "parameters": [
                 "",
                 "\"Curacion\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;90;90"
               ]
             }
           ],
@@ -22791,6 +24036,44 @@
               "parameters": [
                 "",
                 "\"Curacion\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;90;90"
               ]
             }
           ],
@@ -24108,6 +25391,15 @@
                 "=",
                 "255"
               ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;255;255"
+              ]
             }
           ]
         },
@@ -25328,6 +26620,28 @@
           "actions": [
             {
               "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxCristal",
+                "cristaldorado.BoundingBoxCenterX()",
+                "cristaldorado.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxCristal",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
@@ -26178,6 +27492,213 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EnAire",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EnAire",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Suelo\"",
+                    ">",
+                    "0.35"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "FlippedY"
+                  },
+                  "parameters": [
+                    "kaito"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "fxPolvo",
+                    "kaito.X()",
+                    "kaito.Y() + 58",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "270"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "50"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Suelo\"",
+                    ">",
+                    "0.35"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlippedY"
+                  },
+                  "parameters": [
+                    "kaito"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "fxPolvo",
+                    "kaito.X()",
+                    "kaito.Y() - 58",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "90"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "50"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Suelo\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EnAire",
+                "=",
+                "1"
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -26535,6 +28056,21 @@
         },
         {
           "name": "PortalAbierto",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Temblor",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "HitStop",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "EnAire",
           "type": "number",
           "value": 0
         }
@@ -36170,6 +37706,194 @@
               ]
             }
           ]
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 340,
+          "emitterForceMin": 160,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 24,
+          "name": "fxCristal",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 255,
+          "particleBlue2": 255,
+          "particleColor1": "190;110;255",
+          "particleColor2": "255;220;255",
+          "particleGravityX": 0,
+          "particleGravityY": 120,
+          "particleGreen1": 110,
+          "particleGreen2": 220,
+          "particleLifeTimeMax": 0.7,
+          "particleLifeTimeMin": 0.35,
+          "particleRed1": 190,
+          "particleRed2": 255,
+          "particleSize1": 100,
+          "particleSize2": 20,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 9,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 24,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 6,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 560,
+          "emitterForceMin": 260,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 28,
+          "name": "fxGolpe",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 110,
+          "particleBlue2": 20,
+          "particleColor1": "255;225;110",
+          "particleColor2": "255;70;20",
+          "particleGravityX": 0,
+          "particleGravityY": 900,
+          "particleGreen1": 225,
+          "particleGreen2": 70,
+          "particleLifeTimeMax": 0.5,
+          "particleLifeTimeMin": 0.25,
+          "particleRed1": 255,
+          "particleRed2": 255,
+          "particleSize1": 100,
+          "particleSize2": 20,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 9,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 28,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 6,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 380,
+          "emitterForceMin": 160,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 34,
+          "name": "fxMagia",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 255,
+          "particleBlue2": 100,
+          "particleColor1": "200;110;255",
+          "particleColor2": "60;0;100",
+          "particleGravityX": 0,
+          "particleGravityY": -80,
+          "particleGreen1": 110,
+          "particleGreen2": 0,
+          "particleLifeTimeMax": 0.8,
+          "particleLifeTimeMin": 0.4,
+          "particleRed1": 200,
+          "particleRed2": 60,
+          "particleSize1": 100,
+          "particleSize2": 20,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 11,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 34,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 6,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 150,
+          "emitterForceMax": 160,
+          "emitterForceMin": 60,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 14,
+          "name": "fxPolvo",
+          "particleAlpha1": 170,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 185,
+          "particleBlue2": 95,
+          "particleColor1": "215;200;185",
+          "particleColor2": "120;105;95",
+          "particleGravityX": 0,
+          "particleGravityY": 180,
+          "particleGreen1": 200,
+          "particleGreen2": 105,
+          "particleLifeTimeMax": 0.6,
+          "particleLifeTimeMin": 0.3,
+          "particleRed1": 215,
+          "particleRed2": 120,
+          "particleSize1": 100,
+          "particleSize2": 160,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 11,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 14,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 16,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
         }
       ],
       "objectsFolderStructure": {
@@ -36237,10 +37961,77 @@
           },
           {
             "objectName": "zonaSierra"
+          },
+          {
+            "objectName": "fxCristal"
+          },
+          {
+            "objectName": "fxGolpe"
+          },
+          {
+            "objectName": "fxMagia"
+          },
+          {
+            "objectName": "fxPolvo"
           }
         ]
       },
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "-",
+                "1"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "HitStop",
+                    "<=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeTimeScale"
+                  },
+                  "parameters": [
+                    "",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
@@ -36931,6 +38722,57 @@
           "conditions": [
             {
               "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "CameraX"
+              },
+              "parameters": [
+                "",
+                "+",
+                "RandomFloatInRange(-1, 1) * Variable(Temblor)",
+                "",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "CameraY"
+              },
+              "parameters": [
+                "",
+                "+",
+                "RandomFloatInRange(-1, 1) * Variable(Temblor) * 0.35",
+                "",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(0, Variable(Temblor) - 40 * TimeDelta())"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "CollisionNP"
               },
               "parameters": [
@@ -36953,6 +38795,28 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxCristal",
+                "cristal.BoundingBoxCenterX()",
+                "cristal.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxCristal",
+                "=",
+                "50"
+              ]
+            },
             {
               "type": {
                 "value": "SetNumberVariable"
@@ -37094,6 +38958,57 @@
               },
               "parameters": [
                 "",
+                "fxGolpe",
+                "Enemigos.BoundingBoxCenterX()",
+                "Enemigos.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxGolpe",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 6)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
                 "cristaldorado",
                 "Enemigos.BoundingBoxCenterX() - 22",
                 "Enemigos.BoundingBoxBottom() - 70",
@@ -37215,6 +39130,57 @@
               },
               "parameters": [
                 "",
+                "fxGolpe",
+                "Enemigos.BoundingBoxCenterX()",
+                "Enemigos.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxGolpe",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 6)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
                 "cristaldorado",
                 "Enemigos.BoundingBoxCenterX() - 22",
                 "Enemigos.BoundingBoxBottom() - 70",
@@ -37330,6 +39296,57 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxGolpe",
+                "Enemigos.BoundingBoxCenterX()",
+                "Enemigos.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxGolpe",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 6)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
             {
               "type": {
                 "value": "Create"
@@ -37509,6 +39526,44 @@
                 "",
                 "\"Curacion\""
               ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;90;90"
+              ]
             }
           ],
           "events": [
@@ -37684,6 +39739,44 @@
               "parameters": [
                 "",
                 "\"Curacion\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;90;90"
               ]
             }
           ],
@@ -37873,6 +39966,44 @@
               "parameters": [
                 "",
                 "\"Curacion\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;90;90"
               ]
             }
           ],
@@ -39190,6 +41321,15 @@
                 "=",
                 "255"
               ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;255;255"
+              ]
             }
           ]
         },
@@ -40410,6 +42550,28 @@
           "actions": [
             {
               "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxCristal",
+                "cristaldorado.BoundingBoxCenterX()",
+                "cristaldorado.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxCristal",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
@@ -41448,6 +43610,213 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EnAire",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EnAire",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Suelo\"",
+                    ">",
+                    "0.35"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "FlippedY"
+                  },
+                  "parameters": [
+                    "kaito"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "fxPolvo",
+                    "kaito.X()",
+                    "kaito.Y() + 58",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "270"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "50"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Suelo\"",
+                    ">",
+                    "0.35"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlippedY"
+                  },
+                  "parameters": [
+                    "kaito"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "fxPolvo",
+                    "kaito.X()",
+                    "kaito.Y() - 58",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "90"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "50"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Suelo\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EnAire",
+                "=",
+                "1"
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -41876,6 +44245,21 @@
           "name": "MagaMax",
           "type": "number",
           "value": 26680
+        },
+        {
+          "name": "Temblor",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "HitStop",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "EnAire",
+          "type": "number",
+          "value": 0
         }
       ],
       "instances": [
@@ -51818,6 +54202,194 @@
             "lineHeight": 0,
             "color": "220;180;255"
           }
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 340,
+          "emitterForceMin": 160,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 24,
+          "name": "fxCristal",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 255,
+          "particleBlue2": 255,
+          "particleColor1": "190;110;255",
+          "particleColor2": "255;220;255",
+          "particleGravityX": 0,
+          "particleGravityY": 120,
+          "particleGreen1": 110,
+          "particleGreen2": 220,
+          "particleLifeTimeMax": 0.7,
+          "particleLifeTimeMin": 0.35,
+          "particleRed1": 190,
+          "particleRed2": 255,
+          "particleSize1": 100,
+          "particleSize2": 20,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 9,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 24,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 6,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 560,
+          "emitterForceMin": 260,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 28,
+          "name": "fxGolpe",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 110,
+          "particleBlue2": 20,
+          "particleColor1": "255;225;110",
+          "particleColor2": "255;70;20",
+          "particleGravityX": 0,
+          "particleGravityY": 900,
+          "particleGreen1": 225,
+          "particleGreen2": 70,
+          "particleLifeTimeMax": 0.5,
+          "particleLifeTimeMin": 0.25,
+          "particleRed1": 255,
+          "particleRed2": 255,
+          "particleSize1": 100,
+          "particleSize2": 20,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 9,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 28,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 6,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 380,
+          "emitterForceMin": 160,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 34,
+          "name": "fxMagia",
+          "particleAlpha1": 255,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 255,
+          "particleBlue2": 100,
+          "particleColor1": "200;110;255",
+          "particleColor2": "60;0;100",
+          "particleGravityX": 0,
+          "particleGravityY": -80,
+          "particleGreen1": 110,
+          "particleGreen2": 0,
+          "particleLifeTimeMax": 0.8,
+          "particleLifeTimeMin": 0.4,
+          "particleRed1": 200,
+          "particleRed2": 60,
+          "particleSize1": 100,
+          "particleSize2": 20,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 11,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 34,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 6,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "additive": true,
+          "assetStoreId": "",
+          "destroyWhenNoParticles": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 150,
+          "emitterForceMax": 160,
+          "emitterForceMin": 60,
+          "flow": 1000,
+          "jumpForwardInTimeOnCreation": 0,
+          "maxParticleNb": 14,
+          "name": "fxPolvo",
+          "particleAlpha1": 170,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 0,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 185,
+          "particleBlue2": 95,
+          "particleColor1": "215;200;185",
+          "particleColor2": "120;105;95",
+          "particleGravityX": 0,
+          "particleGravityY": 180,
+          "particleGreen1": 200,
+          "particleGreen2": 105,
+          "particleLifeTimeMax": 0.6,
+          "particleLifeTimeMin": 0.3,
+          "particleRed1": 215,
+          "particleRed2": 120,
+          "particleSize1": 100,
+          "particleSize2": 160,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "rendererParam1": 11,
+          "rendererParam2": 1,
+          "rendererType": "Point",
+          "tank": 14,
+          "textureParticleName": "",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 16,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
         }
       ],
       "objectsFolderStructure": {
@@ -51900,10 +54472,77 @@
           },
           {
             "objectName": "TextoMaga"
+          },
+          {
+            "objectName": "fxCristal"
+          },
+          {
+            "objectName": "fxGolpe"
+          },
+          {
+            "objectName": "fxMagia"
+          },
+          {
+            "objectName": "fxPolvo"
           }
         ]
       },
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "-",
+                "1"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "HitStop",
+                    "<=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeTimeScale"
+                  },
+                  "parameters": [
+                    "",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
@@ -52594,6 +55233,57 @@
           "conditions": [
             {
               "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "CameraX"
+              },
+              "parameters": [
+                "",
+                "+",
+                "RandomFloatInRange(-1, 1) * Variable(Temblor)",
+                "",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "CameraY"
+              },
+              "parameters": [
+                "",
+                "+",
+                "RandomFloatInRange(-1, 1) * Variable(Temblor) * 0.35",
+                "",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(0, Variable(Temblor) - 40 * TimeDelta())"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "CollisionNP"
               },
               "parameters": [
@@ -52616,6 +55306,28 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxCristal",
+                "cristal.BoundingBoxCenterX()",
+                "cristal.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxCristal",
+                "=",
+                "50"
+              ]
+            },
             {
               "type": {
                 "value": "SetNumberVariable"
@@ -52757,6 +55469,57 @@
               },
               "parameters": [
                 "",
+                "fxGolpe",
+                "Enemigos.BoundingBoxCenterX()",
+                "Enemigos.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxGolpe",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 6)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
                 "cristaldorado",
                 "Enemigos.BoundingBoxCenterX() - 22",
                 "Enemigos.BoundingBoxBottom() - 70",
@@ -52878,6 +55641,57 @@
               },
               "parameters": [
                 "",
+                "fxGolpe",
+                "Enemigos.BoundingBoxCenterX()",
+                "Enemigos.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxGolpe",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 6)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
                 "cristaldorado",
                 "Enemigos.BoundingBoxCenterX() - 22",
                 "Enemigos.BoundingBoxBottom() - 70",
@@ -52993,6 +55807,57 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxGolpe",
+                "Enemigos.BoundingBoxCenterX()",
+                "Enemigos.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxGolpe",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 6)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
             {
               "type": {
                 "value": "Create"
@@ -53172,6 +56037,44 @@
                 "",
                 "\"Curacion\""
               ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;90;90"
+              ]
             }
           ],
           "events": [
@@ -53347,6 +56250,44 @@
               "parameters": [
                 "",
                 "\"Curacion\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;90;90"
               ]
             }
           ],
@@ -53536,6 +56477,44 @@
               "parameters": [
                 "",
                 "\"Curacion\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 11)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;90;90"
               ]
             }
           ],
@@ -54853,6 +57832,15 @@
                 "=",
                 "255"
               ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "kaito",
+                "255;255;255"
+              ]
             }
           ]
         },
@@ -56071,6 +59059,28 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxCristal",
+                "cristaldorado.BoundingBoxCenterX()",
+                "cristaldorado.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxCristal",
+                "=",
+                "50"
+              ]
+            },
             {
               "type": {
                 "value": "SetNumberVariable"
@@ -58620,6 +61630,16 @@
                 "",
                 "\"Maga\""
               ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 3)"
+              ]
             }
           ],
           "events": [
@@ -59401,6 +62421,57 @@
           "actions": [
             {
               "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxMagia",
+                "maga.X()",
+                "maga.Y() - 70",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxMagia",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 8)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
@@ -59476,6 +62547,37 @@
               "parameters": [
                 "",
                 "\"Maga\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxMagia",
+                "maga.X()",
+                "maga.Y() - 70",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxMagia",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "maga",
+                "255;130;130"
               ]
             }
           ],
@@ -59598,6 +62700,57 @@
           "actions": [
             {
               "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxMagia",
+                "maga.X()",
+                "maga.Y() - 70",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxMagia",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 8)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
@@ -59673,6 +62826,37 @@
               "parameters": [
                 "",
                 "\"Maga\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxMagia",
+                "maga.X()",
+                "maga.Y() - 70",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxMagia",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "maga",
+                "255;130;130"
               ]
             }
           ],
@@ -59781,6 +62965,15 @@
                 "Opacity",
                 "=",
                 "255"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "maga",
+                "255;255;255"
               ]
             }
           ]
@@ -59909,6 +63102,57 @@
               "parameters": [
                 "",
                 "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fxMagia",
+                "maga.X()",
+                "maga.Y() - 70",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "fxMagia",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temblor",
+                "=",
+                "max(Variable(Temblor), 16)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HitStop",
+                "=",
+                "10"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0.08"
               ]
             }
           ],
@@ -60150,6 +63394,213 @@
                     }
                   ]
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EnAire",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EnAire",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Suelo\"",
+                    ">",
+                    "0.35"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "FlippedY"
+                  },
+                  "parameters": [
+                    "kaito"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "fxPolvo",
+                    "kaito.X()",
+                    "kaito.Y() + 58",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "270"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "50"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Suelo\"",
+                    ">",
+                    "0.35"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlippedY"
+                  },
+                  "parameters": [
+                    "kaito"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "fxPolvo",
+                    "kaito.X()",
+                    "kaito.Y() - 58",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "90"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "fxPolvo",
+                    "=",
+                    "50"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Suelo\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "PlatformBehavior::IsOnFloor"
+              },
+              "parameters": [
+                "kaito",
+                "PlatformerObject"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EnAire",
+                "=",
+                "1"
               ]
             }
           ]
