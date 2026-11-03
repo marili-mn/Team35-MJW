@@ -10,7 +10,8 @@
 
 <nav class="versionTabs" role="tablist" aria-label="Versión del documento">
   <button type="button" role="tab" data-target="v1" aria-controls="v1">v1 · GDD</button>
-  <button type="button" role="tab" data-target="v2" aria-controls="v2">v2 · Pre-Alfa <span class="tabNew">NUEVO</span></button>
+  <button type="button" role="tab" data-target="v2" aria-controls="v2">v2 · Pre-Alfa</button>
+  <button type="button" role="tab" data-target="v3" aria-controls="v3">v3 · Prototipo <span class="tabNew">NUEVO</span></button>
   <a class="tabPlay" href="https://marilidev.itch.io/gravity-runner-dash" target="_blank" rel="noopener">▶ Jugar en itch.io</a>
 </nav>
 
@@ -719,6 +720,338 @@
   </div>
 
   <div class="footer"><span>Gravity Runner: Dash · v2 Pre-Alfa</span><span>3 · Pruebas</span></div>
+</section>
+
+</main>
+
+<main id="v3" class="version" role="tabpanel" hidden>
+
+<!-- ================= V3 · PORTADA ================= -->
+<section class="page cover">
+  <div class="title">
+    <div class="kanji">影の道</div>
+    <h1 style="margin-top:6mm">Gravity Runner: Dash</h1>
+    <div class="sub">PROTOTIPO JUGABLE · TRES NIVELES Y JEFA FINAL</div>
+    <div style="margin-top:6mm"><span class="stamp">BUILD · v3.0</span></div>
+  </div>
+
+  <div class="art heroDuo">
+    <figure>
+      <img class="kaitoAnim kaitoHero" data-src="GravityRunnerDash/assets/kaito/run" data-frames="8" data-ms="70"
+           src="GravityRunnerDash/assets/kaito/run_0.png" alt="Kaito corriendo">
+      <figcaption>Kaito</figcaption>
+    </figure>
+    <figure>
+      <img class="kaitoAnim kaitoHero" data-src="GravityRunnerDash/assets/kaito/flip" data-frames="4" data-ms="90"
+           src="GravityRunnerDash/assets/kaito/flip_0.png" alt="Kaito invirtiendo la gravedad">
+      <figcaption>Invirtiendo la gravedad</figcaption>
+    </figure>
+    <figure>
+      <img class="kaitoHero" src="GravityRunnerDash/assets/maga/maga_0.png" alt="La Maga Oscura">
+      <figcaption>La Maga Oscura</figcaption>
+    </figure>
+  </div>
+
+  <div class="liveBox">
+    <h4 style="margin:0 0 2mm">Qué cambió desde la Pre-Alfa</h4>
+    <p style="margin:0;font-size:10pt;color:var(--muted)">
+      El tutorial creció hasta un juego completo: <b>tres niveles</b> procedurales que escalan en dificultad,
+      la <b>Maga Oscura</b> como jefa final, espectros, un <b>nivel oculto de supervivencia</b>, selector de
+      niveles con récords y una <b>banda sonora original</b>. Esta pestaña cuenta cómo está hoy y, al final,
+      cómo lo desarrollamos.
+    </p>
+    <div style="margin-top:3mm"><a href="https://marilidev.itch.io/gravity-runner-dash" class="liveLink" target="_blank" rel="noopener">https://marilidev.itch.io/gravity-runner-dash</a></div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin:0 0 2mm">Grupo 35 — Multimedia y Juegos en Web · UNER</h3>
+    <div class="team">
+      <div>Nahuel Marcilli <small>· diseño, sprites, GDD</small></div>
+      <div>Jorgelina Elizabeth Mendieta <small>· arte, paleta</small></div>
+      <div>Taoufik Saidi <small>· narrativa, mecánicas</small></div>
+      <div>Delcy Adalis Villalba Olmedo <small>· audio, testing</small></div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash · v3 Prototipo</span><span>Portada</span></div>
+</section>
+
+<!-- ================= V3 · ESTADO ================= -->
+<section class="page">
+  <h2>1 · Estado actual del proyecto</h2>
+  <div class="kpis">
+    <div><b>11</b><span>escenas</span></div>
+    <div><b>3 + 1</b><span>niveles y uno oculto</span></div>
+    <div><b>97</b><span>recorridos posibles</span></div>
+    <div><b>7</b><span>enemigos y una jefa</span></div>
+    <div><b>26</b><span>pistas de audio</span></div>
+    <div><b>32</b><span>tests automáticos</span></div>
+  </div>
+  <p>Todo el recorrido se puede jugar de punta a punta: menú, tutorial, tres niveles, la pelea con la Maga
+  Oscura, la victoria con créditos y, después, el modo supervivencia. Cada sistema de la Pre-Alfa quedó
+  terminado y se sumaron los que faltaban.</p>
+
+  <table>
+    <tr><th>Sistema</th><th>Estado</th><th>Detalle</th></tr>
+    <tr><td><b>Menú y opciones</b></td><td><span class="st st-ok">Listo</span></td><td>Jugar, Continuar (último nivel alcanzado), Elegir nivel, sonido y música.</td></tr>
+    <tr><td><b>Tutorial</b></td><td><span class="st st-ok">Listo</span></td><td>6400 px con pistas justo antes de cada obstáculo.</td></tr>
+    <tr><td><b>Niveles 1, 2 y 3</b></td><td><span class="st st-ok">Listo</span></td><td>16 640, 21 760 y 25 600 px de largo por 1080 de alto, en tres pisos. Tramos que se sortean en cada intento.</td></tr>
+    <tr><td><b>Gravedad invertida</b></td><td><span class="st st-ok">Listo</span></td><td>Gasta energía (cada nivel más cara) y se recarga con cristales. Hay una espera breve entre giros.</td></tr>
+    <tr><td><b>Combate</b></td><td><span class="st st-ok">Listo</span></td><td>Katana con F; corriendo, ataque <i>dash</i> con estela. Los shurikens de los ninjas y los hechizos de la maga se reflejan.</td></tr>
+    <tr><td><b>Enemigos</b></td><td><span class="st st-ok">Listo</span></td><td>Siete tipos: ninjas azul, verde, rojo y sombra, guardia, sierras y espectros. Los ninjas saltan, embisten y tiran shurikens, y también montan guardia arriba. Desde el Nivel 2 aparecen todos.</td></tr>
+    <tr><td><b>Maga Oscura</b></td><td><span class="st st-ok">Listo</span></td><td>Jefa final: persigue a Kaito por todo el Nivel 3, tiene 16 vidas y se enfurece al perderlas.</td></tr>
+    <tr><td><b>Cristales y portal</b></td><td><span class="st st-ok">Listo</span></td><td>El portal pide el 45, 50 y 55 % de los cristales. Un golpe hace caer hasta 3, que se pueden recuperar.</td></tr>
+    <tr><td><b>Resultados</b></td><td><span class="st st-ok">Listo</span></td><td>Reloj, rango S/A/B/C, shurikens dorados y mejor tiempo guardado.</td></tr>
+    <tr><td><b>Selector de niveles</b></td><td><span class="st st-ok">Listo</span></td><td>Niveles bloqueados hasta descubrirlos, récords, rangos y reinicio del progreso.</td></tr>
+    <tr><td><b>Supervivencia</b></td><td><span class="st st-ok">Listo</span></td><td>Nivel oculto que se abre al ganar: oleadas sin fin hasta que Kaito cae.</td></tr>
+    <tr><td><b>Sonido</b></td><td><span class="st st-ok">Listo</span></td><td>Cinco temas originales y 19 efectos con instrumentos japoneses modelados.</td></tr>
+    <tr><td><b>Pausa y sensación</b></td><td><span class="st st-ok">Listo</span></td><td>Pausa (P/Esc), sacudida, pausa de impacto, <i>coyote time</i> y <i>jump buffer</i>.</td></tr>
+    <tr><td><b>Pendiente</b></td><td><span class="st st-wip">Próximo</span></td><td>Logo de la UNER en los créditos, mando y controles táctiles, modo asistido, playtest con personas.</td></tr>
+  </table>
+
+  <div class="footer"><span>Gravity Runner: Dash · v3 Prototipo</span><span>1 · Estado</span></div>
+</section>
+
+<!-- ================= V3 · CÓMO SE JUEGA ================= -->
+<section class="page">
+  <h2>2 · Cómo se juega</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Controles</h3>
+      <div class="field"><b><span class="mono">← →</span></b><span>Caminar (doble toque y mantener: correr)</span></div>
+      <div class="field"><b><span class="mono">ESPACIO</span></b><span>Saltar</span></div>
+      <div class="field"><b><span class="mono">ALT</span></b><span>Invertir la gravedad y volver</span></div>
+      <div class="field"><b><span class="mono">F</span></b><span>Katana; corriendo, ataque <i>dash</i></span></div>
+      <div class="field"><b><span class="mono">P</span> / <span class="mono">ESC</span></b><span>Pausa (<span class="mono">M</span>: menú)</span></div>
+      <div class="field"><b><span class="mono">N</span></b><span>Elegir nivel desde el menú</span></div>
+    </div>
+    <div class="card">
+      <h3>El bucle de juego</h3>
+      <p style="font-size:10.5pt">Correr, esquivar y pelear mientras se juntan cristales. Invertir la gravedad
+      permite cruzar filas de pinchos por el techo, pero <b>cuesta energía</b>. Los cristales la recargan y
+      abren el portal. Un golpe hace caer cristales que hay que recuperar rápido. Al final, el rango premia
+      juntar más, recibir menos golpes y encontrar los shurikens dorados.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:6mm">Tres pisos</h3>
+  <div class="grid g3" style="gap:5mm">
+    <div class="card"><h4>Piso</h4><p style="font-size:10pt;margin:0">Pinchos para saltar, fosos con plataformas y los enemigos del camino.</p></div>
+    <div class="card"><h4>Losas</h4><p style="font-size:10pt;margin:0">Techos bajos con superficie propia: se cruzan invertido sobre las filas de pinchos.</p></div>
+    <div class="card"><h4>Techos altos</h4><p style="font-size:10pt;margin:0">A 600 px. Cristales extra y shurikens dorados para quien explora.</p></div>
+  </div>
+
+  <div class="gallery two" style="margin-top:5mm">
+    <figure><img src="assets/landing/v3/nivel1-flip.jpg" alt="Kaito invertido bajo las losas, sobre una fila de pinchos"><figcaption><b>Nivel 1</b> · cruzar por el techo, con los cristales del piso alto arriba</figcaption></figure>
+    <figure><img src="assets/landing/v3/nivel1-drop.jpg" alt="Kaito pierde cristales al recibir un golpe"><figcaption><b>Nivel 1</b> · un golpe hace caer cristales: hay unos segundos para juntarlos</figcaption></figure>
+  </div>
+
+  <h3 style="margin-top:5mm">Movimientos nuevos de Kaito</h3>
+  <div class="animGrid">
+    <figure><img class="kaitoAnim" data-src="GravityRunnerDash/assets/kaito/jump" data-frames="8" data-ms="100" src="GravityRunnerDash/assets/kaito/jump_0.png" alt="Salto"><figcaption><b>Salto</b> · agacharse, impulso y recogerse</figcaption></figure>
+    <figure><img class="kaitoAnim" data-src="GravityRunnerDash/assets/kaito/flip" data-frames="4" data-ms="90" src="GravityRunnerDash/assets/kaito/flip_0.png" alt="Giro de gravedad"><figcaption><b>Giro</b> · con aura violeta</figcaption></figure>
+    <figure><img class="kaitoAnim" data-src="GravityRunnerDash/assets/kaito/attack" data-frames="10" data-ms="60" src="GravityRunnerDash/assets/kaito/attack_0.png" alt="Ataque dash"><figcaption><b>Dash</b> · el ataque al correr</figcaption></figure>
+    <figure><img class="kaitoAnim" data-src="GravityRunnerDash/assets/fantasma/fantasma" data-frames="6" data-ms="120" src="GravityRunnerDash/assets/fantasma/fantasma_0.png" alt="Espectro"><figcaption><b>Espectro</b> · energía oscura</figcaption></figure>
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash · v3 Prototipo</span><span>2 · Cómo se juega</span></div>
+</section>
+
+<!-- ================= V3 · NIVELES ================= -->
+<section class="page">
+  <h2>3 · Niveles procedurales y dificultad</h2>
+  <p>Cada nivel es una <b>secuencia de tramos</b> (saltos, fosos, losas, torres, zonas de enemigos) que se arma
+  a partir de un perfil de dificultad y una semilla. Algunos tramos tienen dos o tres alternativas en el
+  mismo lugar, y <b>en cada intento se sortea una</b>: el Nivel 3 tiene 81 recorridos distintos. Los perfiles
+  crecen de nivel en nivel: filas de pinchos y fosos más largos, más enemigos y más rápidos, y gravedad más cara.</p>
+
+  <table>
+    <tr><th>Nivel</th><th>Largo</th><th>Recorridos</th><th>Costo de girar</th><th>Portal</th><th>Música</th></tr>
+    <tr><td><b>Nivel 1</b></td><td>16 640 px</td><td>8</td><td>28</td><td>45 % de los cristales</td><td>Re · 124 BPM</td></tr>
+    <tr><td><b>Nivel 2</b></td><td>21 760 px</td><td>8</td><td>32</td><td>50 %</td><td>La · 132 BPM, campanas de cristal</td></tr>
+    <tr><td><b>Nivel 3</b></td><td>25 600 px</td><td>81</td><td>36</td><td>55 % y vencer a la Maga</td><td>Mi · 116 BPM, odaiko y coro</td></tr>
+    <tr><td><b>Supervivencia</b></td><td>7 680 px</td><td>oleadas</td><td>32</td><td>sin portal</td><td>tema de la jefa · 148 BPM</td></tr>
+  </table>
+
+  <div class="gallery two" style="margin-top:5mm">
+    <figure><img src="assets/landing/v3/nivel2-flip.jpg" alt="Nivel 2: losas de cristal"><figcaption><b>Nivel 2</b> · losas de cristal, más largo y más rápido</figcaption></figure>
+    <figure><img src="assets/landing/v3/nivel3-spell.jpg" alt="Nivel 3: la Maga Oscura lanza un hechizo"><figcaption><b>Nivel 3</b> · el templo, con la Maga Oscura detrás</figcaption></figure>
+  </div>
+
+  <h3 style="margin-top:5mm">Enemigos</h3>
+  <p style="font-size:10pt">Siete tipos, que se sortean en cada reinicio. Los ninjas usan todos los cuadros de sus hojas
+  (reposo, caminar, correr, atacar), <b>saltan, embisten y tiran shurikens</b> desde lejos, y también montan
+  guardia sobre las losas y las torres. Un shuriken que encuentra la katana vuelve dorado y derriba al enemigo que toque.</p>
+  <div class="animGrid enemies">
+    <figure><img src="GravityRunnerDash/assets/NewSprite88.png" alt="Ninja azul"><figcaption><b>Ninja azul</b> · patrulla y embiste</figcaption></figure>
+    <figure><img src="GravityRunnerDash/assets/NewSprite126.png" alt="Ninja verde"><figcaption><b>Ninja verde</b> · el que más salta</figcaption></figure>
+    <figure><img src="GravityRunnerDash/assets/NewSprite24.png" alt="Ninja rojo"><figcaption><b>Ninja rojo</b> · shurikens de a dos</figcaption></figure>
+    <figure><img class="kaitoAnim" data-src="GravityRunnerDash/assets/sombra/attack" data-frames="10" data-ms="70" src="GravityRunnerDash/assets/sombra/attack_0.png" alt="Ninja sombra"><figcaption><b>Ninja sombra</b> · aparece detrás de Kaito</figcaption></figure>
+  </div>
+  <div class="grid g3" style="gap:5mm;margin-top:4mm">
+    <div class="card"><h4>Espectros</h4><p style="font-size:10pt;margin:0">Encapuchados de energía oscura que flotan hacia Kaito y atraviesan el escenario.</p></div>
+    <div class="card"><h4>Guardia</h4><p style="font-size:10pt;margin:0">Grande y quieto, cierra el paso: hay que derribarlo o saltarle encima.</p></div>
+    <div class="card"><h4>Sierras</h4><p style="font-size:10pt;margin:0">Giran a ras del piso: hay que saltarlas o pasar por arriba.</p></div>
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash · v3 Prototipo</span><span>3 · Niveles</span></div>
+</section>
+
+<!-- ================= V3 · LA MAGA OSCURA Y LOS MODOS ================= -->
+<section class="page">
+  <h2>4 · La Maga Oscura y los modos de juego</h2>
+  <div class="assetShowcase" style="margin-bottom:4mm">
+    <div class="box"><img src="GravityRunnerDash/assets/maga/maga_0.png" width="150" alt="La Maga Oscura"></div>
+    <div>
+      <p style="margin-top:0">Aparece apenas empieza el Nivel 3 y <b>persigue a Kaito por todo el mapa</b>. En el templo
+      final pelea a fondo. Tiene 16 vidas y <b>se vuelve más agresiva a medida que las pierde</b>: planea y ataca
+      más rápido, carga menos y sus hechizos vuelan más.</p>
+      <ul class="tight">
+        <li><b>Ráfaga</b> a ras del piso; en el templo, desde la mitad de su vida, de a dos.</li>
+        <li><b>Dragón de sombra</b>, que vuela al techo y castiga a quien huye invertido.</li>
+        <li><b>Embestida</b> en línea recta: hay que saltarla.</li>
+        <li><b>Invoca espectros</b> desde los dos tercios de su vida (hasta tres a la vez).</li>
+        <li><b>Sus hechizos se reflejan</b> con la katana: vuelven dorados, más rápidos, y la lastiman.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="gallery big" style="margin-bottom:4mm">
+    <figure><img src="assets/landing/v3/arena-reflect.jpg" alt="Kaito refleja un hechizo de la Maga Oscura en el templo"><figcaption><b>El templo</b> · un hechizo de la Maga Oscura vuelve dorado contra ella</figcaption></figure>
+  </div>
+
+  <div class="grid g2" style="gap:6mm">
+    <div class="card">
+      <h3>Selector de niveles</h3>
+      <p style="font-size:10pt;margin:0 0 2mm">Se abre con el botón <b>ELEGIR NIVEL</b> o la tecla N. Los niveles que
+      no se descubrieron aparecen como <b>«????»</b>. Cada uno muestra su récord y su mejor rango, y
+      <b>Reiniciar progreso</b> pide confirmación antes de borrar todo.</p>
+      <img src="assets/landing/v3/niveles.jpg" alt="Selector de niveles" style="width:100%;border-radius:4px;border:1px solid var(--line)">
+    </div>
+    <div class="card">
+      <h3>Supervivencia</h3>
+      <p style="font-size:10pt;margin:0 0 2mm">El nivel oculto se abre al vencer a la Maga. Los enemigos llegan en
+      <b>oleadas de 30 segundos</b>: primero ninjas azules, después verdes, espectros, guardias y sierras,
+      cada vez más seguido y más rápido. Termina cuando Kaito cae y guarda el récord.</p>
+      <img src="assets/landing/v3/supervivencia-t20.jpg" alt="Modo supervivencia" style="width:100%;border-radius:4px;border:1px solid var(--line)">
+    </div>
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash · v3 Prototipo</span><span>4 · Maga y modos</span></div>
+</section>
+
+<!-- ================= V3 · SONIDO Y SENSACIÓN ================= -->
+<section class="page">
+  <h2>5 · Sonido, sensación de juego y pantalla</h2>
+  <h3>Una banda sonora que suena al templo</h3>
+  <p>El sonido de la Pre-Alfa era <i>chiptune</i> (ondas cuadradas, mono). Lo reemplazamos por una producción
+  completa, hecha con un sintetizador propio: <b>instrumentos japoneses modelados</b> (koto y shamisen como
+  cuerdas pulsadas, shakuhachi con su soplo, taiko, campanas de templo, un coro), efectos armados en
+  <b>capas</b> (ataque, cuerpo y cola) dentro de una misma sala, y masterizado a un nivel de sonoridad
+  medido en LUFS. La música usa la escala <i>in</i> (miyako-bushi).</p>
+  <table>
+    <tr><th>Tema</th><th>Dónde</th><th>Carácter</th></tr>
+    <tr><td><b>Menú y créditos</b></td><td>Menú, selector, después de la victoria</td><td>Lento: koto, shakuhachi, viento, campana.</td></tr>
+    <tr><td><b>Nivel 1</b></td><td>Tutorial y Nivel 1</td><td>Taiko y koto en Re, melodía de shakuhachi.</td></tr>
+    <tr><td><b>Nivel 2</b></td><td>Nivel 2</td><td>Más rápido, en La, con campanas de cristal.</td></tr>
+    <tr><td><b>Nivel 3</b></td><td>El templo</td><td>Odaiko y coro, en Mi.</td></tr>
+    <tr><td><b>La Maga Oscura</b></td><td>La pelea y la supervivencia</td><td>148 BPM: riff de shamisen, bajo distorsionado, gong.</td></tr>
+  </table>
+  <p style="font-size:10pt;margin-top:3mm">Los efectos se pensaron para Kaito: el salto es tela que flamea y el pie que empuja, la katana un
+  barrido de aire con el anillo del acero, el reflejo un choque metálico con chispas, los espectros un
+  lamento hueco. Los más frecuentes cambian un poco de altura cada vez para no cansar.</p>
+
+  <div class="grid g2" style="gap:6mm;margin-top:4mm">
+    <div class="card">
+      <h3>Sensación de juego</h3>
+      <ul class="tight" style="font-size:10pt">
+        <li>Sacudida de cámara y pausa de impacto proporcionales al golpe.</li>
+        <li>Destello rojo al recibir daño, partículas en cristales, enemigos y aterrizajes.</li>
+        <li><i>Coyote time</i> (0,1 s) y <i>jump buffer</i> (0,15 s): los controles fueron lo peor puntuado del playtest (3,43/5).</li>
+        <li>Cámara que se adelanta 150 px hacia donde corre Kaito y lo sigue en vertical.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Pantalla</h3>
+      <p style="font-size:10pt;margin:0">La vista es siempre de 1280 × 720. En ventanas de otra proporción aparecen
+      bandas negras, como en cualquier juego en ventana. Antes el juego se estiraba y, pasado el borde del
+      arte, quedaban franjas en blanco.</p>
+    </div>
+  </div>
+
+  <div class="footer"><span>Gravity Runner: Dash · v3 Prototipo</span><span>5 · Sonido</span></div>
+</section>
+
+<!-- ================= V3 · CALIDAD ================= -->
+<section class="page">
+  <h2>6 · Calidad: cómo lo probamos</h2>
+  <p>Probar el juego tiene tres capas, y cada cambio pasa por las tres antes de guardarse.</p>
+  <div class="grid g3" style="gap:5mm">
+    <div class="card"><h4>Tests unitarios</h4><p style="font-size:10pt;margin:0">Revisan <b>todas las combinaciones</b> de cada nivel contra las reglas de diseño (márgenes de losas, fosos cubiertos, cristales suficientes) y el motor de sonido (afinación, picos, sonoridad, loops).</p></div>
+    <div class="card"><h4>Invariantes del proyecto</h4><p style="font-size:10pt;margin:0">Sobre el juego construido: objetos con tipo, colores bien escritos, escenas y sonidos que existen, cámara y caída del tamaño del nivel, losas con superficie.</p></div>
+    <div class="card"><h4>Bot que juega</h4><p style="font-size:10pt;margin:0">Un bot aprieta <b>las mismas teclas que una persona</b>: corre, salta, invierte, pelea con la Maga y reporta tiempo, golpes y cristales.</p></div>
+  </div>
+
+  <h3 style="margin-top:6mm">Última regresión con el bot</h3>
+  <table>
+    <tr><th>Nivel</th><th>Resultado</th><th>Tiempo</th><th>Golpes</th></tr>
+    <tr><td><b>Nivel 1</b></td><td><span class="st st-ok">Completo</span></td><td>1:01</td><td>0</td></tr>
+    <tr><td><b>Nivel 2</b></td><td><span class="st st-ok">Completo</span></td><td>1:21</td><td>2</td></tr>
+    <tr><td><b>Nivel 3</b></td><td><span class="st st-wip">Llega al templo</span> y la Maga Oscura le gana</td><td>1:42</td><td>8</td></tr>
+  </table>
+  <p style="font-size:10pt">Con los enemigos nuevos el bot sigue pasando los Niveles 1 y 2. En el 3 llega hasta la Maga, pero
+  la mayoría de sus golpes vienen de ella. Antes de los ninjas nuevos le ganó en una de dos partidas. El bot no explora, así
+  que los cristales de arriba y los shurikens dorados quedan para el jugador. La prueba que falta es la de las personas.</p>
+
+  <div class="callout">Los tests ya encontraron errores reales antes de que llegaran al juego. Uno era la última
+  plataforma de los fosos largos, que terminaba antes que el foso. Otro, un loop de música con un clic en la
+  vuelta.</div>
+
+  <div class="footer"><span>Gravity Runner: Dash · v3 Prototipo</span><span>6 · Calidad</span></div>
+</section>
+
+<!-- ================= V3 · MANIFIESTO ================= -->
+<section class="page manifesto">
+  <h2>7 · Manifiesto de desarrollo</h2>
+  <p class="lead">Así hacemos <b>Gravity Runner: Dash</b>. El equipo decide qué juego queremos y por qué;
+  el código lo construye; jugarlo confirma si está bien. Estas son las reglas que seguimos.</p>
+
+  <ol class="principles">
+    <li><b>El juego se genera, no se arrastra.</b> El proyecto de GDevelop se reconstruye con scripts a partir del
+    original del equipo. El editor se usa para mirar, probar y exportar; nadie edita a mano lo que un script
+    puede volver a escribir.</li>
+    <li><b>Cada cambio tiene su porqué.</b> Cada mejora es un paso numerado, hoy son 22, con un comentario arriba
+    que explica qué cambia y por qué.</li>
+    <li><b>Misma entrada, mismo juego.</b> El build es reproducible byte a byte y los niveles y el sonido salen
+    de semillas: cualquiera del equipo obtiene exactamente lo mismo.</li>
+    <li><b>Falla fuerte, nunca en silencio.</b> Si un paso no encuentra lo que busca, el build se detiene con un
+    mensaje claro. Antes de escribir, valida cada instrucción y compila cada escena.</li>
+    <li><b>El diseño es dato.</b> Niveles, dificultad y música se describen como datos y código puro: se pueden
+    generar, medir y testear sin abrir el motor.</li>
+    <li><b>Se prueba como juega una persona.</b> Tests, invariantes y un bot que aprieta teclas reales. Al final,
+    siempre, alguien juega como si fuera la primera vez.</li>
+    <li><b>Vibecoding con guardarraíles.</b> Pedimos los cambios en lenguaje natural y un agente de IA escribe el
+    código siguiendo estas reglas. Nada entra sin build validado, tests en verde y prueba en el navegador.</li>
+    <li><b>Checkpoints, no saltos al vacío.</b> Un commit local en cada paso firme. Nada se publica sin el visto
+    bueno del equipo.</li>
+    <li><b>Original y liviano.</b> El arte es del equipo, y el sonido y los sprites derivados se generan por
+    código. No hay dependencias instaladas ni recursos de terceros.</li>
+    <li><b>Lo que se aprende, se escribe.</b> Los hallazgos, las trampas del motor, la auditoría y las decisiones
+    quedan en <span class="mono">docs/</span> para quien venga después.</li>
+  </ol>
+
+  <h3 style="margin-top:5mm">Cómo viaja un cambio</h3>
+  <div class="flow">
+    <div class="step"><span class="n">01</span>Pedido del equipo, en lenguaje natural.</div>
+    <div class="step"><span class="n">02</span>Un paso nuevo: un script con su porqué.</div>
+    <div class="step"><span class="n">03</span>Build: validar instrucciones y compilar escenas.</div>
+    <div class="step"><span class="n">04</span>Tests unitarios e invariantes.</div>
+    <div class="step"><span class="n">05</span>El bot y el navegador: jugarlo de verdad.</div>
+    <div class="step"><span class="n">06</span>Commit local y visto bueno antes de publicar.</div>
+  </div>
+
+  <p class="motto">Diseñamos jugando, construimos con código, confirmamos jugando.</p>
+
+  <div class="footer"><span>Gravity Runner: Dash · v3 Prototipo</span><span>7 · Manifiesto</span></div>
 </section>
 
 </main>

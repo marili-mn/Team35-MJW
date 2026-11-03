@@ -19,7 +19,7 @@ function buildStrip(id, url, count, sheetW){
 }
 buildStrip('idleStrip','assets/anim/ninja-with-katana-idle-pose-607a-spritesheet.png',8,1024);
 
-// Version tabs: switch between v1 (GDD) and v2 (Pre-Alfa) without reloading
+// Version tabs: switch between v1 (GDD), v2 (Pre-Alfa) and v3 (Prototipo) without reloading; v3 by default
 const versionTabs = document.querySelectorAll('.versionTabs [data-target]');
 function showVersion(id) {
   document.querySelectorAll('.version').forEach(v => { v.hidden = v.id !== id; });
@@ -30,7 +30,7 @@ versionTabs.forEach(t => t.addEventListener('click', () => {
   history.replaceState(null, '', '#' + t.dataset.target);
   window.scrollTo(0, 0);
 }));
-const versionFromHash = () => showVersion(location.hash === '#v1' ? 'v1' : 'v2');
+const versionFromHash = () => showVersion(['#v1', '#v2'].includes(location.hash) ? location.hash.slice(1) : 'v3');
 window.addEventListener('hashchange', versionFromHash);
 versionFromHash();
 
