@@ -145,3 +145,24 @@ test("HUD texts live on the HUD layer", () => {
     }
   }
 });
+
+test("every sound and music the events play is a declared audio file on disk, and none is left unused", () => {
+  const audio = new Set(project.resources.resources.filter((r) => r.kind === "audio").map((r) => r.name));
+  const played = new Set();
+  for (const l of layouts) for (const x of instructions(l)) {
+    if (x.type !== "PlaySound" && x.type !== "PlayMusicCanal") continue;
+    const file = x.params[1];
+    assert.ok(audio.has(file), `${l.name}: ${x.type} plays ${file}, which is not an audio resource`);
+    played.add(file);
+  }
+  for (const name of audio) assert.ok(fs.existsSync(path.join(GAME, resources[name])), `${name} is missing on disk`);
+  const onDisk = fs.readdirSync(path.join(GAME, "assets", "audio")).map((f) => `assets/audio/${f}`);
+  for (const f of onDisk) assert.ok(played.has(f), `${f} is never played`);
+  for (const l of layouts.filter((x) => x.name !== "Niveles")) assert.equal(l.stopSoundsOnStartup, true, `${l.name} keeps the previous scene's sounds`);
+});
+
+test("the view stays 1280x720 (no blank bars past the art) and no scene has a light background", () => {
+  assert.equal(project.properties.sizeOnStartupMode, "", "the game must not widen its view to the window");
+  assert.equal(project.properties.adaptGameResolutionAtRuntime, false);
+  for (const l of layouts) assert.ok(l.r + l.v + l.b < 150, `${l.name}: background ${l.r},${l.v},${l.b} shows white where the art ends`);
+});

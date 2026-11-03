@@ -78,7 +78,13 @@ export function makeEventFinder(gd, events, label) {
     if (found.length !== count) throw new Error(`${label}: expected ${count} events (${what}), found ${found.length}`);
     return found;
   };
-  return { find, findAll };
+  // Every match, when how many depends on the level (checkpoints...); at least one.
+  const findSome = (predicate, what) => {
+    const found = matches(predicate);
+    if (!found.length) throw new Error(`${label}: event not found: ${what}`);
+    return found;
+  };
+  return { find, findAll, findSome };
 }
 
 export function makeLayoutHelpers(gd, layout) {

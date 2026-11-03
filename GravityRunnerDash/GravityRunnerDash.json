@@ -8,7 +8,7 @@
   },
   "initialGDVersion": "5.6.282",
   "properties": {
-    "adaptGameResolutionAtRuntime": true,
+    "adaptGameResolutionAtRuntime": false,
     "antialiasingMode": "MSAA",
     "antialisingEnabledOnMobile": false,
     "folderProject": false,
@@ -17,7 +17,7 @@
     "pixelsRounding": true,
     "projectUuid": "a34e85ba-4a01-4972-a49e-563c6c0910b5",
     "scaleMode": "nearest",
-    "sizeOnStartupMode": "adaptWidth",
+    "sizeOnStartupMode": "",
     "templateSlug": "",
     "version": "1.0.0",
     "name": "Gravity Runner: Dash - Copy - Copy",
@@ -2606,7 +2606,7 @@
         "metadata": "",
         "name": "assets/audio/salto.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -2616,7 +2616,7 @@
         "metadata": "",
         "name": "assets/audio/golpe.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -2626,7 +2626,7 @@
         "metadata": "",
         "name": "assets/audio/cristal.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -2636,7 +2636,7 @@
         "metadata": "",
         "name": "assets/audio/espada.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -2646,7 +2646,7 @@
         "metadata": "",
         "name": "assets/audio/gravedad.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -2656,7 +2656,7 @@
         "metadata": "",
         "name": "assets/audio/enemigo.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -2666,45 +2666,175 @@
         "metadata": "",
         "name": "assets/audio/hechizo.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
       {
-        "file": "assets/audio/portal.wav",
+        "file": "assets/audio/dash.wav",
         "kind": "audio",
         "metadata": "",
-        "name": "assets/audio/portal.wav",
+        "name": "assets/audio/dash.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/reflejo.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/reflejo.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/menu_mover.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/menu_mover.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/espectro.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/espectro.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/dispersion.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/dispersion.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/checkpoint.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/checkpoint.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/oleada.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/oleada.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/menu_ok.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/menu_ok.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/portal.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/portal.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/completado.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/completado.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/victoria.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/victoria.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/derrota.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/derrota.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/musica_menu.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/musica_menu.mp3",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
       },
       {
-        "file": "assets/audio/victoria.wav",
+        "file": "assets/audio/musica_nivel.mp3",
         "kind": "audio",
         "metadata": "",
-        "name": "assets/audio/victoria.wav",
+        "name": "assets/audio/musica_nivel.mp3",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
       },
       {
-        "file": "assets/audio/musica_nivel.wav",
+        "file": "assets/audio/musica_nivel2.mp3",
         "kind": "audio",
         "metadata": "",
-        "name": "assets/audio/musica_nivel.wav",
+        "name": "assets/audio/musica_nivel2.mp3",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
       },
       {
-        "file": "assets/audio/musica_jefe.wav",
+        "file": "assets/audio/musica_nivel3.mp3",
         "kind": "audio",
         "metadata": "",
-        "name": "assets/audio/musica_jefe.wav",
+        "name": "assets/audio/musica_nivel3.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/audio/musica_jefe.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/audio/musica_jefe.mp3",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
@@ -2776,16 +2906,16 @@
   ],
   "layouts": [
     {
-      "b": 255,
+      "b": 32,
       "disableInputWhenNotFocused": true,
       "mangledName": "Menu",
       "name": "Menu",
-      "r": 247,
+      "r": 18,
       "renderer3DWorldScale": 100,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 249,
+      "v": 10,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -3506,13 +3636,109 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/musica_nivel.wav",
+                    "assets/audio/musica_menu.mp3",
                     "1",
                     "yes",
-                    "30",
+                    "35",
                     "1"
                   ]
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MusicOn",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "MusicPlaying"
+              },
+              "parameters": [
+                "",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnyKeyPressed"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlayMusicCanal"
+              },
+              "parameters": [
+                "",
+                "assets/audio/musica_menu.mp3",
+                "1",
+                "yes",
+                "35",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MusicOn",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "MusicPlaying"
+              },
+              "parameters": [
+                "",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "HasAnyTouchOrMouseStarted"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlayMusicCanal"
+              },
+              "parameters": [
+                "",
+                "assets/audio/musica_menu.mp3",
+                "1",
+                "yes",
+                "35",
+                "1"
               ]
             }
           ]
@@ -4056,16 +4282,16 @@
       ]
     },
     {
-      "b": 255,
+      "b": 32,
       "disableInputWhenNotFocused": true,
       "mangledName": "Opciones",
       "name": "Opciones",
-      "r": 247,
+      "r": 18,
       "renderer3DWorldScale": 100,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 249,
+      "v": 10,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -5068,16 +5294,16 @@
       ]
     },
     {
-      "b": 255,
+      "b": 32,
       "disableInputWhenNotFocused": true,
       "mangledName": "controles",
       "name": "controles",
-      "r": 247,
+      "r": 18,
       "renderer3DWorldScale": 100,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 249,
+      "v": 10,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -5347,16 +5573,16 @@
       ]
     },
     {
-      "b": 255,
+      "b": 32,
       "disableInputWhenNotFocused": true,
       "mangledName": "Tutorial",
       "name": "Tutorial",
-      "r": 247,
+      "r": 18,
       "renderer3DWorldScale": 100,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 249,
+      "v": 10,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -14327,7 +14553,7 @@
                     "assets/audio/gravedad.wav",
                     "no",
                     "45",
-                    "1"
+                    "0.85"
                   ]
                 }
               ]
@@ -15335,7 +15561,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -15484,6 +15710,37 @@
                   "parameters": [
                     "",
                     "\"Aviso\""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SoundOn",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets/audio/dispersion.mp3",
+                        "no",
+                        "60",
+                        "1"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -15710,7 +15967,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -15937,7 +16194,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -16619,6 +16876,37 @@
                     "max(Variable(Temblor), 3)"
                   ]
                 }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SoundOn",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets/audio/dash.wav",
+                        "no",
+                        "60",
+                        "RandomFloatInRange(0.94, 1.06)"
+                      ]
+                    }
+                  ]
+                }
               ]
             },
             {
@@ -16645,7 +16933,7 @@
                     "assets/audio/espada.wav",
                     "no",
                     "55",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -17672,7 +17960,7 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/musica_nivel.wav",
+                    "assets/audio/musica_nivel.mp3",
                     "1",
                     "yes",
                     "40",
@@ -17743,7 +18031,7 @@
                         "assets/audio/salto.wav",
                         "no",
                         "50",
-                        "1"
+                        "RandomFloatInRange(0.94, 1.06)"
                       ]
                     }
                   ]
@@ -19252,16 +19540,16 @@
       ]
     },
     {
-      "b": 255,
+      "b": 32,
       "disableInputWhenNotFocused": true,
       "mangledName": "Nivel1",
       "name": "Nivel1",
-      "r": 247,
+      "r": 18,
       "renderer3DWorldScale": 100,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 249,
+      "v": 10,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -37525,7 +37813,7 @@
                     "assets/audio/gravedad.wav",
                     "no",
                     "45",
-                    "1"
+                    "0.85"
                   ]
                 }
               ]
@@ -38282,7 +38570,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -38454,7 +38742,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -38644,7 +38932,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -38890,7 +39178,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -39039,6 +39327,37 @@
                   "parameters": [
                     "",
                     "\"Aviso\""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SoundOn",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets/audio/dispersion.mp3",
+                        "no",
+                        "60",
+                        "1"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -39275,7 +39594,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -39512,7 +39831,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -40155,6 +40474,37 @@
                     "max(Variable(Temblor), 3)"
                   ]
                 }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SoundOn",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets/audio/dash.wav",
+                        "no",
+                        "60",
+                        "RandomFloatInRange(0.94, 1.06)"
+                      ]
+                    }
+                  ]
+                }
               ]
             },
             {
@@ -40181,7 +40531,7 @@
                     "assets/audio/espada.wav",
                     "no",
                     "55",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -42765,6 +43115,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -42861,6 +43242,37 @@
                 "fxCristal",
                 "=",
                 "50"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -42961,6 +43373,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -43057,6 +43500,37 @@
                 "fxCristal",
                 "=",
                 "50"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -43157,6 +43631,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -43255,6 +43760,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -43351,6 +43887,37 @@
                 "fxCristal",
                 "=",
                 "50"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -43731,7 +44298,7 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/portal.wav",
+                    "assets/audio/portal.mp3",
                     "no",
                     "70",
                     "1"
@@ -43871,6 +44438,37 @@
                 ""
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/completado.mp3",
+                    "no",
+                    "80",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -43987,7 +44585,7 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/musica_nivel.wav",
+                    "assets/audio/musica_nivel.mp3",
                     "1",
                     "yes",
                     "40",
@@ -44058,7 +44656,7 @@
                         "assets/audio/salto.wav",
                         "no",
                         "50",
-                        "1"
+                        "RandomFloatInRange(0.94, 1.06)"
                       ]
                     }
                   ]
@@ -46565,16 +47163,16 @@
       ]
     },
     {
-      "b": 255,
+      "b": 32,
       "disableInputWhenNotFocused": true,
       "mangledName": "Nivel2",
       "name": "Nivel2",
-      "r": 247,
+      "r": 18,
       "renderer3DWorldScale": 100,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 249,
+      "v": 10,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -66665,7 +67263,7 @@
                     "assets/audio/gravedad.wav",
                     "no",
                     "45",
-                    "1"
+                    "0.85"
                   ]
                 }
               ]
@@ -67422,7 +68020,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -67594,7 +68192,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -67784,7 +68382,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -68030,7 +68628,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -68179,6 +68777,37 @@
                   "parameters": [
                     "",
                     "\"Aviso\""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SoundOn",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets/audio/dispersion.mp3",
+                        "no",
+                        "60",
+                        "1"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -68415,7 +69044,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -68652,7 +69281,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -69295,6 +69924,37 @@
                     "max(Variable(Temblor), 3)"
                   ]
                 }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SoundOn",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets/audio/dash.wav",
+                        "no",
+                        "60",
+                        "RandomFloatInRange(0.94, 1.06)"
+                      ]
+                    }
+                  ]
+                }
               ]
             },
             {
@@ -69321,7 +69981,7 @@
                     "assets/audio/espada.wav",
                     "no",
                     "55",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -71905,6 +72565,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -72001,6 +72692,37 @@
                 "fxCristal",
                 "=",
                 "50"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -72101,6 +72823,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -72197,6 +72950,37 @@
                 "fxCristal",
                 "=",
                 "50"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -72297,6 +73081,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -72393,6 +73208,37 @@
                 "fxCristal",
                 "=",
                 "50"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -72493,6 +73339,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -72589,6 +73466,37 @@
                 "fxCristal",
                 "=",
                 "50"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -72969,7 +73877,7 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/portal.wav",
+                    "assets/audio/portal.mp3",
                     "no",
                     "70",
                     "1"
@@ -73109,6 +74017,37 @@
                 ""
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/completado.mp3",
+                    "no",
+                    "80",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -73225,7 +74164,7 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/musica_nivel.wav",
+                    "assets/audio/musica_nivel2.mp3",
                     "1",
                     "yes",
                     "40",
@@ -73296,7 +74235,7 @@
                         "assets/audio/salto.wav",
                         "no",
                         "50",
-                        "1"
+                        "RandomFloatInRange(0.94, 1.06)"
                       ]
                     }
                   ]
@@ -75803,16 +76742,16 @@
       ]
     },
     {
-      "b": 255,
+      "b": 32,
       "disableInputWhenNotFocused": true,
       "mangledName": "Nivel3",
       "name": "Nivel3",
-      "r": 247,
+      "r": 18,
       "renderer3DWorldScale": 100,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 249,
+      "v": 10,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -102590,7 +103529,7 @@
                     "assets/audio/gravedad.wav",
                     "no",
                     "45",
-                    "1"
+                    "0.85"
                   ]
                 }
               ]
@@ -103347,7 +104286,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -103519,7 +104458,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -103709,7 +104648,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -103955,7 +104894,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -104104,6 +105043,37 @@
                   "parameters": [
                     "",
                     "\"Aviso\""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SoundOn",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets/audio/dispersion.mp3",
+                        "no",
+                        "60",
+                        "1"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -104340,7 +105310,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -104577,7 +105547,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -105220,6 +106190,37 @@
                     "max(Variable(Temblor), 3)"
                   ]
                 }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SoundOn",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets/audio/dash.wav",
+                        "no",
+                        "60",
+                        "RandomFloatInRange(0.94, 1.06)"
+                      ]
+                    }
+                  ]
+                }
               ]
             },
             {
@@ -105246,7 +106247,7 @@
                     "assets/audio/espada.wav",
                     "no",
                     "55",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -107830,6 +108831,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -107926,6 +108958,37 @@
                 "fxCristal",
                 "=",
                 "50"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -108026,6 +109089,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -108122,6 +109216,37 @@
                 "fxCristal",
                 "=",
                 "50"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -108222,6 +109347,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -108318,6 +109474,37 @@
                 "fxCristal",
                 "=",
                 "50"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -108418,6 +109605,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -108516,6 +109734,37 @@
                 "50"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -108612,6 +109861,37 @@
                 "fxCristal",
                 "=",
                 "50"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/checkpoint.mp3",
+                    "no",
+                    "45",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -109002,7 +110282,7 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/portal.wav",
+                    "assets/audio/portal.mp3",
                     "no",
                     "70",
                     "1"
@@ -109140,6 +110420,37 @@
               "parameters": [
                 "AyudaResultado",
                 ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/completado.mp3",
+                    "no",
+                    "80",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -109494,7 +110805,7 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/musica_jefe.wav",
+                    "assets/audio/musica_jefe.mp3",
                     "1",
                     "yes",
                     "45",
@@ -111205,6 +112516,37 @@
                 "\"Aviso\""
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/espectro.mp3",
+                    "no",
+                    "70",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -112237,7 +113579,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -112516,7 +113858,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -112683,6 +114025,37 @@
                 "\"Aviso\""
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/reflejo.wav",
+                    "no",
+                    "75",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -112842,6 +114215,37 @@
               "parameters": [
                 "",
                 "\"Aviso\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/reflejo.wav",
+                    "no",
+                    "75",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -113171,7 +114575,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -113439,6 +114843,37 @@
                 "\"Aviso\""
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/reflejo.wav",
+                    "no",
+                    "75",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -113598,6 +115033,37 @@
               "parameters": [
                 "",
                 "\"Aviso\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/reflejo.wav",
+                    "no",
+                    "75",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -113927,7 +115393,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -114348,7 +115814,7 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/victoria.wav",
+                    "assets/audio/victoria.mp3",
                     "no",
                     "70",
                     "1"
@@ -114377,7 +115843,7 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/musica_nivel.wav",
+                    "assets/audio/musica_nivel3.mp3",
                     "1",
                     "yes",
                     "40",
@@ -114488,7 +115954,7 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/musica_nivel.wav",
+                    "assets/audio/musica_nivel3.mp3",
                     "1",
                     "yes",
                     "40",
@@ -114559,7 +116025,7 @@
                         "assets/audio/salto.wav",
                         "no",
                         "50",
-                        "1"
+                        "RandomFloatInRange(0.94, 1.06)"
                       ]
                     }
                   ]
@@ -119607,6 +121073,15 @@
                 "",
                 "1"
               ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"MusicaCreditos\""
+              ]
             }
           ],
           "events": [
@@ -119631,9 +121106,64 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/victoria.wav",
+                    "assets/audio/victoria.mp3",
                     "no",
                     "80",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"MusicaCreditos\"",
+                ">",
+                "4.5"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "MusicOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlayMusicCanal"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/musica_menu.mp3",
+                    "1",
+                    "yes",
+                    "35",
                     "1"
                   ]
                 }
@@ -119784,16 +121314,16 @@
       "behaviorsSharedData": []
     },
     {
-      "b": 255,
+      "b": 32,
       "disableInputWhenNotFocused": true,
       "mangledName": "GameOver",
       "name": "GameOver",
-      "r": 247,
+      "r": 18,
       "renderer3DWorldScale": 100,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 249,
+      "v": 10,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -120137,9 +121667,9 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/golpe.wav",
+                    "assets/audio/derrota.mp3",
                     "no",
-                    "70",
+                    "80",
                     "1"
                   ]
                 }
@@ -120243,16 +121773,16 @@
       ]
     },
     {
-      "b": 255,
+      "b": 32,
       "disableInputWhenNotFocused": true,
       "mangledName": "Supervivencia",
       "name": "Supervivencia",
-      "r": 247,
+      "r": 18,
       "renderer3DWorldScale": 100,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 249,
+      "v": 10,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -132663,7 +134193,7 @@
                     "assets/audio/gravedad.wav",
                     "no",
                     "45",
-                    "1"
+                    "0.85"
                   ]
                 }
               ]
@@ -133430,7 +134960,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -133612,7 +135142,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -133812,7 +135342,7 @@
                     "assets/audio/enemigo.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -134048,7 +135578,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -134197,6 +135727,37 @@
                   "parameters": [
                     "",
                     "\"Aviso\""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SoundOn",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets/audio/dispersion.mp3",
+                        "no",
+                        "60",
+                        "1"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -134423,7 +135984,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -134650,7 +136211,7 @@
                     "assets/audio/golpe.wav",
                     "no",
                     "70",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -135347,6 +136908,37 @@
                     "max(Variable(Temblor), 3)"
                   ]
                 }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SoundOn",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets/audio/dash.wav",
+                        "no",
+                        "60",
+                        "RandomFloatInRange(0.94, 1.06)"
+                      ]
+                    }
+                  ]
+                }
               ]
             },
             {
@@ -135373,7 +136965,7 @@
                     "assets/audio/espada.wav",
                     "no",
                     "55",
-                    "1"
+                    "RandomFloatInRange(0.94, 1.06)"
                   ]
                 }
               ]
@@ -137856,7 +139448,7 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/portal.wav",
+                    "assets/audio/portal.mp3",
                     "no",
                     "70",
                     "1"
@@ -138029,10 +139621,10 @@
                   },
                   "parameters": [
                     "",
-                    "assets/audio/musica_nivel.wav",
+                    "assets/audio/musica_jefe.mp3",
                     "1",
                     "yes",
-                    "40",
+                    "42",
                     "1"
                   ]
                 }
@@ -138100,7 +139692,7 @@
                         "assets/audio/salto.wav",
                         "no",
                         "50",
-                        "1"
+                        "RandomFloatInRange(0.94, 1.06)"
                       ]
                     }
                   ]
@@ -139194,6 +140786,37 @@
                 "\"Aviso\""
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/oleada.mp3",
+                    "no",
+                    "75",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -139742,6 +141365,37 @@
                     "Variable(SpawnXSup) + 65",
                     "938",
                     ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SoundOn",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets/audio/espectro.mp3",
+                        "no",
+                        "40",
+                        "1"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -141079,16 +142733,16 @@
       ]
     },
     {
-      "b": 255,
+      "b": 32,
       "disableInputWhenNotFocused": true,
       "mangledName": "Niveles",
       "name": "Niveles",
-      "r": 247,
+      "r": 18,
       "renderer3DWorldScale": 100,
       "standardSortMethod": true,
-      "stopSoundsOnStartup": true,
+      "stopSoundsOnStartup": false,
       "title": "",
-      "v": 249,
+      "v": 10,
       "uiSettings": {},
       "objectsGroups": [],
       "variables": [
@@ -143458,6 +145112,37 @@
                 "AvisoNiveles"
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/menu_mover.wav",
+                    "no",
+                    "60",
+                    "1"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -143490,6 +145175,37 @@
               },
               "parameters": [
                 "AvisoNiveles"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/menu_mover.wav",
+                    "no",
+                    "60",
+                    "1"
+                  ]
+                }
               ]
             }
           ]
@@ -146005,6 +147721,35 @@
                   "parameters": [
                     "AvisoNiveles",
                     ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "SoundOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/menu_ok.mp3",
+                    "no",
+                    "60",
+                    "1"
                   ]
                 }
               ]

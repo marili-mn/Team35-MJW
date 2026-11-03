@@ -38,7 +38,7 @@ node --test tools/gdevelop/test/         # tests: reglas de los niveles, PNG y c
 | `05-tutorial-layout-fixes` | Ajustes del tutorial encontrados con el bot de salto. |
 | `06-levels` | Niveles 1, 2 y 3 (y el oculto) de 1,5 pantallas de alto, generados por `lib/layout.mjs` desde un perfil de dificultad con semilla; tramos y enemigos que se sortean en cada reinicio, portal que se abre con cristales. |
 | `07-victory-credits` | Pantalla de Victoria con los créditos del equipo. |
-| `08-audio` | Música y efectos de sonido (respetan las opciones del menú). |
+| `08-audio` | Música y efectos de sonido (respetan las opciones del menú): un tema por nivel, otro para la jefa y la supervivencia, y otro para el menú y los créditos. |
 | `09-game-feel` | Sacudida de cámara, pausa de impacto, destello rojo al recibir daño y partículas. |
 | `10-forgiving-jump` | Jump buffer (0,15 s) y coyote time (0,1 s). |
 | `11-pause` | Pausa con P o Esc; M vuelve al menú. |
@@ -50,10 +50,12 @@ node --test tools/gdevelop/test/         # tests: reglas de los niveles, PNG y c
 | `17-survival` | Nivel oculto de supervivencia en oleadas; se abre al ganar el juego. |
 | `18-level-select` | Selector de niveles (bloqueados, récords, rangos), botón "ELEGIR NIVEL" y reiniciar progreso. |
 | `19-dropped-crystals` | Al recibir daño se caen hasta 3 cristales que se pueden recuperar. |
+| `20-sound-design` | Sonidos de lo que vino después del paso 08: dash, reflejo, espectros, cristales perdidos, puntos de control, nivel superado, oleadas y selector. |
+| `21-screen-fit` | La vista queda en 1280×720 con bandas negras en ventanas de otra forma (antes se veían bandas blancas más allá del arte). |
 
 Cómo está hecho cada paso, el diseño procedural de los niveles y las pruebas: `docs/integraciones-y-enfoque.md`. Por qué cada mejora de jugabilidad y la hoja de ruta para venderlo: `docs/potencial-comercial.md`.
 
-La lógica compartida está en `tools/gdevelop/lib/`: `layout.mjs` describe los niveles como datos (segmentos, pisos, tramos sorteados), `level.mjs` los convierte en escenas, `boss.mjs` hace a la Maga Oscura y `scenes.mjs` dice qué escenas se juegan. La Maga Oscura persigue a Kaito por todo el Nivel 3, se vuelve más agresiva a medida que pierde vidas, invoca espectros y sus hechizos se pueden reflejar con la katana. Todos los personajes miden lo mismo que Kaito (120 px). Los recursos que se generan por script están en `tools/gdevelop/assets/`: `slice-maga.mjs` recorta los sprites de la maga, `make-audio.mjs` sintetiza la música y los efectos, `make-flip.mjs` dibuja el giro de gravedad de Kaito y `make-fantasma.mjs` los espectros.
+La lógica compartida está en `tools/gdevelop/lib/`: `layout.mjs` describe los niveles como datos (segmentos, pisos, tramos sorteados), `level.mjs` los convierte en escenas, `boss.mjs` hace a la Maga Oscura y `scenes.mjs` dice qué escenas se juegan. La Maga Oscura persigue a Kaito por todo el Nivel 3, se vuelve más agresiva a medida que pierde vidas, invoca espectros y sus hechizos se pueden reflejar con la katana. Todos los personajes miden lo mismo que Kaito (120 px). Los recursos que se generan por script están en `tools/gdevelop/assets/`: `slice-maga.mjs` recorta los sprites de la maga, `make-audio.mjs` compone y sintetiza la música y los efectos con el motor de `lib/synth.mjs` (instrumentos japoneses modelados, efectos en capas, reverb y masterizado; ver `docs/sonido.md`), `make-flip.mjs` dibuja el giro de gravedad de Kaito y `make-fantasma.mjs` los espectros.
 
 ## Probarlo en local
 
