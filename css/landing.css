@@ -182,7 +182,7 @@ ul.tight li{margin:2px 0}
   border-radius:6px;padding:5mm 6mm;margin-top:5mm;
   box-shadow:0 1px 3px rgba(0,0,0,.06)
 }
-.liveBox .liveLink{font-family:'JetBrains Mono',monospace;font-size:11pt;
+.liveBox .liveLink,.projectLinks .liveLink{font-family:'JetBrains Mono',monospace;font-size:11pt;
   color:var(--crimson);font-weight:700;text-decoration:none;
   background:#fdf5f6;padding:3px 8px;border-radius:3px;border:1px solid #f0d5da}
 /* Version tabs (v1 GDD / v2 Pre-Alfa) */
@@ -257,3 +257,5 @@ ol.principles li b{color:var(--night)}
   .gallery.two{grid-template-columns:1fr}
   .page table{display:block;overflow-x:auto}
 }
+.projectLinks ul.rawlinks li{margin:1.5mm 0}
+.projectLinks .liveLink{font-size:10pt;display:inline-block}
