@@ -65,12 +65,17 @@ const withEcho = (t, { time = 0.1, feedback = 0.3, wet = 0.25 } = {}) => {
 
 // ---------- sound effects ----------
 const SFX = {
-  // Jump: a puff of air rising with Kaito, the push of the foot and a flick of cloth.
+  // Jump: a ninja's, not an arcade "fwoop" (no pitched sweep): the gi snapping as it flutters (noise in a
+  // wide band, chopped by fast random flaps), the dull push of the foot on stone and a broad breath of air.
   salto() {
-    const d = 0.32, t = stereo(d);
-    place(t, shape(svf(noise(d, { seed: 11, color: "pink" }), (x) => 500 * 2 ** (x * 7), { q: 1.6, mode: "bpn" }), env.perc(0.025, 0.07)), 0, { gain: 0.9 });
-    place(t, shape(osc("sine", (x) => 70 + 60 * Math.exp(-x / 0.02), d), env.perc(0.002, 0.04)), 0, { gain: 0.5 });
-    place(t, shape(svf(noise(d, { seed: 12 }), 3200, { q: 2, mode: "bpn" }), env.perc(0.001, 0.012)), 0.01, { gain: 0.25 });
+    const d = 0.3, t = stereo(d), r = random(11);
+    const flaps = Array.from({ length: 8 }, () => [0.01 + 0.13 * r(), 0.5 + 0.5 * r()]);
+    const flutter = (x) => flaps.reduce((a, [at, g]) => a + g * Math.exp(-(((x - at) / 0.009) ** 2)), 0);
+    place(t, shape(svf(noise(d, { seed: 12, color: "pink" }), 1700, { q: 0.7, mode: "bpn" }), (x) => flutter(x) * Math.exp(-x / 0.09)), 0, { gain: 0.55 });
+    place(t, shape(svf(noise(d, { seed: 13 }), 380, { q: 0.9, mode: "bpn" }), env.perc(0.002, 0.025)), 0, { gain: 0.6 });
+    place(t, shape(osc("sine", (x) => 85 + 40 * Math.exp(-x / 0.012), d), env.perc(0.002, 0.02)), 0, { gain: 0.3 });
+    place(t, shape(svf(noise(d, { seed: 14 }), 2600, { mode: "hp" }), env.perc(0.001, 0.012)), 0.004, { gain: 0.12 });
+    place(t, shape(svf(noise(d, { seed: 15, color: "pink" }), 900, { q: 0.5, mode: "bpn" }), env.perc(0.015, 0.08)), 0, { gain: 0.35 });
     return t;
   },
   // Taking damage: the weight of the blow (a falling sub), a distorted crunch, the click and a dissonant ring.
@@ -104,14 +109,16 @@ const SFX = {
     place(t, partials(3100, d - 0.07, [[1, 1, 0.09], [1.47, 0.6, 0.07], [2.03, 0.4, 0.05], [2.71, 0.25, 0.04]], { seed: 34 }), 0.07, { gain: 0.1, pan: 0.2 });
     return withRoom(t, { room: 0.5, wet: 0.1 });
   },
-  // Gravity flip: an FM tone that rises and darkens over a rising sub, a resonant sweep of air that circles
-  // round, through a chorus: energy turning the world over.
+  // Gravity flip: temple magic, not a power-up chirp: a gust of air that swells and turns over (wide band,
+  // no pitched sweep), a deep soft blow under it and the shimmer of a small temple bell, through a chorus.
   gravedad() {
-    const d = 0.75, t = stereo(d), e = env.adsr(0.01, 0.2, 0.6, 0.35);
-    place(t, shape(fm((x) => 140 * 2 ** (x * 2.6), d, { ratio: 2, index: (x) => 4 * Math.exp(-x / 0.12) + 0.5 }), e), 0, { gain: 0.5 });
-    place(t, shape(osc("sine", (x) => 70 * 2 ** (x * 2.6), d), e), 0, { gain: 0.45 });
-    place(t, shape(svf(noise(d, { seed: 41, color: "pink" }), (x) => 600 * 2 ** (x * 4.5), { q: 5, mode: "bpn" }), env.swell(0.25)), 0, { gain: 0.5, pan: (x) => Math.sin(x * 9) * 0.5 });
-    return withRoom(chorus(t, { rate: 3, depth: 0.002, mix: 0.6 }), { room: 0.75, wet: 0.25 });
+    const d = 0.9, t = stereo(d);
+    place(t, shape(svf(svf(noise(d, { seed: 41, color: "pink" }), 650, { q: 0.6, mode: "bpn" }), 220, { mode: "hp" }), env.swell(0.12, 1.5)), 0, { gain: 0.8, pan: (x) => Math.sin(x * 7) * 0.5 });
+    place(t, shape(svf(noise(d, { seed: 42 }), 3000, { q: 0.5, mode: "bpn" }), env.swell(0.1, 2)), 0, { gain: 0.2, pan: (x) => -Math.sin(x * 7) * 0.5 });
+    place(t, drive(shape(osc("sine", (x) => 52 + 30 * Math.exp(-x / 0.04), d), env.perc(0.006, 0.18)), 1.6), 0, { gain: 0.45 });
+    place(t, bell(midiHz(93), d, { seed: 43, hardness: 0.15 }), 0.03, { gain: 0.12, pan: 0.3 });
+    place(t, bell(midiHz(98), d, { seed: 44, hardness: 0.1 }), 0.07, { gain: 0.07, pan: -0.3 });
+    return withRoom(chorus(t, { rate: 1.2, depth: 0.003, mix: 0.4 }), { room: 0.8, wet: 0.28 });
   },
   // Enemy defeated: the slash lands, the body dissolves into motes of light and the spirit leaves (a falling
   // FM tone).
