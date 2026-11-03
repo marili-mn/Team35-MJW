@@ -58,17 +58,26 @@
         }
 
         if (!map) {
-          const spikes = rs.getObjects("pinchos").map((p) => ({ x0: p.getX() + 8, x1: p.getX() + p.getWidth() - 8, up: p.isFlippedY() }));
+          // Read once Kaito stands at the start: the floor line, the slabs right above it (the high
+          // ceilings, 600 px up, are not crossed by the bot), the spikes and the jump-through platforms.
+          const F = k.getY() + 60;
+          const line = (o) => o.getY() + 31;      // colliders are 64 px images with their line 31 px down
+          const spikes = rs.getObjects("pinchos").map((p) => ({ x0: p.getX() + 8, x1: p.getX() + p.getWidth() - 8, up: p.isFlippedY(), y: p.getY() }));
           map = {
-            ceilings: rs.getObjects("techo").filter((t) => t.getY() > 0).map((t) => ({ x0: t.getX(), x1: t.getX() + t.getWidth() })),
+            F,
+            ceilings: rs.getObjects("techo").filter((t) => line(t) > F - 320 && line(t) < F - 230).map((t) => ({ x0: t.getX(), x1: t.getX() + t.getWidth() })),
             floor: spikes.filter((s) => !s.up).sort((a, b) => a.x0 - b.x0),
-            hanging: spikes.filter((s) => s.up).sort((a, b) => a.x0 - b.x0),
+            hanging: spikes.filter((s) => s.up && s.y > F - 320).sort((a, b) => a.x0 - b.x0),
+            platforms: rs.getObjects("plataforma").map((p) => ({ x0: p.getX(), x1: p.getX() + p.getWidth(), line: line(p) })),
           };
         }
         const ceilingAt = (px) => map.ceilings.find((c) => px - 24 >= c.x0 + 6 && px + 24 <= c.x1 - 6);
         const front = x + 24;
         const nextFloor = map.floor.find((s) => s.x1 > x - 24);
         const nextHanging = map.hanging.find((s) => s.x1 > x - 24);
+        // Standing on a jump-through platform over a pit: jump from its edge while spikes go on below.
+        const feet = k.getY() + 60;
+        const platform = onFloor && !flipped ? map.platforms.find((p) => Math.abs(feet - p.line) < 8 && x >= p.x0 - 20 && x <= p.x1 + 20) : null;
         const tapAlt = () => { if (altCooldown <= 0) { im.onKeyPressed(KEY.alt, ALT_LOCATION); altUp = true; altCooldown = 40; } };
 
         if (altUp) { im.onKeyReleased(KEY.alt, ALT_LOCATION); altUp = false; }
@@ -109,7 +118,10 @@
 
         if (!flipped) {
           const ceil = ceilingAt(x);
-          if (onFloor && nextFloor) {
+          if (platform) {
+            const pitGoesOn = map.floor.some((s) => s.x0 < platform.x1 + 120 && s.x1 > platform.x1);
+            if (pitGoesOn && platform.x1 - front < 16) jumpHold = 12;
+          } else if (onFloor && nextFloor) {
             const dist = nextFloor.x0 - front;
             const spikeUnderCeiling = map.ceilings.some((c) => nextFloor.x0 >= c.x0 && nextFloor.x1 <= c.x1);
             if (spikeUnderCeiling && ceil && dist > 0 && dist < 160 && energy >= cost + 8) tapAlt();

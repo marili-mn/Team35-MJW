@@ -1,11 +1,11 @@
 // Step 12 — Replay value: a clock on the HUD and a results card when a level is cleared (time, crystals,
 // hits taken and a rank S/A/B/C), with the best time kept in the browser (GDevelop storage). The portal
 // now shows the card first; Space or Enter goes on to the next scene. Rank score = % of crystals minus
-// 8 per hit: S from 90, A from 75, B from 60, C below.
+// 8 per hit, plus 5 per golden shuriken: S from 90, A from 75, B from 60, C below.
 import { makeEventHelpers, makeEventFinder, makeLayoutHelpers } from "../../lib/events.mjs";
 import { cloneTextObject } from "../../lib/objects.mjs";
 
-const LEVELS = ["Nivel1", "Nivel2", "Nivel3"];
+import { LEVEL_SCENES as LEVELS } from "../../lib/scenes.mjs";
 const STORE = '"GravityRunnerDash"';
 const RANKS = [["S", 90, "255;214;102"], ["A", 75, "140;230;140"], ["B", 60, "140;190;255"], ["C", -1000, "220;200;230"]];
 
@@ -47,7 +47,7 @@ export default function levelResults({ gd, project }) {
     addInst("AyudaResultado", 0, 600, 0, 0, { layer: "HUD", z: 31 });
     const card = ["TituloResultado", "RangoTexto", "Resumen", "AyudaResultado"];
 
-    const start = find((c, a) => has(c, "SceneJustBegins") && has(a, "SetNumberVariable", "Requeridas"), "level start");
+    const start = find((c, a) => has(c, "SceneJustBegins") && has(a, "SetStringVariable", "NivelActual"), "level start");
     const startActs = start.event.getActions();
     for (const a of [
       setNum("TotalCristales", "=", "Count(cristal)"), setNum("Record", "=", "0"),
@@ -71,7 +71,7 @@ export default function levelResults({ gd, project }) {
     portal.event.getConditions().insert(numIs("Completado", "=", "0"), portal.event.getConditions().size());
     for (const a of [
       setNum("Completado", "=", "1"), setNum("HitStop", "=", "0"), I("ChangeTimeScale", ["", "0"]), I("Cache", ["Aviso"]),
-      setNum("Puntaje", "=", "round(100 * Variable(Gemas) / max(1, Variable(TotalCristales))) - 8 * Variable(Golpes)"),
+      setNum("Puntaje", "=", "round(100 * Variable(Gemas) / max(1, Variable(TotalCristales))) - 8 * Variable(Golpes) + 5 * Variable(Shurikens)"),
       ...card.map((o) => I("Montre", [o, ""])),
     ]) acts.insert(a, acts.size());
     // Rank, best time and the summary, worked out on the frame the level is cleared.
@@ -85,7 +85,7 @@ export default function levelResults({ gd, project }) {
     add(ev(done([numIs("NuevoRecord", "=", "1")]), [setNum("Record", "=", "Variable(Tiempo)"), I("EcrireFichierExp", [STORE, key, "Variable(Tiempo)"])]));
     add(ev([numIs("Completado", "=", "1")], [], clock("Record", "RecordTxt")));
     const summary = (recordLine) => text("Resumen",
-      `"Tiempo  " + VariableString(TiempoTxt) + "   ·   " + ${recordLine} + NewLine() + "Cristales  " + ToString(Variable(Gemas)) + " / " + ToString(Variable(TotalCristales)) + "   ·   Golpes  " + ToString(Variable(Golpes))`);
+      `"Tiempo  " + VariableString(TiempoTxt) + "   ·   " + ${recordLine} + NewLine() + "Cristales  " + ToString(Variable(Gemas)) + " / " + ToString(Variable(TotalCristales)) + "   ·   Golpes  " + ToString(Variable(Golpes)) + NewLine() + "Shurikens dorados  " + ToString(Variable(Shurikens)) + " / " + ToString(Variable(TotalShurikens))`);
     add(ev([numIs("Completado", "=", "1"), numIs("NuevoRecord", "=", "1")], [summary('"¡Nuevo récord!"')]));
     add(ev([numIs("Completado", "=", "1"), numIs("NuevoRecord", "=", "0")], [summary('"Récord  " + VariableString(RecordTxt)')]));
     add(ev([numIs("Completado", "=", "1")], [

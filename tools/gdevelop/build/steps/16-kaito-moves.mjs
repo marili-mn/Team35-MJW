@@ -8,7 +8,7 @@ import { makeEventHelpers, makeEventFinder } from "../../lib/events.mjs";
 import { ensureImageResource, insertObjectFrom, serializeObject } from "../../lib/objects.mjs";
 import { KAITO_MASK } from "./03-physics-and-gravity-rules.mjs";
 
-const PLAYABLE = ["Tutorial", "Nivel1", "Nivel2", "Nivel3"];
+import { PLAYABLE } from "../../lib/scenes.mjs";
 const DASH = { speed: 950, time: 0.22, every: 3 };   // afterimage every 3 frames
 
 export default function kaitoMoves({ gd, project }) {

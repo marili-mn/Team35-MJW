@@ -4,7 +4,7 @@
 import { append, makeEventHelpers, makeLayoutHelpers } from "../../lib/events.mjs";
 import { cloneTextObject } from "../../lib/objects.mjs";
 
-const PLAYABLE = ["Tutorial", "Nivel1", "Nivel2", "Nivel3"];
+import { PLAYABLE } from "../../lib/scenes.mjs";
 const KEY_CONDITIONS = ["KeyFromTextJustPressed", "KeyFromTextPressed", "KeyFromTextReleased", "KeyPressed", "KeyReleased"];
 
 export default function pause({ gd, project }) {

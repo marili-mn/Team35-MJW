@@ -4,7 +4,7 @@
 import { makeEventHelpers, makeEventFinder, makeLayoutHelpers } from "../../lib/events.mjs";
 import { cloneTextObject, insertObjectFrom, serializeObject } from "../../lib/objects.mjs";
 
-const LEVELS = ["Nivel1", "Nivel2", "Nivel3"];
+import { LEVEL_SCENES as LEVELS } from "../../lib/scenes.mjs";
 const STORE = '"GravityRunnerDash"', KEY = '"ultimoNivel"';
 const IDLE = "255;214;102", HOVER = "255;255;255";
 

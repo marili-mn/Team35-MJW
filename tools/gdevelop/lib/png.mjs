@@ -55,6 +55,17 @@ const chunk = (type, data) => {
   return Buffer.concat([head, data, crc]);
 };
 
+// Where the drawn surface of a slab image starts: the first row (as a share of the height) where most
+// pixels are opaque. Used to put the collider a character stands on right on the art.
+export function opaqueTop({ width, height, data }, share = 0.6) {
+  for (let y = 0; y < height; y++) {
+    let solid = 0;
+    for (let x = 0; x < width; x++) if (data[(y * width + x) * 4 + 3] > 128) solid++;
+    if (solid / width > share) return y / height;
+  }
+  return 1;
+}
+
 export function writePng({ width, height, data }) {
   const ihdr = Buffer.alloc(13);
   ihdr.writeUInt32BE(width, 0);

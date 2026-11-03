@@ -7,7 +7,7 @@ import { makeEventHelpers, makeEventFinder } from "../../lib/events.mjs";
 
 const AUDIO = ["salto", "golpe", "cristal", "espada", "gravedad", "enemigo", "hechizo", "portal", "victoria", "musica_nivel", "musica_jefe"];
 const file = (name) => `assets/audio/${name}.wav`;
-const PLAYABLE = ["Tutorial", "Nivel1", "Nivel2", "Nivel3"];
+import { PLAYABLE } from "../../lib/scenes.mjs";
 
 export default function audio({ gd, project, gameDir }) {
   const rm = project.getResourcesManager();

@@ -12,7 +12,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { makeEventHelpers, makeEventFinder, makeLayoutHelpers } from "../../lib/events.mjs";
 import { insertObjectFrom, serializeObject } from "../../lib/objects.mjs";
-import { readPng } from "../../lib/png.mjs";
+import { readPng, opaqueTop } from "../../lib/png.mjs";
 
 // Energy to flip up, seconds per energy point while hanging, energy per crystal, wait after dropping.
 export const GRAVITY = {
@@ -20,26 +20,14 @@ export const GRAVITY = {
   Nivel1: { cost: 28, drain: 0.38, crystal: 8, cooldown: 0.5 },
   Nivel2: { cost: 32, drain: 0.32, crystal: 7, cooldown: 0.5 },
   Nivel3: { cost: 36, drain: 0.28, crystal: 6, cooldown: 0.5 },
+  Supervivencia: { cost: 32, drain: 0.32, crystal: 7, cooldown: 0.5 },
 };
 const MASK_TOP = 31;   // the collider image (techo, piso) is 64 px tall with its solid line 31 px down
 
 export default function platformsAndGravity({ gd, project, gameDir }) {
   const { I, NOT, ev, q, setNum, numIs, keyJust, timer, resetTimer } = makeEventHelpers(gd);
   const has = (list, type, ...params) => list.some((x) => x.type === type && params.every((p, i) => p === undefined || x.params[i] === p));
-  const surfaceCache = new Map();
-  const surfaceOf = (file) => {
-    if (!surfaceCache.has(file)) {
-      const img = readPng(fs.readFileSync(path.join(gameDir, file)));
-      let row = 0;
-      for (; row < img.height; row++) {
-        let solid = 0;
-        for (let x = 0; x < img.width; x++) if (img.data[(row * img.width + x) * 4 + 3] > 128) solid++;
-        if (solid / img.width > 0.6) break;
-      }
-      surfaceCache.set(file, row / img.height);
-    }
-    return surfaceCache.get(file);
-  };
+  const surfaceOf = (file) => opaqueTop(readPng(fs.readFileSync(path.join(gameDir, file))));
   const report = [];
 
   for (const [name, g] of Object.entries(GRAVITY)) {
@@ -52,9 +40,10 @@ export default function platformsAndGravity({ gd, project, gameDir }) {
     if (!vars.has("CostoGravedad")) vars.insertNew("CostoGravedad", vars.count());
     vars.get("CostoGravedad").setValue(g.cost);
 
-    // ---- colliders: slab surfaces and the safety ceiling ----
+    // ---- colliders: slab surfaces (the levels already got theirs from lib/level.mjs) and the safety ceiling ----
     const techo = serializeObject(gd, objects.getObject("techo"));
-    insertObjectFrom(gd, project, objects, "sueloLosa", techo);
+    const needsSlabTops = !objects.hasObjectNamed("sueloLosa");
+    if (needsSlabTops) insertObjectFrom(gd, project, objects, "sueloLosa", techo);
     insertObjectFrom(gd, project, objects, "techoSeguridad", techo);
     const slabArt = objects.getObject("pisoflotante");
     const slabImage = gd.asSpriteConfiguration(slabArt.getConfiguration()).getAnimations().getAnimation(0).getDirection(0).getSprite(0).getImageName();
@@ -65,7 +54,7 @@ export default function platformsAndGravity({ gd, project, gameDir }) {
     for (const inst of instances) {
       const n = inst.getObjectName();
       if (n === "techo" && inst.getY() === -55) { inst.setObjectName("techoSeguridad"); inst.setY(topLine - MASK_TOP); safety++; }
-      if (n === "pisoflotante" && inst.getZOrder() >= 1) {
+      if (needsSlabTops && n === "pisoflotante" && inst.getZOrder() >= 1) {
         const w = inst.hasCustomSize() ? inst.getCustomWidth() : 256, h = inst.hasCustomSize() ? inst.getCustomHeight() : 85;
         addInst("sueloLosa", inst.getX(), Math.round(inst.getY() + h * surface) - MASK_TOP, w, 64, { z: 0 });
         slabs++;

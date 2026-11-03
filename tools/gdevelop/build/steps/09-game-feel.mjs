@@ -8,7 +8,7 @@
 //   she reappears, dust when Kaito lands from a jump or a flip.
 import { makeEventHelpers, makeEventFinder } from "../../lib/events.mjs";
 
-const PLAYABLE = ["Tutorial", "Nivel1", "Nivel2", "Nivel3"];
+import { PLAYABLE } from "../../lib/scenes.mjs";
 // [name, color from, color to, particles, speed min, speed max, life min, life max, gravity y, size, additive]
 const EMITTERS = [
   ["fxCristal", "190;110;255", "255;220;255", 24, 160, 340, 0.35, 0.7, 120, 9, false],

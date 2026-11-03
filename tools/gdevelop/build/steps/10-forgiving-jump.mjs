@@ -5,7 +5,7 @@
 // Both only on the floor side (not while walking upside down).
 import { makeEventHelpers } from "../../lib/events.mjs";
 
-const PLAYABLE = ["Tutorial", "Nivel1", "Nivel2", "Nivel3"];
+import { PLAYABLE } from "../../lib/scenes.mjs";
 const BUFFER = 0.15, COYOTE = 0.1;
 
 export default function forgivingJump({ gd, project }) {

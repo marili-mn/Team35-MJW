@@ -3,8 +3,9 @@
 // energy burst along the floor (jump it or flip up) and a dash through Kaito (jump her or cut her as she
 // comes); in the arena at the end she also sends a smoke dragon along the ceiling (drop down). Outside the
 // arena she holds her spells while Kaito is near spikes or upside down, so every attack can be dodged.
-// Each katana hit takes one of her lives and she teleports to the other side of Kaito; in the arena she
-// casts faster at half life, fires her burst twice and calls up to 3 dark-energy wraiths. A spell cut
+// Each katana hit takes one of her lives and she teleports to the other side of Kaito; she grows more
+// aggressive with every life she loses (FURY below); in the arena at half life she fires her burst twice,
+// and from two thirds down she calls up to 3 dark-energy wraiths. A spell cut
 // with the katana flies back at her and hurts her like a blow. Defeating her opens the portal.
 // Frames: tools/gdevelop/assets/slice-maga.mjs.
 import { makeEventHelpers } from "./events.mjs";
@@ -20,7 +21,12 @@ const SPELL_SPEED = { hechizo: 500, dragonSombra: 420 };
 const KEEP = 420;          // distance she keeps from Kaito while she follows him
 const GLIDE = 230;         // px/s, a bit slower than Kaito walking (250), so he can catch her
 const DASH = { speed: 760, time: 1, past: 250 };
-const COOLDOWN = { road: 1.9, arena: 1.3, arenaHalf: 0.8 };
+const COOLDOWN = { road: 1.9, arena: 1.3 };
+// Fury: 0 with all her lives, close to 1 on the last one. The fewer lives she has, the sooner she attacks,
+// the faster her spells, dash and glide, and the shorter her wind-up.
+const FURY = `(1 - Variable(MagaVida) / ${BOSS_LIVES})`;
+const furious = (base, gain) => `${base} * (1 + ${gain} * ${FURY})`;
+const calmer = (base, cut) => `${base} * (1 - ${cut} * ${FURY})`;
 const REFLECT_RANGE = 130, MAX_WRAITHS = 3;
 const WAKE_X = 900;        // she shows up once Kaito leaves the start
 const SAFE_FROM_SPIKES = 450;
@@ -109,7 +115,7 @@ export function addBoss({ gd, project }, level, { floorLine: F, ceilingLine: C, 
   add(ev([following], [setNum("MagaObjetivo", "=", beside)]));
   add(ev([following, I("PosX", ["maga", "<", "Variable(MagaObjetivo) - 900"])], [I("SetX", ["maga", "=", "Variable(MagaObjetivo)"])]));
   add(ev([following, I("PosX", ["maga", ">", "Variable(MagaObjetivo) + 900"])], [I("SetX", ["maga", "=", "Variable(MagaObjetivo)"])]));
-  add(ev([following], [I("SetX", ["maga", "+", `clamp(Variable(MagaObjetivo) - maga.X(), -${GLIDE} * TimeDelta(), ${GLIDE} * TimeDelta())`])]));
+  add(ev([following], [I("SetX", ["maga", "+", `clamp(Variable(MagaObjetivo) - maga.X(), -${furious(GLIDE, 0.3)} * TimeDelta(), ${furious(GLIDE, 0.3)} * TimeDelta())`])]));
   // She floats a little above the ground (she glides over spikes and gaps).
   add(ev([awake], [I("SetY", ["maga", "=", `${F - 14} - 6 * sin(TimeFromStart() * 3)`])]));
 
@@ -122,15 +128,14 @@ export function addBoss({ gd, project }, level, { floorLine: F, ceilingLine: C, 
   // Following -> chooses an attack: burst or dash on the way, also the dragon in the arena (faster at half life).
   const cast = [setNum("MagaEstado", "=", "2"), resetTimer("Maga")];
   const ready = [following, numIs("MagaPuede", "=", "1")];
-  add(ev([...ready, numIs("MagaArena", "=", "0"), timer("Maga", ">", String(COOLDOWN.road))], [setNum("MagaAtaque", "=", "RandomInRange(0, 1) * 2 + 1"), ...cast]));
+  add(ev([...ready, numIs("MagaArena", "=", "0"), timer("Maga", ">", calmer(COOLDOWN.road, 0.45))], [setNum("MagaAtaque", "=", "RandomInRange(0, 1) * 2 + 1"), ...cast]));
   // In the arena: burst, dragon, dash or (from two thirds of her life down, up to MAX_WRAITHS) wraiths.
   const arenaPick = [setNum("MagaAtaque", "=", "RandomInRange(1, 4)"), ...cast];
   const noWraiths = [
     ev([numIs("MagaAtaque", "=", "4"), I("BuiltinCommonInstructions::CompareNumbers", ["Count(fantasma)", ">=", String(MAX_WRAITHS)])], [setNum("MagaAtaque", "=", "1")]),
     ev([numIs("MagaAtaque", "=", "4"), numIs("MagaVida", ">", Math.round((BOSS_LIVES * 2) / 3))], [setNum("MagaAtaque", "=", "1")]),
   ];
-  add(ev([...ready, numIs("MagaArena", "=", "1"), numIs("MagaVida", ">", BOSS_LIVES / 2), timer("Maga", ">", String(COOLDOWN.arena))], arenaPick, noWraiths));
-  add(ev([...ready, numIs("MagaArena", "=", "1"), numIs("MagaVida", "<=", BOSS_LIVES / 2), timer("Maga", ">", String(COOLDOWN.arenaHalf))], arenaPick, noWraiths));
+  add(ev([...ready, numIs("MagaArena", "=", "1"), timer("Maga", ">", calmer(COOLDOWN.arena, 0.5))], arenaPick, noWraiths));
   add(ev([numIs("MagaEstado", "=", "2"), numIs("MagaAtaque", "=", "1")], [anim("cast")]));
   add(ev([numIs("MagaEstado", "=", "2"), numIs("MagaAtaque", "=", "2")], [anim("summon")]));
   add(ev([numIs("MagaEstado", "=", "2"), numIs("MagaAtaque", "=", "3")], [anim("dash")]));
@@ -142,11 +147,11 @@ export function addBoss({ gd, project }, level, { floorLine: F, ceilingLine: C, 
     I("ResizableCapability::ResizableBehavior::SetHeight", [name, "Resizable", "=", String(size.h)]),
   ];
   const towardsKaito = (name, speed) => [
-    ev([I("PosX", ["maga", ">", "kaito.X()"])], [I("SetNumberObjectVariable", [name, "Vel", "=", String(-speed)])]),
-    ev([I("PosX", ["maga", "<=", "kaito.X()"])], [I("SetNumberObjectVariable", [name, "Vel", "=", String(speed)])]),
+    ev([I("PosX", ["maga", ">", "kaito.X()"])], [I("SetNumberObjectVariable", [name, "Vel", "=", `-${furious(speed, 0.35)}`])]),
+    ev([I("PosX", ["maga", "<=", "kaito.X()"])], [I("SetNumberObjectVariable", [name, "Vel", "=", furious(speed, 0.35)])]),
   ];
   const release = [setNum("MagaEstado", "=", "1"), resetTimer("Maga")];
-  const casting = (n) => [numIs("MagaEstado", "=", "2"), numIs("MagaAtaque", "=", String(n)), timer("Maga", ">", "0.55")];
+  const casting = (n) => [numIs("MagaEstado", "=", "2"), numIs("MagaAtaque", "=", String(n)), timer("Maga", ">", calmer(0.55, 0.35))];
   add(ev(casting(1), [...spell("hechizo", BURST, F - BURST.h - 4), ...release], [
     ...towardsKaito("hechizo", SPELL_SPEED.hechizo),
     // In the arena at half life the burst comes twice.
@@ -171,7 +176,7 @@ export function addBoss({ gd, project }, level, { floorLine: F, ceilingLine: C, 
   ]));
   // Dashing: straight through Kaito until she is well past him, runs out of time or reaches her bounds.
   const dashing = numIs("MagaEstado", "=", "4");
-  add(ev([dashing], [I("SetX", ["maga", "+", `Variable(MagaDir) * ${DASH.speed} * TimeDelta()`])]));
+  add(ev([dashing], [I("SetX", ["maga", "+", `Variable(MagaDir) * ${furious(DASH.speed, 0.3)} * TimeDelta()`])]));
   const endDash = [setNum("MagaLado", "=", "Variable(MagaDir)"), ...release];
   add(ev([dashing, numIs("MagaDir", "=", "1"), I("PosX", ["maga", ">", `kaito.X() + ${DASH.past}`])], endDash));
   add(ev([dashing, numIs("MagaDir", "=", "-1"), I("PosX", ["maga", "<", `kaito.X() - ${DASH.past}`])], endDash));

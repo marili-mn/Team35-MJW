@@ -4,7 +4,7 @@
 // - Checkpoints (levels): passing one now says so, with a sparkle, instead of happening silently.
 import { makeEventHelpers, makeEventFinder } from "../../lib/events.mjs";
 
-const PLAYABLE = ["Tutorial", "Nivel1", "Nivel2", "Nivel3"];
+import { PLAYABLE } from "../../lib/scenes.mjs";
 const LOOK_AHEAD = 150, HALF_SCREEN = 640;
 
 export default function cameraAndCheckpoints({ gd, project }) {
@@ -21,9 +21,15 @@ export default function cameraAndCheckpoints({ gd, project }) {
     // ---- look-ahead, between the camera follow and the shake (step 09) ----
     const camera = find((c, a) => has(a, "FixCamera"), "camera");
     const fix = camera.event.getActions();
-    let width = null;
-    for (let i = 0; i < fix.size(); i++) if (fix.get(i).getType() === "FixCamera") width = Number(fix.get(i).getParameter(4).getPlainString());
-    if (!width) throw new Error(`step 13 (${name}): camera bounds not found`);
+    let width = null, height = null;
+    for (let i = 0; i < fix.size(); i++) {
+      if (fix.get(i).getType() !== "FixCamera") continue;
+      width = Number(fix.get(i).getParameter(4).getPlainString());
+      height = Number(fix.get(i).getParameter(5).getPlainString());
+    }
+    if (!width || !height) throw new Error(`step 13 (${name}): camera bounds not found`);
+    if (!vars.has("CamY")) vars.insertNew("CamY", vars.count());
+    vars.get("CamY").setValue(height - 360);
     const facingLeft = I("FlippableCapability::FlippableBehavior::FlippedX", ["kaito", "Flippable"]);
     const facingRight = I("FlippableCapability::FlippableBehavior::FlippedX", ["kaito", "Flippable"], true);
     const ease = (target) => setNum("Mirada", "=", `Variable(Mirada) + (${target} - Variable(Mirada)) * min(1, 3 * TimeDelta())`);
@@ -33,6 +39,12 @@ export default function cameraAndCheckpoints({ gd, project }) {
       // From Kaito, not from the camera: near the ends of the level the camera is already held at the
       // edge, and adding the look-ahead to it pushed Kaito off the screen (at the start he was at x=-50).
       ev([], [I("CameraX", ["", "=", `clamp(kaito.X() + Variable(Mirada), ${HALF_SCREEN}, ${width - HALF_SCREEN})`, "", "0"])]),
+      // Up and down (levels taller than the screen): a normal jump does not move the view, climbing to the
+      // platforms or flipping up to a high ceiling does, smoothly. Kaito stays ~150 px under the top edge.
+      ev([], [
+        setNum("CamY", "=", `Variable(CamY) + (clamp(kaito.Y() + 210, 360, ${height - 360}) - Variable(CamY)) * min(1, 5 * TimeDelta())`),
+        I("CameraY", ["", "=", "Variable(CamY)", "", "0"]),
+      ]),
     ].reverse().forEach((e) => events.insertEvent(e, camera.index + 1));
 
     // ---- checkpoints say so ----

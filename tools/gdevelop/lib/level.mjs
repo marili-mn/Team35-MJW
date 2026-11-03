@@ -1,79 +1,30 @@
 // Builds a long level scene from the finished Tutorial: same Kaito, physics, energy, damage, healing and
-// HUD, with the level's own art, a layout made of segments, procedural enemies that change on every
-// restart, and a portal that opens with crystals.
+// HUD, with the level's own art, a layout from lib/layout.mjs (three tiers, 1.5 screens tall, some
+// stretches drawn again on every restart), procedural enemies, golden shurikens to find, and a portal
+// that opens with crystals.
+import fs from "node:fs";
+import path from "node:path";
 import { append, makeEventHelpers, makeEventFinder, makeLayoutHelpers } from "./events.mjs";
 import { addBoss } from "./boss.mjs";
+import { layoutLevel, itemsFor, allDraws, TILE, SPIKE_W, HEIGHTS } from "./layout.mjs";
+import { readPng, opaqueTop } from "./png.mjs";
 import {
   setAnimations, spriteFrames, ensureImageResource, insertObjectFrom, declareObjectNumbers, setSpriteMask,
+  serializeObject, setBehaviorProperties,
 } from "./objects.mjs";
 
-export const TILE = 1280;
-const CEIL_GAP = 277;          // floor line to ceiling line, as in the Tutorial (proven flip distances)
+export { layoutLevel };
 const KAITO_HALF = 60;         // Kaito's origin is centered: feet at y + 60
+const MASK_TOP = 31;           // the collider image (piso, techo) is 64 px tall with its solid line 31 px down
 const PIECE_W = 256, PIECE_H = 85, PIECE_STEP = 240;   // floating platform art pieces (3:1 images)
 const FLOOR_PIECE_W = 360, FLOOR_PIECE_H = 120, FLOOR_PIECE_STEP = 340;
+const PLATFORM_ART_H = 70;
 const TUTORIAL_ONLY = ["Hint1", "Hint2", "Hint3", "Hint4", "Hint5", "Hint6", "Hint7", "Hint8", "Hint9", "Hint10",
   "indicacion1", "indicacion2", "indicacion3", "Indicacion4", "indicacion5", "cartelInicio", "InstruccionGravedad", "roca"];
 const HUD_OBJECTS = ["barradeenergia", "energiadebarra", "vida", "TextoGemas", "Aviso"];
 const PATROL_VARS = ["Dir", "Vel", "Base", "MinX", "MaxX"];
-
-// ======================= LAYOUT: segments =======================
-// Each segment adds its pieces at x and returns its width. Rules found with the jump bot: spikes to be
-// jumped sit in the open (a ceiling cuts the jump at ~155 px), spike runs sit under a ceiling that starts
-// 200 px before them and ends 200 px after, so they are crossed upside down.
-const SEGMENTS = {
-  start: (x, L) => { L.floorGems.push(x + 260, x + 330, x + 400); return 600; },
-  open: (x, L, w = 400, gems = 0) => {
-    for (let i = 1; i <= gems; i++) L.floorGems.push(Math.round(x + (i * w) / (gems + 1) - 25));
-    return w;
-  },
-  jump: (x, L) => { L.floorSpikes.push(x + 185); L.airGems.push(x + 235); return 520; },
-  jump2: (x, L) => { L.floorSpikes.push(x + 185, x + 535); L.airGems.push(x + 235, x + 585); return 870; },
-  flip: (x, L, n = 3) => {
-    const run = n * 150;
-    L.ceilings.push([x + 50, run + 400]);
-    for (let i = 0; i < n; i++) L.floorSpikes.push(x + 250 + i * 150);
-    for (let gx = x + 260; gx < x + 250 + run; gx += 110) L.ceilGems.push(gx);
-    return run + 500;
-  },
-  // Up over a spike run, down before a hanging spike (180 px window), up again over a second run.
-  zigzag: (x, L) => {
-    L.ceilings.push([x + 50, 1600]);
-    L.floorSpikes.push(x + 250, x + 400, x + 1150, x + 1300);
-    L.hangingSpikes.push(x + 780);
-    L.ceilGems.push(x + 280, x + 420, x + 1180, x + 1320);
-    L.floorGems.push(x + 830);
-    return 1750;
-  },
-  bonus: (x, L, w = 900) => {
-    L.ceilings.push([x + 50, w - 100]);
-    for (let gx = x + 150; gx < x + w - 150; gx += 120) L.ceilGems.push(gx);
-    return w;
-  },
-  enemies: (x, L, w = 900) => { L.zones.push([x + 100, w - 200, "zonaEnemigo"]); return w; },
-  saw: (x, L, w = 700) => { L.zones.push([x + 100, w - 200, "zonaSierra"]); return w; },
-  end: (x, L) => { L.portal = x + 380; return 800; },
-  // Final boss arena: a ceiling over most of it to dodge her spells upside down, gems up there for energy.
-  arena: (x, L, w = 2400) => {
-    L.ceilings.push([x + 200, w - 500]);
-    for (let gx = x + 400; gx < x + w - 400; gx += 300) L.ceilGems.push(gx);
-    L.arena = { x0: x, x1: x + w - 300 };
-    L.portal = x + w - 220;
-    return w;
-  },
-};
-
-export function layoutLevel(sequence) {
-  const L = { ceilings: [], floorSpikes: [], hangingSpikes: [], floorGems: [], ceilGems: [], airGems: [], zones: [], checkpoints: [], portal: null, arena: null };
-  let x = 0, lastCheckpoint = 0;
-  for (const [kind, ...args] of sequence) {
-    if (!SEGMENTS[kind]) throw new Error(`unknown segment ${kind}`);
-    if (x - lastCheckpoint >= 1500) { L.checkpoints.push(x + 40); lastCheckpoint = x; }
-    x += SEGMENTS[kind](x, L, ...args);
-  }
-  if (L.portal === null) throw new Error("a level needs an 'end' or 'arena' segment");
-  return { ...L, length: x, width: Math.ceil(x / TILE) * TILE };
-}
+// Objects whose instances can belong to a slot alternative (instance variable Variante = slot*10 + alt).
+export const VARIANT_OBJECTS = ["pinchos", "techo", "pisoflotante", "sueloLosa", "cristal", "zonaEnemigo", "zonaSierra", "plataforma", "plataformaArte", "shuriken"];
 
 // ======================= OBJECTS captured from the team's original levels =======================
 // Called once, before any level is rebuilt (rebuilding a level replaces its objects).
@@ -90,7 +41,7 @@ export function captureOriginalObjects(gd, project) {
 // Enemy kinds created at runtime: size on screen and how far above the floor line their top-left is.
 // Sized so every body (head to feet, transparent margins left out) is Kaito's 120 px, the sorceress too
 // (lib/boss.mjs). The wraith floats: it appears well above the floor line.
-const KINDS = {
+export const KINDS = {
   azul: { object: "ninjapatrullero", w: 144, h: 144, top: 143 },
   verde: { object: "ninjapatrullero2", w: 133, h: 145, top: 135 },
   guardia: { object: "enemigo", w: 123, h: 123, top: 122 },
@@ -98,7 +49,7 @@ const KINDS = {
   sierra: { object: "cierra", w: 96, h: 77, top: 58 },
 };
 
-function setupEnemyObjects(gd, project, objects, captured) {
+export function setupEnemyObjects(gd, project, objects, captured) {
   for (const n of ["ninjapatrullero", "ninjapatrullero2", "enemigo", "cierra", "cristaldorado"]) insertObjectFrom(gd, project, objects, n, captured[n]);
   // The team's sheets hold every move in one animation: split them into named ones.
   const azul = objects.getObject("ninjapatrullero");
@@ -147,18 +98,42 @@ function setupEnemyObjects(gd, project, objects, captured) {
   group("Peligro", ["pinchos", "ninjapatrullero", "ninjapatrullero2", "enemigo", "cierra", "fantasma"]);
 }
 
+// Colliders and art for slabs and jump-through platforms, copied from the Tutorial's own objects.
+function setupPlatformObjects(gd, project, objects, platformImage) {
+  const techo = serializeObject(gd, objects.getObject("techo"));
+  insertObjectFrom(gd, project, objects, "sueloLosa", techo);
+  const jumpThrough = insertObjectFrom(gd, project, objects, "plataforma", techo);
+  const names = jumpThrough.getAllBehaviorNames();
+  let platformBehavior = null;
+  for (let i = 0; i < names.size(); i++) if (jumpThrough.getBehavior(names.at(i)).getTypeName() === "PlatformBehavior::PlatformBehavior") platformBehavior = names.at(i);
+  if (!platformBehavior) throw new Error("the ceiling collider has no platform behavior");
+  const set = setBehaviorProperties(jumpThrough, platformBehavior, { PlatformType: "Jumpthru" });
+  if (set.PlatformType !== "Jumpthru") throw new Error(`could not make a jump-through platform (${set.PlatformType})`);
+  const art = objects.insertNewObject(project, "Sprite", "plataformaArte", objects.getObjectsCount());
+  setAnimations(gd, art, [{ name: "", images: [platformImage] }]);
+  const item = objects.insertNewObject(project, "Sprite", "shuriken", objects.getObjectsCount());
+  setAnimations(gd, item, [{ name: "", images: [ensureImageResource(gd, project, "assets/items/shuriken.png")] }]);
+  for (const n of VARIANT_OBJECTS) declareObjectNumbers(objects.getObject(n), ["Variante"]);
+  declareObjectNumbers(objects.getObject("cristal"), ["Extra"]);
+}
+
 // ======================= LEVEL =======================
-export function buildLevel({ gd, project }, def, captured) {
-  const F = def.floorLine;                 // y of the floor collider line
-  const C = F - CEIL_GAP;                  // y of the ceiling collider line
+export function buildLevel({ gd, project, gameDir }, def, captured) {
+  const H = def.height || 720;             // level height: 1.5 screens, the camera follows Kaito up
+  const F = def.floorLine + (H - 720);     // y of the floor collider line
+  const C = F - HEIGHTS.slab;              // y of the slab (ceiling) collider line
+  const C2 = F - HEIGHTS.high;             // y of the high ceilings
   const KAITO_Y = F - KAITO_HALF;
   const lay = layoutLevel(def.segments);
   const W = lay.width;
 
-  // ---- 1. A fresh copy of the Tutorial under the level's name ----
-  let position = 0;
-  while (project.getLayoutAt(position).getName() !== def.name) position++;
-  project.removeLayout(def.name);
+  // ---- 1. A fresh copy of the Tutorial under the level's name (a new scene goes at the end) ----
+  let position = project.getLayoutsCount();
+  if (project.hasLayoutNamed(def.name)) {
+    position = 0;
+    while (project.getLayoutAt(position).getName() !== def.name) position++;
+    project.removeLayout(def.name);
+  }
   const level = project.insertNewLayout(def.name, position);
   const el = new gd.SerializerElement();
   project.getLayout("Tutorial").serializeTo(el);
@@ -180,34 +155,74 @@ export function buildLevel({ gd, project }, def, captured) {
   for (const inst of allInstances()) if (inst.getObjectName() === "kaito") { inst.setX(100); inst.setY(KAITO_Y); }
 
   // ---- 2. The level's art ----
+  const platformImage = ensureImageResource(gd, project, def.platform);
   setAnimations(gd, objects.getObject("fondo"), [{ name: "", images: [ensureImageResource(gd, project, def.background)] }]);
-  setAnimations(gd, objects.getObject("pisoflotante"), [{ name: "", images: [ensureImageResource(gd, project, def.platform)] }]);
+  setAnimations(gd, objects.getObject("pisoflotante"), [{ name: "", images: [platformImage] }]);
   setAnimations(gd, objects.getObject("puerta"), [{ name: "", images: [ensureImageResource(gd, project, def.portal)] }]);
   if (def.topBorder) insertObjectFrom(gd, project, objects, "techosuperior", captured.techosuperior);
   setupEnemyObjects(gd, project, objects, captured);
+  setupPlatformObjects(gd, project, objects, platformImage);
+  const surface = opaqueTop(readPng(fs.readFileSync(path.join(gameDir, def.platform))));
 
   // ---- 3. Instances ----
+  // The backgrounds have the floor painted in: each tile keeps its size, standing on the bottom so the
+  // painted floor stays on F, mirrored every other one; above it (taller levels) the same tile flipped
+  // upside down continues the sky with no seam.
   for (let i = 0; i < W / TILE; i++) {
-    addInst("fondo", i * TILE, 0, TILE, 720, { z: -10, flipX: i % 2 === 1 });
-    addInst("piso", i * TILE, F - 31, TILE, 64, { z: 0 });
+    addInst("fondo", i * TILE, H - 720, TILE, 720, { z: -10, flipX: i % 2 === 1 });
+    if (H > 720) addInst("fondo", i * TILE, H - 1440, TILE, 720, { z: -10, flipX: i % 2 === 1, flipY: true });
+    addInst("piso", i * TILE, F - MASK_TOP, TILE, 64, { z: 0 });
   }
   // Backgrounds without a flat floor get one made of the level's platform slabs (slab top on the floor line).
   if (def.floorSlabTop) {
     for (let px = -20; px < W; px += FLOOR_PIECE_STEP) addInst("pisoflotante", px, Math.round(F - FLOOR_PIECE_H * def.floorSlabTop), FLOOR_PIECE_W, FLOOR_PIECE_H, { z: -1 });
   }
   if (def.topBorder) for (let x = 0; x < W; x += 920) addInst("techosuperior", x, 0, 928, 50, { z: -4 });
-  addInst("techo", 0, -55, W, 64, { z: 0 });                       // safety ceiling over the whole level
-  const pieceY = Math.round(C + 2 - PIECE_H * def.platformBottom);
-  for (const [x, w] of lay.ceilings) {
-    addInst("techo", x, C - 31, w, 64, { z: 0 });
-    for (let px = x - 20; px < x + w; px += PIECE_STEP) addInst("pisoflotante", px, pieceY, Math.min(PIECE_W, x + w + 20 - px), PIECE_H, { z: 1 });
+  addInst("techo", 0, -55, W, 64, { z: 0 });                       // safety ceiling over the whole level (step 15)
+
+  const tagged = (inst, tag) => { if (tag) inst.getVariables().insertNew("Variante", 0).setValue(tag); return inst; };
+  // A slab: the collider along its underside (walked upside down), the art, and a collider on the drawn
+  // surface to stand on it.
+  const slab = (line, x, w, tag) => {
+    tagged(addInst("techo", x, line - MASK_TOP, w, 64, { z: 0 }), tag);
+    const pieceY = Math.round(line + 2 - PIECE_H * def.platformBottom);
+    for (let px = x - 20; px < x + w; px += PIECE_STEP) {
+      const pw = Math.min(PIECE_W, x + w + 20 - px);
+      tagged(addInst("pisoflotante", px, pieceY, pw, PIECE_H, { z: 1 }), tag);
+      tagged(addInst("sueloLosa", px, Math.round(pieceY + PIECE_H * surface) - MASK_TOP, pw, 64, { z: 0 }), tag);
+    }
+  };
+  // Crystals up high (high ceilings, upper tower steps) are extra: they count for the rank, not for the
+  // portal, so going up is a choice and not the only way through.
+  const gem = (x, y, tag, extra = false) => {
+    const inst = tagged(addInst("cristal", x, y, 49, 52, { z: 3 }), tag);
+    if (extra) inst.getVariables().insertNew("Extra", 0).setValue(1);
+    return inst;
+  };
+  for (const it of lay.items) {
+    const t = it.tag;
+    switch (it.type) {
+      case "slab": slab(C, it.x, it.w, t); break;
+      case "high": slab(C2, it.x, it.w, t); break;
+      case "floorSpike": tagged(addInst("pinchos", it.x, F - 47, SPIKE_W, 50, { z: 2 }), t); break;
+      case "hangingSpike": tagged(addInst("pinchos", it.x, C, SPIKE_W, 50, { z: 2, flipY: true }), t); break;
+      case "highSpike": tagged(addInst("pinchos", it.x, C2, SPIKE_W, 50, { z: 2, flipY: true }), t); break;
+      case "floorGem": gem(it.x, F - 76, t); break;
+      case "airGem": gem(it.x, F - 176, t); break;
+      case "slabGem": gem(it.x, C + 51, t); break;
+      case "highGem": gem(it.x, C2 + 51, t, true); break;
+      case "platformGem": gem(it.x, F - it.h - 76, t, it.h > HEIGHTS.platform[0]); break;
+      case "platform": {
+        const line = F - it.h;
+        tagged(addInst("plataforma", it.x, line - MASK_TOP, it.w, 64, { z: 0 }), t);
+        tagged(addInst("plataformaArte", it.x - 10, Math.round(line - PLATFORM_ART_H * surface), it.w + 20, PLATFORM_ART_H, { z: 1 }), t);
+        break;
+      }
+      case "shuriken": tagged(addInst("shuriken", it.x, F - it.h, 48, 48, { z: 4 }), t); break;
+      case "zone": tagged(addInst(it.kind, it.x, F - 140, it.w, 20, { z: 0 }), t); break;
+      default: throw new Error(`${def.name}: no instances for layout item ${it.type}`);
+    }
   }
-  for (const x of lay.floorSpikes) addInst("pinchos", x, F - 47, 150, 50, { z: 2 });
-  for (const x of lay.hangingSpikes) addInst("pinchos", x, C, 150, 50, { z: 2, flipY: true });
-  for (const x of lay.floorGems) addInst("cristal", x, F - 76, 49, 52, { z: 3 });
-  for (const x of lay.ceilGems) addInst("cristal", x, C + 51, 49, 52, { z: 3 });
-  for (const x of lay.airGems) addInst("cristal", x, F - 176, 49, 52, { z: 3 });
-  for (const [x, w, zone] of lay.zones) addInst(zone, x, F - 140, w, 20, { z: 0 });
   addInst("puerta", lay.portal, F - 158, 150, 164, { z: 1 });
 
   // ---- 4. Variables ----
@@ -215,18 +230,39 @@ export function buildLevel({ gd, project }, def, captured) {
   const num = (n, v) => { if (!vars.has(n)) vars.insertNew(n, vars.count()); vars.get(n).setValue(v); };
   num("CheckX", 100);
   num("CheckY", KAITO_Y);
-  for (const n of ["Sorteo", "SpawnX", "Requeridas", "PortalAbierto"]) num(n, 0);
+  for (const n of ["Sorteo", "SpawnX", "Requeridas", "PortalAbierto", "Shurikens", "TotalShurikens"]) num(n, 0);
+  for (const { slot } of lay.slots) num(`Slot${slot}`, 0);
 
   // ---- 5. Events taken from the Tutorial that need the level's numbers ----
   const camera = find((c, a) => a.some((x) => x.type === "FixCamera"), "camera");
   const camActions = camera.event.getActions();
   for (let i = 0; i < camActions.size(); i++) {
     const a = camActions.get(i);
-    if (a.getType() === "FixCamera") a.setParameter(4, String(W));
+    if (a.getType() === "FixCamera") { a.setParameter(4, String(W)); a.setParameter(5, String(H)); }
     if (a.getType() === "TextContainerCapability::TextContainerBehavior::SetValue" && a.getParameter(0).getPlainString() === "TextoGemas") {
       a.setParameter(3, '"Cristales: " + ToString(Variable(Gemas)) + " / " + ToString(Variable(Requeridas))');
     }
   }
+  // Falling out of the level: below its (now taller) bottom edge.
+  let falls = 0;
+  const lowerFall = (list) => {
+    for (let i = 0; i < list.getEventsCount(); i++) {
+      const e = list.getEventAt(i);
+      if (e.getType() === "BuiltinCommonInstructions::Standard") {
+        const conds = gd.asStandardEvent(e).getConditions();
+        for (let j = 0; j < conds.size(); j++) {
+          const c = conds.get(j);
+          if (c.getType() === "PosY" && c.getParameter(0).getPlainString() === "kaito" && c.getParameter(1).getPlainString() === ">" && c.getParameter(2).getPlainString() === "760") {
+            c.setParameter(2, String(H + 40));
+            falls++;
+          }
+        }
+      }
+      if (e.canHaveSubEvents()) lowerFall(e.getSubEvents());
+    }
+  };
+  lowerFall(events);
+  if (!falls) throw new Error(`${def.name}: the fall-out-of-the-level event was not found`);
   const isCheckpoint = (c) => c.some((x) => x.type === "PosX" && x.params[0] === "kaito") && c.some((x) => x.params[0] === "CheckX");
   for (const { index } of findAll(isCheckpoint, "tutorial checkpoints", 4).reverse()) events.removeEventAt(index);
   const portal = find((c, a) => c.some((x) => x.type === "CollisionNP" && x.params[1] === "puerta") && a.some((x) => x.type === "Scene"), "portal");
@@ -300,7 +336,7 @@ export function buildLevel({ gd, project }, def, captured) {
     return fe;
   };
   // Zones and colliders are invisible helpers (hidden objects still collide).
-  add(ev([I("SceneJustBegins", [""])], ["zonaEnemigo", "zonaSierra", "piso", "techo"].map((o) => I("Cache", [o]))));
+  add(ev([I("SceneJustBegins", [""])], ["zonaEnemigo", "zonaSierra", "piso", "techo", "sueloLosa", "plataforma"].map((o) => I("Cache", [o]))));
   add(spawner("zonaEnemigo", E.perZone, [
     ["azul", E.azul, speed(E.speed)], ["verde", E.verde, speed(E.speed)], ["guardia", E.guardia, "0"], ["sierra", E.sierra, speed(E.sawSpeed)],
     ["espectro", E.espectro || 0, speed(E.wraithSpeed || [60, 90])],
@@ -340,15 +376,23 @@ export function buildLevel({ gd, project }, def, captured) {
   // Golden crystals dropped by defeated enemies: a big energy refill.
   add(ev([coll("kaito", "cristaldorado"), numIs("Muerto", "=", "0")],
     [setNum("EnergiaGravedad", "+", "25"), I("Delete", ["cristaldorado", ""]), ...warn(q("+25 energía"))]));
+  // Golden shurikens: hidden up high, counted on the results card.
+  add(ev([], [I("Rotate", ["shuriken", "160", ""])]));
+  add(ev([coll("kaito", "shuriken"), numIs("Muerto", "=", "0")], [
+    setNum("Shurikens", "+", "1"), I("Create", ["", "fxCristal", "shuriken.X() + 24", "shuriken.Y() + 24", ""]), I("Delete", ["shuriken", ""]),
+    ...warn('"Shuriken dorado " + ToString(Variable(Shurikens)) + " / " + ToString(Variable(TotalShurikens))'),
+  ]));
 
   // ---- 9. Checkpoints (only used when falling out of the level) ----
   for (const cx of lay.checkpoints) {
     add(ev([I("PosX", ["kaito", ">", cx - 20]), numIs("CheckX", "<", cx)], [setNum("CheckX", "=", cx), setNum("CheckY", "=", KAITO_Y)]));
   }
 
-  // ---- 10. Portal: opens with a share of the level's crystals ----
+  // ---- 10. Portal: opens with a share of the crystals along the way (not the extra ones up high) ----
+  add(ev([I("SceneJustBegins", [""]), I("NumberObjectVariable", ["cristal", "Extra", "=", "0"])],
+    [setNum("Requeridas", "=", `round(Count(cristal) * ${def.crystalsToOpen})`)]));
   add(ev([I("SceneJustBegins", [""])], [
-    setNum("Requeridas", "=", `round(Count(cristal) * ${def.crystalsToOpen})`),
+    setNum("TotalShurikens", "=", "Count(shuriken)"),
     setStr("NivelActual", def.name),
     ...warn(q(def.title)),
   ]));
@@ -368,5 +412,26 @@ export function buildLevel({ gd, project }, def, captured) {
 
   if (lay.arena) addBoss({ gd, project }, level, { floorLine: F, ceilingLine: C, arena: lay.arena, width: W });
 
-  return { boss: !!lay.arena, width: W, length: lay.length, crystals: lay.floorGems.length + lay.ceilGems.length + lay.airGems.length, zones: lay.zones.length, checkpoints: lay.checkpoints.length };
+  // ---- 11. Slots: when the scene starts, keep one alternative of each and delete the others. These run
+  // first, before anything counts crystals or reads the enemy zones.
+  const slotEvents = [];
+  for (const { slot, alternatives } of lay.slots) {
+    slotEvents.push(ev([I("SceneJustBegins", [""])], [setNum(`Slot${slot}`, "=", `RandomInRange(1, ${alternatives})`)]));
+    for (let alt = 1; alt <= alternatives; alt++) {
+      for (const o of VARIANT_OBJECTS) {
+        slotEvents.push(ev([I("SceneJustBegins", [""]), numIs(`Slot${slot}`, "!=", String(alt)), I("NumberObjectVariable", [o, "Variante", "=", String(slot * 10 + alt)])],
+          [I("Delete", [o, ""])]));
+      }
+    }
+  }
+  slotEvents.reverse().forEach((e) => events.insertEvent(e, 0));
+
+  const draws = allDraws(lay).map((d) => itemsFor(lay, d));
+  const count = (items, types) => items.filter((it) => types.includes(it.type)).length;
+  const gems = draws.map((items) => count(items, ["floorGem", "airGem", "slabGem", "highGem", "platformGem"]));
+  return {
+    boss: !!lay.arena, width: W, height: H, length: lay.length, slots: lay.slots.length, draws: draws.length,
+    crystals: `${Math.min(...gems)}-${Math.max(...gems)}`, shurikens: Math.min(...draws.map((items) => count(items, ["shuriken"]))),
+    zones: lay.items.filter((it) => it.type === "zone").length, checkpoints: lay.checkpoints.length,
+  };
 }
