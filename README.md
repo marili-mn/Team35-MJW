@@ -14,7 +14,7 @@ invirtiendo la gravedad para caminar por los techos.
 | `assets/` | Imágenes de la landing: galería, animaciones de Kaito, katana, shuriken y la maga (`assets/wizard/`). |
 | `GravityRunnerDash/` | El juego: proyecto de GDevelop (`GravityRunnerDash.json`) y sus recursos en `assets/`. |
 | `tools/gdevelop/` | Scripts que construyen el juego a partir del proyecto original del equipo. |
-| `docs/` | Documentación del desarrollo (`hallazgos.md`, `potencial-comercial.md`). |
+| `docs/` | Documentación: `integraciones-y-enfoque.md` (cómo está hecho y cómo se prueba), `potencial-comercial.md`, `hallazgos.md`. |
 
 ## Cómo se construye el juego
 
@@ -26,6 +26,7 @@ El motor sale de la instalación local de GDevelop, así que siempre coincide co
 node tools/gdevelop/build.mjs            # construye, valida y escribe GravityRunnerDash/GravityRunnerDash.json
 node tools/gdevelop/build.mjs --check    # construye y compara con el archivo actual, sin escribir
 node tools/gdevelop/build.mjs --export   # además exporta un HTML5 a tools/gdevelop/.cache/export
+node --test tools/gdevelop/test/         # tests: reglas de los niveles, PNG y chequeos del proyecto construido
 ```
 
 | Paso | Qué hace |
@@ -35,7 +36,7 @@ node tools/gdevelop/build.mjs --export   # además exporta un HTML5 a tools/gdev
 | `03-physics-and-gravity-rules` | Física, hitboxes y reglas para invertir la gravedad (techo y energía). |
 | `04-damage-and-lives` | Daño sin volver al checkpoint, invulnerabilidad, autocuración y corazones. |
 | `05-tutorial-layout-fixes` | Ajustes del tutorial encontrados con el bot de salto. |
-| `06-levels` | Niveles 1, 2 y 3 (16 640, 23 040 y 26 880 px) armados por segmentos, con enemigos que se sortean en cada reinicio y portal que se abre con cristales. |
+| `06-levels` | Niveles 1, 2 y 3 (y el oculto) de 1,5 pantallas de alto, generados por `lib/layout.mjs` desde un perfil de dificultad con semilla; tramos y enemigos que se sortean en cada reinicio, portal que se abre con cristales. |
 | `07-victory-credits` | Pantalla de Victoria con los créditos del equipo. |
 | `08-audio` | Música y efectos de sonido (respetan las opciones del menú). |
 | `09-game-feel` | Sacudida de cámara, pausa de impacto, destello rojo al recibir daño y partículas. |
@@ -44,16 +45,21 @@ node tools/gdevelop/build.mjs --export   # además exporta un HTML5 a tools/gdev
 | `12-level-results` | Reloj en el HUD y tarjeta de resultados por nivel (tiempo, cristales, golpes, rango y récord). |
 | `13-camera-and-checkpoints` | La cámara se adelanta 150 px hacia donde mira Kaito; los puntos de control se anuncian. |
 | `14-continue` | Cada nivel se guarda al empezar y el menú ofrece "Continuar" (clic o C). |
+| `15-platforms-and-gravity` | Superficie de las losas, techo de seguridad y gravedad más cara de nivel en nivel. |
+| `16-kaito-moves` | Salto y giro de gravedad con sprites propios; ataque dash al atacar corriendo. |
+| `17-survival` | Nivel oculto de supervivencia en oleadas; se abre al ganar el juego. |
+| `18-level-select` | Selector de niveles (bloqueados, récords, rangos), botón "ELEGIR NIVEL" y reiniciar progreso. |
+| `19-dropped-crystals` | Al recibir daño se caen hasta 3 cristales que se pueden recuperar. |
 
-Por qué cada mejora y la hoja de ruta para venderlo: `docs/potencial-comercial.md`.
+Cómo está hecho cada paso, el diseño procedural de los niveles y las pruebas: `docs/integraciones-y-enfoque.md`. Por qué cada mejora de jugabilidad y la hoja de ruta para venderlo: `docs/potencial-comercial.md`.
 
-La lógica compartida está en `tools/gdevelop/lib/` (`level.mjs` genera los niveles y `boss.mjs` hace a la maga, jefa final del Nivel 3). La maga aparece al salir del inicio del Nivel 3 y persigue a Kaito por todo el mapa: lanza hechizos por el piso y lo embiste (se saltan o se cortan con la katana), no ataca cerca de pinchos ni cuando Kaito va por el techo, y en el templo del final suma el dragón de humo. Todos los personajes están en la misma escala: Kaito 120 px de alto, ninjas 118–125 px y la maga 141 px. Los recursos que se generan por script están en `tools/gdevelop/assets/`: `slice-maga.mjs` recorta los sprites de la maga y `make-audio.mjs` sintetiza la música y los efectos.
+La lógica compartida está en `tools/gdevelop/lib/`: `layout.mjs` describe los niveles como datos (segmentos, pisos, tramos sorteados), `level.mjs` los convierte en escenas, `boss.mjs` hace a la Maga Oscura y `scenes.mjs` dice qué escenas se juegan. La Maga Oscura persigue a Kaito por todo el Nivel 3, se vuelve más agresiva a medida que pierde vidas, invoca espectros y sus hechizos se pueden reflejar con la katana. Todos los personajes miden lo mismo que Kaito (120 px). Los recursos que se generan por script están en `tools/gdevelop/assets/`: `slice-maga.mjs` recorta los sprites de la maga, `make-audio.mjs` sintetiza la música y los efectos, `make-flip.mjs` dibuja el giro de gravedad de Kaito y `make-fantasma.mjs` los espectros.
 
 ## Probarlo en local
 
 ```sh
 node tools/gdevelop/build.mjs --export
-npx serve -l 47281 tools/gdevelop/.cache/export   # juego en http://localhost:47281
+python -m http.server 47281 --directory tools/gdevelop/.cache/export   # juego en http://localhost:47281
 npx serve -l 58913 .                              # landing en http://localhost:58913
 ```
 
@@ -63,4 +69,6 @@ La versión que se sube a itch.io se exporta desde el IDE de GDevelop (File → 
 
 ## Controles
 
-← → caminar (doble toque para correr) · Espacio saltar · Alt invertir la gravedad (bajo un techo, gasta energía) · F atacar · P o Esc pausa
+← → caminar (doble toque para correr) · Espacio saltar · Alt invertir la gravedad (bajo un techo, gasta energía) · F atacar (corriendo: dash) · P o Esc pausa
+
+Menú: Jugar (desde el tutorial) · ELEGIR NIVEL o N · CONTINUAR o C. En el selector: flechas y Enter, R dos veces para reiniciar el progreso.
