@@ -85,6 +85,18 @@ GDD); la historia en pocas frases; ninguna cifra de ventas inventada.
   final («Voz: ElevenLabs»).
 - Para rehacer una frase: generarla sola en el panel y reemplazar sus tiempos en `LINES` de
   `make-trailer.mjs`.
+- **Las voces del equipo (pitch):** una voz de la biblioteca por integrante, todas del plan gratuito y con
+  acento argentino (*Fernando* y *Carolina* piden plan pago): *Tomas - Argentina & Uruguaya* (Nahuel),
+  *Valeria - Cheerful, Youthful, Catchy* (Jorgelina), *Pablo - Argentino, Córdoba* (Taoufik) y *Cande - Friend
+  from Buenos Aires* (Delcy). Cada una es una toma con todas sus líneas, un párrafo por línea;
+  `tools/video/voice-cuts.mjs` encuentra los cortes (las pausas que mantienen parejo el ritmo de cada línea) y
+  los imprime para revisarlos. Las tomas salen con hasta 7 dB de diferencia (Taoufik −22 LUFS, Nahuel −14,8),
+  así que `make-pitch.mjs` lleva cada una a −16 LUFS antes de mezclar. En pantalla dice «voz generada con IA»
+  junto a cada nombre.
+- **Créditos:** unos 4.400 de los 10.000 del mes (una toma de Nahuel se descartó al reescribir el relato).
+- Para cambiar una línea: editarla en `pitch-script.mjs`, volver a generar la toma de ese integrante en el
+  panel (el texto sale de `takeText(miembro)`), guardarla como `tools/video/.cache/voz-<miembro>.mp3` y correr
+  `node tools/video/make-pitch.mjs`.
 
 ## 5. Producción
 
@@ -106,5 +118,5 @@ GDD); la historia en pocas frases; ninguna cifra de ventas inventada.
    juego, arma cada plano de fondo por separado (las páginas del GDD bajan despacio; la Victoria y el selector
    se achican para que los subtítulos no tapen su texto), pone el título de cada punto, quién habla y los
    subtítulos, y mezcla las voces con el tema del menú, que baja cuando hablan. Falla si el video pasa de
-   5 minutos. Resultado: 4:39, 1280 × 720, −14,8 LUFS, en `tools/video/.cache/pitch.mp4`; se copia a
+   5 minutos. Resultado: 4:39, 1280 × 720, −13,9 LUFS con pico de −1,3 dBFS, en `tools/video/.cache/pitch.mp4`; se copia a
    `Desktop/GravityRunnerDash-Final/video/` junto con una versión liviana (CRF 26, ~60 MB) y las cuatro voces.
