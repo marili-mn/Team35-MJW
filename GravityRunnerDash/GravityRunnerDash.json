@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 285,
+    "build": 286,
     "major": 5,
     "minor": 6,
     "revision": 0
@@ -62112,7 +62112,45 @@
       ]
     }
   ],
+  "layoutsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "itemName": "Menu"
+      },
+      {
+        "itemName": "Opciones"
+      },
+      {
+        "itemName": "controles"
+      },
+      {
+        "itemName": "Tutorial"
+      },
+      {
+        "itemName": "Victoria"
+      },
+      {
+        "itemName": "GameOver"
+      },
+      {
+        "itemName": "Nivel1"
+      },
+      {
+        "itemName": "Nivel2"
+      },
+      {
+        "itemName": "Nivel3"
+      }
+    ]
+  },
   "externalEvents": [],
+  "externalEventsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "testsFolderStructure": {
+    "folderName": "__ROOT"
+  },
   "eventsFunctionsExtensions": [
     {
       "author": "",
@@ -67245,5 +67283,8 @@
       "eventsBasedObjects": []
     }
   ],
-  "externalLayouts": []
+  "externalLayouts": [],
+  "externalLayoutsFolderStructure": {
+    "folderName": "__ROOT"
+  }
 }
