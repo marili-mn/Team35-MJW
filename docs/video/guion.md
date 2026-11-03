@@ -40,23 +40,41 @@ debajo. Cada plano dura lo que dura su frase; los cortes caen en los golpes de l
 **Sonido:** el tema del Nivel 1 en el arranque, el de la Maga Oscura a partir del plano 6 y un golpe de
 odaiko con la campana en el logo. Los efectos del juego (salto, katana, reflejo) quedan debajo de la voz.
 
-## 3. Video pitch completo (≈ 4:30)
+## 3. Video pitch (4:39): el tráiler y las voces del equipo
 
-| # | Tiempo | Bloque | Imagen | Voz en off (idea) |
-|---|---|---|---|---|
-| 1 | 0:00–1:05 | **Gancho** | El tráiler. | El de la sección 2. |
-| 2 | 1:05–1:35 | **Visión y USP** | Título; plano del giro de gravedad en loop. | «Gravity Runner: Dash es un plataformas de acción 2D en el que la gravedad es un recurso: invertirla cuesta energía, y la energía se gana jugando bien. Cada giro es una decisión.» |
-| 3 | 1:35–2:05 | **Cómo se juega** | Esquema del bucle (correr → cristales → invertir → portal → rango) sobre gameplay. | Los tres pisos (piso, losas, techos altos), los cristales que se caen al recibir daño y el rango al final de cada nivel. |
-| 4 | 2:05–2:35 | **Mercado y competencia** | Portadas de *VVVVVV*, *Celeste* y *Katana ZERO*, y al lado nuestro juego. | «*VVVVVV* demostró que invertir la gravedad engancha; nosotros le ponemos un costo. *Celeste* nos enseñó que lo difícil tiene que sentirse justo: por eso agregamos *coyote time* y *jump buffer*. Y como en *Katana ZERO*, la katana devuelve los ataques.» Tracción: «En el primer playtest los controles sacaron 3,43 sobre 5; los rehicimos a partir de eso.» |
-| 5 | 2:35–3:00 | **Modelo de negocio** | Página de itch.io; esquema demo → versión completa. | «Primero, itch.io con "pagá lo que quieras" para construir público y feedback. Después, una versión completa paga con demo gratuita, y la meta de una página de Steam para juntar listas de deseos.» |
-| 6 | 3:00–3:30 | **Hoja de ruta y presupuesto** | Línea de tiempo con hitos. | Hoy: prototipo con tres niveles y jefa final (3/11). 10/11: publicación en itch.io y playtest. Siguiente versión: mando, controles táctiles, modo asistido y volumen por separado. Presupuesto: *[a completar por el equipo: horas por integrante, licencias, publicación (Steam Direct)]*. |
-| 7 | 3:30–4:10 | **El equipo** | Los cuatro integrantes con su rol; el manifiesto en una frase. | Nahuel Marcilli (diseño, sprites, GDD), Jorgelina Elizabeth Mendieta (arte, paleta), Taoufik Saidi (narrativa, mecánicas) y Delcy Adalis Villalba Olmedo (audio, testing). «Diseñamos jugando, construimos con código, confirmamos jugando.» |
-| 8 | 4:10–4:30 | **Cierre y llamado a la acción** | Logo, link de itch.io, logo de la UNER y copyright. | «Probalo, intentá romperlo y contanos qué te pasó. Gravity Runner: Dash, del Grupo 35.» |
+El criterio lo dio el profesor Fabián Pineda por mail (31/10/2026): el *game pitch* da a conocer el producto
+para atraer a un patrocinador o *publisher* que financie el desarrollo completo; para la materia, el alcance
+es el prototipo / *vertical slice* / MVP. Pide que el video tenga **las voces de los integrantes** contando
+su experiencia sobre diez puntos, y así quedó armado: el tráiler abre y después cada integrante responde los
+puntos de su rol, en orden, sobre gameplay y páginas del GDD, con subtítulos.
 
-**Qué no decir** (según el artículo): nada de jerga del motor, de *scripts* ni de *libGD* en el video
-(eso está en el GDD); la historia en una sola frase; ninguna cifra de ventas inventada.
+| # | Punto del mail | Quién responde | Qué se ve |
+|---|---|---|---|
+| — | (gancho) | Narrador del tráiler | El tráiler de la sección 2, hasta el último plano de juego. |
+| 1 | Cómo surgió la idea | Nahuel | La portada y las animaciones del GDD v1; Kaito en el Nivel 1. |
+| 2 | El género | Nahuel | Nivel 1, Nivel 2 y el templo. |
+| 3 | En qué juegos se inspiraron | Taoufik | Gravedad invertida, plataformas y el reflejo con la katana. |
+| 4 | La narrativa detrás del personaje | Taoufik | El templo, la arena y la Maga Oscura. |
+| 5 | Los perfiles del grupo | Delcy | Los créditos de la Victoria (con el logo de la UNER), la ficha de Kaito y el menú. |
+| 6 | Herramientas además de GDevelop y el rol de la IA | Jorgelina y Nahuel | Las páginas de arte y de arte conceptual del GDD, el manifiesto y gameplay. |
+| 7 | Qué les pareció la experiencia | Delcy | El Tutorial y gameplay de los niveles. |
+| 8 | Si se animarían a presentarlo en un evento | Jorgelina | Una oleada de la supervivencia. |
+| 9 | Qué necesitan para un producto completo | Nahuel | El selector de niveles y gameplay. |
+| 10 | La industria de videojuegos en Argentina | Taoufik | La arena y el reflejo. |
+| — | Cierre y créditos | Delcy | Gameplay y la tarjeta final: logo del juego, link de itch.io, integrantes, logo de la UNER, voces con IA y ©. |
 
-## 4. La voz (ElevenLabs)
+El texto de cada línea está en `tools/video/pitch-script.mjs`. La IA aparece como apoyo (tiempo de
+programación, pruebas y sonido, el guion y las voces), y las ideas, el arte y las decisiones como del equipo.
+Las líneas marcadas `confirm` son opiniones o planes escritos para el equipo: **cada integrante tiene que
+confirmar las suyas** antes de entregar (puntos 7, 8 y 10). Los datos son reales: el origen en la actividad de
+pixel art (GDD v1), la ficha de Kaito, las herramientas del GDD (Piskel, Aseprite, Krita, Photopea), el
+playtest (7 respuestas, controles 3,43/5, arte lo mejor valorado) y la EVA 2026, 24.ª edición, organizada por
+ADVA ([expoeva.com](https://www.expoeva.com/), [adva.com.ar](https://www.adva.com.ar/)).
+
+**Qué no decir** (según el artículo): nada de jerga del motor ni de *scripts* en el video (eso está en el
+GDD); la historia en pocas frases; ninguna cifra de ventas inventada.
+
+## 4. Las voces (ElevenLabs)
 
 - **Voz:** *Juanma - Deep Cinematic, Argentina*, de la biblioteca de ElevenLabs: narrador grave, con acento
   rioplatense. **Modelo:** Eleven v4, con la configuración por defecto.
@@ -82,3 +100,11 @@ odaiko con la campana en el logo. Los efectos del juego (salto, katana, reflejo)
    del GDD) y mezcla y masteriza a −14 LUFS, el estándar de video web. El resultado dura 66 s, en 1280 × 720
    a 30 cuadros por segundo. Se guarda en `tools/video/.cache/trailer.mp4` y se copia a
    `Desktop/GravityRunnerDash-Final/video/`.
+5. **Pitch:** para el fondo de las respuestas se grabaron además el Tutorial, el menú, el selector de
+   niveles y la Victoria con el logo de la UNER (`take-Pantallas.webm`), y se capturaron páginas del GDD
+   (sin la barra de pestañas). `node tools/video/make-pitch.mjs` toma el tráiler hasta su último plano de
+   juego, arma cada plano de fondo por separado (las páginas del GDD bajan despacio; la Victoria y el selector
+   se achican para que los subtítulos no tapen su texto), pone el título de cada punto, quién habla y los
+   subtítulos, y mezcla las voces con el tema del menú, que baja cuando hablan. Falla si el video pasa de
+   5 minutos. Resultado: 4:39, 1280 × 720, −14,8 LUFS, en `tools/video/.cache/pitch.mp4`; se copia a
+   `Desktop/GravityRunnerDash-Final/video/` junto con una versión liviana (CRF 26, ~60 MB) y las cuatro voces.
