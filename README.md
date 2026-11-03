@@ -53,6 +53,7 @@ node --test tools/gdevelop/test/         # tests: reglas de los niveles, PNG y c
 | `20-sound-design` | Sonidos de lo que vino después del paso 08: dash, reflejo, espectros, cristales perdidos, puntos de control, nivel superado, oleadas y selector. |
 | `21-screen-fit` | La vista queda en 1280×720 con bandas negras en ventanas de otra forma (antes se veían bandas blancas más allá del arte). |
 | `22-agile-enemies` | Ninja rojo y ninja sombra; todos los ninjas saltan, embisten, tiran shurikens reflejables y montan guardia arriba; desde el Nivel 2 aparecen los 7 tipos. |
+| `23-intro-crawl` | La primera vez que se toca JUGAR, la historia y los créditos suben como introducción antes del Tutorial (flechas ↑ ↓ para desplazar, SALTAR o Espacio para empezar, Esc para volver al menú); después JUGAR entra directo. |
 
 Cómo está hecho cada paso, el diseño procedural de los niveles y las pruebas: `docs/integraciones-y-enfoque.md`. Por qué cada mejora de jugabilidad y la hoja de ruta para venderlo: `docs/potencial-comercial.md`.
 

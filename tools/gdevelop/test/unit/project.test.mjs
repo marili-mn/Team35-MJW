@@ -158,7 +158,7 @@ test("every sound and music the events play is a declared audio file on disk, an
   for (const name of audio) assert.ok(fs.existsSync(path.join(GAME, resources[name])), `${name} is missing on disk`);
   const onDisk = fs.readdirSync(path.join(GAME, "assets", "audio")).map((f) => `assets/audio/${f}`);
   for (const f of onDisk) assert.ok(played.has(f), `${f} is never played`);
-  for (const l of layouts.filter((x) => x.name !== "Niveles")) assert.equal(l.stopSoundsOnStartup, true, `${l.name} keeps the previous scene's sounds`);
+  for (const l of layouts.filter((x) => !["Niveles", "Intro"].includes(x.name))) assert.equal(l.stopSoundsOnStartup, true, `${l.name} keeps the previous scene's sounds`);
 });
 
 test("the view stays 1280x720 (no blank bars past the art) and no scene has a light background", () => {

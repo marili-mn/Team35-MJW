@@ -5,7 +5,7 @@ import { existsSync } from "node:fs";
 import { makeEventHelpers, makeLayoutHelpers } from "../../lib/events.mjs";
 import { cloneTextObject, ensureImageResource, insertObjectFrom, serializeObject, setAnimations } from "../../lib/objects.mjs";
 
-const TEAM = [
+export const TEAM = [
   ["Nahuel Marcilli", "Diseño, sprites, GDD"],
   ["Jorgelina Elizabeth Mendieta", "Arte, paleta"],
   ["Taoufik Saidi", "Narrativa, mecánicas"],

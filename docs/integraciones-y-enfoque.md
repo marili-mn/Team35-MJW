@@ -70,6 +70,7 @@ node --test tools/gdevelop/test/         # tests (sección 4)
 | `08-audio` + `20-sound-design` + `lib/synth.mjs` | Sonido producido: instrumentos japoneses modelados, un tema por nivel, 21 efectos en capas, masterizado en LUFS (`docs/sonido.md`) | El sonido sonaba a 8 bits; pedido de que el salto suene a ninja. |
 | `21-screen-fit` | Vista fija de 1280×720 con bandas negras y fondo oscuro en todas las escenas | En ventanas más anchas que 16:9 se veían bandas blancas al jugar. |
 | `22-agile-enemies` + `lib/enemies.mjs` | Ninja rojo (hoja del equipo sin usar) y ninja sombra (original, generado); saltos, embestidas, pausas, shurikens reflejables, guardias sobre losas y torres; los 7 tipos desde el Nivel 2 | Pedidos: más enemigos y más variedad, más agilidad, shurikens reflejables, enemigos arriba. |
+| `23-intro-crawl` | Escena `Intro` entre JUGAR y el Tutorial (solo la primera vez): título, historia del GDD y créditos con el logo de la UNER que suben solos con el tema del menú; ↓ adelanta, ↑ vuelve, SALTAR/Espacio/Enter empiezan, Esc vuelve. Se recuerda en el almacenamiento del navegador (`introVista`), que "Reiniciar progreso" borra | Pedidos: créditos como introducción de la historia, con saltar y flechas; que aparezca al tocar JUGAR. |
 
 ### Niveles procedurales, en detalle
 
