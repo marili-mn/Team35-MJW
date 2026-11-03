@@ -20,6 +20,12 @@ function pauses(file) {
   return { duration, pauses: out };
 }
 
+// Integrated loudness of a take (LUFS, EBU R128): the four voices come out of ElevenLabs up to 7 dB apart.
+export function loudness(member) {
+  const r = spawnSync(findFfmpeg("ffmpeg"), ["-hide_banner", "-i", takeFile(member), "-af", "ebur128", "-f", "null", "-"], { encoding: "utf8" });
+  return Number(r.stderr.split("Summary:").pop().match(/I:\s+(-?[\d.]+) LUFS/)[1]);
+}
+
 // [{ text, chapter, from, to }] for one member, in the take's order.
 export function cuts(member) {
   const lines = LINES.filter(([m]) => m === member);
@@ -52,7 +58,7 @@ export function cuts(member) {
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   for (const member of Object.keys(MEMBERS)) {
     const cs = cuts(member);
-    console.log(`${member}:`);
+    console.log(`${member} (${loudness(member)} LUFS):`);
     for (const c of cs) console.log(`  ${c.from.toFixed(2)}–${c.to.toFixed(2)}  ${(c.text.length / (c.to - c.from)).toFixed(1)} car/s  ${c.text.slice(0, 50)}`);
   }
 }

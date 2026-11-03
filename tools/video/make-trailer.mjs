@@ -120,7 +120,7 @@ LINES.forEach(([from, to, at], i) => {
   const ms = Math.round(at * 1000);
   f.push(`[l${i}]atrim=start=${from}:end=${to},asetpts=PTS-STARTPTS,afade=t=in:d=0.04,afade=t=out:st=${(to - from - 0.12).toFixed(2)}:d=0.12,adelay=${ms}|${ms}[lv${i}]`);
 });
-f.push(`${LINES.map((_, i) => `[lv${i}]`).join("")}amix=inputs=${LINES.length}:normalize=0,volume=1.6,asplit=2[vo][vokey]`);
+f.push(`${LINES.map((_, i) => `[lv${i}]`).join("")}amix=inputs=${LINES.length}:normalize=0,volume=1.6,apad=whole_dur=${total},asplit=2[vo][vokey]`);
 // music: [input, from, length, at, fade in, fade out]
 const MUSIC = [["menu", 0, 6.4, 0, 1.6, 0.5], ["nivel", 0, 30.4, 6, 0.15, 0.5], ["jefe", 0, 21.4, 36, 0.1, 0.6], ["fanfarria", 0, 6.5, 56.6, 0, 1.2], ["menu", 4, 9, 61.5, 2.5, 2.5]];
 MUSIC.forEach(([src, from, len, at, fin, fout], i) => {
@@ -130,18 +130,24 @@ MUSIC.forEach(([src, from, len, at, fin, fout], i) => {
 f.push(`${MUSIC.map((_, i) => `[m${i}]`).join("")}amix=inputs=${MUSIC.length}:normalize=0,volume=0.7[music]`);
 f.push(`[music][vokey]sidechaincompress=threshold=0.04:ratio=7:attack=15:release=350:makeup=1[ducked]`);
 f.push(`[acat]volume=0.55[sfx]`);
-f.push(`[vo][ducked][sfx]amix=inputs=3:normalize=0,atrim=duration=${total},afade=t=out:st=${total - 1.5}:d=1.5,loudnorm=I=-14:TP=-1.5:LRA=11[aout]`);
 
 const script = path.join(CACHE, "trailer.filter");
 fs.writeFileSync(script, f.join(";\n"));
-const args = ["-y", "-loglevel", "error"];
-for (const name of order) {
-  if (name === "selector") args.push("-i", INPUTS[name]);
-  else args.push("-i", INPUTS[name]);
-}
 const out = path.join(CACHE, "trailer.mp4");
-args.push("-/filter_complex", script, "-map", "[vout]", "-map", "[aout]", "-r", String(FPS),
-  "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", out);
+// Two passes. The first writes the picture and the three audio stems (voice, ducked music, game sounds) to
+// separate files; the second mixes and masters the stems and joins them with the picture. Mixed inside the
+// same graph as the picture, the audio came out cut after its first second (FFmpeg 9).
+const tmp = (name) => path.join(CACHE, `trailer-${name}`);
+const stems = ["vo", "ducked", "sfx"];
+const args = ["-y", "-loglevel", "error"];
+for (const name of order) args.push("-i", INPUTS[name]);
+args.push("-/filter_complex", script, "-map", "[vout]", "-an", "-r", String(FPS),
+  "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p", tmp("video.mp4"));
+for (const stem of stems) args.push("-map", `[${stem}]`, "-vn", "-ar", "48000", "-c:a", "pcm_f32le", tmp(`${stem}.wav`));
 process.chdir(CACHE);
 run("ffmpeg", args);
+run("ffmpeg", ["-y", "-loglevel", "error", "-i", tmp("video.mp4"), ...stems.flatMap((stem) => ["-i", tmp(`${stem}.wav`)]),
+  "-filter_complex", `[1:a][2:a][3:a]amix=inputs=3:normalize=0,apad,atrim=duration=${total},afade=t=out:st=${total - 1.5}:d=1.5,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[aout]`,
+  "-map", "0:v", "-map", "[aout]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out]);
+for (const name of ["video.mp4", ...stems.map((stem) => `${stem}.wav`)]) fs.rmSync(tmp(name), { force: true });
 console.log(`${path.relative(REPO, out)}: ${total.toFixed(1)} s, ${(fs.statSync(out).size / 1048576).toFixed(1)} MB`);

@@ -12,7 +12,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { run } from "../gdevelop/lib/ffmpeg.mjs";
 import { CHAPTERS, LINES, MEMBERS, shown } from "./pitch-script.mjs";
-import { cuts, takeFile } from "./voice-cuts.mjs";
+import { cuts, loudness, takeFile } from "./voice-cuts.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(HERE, "..", "..");
@@ -191,11 +191,12 @@ const f = [];
 f.push(`[0:v]trim=duration=${TRAILER_END},setpts=PTS-STARTPTS,fade=t=out:st=${TRAILER_END - 0.6}:d=0.6[vtr]`);
 f.push(`[0:a]atrim=duration=${TRAILER_END},asetpts=PTS-STARTPTS,afade=t=out:st=${TRAILER_END - 1.2}:d=1.2[atr]`);
 f.push(`[1:v]fade=t=in:st=0:d=0.6,${draws.join(",")}[vteam]`);
-// Voices: each line at its moment.
+// Voices: each take brought to the same loudness, each line at its moment.
+const VOICE_LUFS = -16;
 const byMember = {};
 timeline.forEach((l, i) => (byMember[l.member] ||= []).push([l, i]));
 for (const [member, ls] of Object.entries(byMember)) {
-  f.push(`[${vIdx[member]}:a]aresample=48000,aformat=channel_layouts=stereo,asplit=${ls.length}${ls.map(([, i]) => `[s${i}]`).join("")}`);
+  f.push(`[${vIdx[member]}:a]aresample=48000,aformat=channel_layouts=stereo,volume=${(VOICE_LUFS - loudness(member)).toFixed(1)}dB,asplit=${ls.length}${ls.map(([, i]) => `[s${i}]`).join("")}`);
   for (const [l, i] of ls) {
     const ms = Math.round(l.at * 1000), len = l.to - l.from;
     f.push(`[s${i}]atrim=start=${l.from.toFixed(3)}:end=${l.to.toFixed(3)},asetpts=PTS-STARTPTS,afade=t=in:d=0.03,afade=t=out:st=${(len - 0.08).toFixed(3)}:d=0.08,adelay=${ms}|${ms}[l${i}]`);
@@ -214,9 +215,15 @@ fs.writeFileSync(script, f.join(";\n"));
 const args = ["-y", "-loglevel", "error"];
 inputs.forEach((p, i) => { if (i === musicIdx) args.push("-stream_loop", "-1"); args.push("-i", p); });
 const out = path.join(CACHE, "pitch.mp4");
-args.push("-/filter_complex", script, "-map", "[vcat]", "-map", "[aout]", "-r", String(FPS),
-  "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", out);
+// Video and audio go to separate files in the same run and are joined afterwards: written straight into one MP4,
+// the audio came out cut after the first second (FFmpeg 9, this graph).
+const videoOnly = path.join(CACHE, "pitch-video.mp4"), audioOnly = path.join(CACHE, "pitch-audio.wav");
+args.push("-/filter_complex", script, "-map", "[vcat]", "-an", "-r", String(FPS),
+  "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p", videoOnly,
+  "-map", "[aout]", "-vn", "-ar", "48000", "-c:a", "pcm_f32le", audioOnly);
 run("ffmpeg", args);
+run("ffmpeg", ["-y", "-loglevel", "error", "-i", videoOnly, "-i", audioOnly, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", out]);
+for (const f of [videoOnly, audioOnly]) fs.rmSync(f, { force: true });
 const mmss = (s) => { const r = Math.round(s); return `${Math.floor(r / 60)}:${String(r % 60).padStart(2, "0")}`; };
 console.log(`${path.relative(REPO, out)}: ${mmss(total)} (${total.toFixed(1)} s), ${(fs.statSync(out).size / 1048576).toFixed(1)} MB`);
 console.log([...chapters.map((c) => `${c.n === 11 ? "cierre" : c.n} ${mmss(TRAILER_END + c.start)}`), `créditos ${mmss(TRAILER_END + teamLength - END_CARD)}`].join(" · "));
