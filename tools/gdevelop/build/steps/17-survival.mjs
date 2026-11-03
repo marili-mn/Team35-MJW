@@ -11,7 +11,7 @@ import { SURVIVAL_SCENE } from "../../lib/scenes.mjs";
 
 const STORE = '"GravityRunnerDash"', RECORD = '"record_Supervivencia"';
 // [kind, from second, share of the draw out of 100, base speed px/s]
-export const ROSTER = [["azul", 0, 40, 95], ["verde", 20, 30, 115], ["espectro", 45, 15, 85], ["guardia", 70, 8, 0], ["sierra", 90, 7, 160]];
+export const ROSTER = [["azul", 0, 30, 95], ["verde", 20, 22, 115], ["rojo", 30, 16, 110], ["espectro", 45, 12, 85], ["sombra", 60, 10, 120], ["guardia", 70, 5, 0], ["sierra", 90, 5, 160]];
 const WAVE = 30;                  // seconds per wave
 const HEAL = 9;                   // seconds per life healed (4 in the story)
 

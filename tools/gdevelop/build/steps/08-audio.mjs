@@ -11,8 +11,8 @@ import { PLAYABLE, SURVIVAL_SCENE } from "../../lib/scenes.mjs";
 // name -> format: what must sound the instant a key is pressed is WAV, the rest MP3 (smaller).
 export const AUDIO = {
   salto: "wav", golpe: "wav", cristal: "wav", espada: "wav", gravedad: "wav", enemigo: "wav", hechizo: "wav",
-  dash: "wav", reflejo: "wav", menu_mover: "wav",
-  espectro: "mp3", dispersion: "mp3", checkpoint: "mp3", oleada: "mp3", menu_ok: "mp3",
+  dash: "wav", reflejo: "wav", menu_mover: "wav", shuriken: "wav",
+  espectro: "mp3", dispersion: "mp3", checkpoint: "mp3", oleada: "mp3", menu_ok: "mp3", sombra: "mp3",
   portal: "mp3", completado: "mp3", victoria: "mp3", derrota: "mp3",
   musica_menu: "mp3", musica_nivel: "mp3", musica_nivel2: "mp3", musica_nivel3: "mp3", musica_jefe: "mp3",
 };

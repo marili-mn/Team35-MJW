@@ -6,6 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { append, makeEventHelpers, makeEventFinder, makeLayoutHelpers } from "./events.mjs";
 import { addBoss } from "./boss.mjs";
+import { setupExtraEnemies, NINJAS } from "./enemies.mjs";
 import { layoutLevel, itemsFor, allDraws, TILE, SPIKE_W, HEIGHTS } from "./layout.mjs";
 import { readPng, opaqueTop } from "./png.mjs";
 import {
@@ -47,6 +48,8 @@ export const KINDS = {
   guardia: { object: "enemigo", w: 123, h: 123, top: 122 },
   espectro: { object: "fantasma", w: 130, h: 130, top: 240 },
   sierra: { object: "cierra", w: 96, h: 77, top: 58 },
+  rojo: { object: "ninjarojo", w: 128, h: 128, top: 125 },     // lib/enemies.mjs
+  sombra: { object: "sombra", w: 128, h: 128, top: 124 },
 };
 
 export function setupEnemyObjects(gd, project, objects, captured) {
@@ -82,6 +85,7 @@ export function setupEnemyObjects(gd, project, objects, captured) {
     { name: "flota", images: [0, 1, 2, 3, 4, 5].map((i) => ensureImageResource(gd, project, `assets/fantasma/fantasma_${i}.png`)), speed: 0.11 },
   ], { mask: [[34, 12], [96, 12], [96, 118], [34, 118]] });
   declareObjectNumbers(wraith, [...PATROL_VARS, "Fase"]);
+  setupExtraEnemies(gd, project, objects, PATROL_VARS);
 
   for (const zone of ["zonaEnemigo", "zonaSierra"]) {
     const obj = objects.insertNewObject(project, "Sprite", zone, objects.getObjectsCount());
@@ -92,10 +96,10 @@ export function setupEnemyObjects(gd, project, objects, captured) {
     const g = groups.insertNew(name, groups.count());
     for (const m of members) g.addObject(m);
   };
-  group("Patrulla", ["ninjapatrullero", "ninjapatrullero2", "enemigo", "cierra"]);
-  group("Enemigos", ["ninjapatrullero", "ninjapatrullero2", "enemigo", "fantasma"]);
-  group("Ninjas", ["ninjapatrullero", "ninjapatrullero2"]);
-  group("Peligro", ["pinchos", "ninjapatrullero", "ninjapatrullero2", "enemigo", "cierra", "fantasma"]);
+  group("Patrulla", [...NINJAS, "enemigo", "cierra"]);
+  group("Enemigos", [...NINJAS, "enemigo", "fantasma"]);
+  group("Ninjas", NINJAS);
+  group("Peligro", ["pinchos", ...NINJAS, "enemigo", "cierra", "fantasma", "shurikenEnemigo"]);
 }
 
 // Colliders and art for slabs and jump-through platforms, copied from the Tutorial's own objects.
@@ -340,6 +344,7 @@ export function buildLevel({ gd, project, gameDir }, def, captured) {
   add(spawner("zonaEnemigo", E.perZone, [
     ["azul", E.azul, speed(E.speed)], ["verde", E.verde, speed(E.speed)], ["guardia", E.guardia, "0"], ["sierra", E.sierra, speed(E.sawSpeed)],
     ["espectro", E.espectro || 0, speed(E.wraithSpeed || [60, 90])],
+    ["rojo", E.rojo || 0, speed(E.speed)], ["sombra", E.sombra || 0, speed(E.speed)],
   ]));
   add(ev([I("SceneJustBegins", [""])], [I("SetNumberObjectVariable", ["fantasma", "Fase", "=", "RandomFloat(6.28)"])]));
   add(spawner("zonaSierra", 1, [["sierra", 100, speed(E.sawSpeed)]]));

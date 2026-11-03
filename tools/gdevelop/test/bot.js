@@ -4,7 +4,8 @@
 //   await page.addScriptTag({ path: "tools/gdevelop/test/bot.js" });
 //   const report = await page.evaluate(() => window.gravityBot.play("Nivel1", { timeout: 300 }));
 // It walks right, jumps open-air spikes and saws, flips under ceilings before spike runs, drops before
-// hanging spikes or the ceiling's end, attacks enemies ahead, and reports lives lost, crystals and time.
+// hanging spikes or the ceiling's end, attacks enemies ahead, reflects shurikens coming from the front (and
+// jumps the rest), and reports lives lost, crystals and time.
 (function () {
   const KEY = { left: 37, right: 39, space: 32, alt: 18, f: 70 };
   const ALT_LOCATION = 1; // left Alt ("LAlt" in the events)
@@ -47,7 +48,17 @@
         const x = k.getX(), flipped = k.isFlippedY(), onFloor = b.isOnFloor();
         const energy = v.get("EnergiaGravedad").getAsNumber();
         const lives = v.get("Vidas").getAsNumber();
-        if (lastLives !== null && lives < lastLives) { livesLost += lastLives - lives; log.push(`hit at x=${Math.round(x)} (${flipped ? "up" : "floor"})`); }
+        if (lastLives !== null && lives < lastLives) {
+          // what hurt: the nearest hazard at that moment
+          const hazards = ["pinchos", "ninjapatrullero", "ninjapatrullero2", "ninjarojo", "sombra", "enemigo", "fantasma", "cierra", "shurikenEnemigo", "hechizo", "dragonSombra", "maga"];
+          let by = "?", best = 1e9;
+          for (const n of hazards) for (const o of rs.getObjects(n)) {
+            const d = Math.hypot(o.getX() + o.getWidth() / 2 - x, o.getY() + o.getHeight() / 2 - k.getY());
+            if (d < best) { best = d; by = n; }
+          }
+          livesLost += lastLives - lives;
+          log.push(`hit at x=${Math.round(x)} (${flipped ? "up" : "floor"}) by ${by}`);
+        }
         lastLives = lives;
         crystals = `${v.get("Gemas").getAsNumber()}/${v.get("Requeridas").getAsNumber()}`;
         // Progress is any step to the right (not only past the furthest point: after the arena fight Kaito
@@ -105,6 +116,14 @@
         if (inArena) lastProgressFrame = frames;
         let wantAttack = false;
         if (magaOn && (goLeft ? md > -150 && md < 40 : md > -40 && md < 150)) wantAttack = true;
+        // Ninja shurikens: the katana sends back one coming from the front; any other is jumped in time.
+        for (const sh of rs.getObjects("shurikenEnemigo")) {
+          const hd = sh.getX() + 18 - x, vel = sh.getVariables().get("Vel").getAsNumber();
+          if (hd * vel >= 0) continue;
+          const t = Math.abs(hd) / Math.max(1, Math.abs(vel)), inFront = hd > 0 ? !k.isFlippedX() : k.isFlippedX();
+          if (inFront && Math.abs(hd) < 125 && Math.abs(hd) > 30 && attackCooldown <= 0) wantAttack = true;
+          else if (onFloor && !flipped && t < 0.28 && t > 0.04) jumpHold = 12;
+        }
         if (magaOn && onFloor && !flipped) {
           const coming = magaState === 4 && v.get("MagaDir").getAsNumber() * (x - maga.getX()) > 0;
           if (coming && Math.abs(md) < 210 && Math.abs(md) > 60) jumpHold = 12;
@@ -135,7 +154,7 @@
           }
           const saw = rs.getObjects("cierra").map((s) => s.getX() + 10 - front).filter((d) => d > -20).sort((a, b) => a - b)[0];
           if (onFloor && saw !== undefined && saw > 0 && saw < 45 && !ceil) jumpHold = 12;
-          const enemy = ["ninjapatrullero", "ninjapatrullero2", "enemigo", "fantasma"].flatMap((n) => rs.getObjects(n))
+          const enemy = ["ninjapatrullero", "ninjapatrullero2", "ninjarojo", "sombra", "enemigo", "fantasma"].flatMap((n) => rs.getObjects(n))
             .map((e) => e.getX() + e.getWidth() / 2 - x).filter((d) => d > -40 && d < 150).sort((a, b) => a - b)[0];
           if ((enemy !== undefined || wantAttack) && attackCooldown <= 0) { hold(im, KEY.f, true); attackCooldown = 35; } else hold(im, KEY.f, false);
         } else {

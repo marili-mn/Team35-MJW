@@ -166,3 +166,21 @@ test("the view stays 1280x720 (no blank bars past the art) and no scene has a li
   assert.equal(project.properties.adaptGameResolutionAtRuntime, false);
   for (const l of layouts) assert.ok(l.r + l.v + l.b < 150, `${l.name}: background ${l.r},${l.v},${l.b} shows white where the art ends`);
 });
+
+test("every ninja shows all its moves, and its shurikens can hurt and be reflected", () => {
+  const MOVES = { ninjapatrullero: ["idle", "walk", "run", "attack"], ninjapatrullero2: ["idle", "walk", "run", "attack"], ninjarojo: ["idle", "walk", "run", "attack"], sombra: ["idle", "walk", "run", "jump", "attack"] };
+  for (const name of LEVELS) {
+    const l = scene(name);
+    for (const [ninja, moves] of Object.entries(MOVES)) {
+      const o = l.objects.find((x) => x.name === ninja);
+      assert.ok(o, `${name}: no ${ninja}`);
+      const anims = o.animations.map((a) => a.name);
+      for (const m of moves) assert.ok(anims.includes(m), `${name}: ${ninja} has no ${m} animation`);
+      const set = new Set(instructions(l).filter((x) => x.type === "AnimatableCapability::AnimatableBehavior::SetName" && (x.params[0] === ninja || x.params[0] === "Ninjas")).map((x) => x.params[3].replace(/"/g, "")));
+      for (const m of moves) assert.ok(set.has(m), `${name}: the events never show ${ninja}'s ${m}`);
+    }
+    const peligro = l.objectsGroups.find((g) => g.name === "Peligro").objects.map((o) => o.name);
+    assert.ok(peligro.includes("shurikenEnemigo"), `${name}: shurikens do not hurt`);
+    assert.ok(instructions(l).some((x) => x.type === "Create" && x.params[1] === "shurikenReflejado"), `${name}: shurikens cannot be reflected`);
+  }
+});

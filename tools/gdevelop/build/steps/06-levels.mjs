@@ -28,7 +28,7 @@ export const LEVELS = [
     floorLine: 535, height: 1080,
     crystalsToOpen: 0.45,
     // Draw weights out of 100 (the rest: an empty zone), speeds in px/s.
-    enemies: { perZone: 1, azul: 40, verde: 20, guardia: 10, sierra: 10, espectro: 8, speed: [70, 110], sawSpeed: [90, 140], wraithSpeed: [55, 75] },
+    enemies: { perZone: 1, azul: 30, verde: 18, rojo: 12, sombra: 6, guardia: 10, sierra: 10, espectro: 8, speed: [70, 110], sawSpeed: [90, 140], wraithSpeed: [55, 75] },
   },
   {
     name: "Nivel2", title: "NIVEL 2 · Cueva de Cristal", next: "Nivel3",
@@ -38,7 +38,7 @@ export const LEVELS = [
     floorSlabTop: 0.2,
     floorLine: 545, height: 1080,
     crystalsToOpen: 0.5,
-    enemies: { perZone: 2, azul: 27, verde: 27, guardia: 10, sierra: 18, espectro: 18, speed: [90, 140], sawSpeed: [120, 180], wraithSpeed: [70, 95] },
+    enemies: { perZone: 2, azul: 18, verde: 18, rojo: 14, sombra: 10, guardia: 10, sierra: 14, espectro: 16, speed: [90, 140], sawSpeed: [120, 180], wraithSpeed: [70, 95] },
   },
   {
     name: "Nivel3", title: "NIVEL 3 · Templo de la Luna Roja", next: "Victoria",
@@ -47,7 +47,7 @@ export const LEVELS = [
     portal: "assets/nivel1/assets de escena/puerta.png",
     floorLine: 638, height: 1080,
     crystalsToOpen: 0.55,
-    enemies: { perZone: 2, azul: 20, verde: 25, guardia: 15, sierra: 15, espectro: 25, speed: [110, 160], sawSpeed: [150, 210], wraithSpeed: [85, 115] },
+    enemies: { perZone: 2, azul: 12, verde: 14, rojo: 16, sombra: 16, guardia: 12, sierra: 12, espectro: 18, speed: [110, 160], sawSpeed: [150, 210], wraithSpeed: [85, 115] },
   },
 ].map((def) => ({ ...def, segments: generateSequence(PROFILES[def.name]) }));
 

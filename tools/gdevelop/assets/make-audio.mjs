@@ -202,6 +202,24 @@ const SFX = {
     for (const [m, pan] of [[38, -0.3], [45, 0.3], [50, 0]]) place(t, shape(brass(m, 1.0, { seed: 123 + m, open: 1500 }), env.swell(0.5)), 0.2, { gain: 0.18, pan });
     return withRoom(t, { room: 0.8, wet: 0.25 });
   },
+  // An enemy shuriken leaving the hand: a whirring hiss chopped by its spin and a flick of steel.
+  shuriken() {
+    const d = 0.34, t = stereo(d);
+    place(t, shape(svf(noise(d, { seed: 141 }), 3200, { q: 1.2, mode: "bpn" }), (x) => (0.55 + 0.45 * Math.sin(2 * Math.PI * 32 * x)) * env.perc(0.006, 0.11)(x)), 0, { gain: 0.8 });
+    place(t, partials(4200, d, [[1, 1, 0.045], [1.51, 0.6, 0.035], [2.33, 0.35, 0.025]], { seed: 142 }), 0.004, { gain: 0.16 });
+    place(t, shape(svf(noise(d, { seed: 143, color: "pink" }), 700, { q: 0.7, mode: "bpn" }), env.perc(0.003, 0.03)), 0, { gain: 0.3 });
+    return withRoom(t, { room: 0.4, wet: 0.08 });
+  },
+  // The shadow ninja vanishing and appearing: a breath of smoke drawn in backwards that ends on a soft,
+  // deep blow, with a whisper inside it.
+  sombra() {
+    const d = 0.9, t = stereo(d), cut = 0.32;
+    const rush = reverse(shape(svf(noise(cut, { seed: 151, color: "pink" }), 520, { q: 0.8, mode: "bpn" }), env.perc(0.002, 0.12)));
+    place(t, rush, 0, { gain: 0.9, pan: (x) => Math.sin(x * 12) * 0.4 });
+    place(t, drive(shape(osc("sine", (x) => 48 + 40 * Math.exp(-x / 0.03), d - cut), env.perc(0.004, 0.16)), 1.6), cut, { gain: 0.55 });
+    place(t, shape(voice(130, 0.5, { vowel: "o", vibrato: 0.2, breath: 1.2, seed: 152 }), env.swell(0.25)), 0.05, { gain: 0.1 });
+    return withRoom(chorus(t, { rate: 0.7, depth: 0.003, mix: 0.4 }), { room: 0.85, wet: 0.35 });
+  },
   // Menus: a wooden tick to move, a koto dyad to confirm.
   menu_mover() { const t = stereo(0.15); place(t, rim(0.15, { seed: 131 }), 0, { gain: 0.6 }); return withRoom(t, { room: 0.3, wet: 0.08 }); },
   menu_ok() {
@@ -211,9 +229,9 @@ const SFX = {
     return withRoom(t, { room: 0.6, wet: 0.2 });
   },
 };
-const MONO = new Set(["salto", "golpe", "espada", "dash", "enemigo", "menu_mover"]);
+const MONO = new Set(["salto", "golpe", "espada", "dash", "enemigo", "menu_mover", "shuriken"]);
 // Effects whose timing is not tied to a key press can be MP3 (smaller); the rest stay WAV, instant to play.
-const AS_MP3 = new Set(["checkpoint", "espectro", "oleada", "dispersion", "menu_ok"]);
+const AS_MP3 = new Set(["checkpoint", "espectro", "oleada", "dispersion", "menu_ok", "sombra"]);
 
 // ---------- music ----------
 const IN = [0, 1, 5, 7, 8], YO = [0, 2, 5, 7, 9];
