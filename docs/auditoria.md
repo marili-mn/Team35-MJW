@@ -29,18 +29,19 @@ ordenado por prioridad. Las cifras se midieron sobre el commit de esta auditorí
 
 ### Alta prioridad (antes de publicar o de la entrega final)
 
-1. **Peso de la descarga.** El proyecto declara 333 recursos y las escenas usan 186; hay 122 archivos
-   sin uso (15,2 MB) y los fondos son PNG grandes sin comprimir. El ZIP de itch pesa ~80 MB: en el
-   navegador eso es una carga larga y gente que se va antes de jugar. *Propuesta*: un paso que quite los
-   recursos no referenciados y comprimir los PNG (sin pérdida visible). Estimado: menos de la mitad.
-2. **El GDD de la landing está desactualizado.** La pestaña v2 dice que los niveles 2 y 3 están
-   "pendientes" y que el audio viene "en la próxima versión". *Propuesta*: pestaña v3 con lo actual
-   (niveles procedurales, Maga Oscura, espectros, supervivencia, selector, resultados).
-3. **El balance está verificado solo con el bot.** Última regresión: Nivel 1 completo (1:00, sin
-   golpes), Nivel 2 completo (1:21, sin golpes), Nivel 3: en una partida derrotó a la Maga Oscura y llegó
-   a la Victoria (1:55, 5 golpes), en la otra la dejó a 3 vidas. El bot saca rango C porque no explora:
-   los cristales de arriba y los shurikens quedan para el jugador. Falta que lo juegue una persona y,
-   idealmente, un segundo playtest con el mismo formulario para comparar con el primero (controles 3,43/5).
+1. **Peso de la descarga.** Las escenas usan una parte de los recursos declarados; quedan unos 100
+   archivos sin uso (cuadros viejos y duplicados) y los fondos son PNG grandes sin comprimir. El ZIP de itch
+   pesa 84,6 MB: en el navegador es una carga larga y hay gente que se va antes de jugar. El ninja rojo y el
+   ninja sombra ya usan parte de lo que no se usaba. *Propuesta*: un paso que quite los recursos no
+   referenciados y comprimir los PNG sin pérdida visible. Estimado: menos de la mitad.
+2. ~~El GDD de la landing está desactualizado.~~ **Resuelto**: pestaña v3 · Prototipo con el estado actual
+   y el manifiesto de desarrollo.
+3. **El balance está verificado solo con el bot, y el Nivel 3 quedó exigente.** Con los ninjas nuevos el bot
+   completa el Nivel 1 (1:01, sin golpes) y el 2 (1:21, 2 golpes). En el 3 llega al templo (1:42) pero la
+   Maga Oscura le gana: la mayoría de sus golpes vienen de ella. Antes de los ninjas nuevos le ganó en una de
+   dos partidas. Si las personas lo sienten injusto, las perillas son los pesos de `06-levels.mjs` y
+   `PACE`/`UPPER` de `22-agile-enemies.mjs`. Falta que lo juegue una persona y, si se puede, un segundo
+   playtest con el mismo formulario (en el primero, controles 3,43/5).
 4. **El bot es un oráculo limitado.** No trepa torres ni junta los cristales de arriba, a veces pisa
    sierras y no sabía atacar espectros (corregido). Si el bot falla no siempre es el juego: hay que
    mirar el detalle de cada golpe (el harness ya lo registra).
@@ -56,8 +57,9 @@ ordenado por prioridad. Las cifras se midieron sobre el commit de esta auditorí
    robusto (avisa si no los encuentra) pero hace que reordenar o cambiar un paso viejo pueda romper a
    otro. *Propuesta*: documentar en cada paso de qué eventos depende, o marcarlos (un comentario de
    evento con un id) para buscarlos por marca.
-4. **`lib/level.mjs` es el archivo más grande (437 líneas)**: separar los enemigos (objetos y
-   comportamiento) en `lib/enemies.mjs`.
+4. **`lib/level.mjs` sigue siendo grande**: los ninjas nuevos y su comportamiento ya viven en
+   `lib/enemies.mjs`; falta mover ahí también a los enemigos originales (azul, verde, guardia, sierra,
+   espectro).
 5. **Validación del build**: los chequeos que hoy están en los tests (objetos sin tipo, colores sin
    comillas) podrían correr también en `build.mjs` para no escribir nunca un proyecto así.
 6. **Las pruebas de juego no son automáticas**: hoy se corren desde Playwright a mano. Un

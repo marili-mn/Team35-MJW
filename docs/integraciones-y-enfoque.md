@@ -41,9 +41,13 @@ node --test tools/gdevelop/test/         # tests (sección 4)
 | `lib/boss.mjs` | La Maga Oscura. |
 | `lib/scenes.mjs` | Qué escenas son niveles, cuál es la supervivencia y cuáles se juegan (una sola lista). |
 | `lib/png.mjs` | Leer y escribir PNG y medir dónde empieza la superficie de una imagen. |
-| `assets/*.mjs` | Recursos generados por código: audio, la maga recortada, el giro de Kaito, los espectros. |
-| `test/bot.js` | El bot que juega un nivel apretando las mismas teclas que una persona. |
+| `lib/enemies.mjs` | Los ninjas: el rojo y la sombra, saltos, embestidas, shurikens reflejables, guardias arriba. |
+| `lib/synth.mjs` | El motor de sonido: osciladores, filtros, cuerdas pulsadas, flauta, tambores, reverb, limitador, LUFS. |
+| `lib/ffmpeg.mjs` | Encuentra FFmpeg (PATH, variable `FFMPEG` o la carpeta de winget). |
+| `assets/*.mjs` | Recursos generados por código: música y efectos, la maga recortada, el giro de Kaito, los espectros, el ninja sombra. |
+| `test/bot.js` | El bot que juega un nivel apretando las mismas teclas que una persona (refleja o salta los shurikens). |
 | `test/unit/*.test.mjs` | Tests unitarios y del proyecto construido. |
+| `../video/*` | Grabación de tomas del juego (con el bot) y montaje del tráiler con FFmpeg. |
 
 ## 3. Integraciones de la recta final
 
@@ -63,6 +67,9 @@ node --test tools/gdevelop/test/         # tests (sección 4)
 | `lib/layout.mjs` + `06-levels` | Niveles de 1,5 pantallas en tres pisos, plataformas sobre fosos, torres, shurikens; generados por semilla con dificultad creciente y **tramos que se sortean en cada reinicio** | Niveles más procedurales, menos repetitivos y que escalan. |
 | `lib/boss.mjs` | Maga Oscura: más vidas, furia creciente, ráfagas, invoca espectros, hechizos reflejables | Jefa más difícil y más agresiva a medida que pierde vida. |
 | `lib/level.mjs` | Espectros de energía oscura; todos los personajes a 120 px | Enemigo nuevo; escala coherente. |
+| `08-audio` + `20-sound-design` + `lib/synth.mjs` | Sonido producido: instrumentos japoneses modelados, un tema por nivel, 21 efectos en capas, masterizado en LUFS (`docs/sonido.md`) | El sonido sonaba a 8 bits; pedido de que el salto suene a ninja. |
+| `21-screen-fit` | Vista fija de 1280×720 con bandas negras y fondo oscuro en todas las escenas | En ventanas más anchas que 16:9 se veían bandas blancas al jugar. |
+| `22-agile-enemies` + `lib/enemies.mjs` | Ninja rojo (hoja del equipo sin usar) y ninja sombra (original, generado); saltos, embestidas, pausas, shurikens reflejables, guardias sobre losas y torres; los 7 tipos desde el Nivel 2 | Pedidos: más enemigos y más variedad, más agilidad, shurikens reflejables, enemigos arriba. |
 
 ### Niveles procedurales, en detalle
 
@@ -96,8 +103,9 @@ node --test tools/gdevelop/test/         # tests (sección 4)
 3. **Pruebas de juego** con el bot en el navegador (Playwright): juega cada nivel apretando teclas
    reales, pelea con la Maga Oscura, y reporta si llegó, tiempo, golpes y cristales.
 
-Los tests ya encontraron un bug real: en los fosos de 5 pinchos o más la última plataforma terminaba
-antes del final del foso.
+Los tests ya encontraron bugs reales: en los fosos de 5 pinchos o más la última plataforma terminaba
+antes del final del foso, y un loop de música tenía un clic en la vuelta. Hoy son 32 tests; el más nuevo
+revisa que cada ninja muestre todos sus movimientos y que sus shurikens dañen y se puedan reflejar.
 
 ### Trampas de libGD / GDevelop aprendidas (y cubiertas por los tests donde se puede)
 
@@ -111,6 +119,15 @@ antes del final del foso.
 - La cámara adelantada se calcula desde Kaito y recién después se limita al nivel (si se suma a la
   cámara ya trabada en el borde, Kaito queda fuera de pantalla).
 - `npx serve` se cae con muchas recargas (EMFILE); para probar conviene `python -m http.server`.
+- La precarga de un audio se activa con `updateProperty("Preload as sound", "1")` (el nombre visible de la
+  propiedad, y `"1"`, no `"true"`).
+- Cada escena corta todos los sonidos al empezar (`stopSoundsOnStartup`); el selector de niveles lo tiene
+  apagado para que siga el tema del menú. El navegador no deja sonar nada hasta el primer clic o tecla: el
+  menú arranca la música en ese momento si no pudo antes.
+- Con `adaptWidth` el juego ensanchaba la vista según la ventana y mostraba el fondo de la escena más allá
+  del arte: la vista ahora es fija.
+- En FFmpeg 9 el grafo de filtros desde un archivo es `-/filter_complex archivo` (`-filter_complex_script`
+  ya no existe).
 
 ## 5. Cómo agregar algo nuevo
 

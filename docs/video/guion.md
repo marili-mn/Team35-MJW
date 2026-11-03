@@ -32,7 +32,7 @@ debajo. Cada plano dura lo que dura su frase; los cortes caen en los golpes de l
 | 2 | 0:05–0:10 | Kaito corre por el Nivel 1 y salta una fila de pinchos. | «Kaito, el Caminante de las Sombras.» | — |
 | 3 | 0:10–0:19 | Kaito invierte la gravedad bajo una losa y corre por el techo sobre los pinchos. | «Invertí la gravedad y corré por el techo… pero cada giro cuesta energía.» | INVERTÍ LA GRAVEDAD |
 | 4 | 0:19–0:27 | Junta cristales; recibe un golpe y se le caen; los recupera. | «Juntá cristales para recargarla. Si te golpean, se te caen: recuperalos antes de que se apaguen.» | CADA GIRO CUESTA ENERGÍA |
-| 5 | 0:27–0:36 | Katana, ataque *dash* con estela, espectros que se acercan. | «Abrite paso con la katana, lanzate en dash… y que los espectros no te alcancen.» | KATANA · DASH · ESPECTROS |
+| 5 | 0:27–0:36 | Un ninja tira un shuriken y vuelve reflejado; ninjas de guardia arriba; espectros. | «Ninjas que saltan y tiran shurikens. Espectros que te persiguen. Abrite paso con la katana.» | NINJAS · SHURIKENS · ESPECTROS |
 | 6 | 0:36–0:49 | El templo. La Maga Oscura lanza hechizos; uno vuelve dorado contra ella. | «Y cuando la Maga Oscura te persiga por todo el templo… devolvele su propia magia.» | LA MAGA OSCURA |
 | 7 | 0:49–0:57 | Montaje rápido: los tres niveles, el selector, una oleada de la supervivencia. | «Tres niveles que cambian en cada intento. Y, si sobrevivís, un modo sin fin.» | 3 NIVELES · 97 RECORRIDOS · SUPERVIVENCIA |
 | 8 | 0:57–1:05 | Logo sobre la luna. Link y créditos. | «Gravity Runner: Dash. Jugalo gratis en el navegador.» | Gravity Runner: Dash · marilidev.itch.io/gravity-runner-dash · Grupo 35 · UNER · © 2026 |
@@ -58,19 +58,27 @@ odaiko con la campana en el logo. Los efectos del juego (salto, katana, reflejo)
 
 ## 4. La voz (ElevenLabs)
 
-- **Modelo:** Eleven Multilingual v2, el de mejor español de ElevenLabs.
-- **Voz:** narrador masculino, grave y pausado, con acento rioplatense si la biblioteca lo tiene; si no,
-  español latinoamericano neutro. Estabilidad media (≈ 0,45), similitud alta (≈ 0,8) y algo de estilo
-  (≈ 0,3) para que suene a tráiler sin sobreactuar.
-- **Texto:** una toma por plano (las ocho frases de la sección 2), así cada una se puede rehacer sola y
-  los cortes caen donde corresponde.
-- **Créditos:** las ocho frases suman ≈ 600 caracteres. El plan gratuito trae 10.000 créditos por mes y
-  pide atribuir a ElevenLabs, que se agrega en los créditos («Voz: ElevenLabs»).
+- **Voz:** *Juanma - Deep Cinematic, Argentina*, de la biblioteca de ElevenLabs: narrador grave, con acento
+  rioplatense. **Modelo:** Eleven v4, con la configuración por defecto.
+- **Cómo se generó:** desde el panel de texto a voz, en una sola toma de 574 caracteres. Cada frase va en un
+  párrafo, así el modelo hace una pausa entre frases. `tools/video/make-trailer.mjs` corta la toma en esas
+  pausas (de 0,3 a 0,5 s) y pone cada frase en su plano.
+- **Créditos:** 574 de los 10.000 del plan gratuito. El plan pide atribuir a ElevenLabs: va en la tarjeta
+  final («Voz: ElevenLabs»).
+- Para rehacer una frase: generarla sola en el panel y reemplazar sus tiempos en `LINES` de
+  `make-trailer.mjs`.
 
 ## 5. Producción
 
 1. **Gameplay:** el bot del juego (`tools/gdevelop/test/bot.js`) juega cada nivel mientras
-   `tools/video/recorder.js` graba el lienzo del juego con sus efectos de sonido (`tools/video/take.js`).
-2. **Música:** el tema del Nivel 1 y el de la Maga Oscura, generados por `tools/gdevelop/assets/make-audio.mjs`.
-3. **Voz:** las ocho tomas de ElevenLabs.
-4. **Armado:** los planos se cortan y se titulan con FFmpeg según la tabla de la sección 2.
+   `tools/video/recorder.js` graba el lienzo con sus efectos de sonido (`tools/video/take.js`,
+   `tools/video/capture.md`). Para el reflejo en el templo, una toma armada: Kaito mira a la Maga y corta
+   cuando llega cada hechizo, con las mismas mecánicas del juego.
+2. **Música:** la del juego (`tools/gdevelop/assets/make-audio.mjs`). El tema del menú va bajo el título, el
+   del Nivel 1 hasta el templo, el de la Maga Oscura desde ahí y la fanfarria de la victoria en la tarjeta
+   final. Baja sola cuando habla la voz (*ducking*).
+3. **Voz:** la toma de ElevenLabs, cortada en ocho frases.
+4. **Armado:** `node tools/video/make-trailer.mjs` corta los planos, pone los títulos (Cinzel, la tipografía
+   del GDD) y mezcla y masteriza a −14 LUFS, el estándar de video web. El resultado dura 66 s, en 1280 × 720
+   a 30 cuadros por segundo. Se guarda en `tools/video/.cache/trailer.mp4` y se copia a
+   `Desktop/GravityRunnerDash-Final/video/`.

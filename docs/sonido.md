@@ -46,9 +46,9 @@ cuenta qué investigamos, qué decidimos y cómo está hecho el sonido nuevo.
 | Archivo | Qué hace |
 |---|---|
 | `tools/gdevelop/lib/synth.mjs` | El motor: osciladores PolyBLEP, FM, parciales, ruido blanco, rosa y marrón, filtro de estado variable, Karplus-Strong, flauta, tambores, campanas, gong, *pad*, metales, voces con formantes, Freeverb, eco ping-pong, chorus, limitador con *look-ahead*, sonoridad BS.1770, WAV con *dither*. Sin dependencias. |
-| `tools/gdevelop/assets/make-audio.mjs` | La "sesión": instrumentos, 19 efectos y *jingles*, 5 temas, mezcla y masterizado. `node tools/gdevelop/assets/make-audio.mjs` regenera todo en ~1 minuto (o solo los nombres que se le pasen). |
+| `tools/gdevelop/assets/make-audio.mjs` | La "sesión": instrumentos, 21 efectos y *jingles*, 5 temas, mezcla y masterizado. `node tools/gdevelop/assets/make-audio.mjs` regenera todo en ~1 minuto (o solo los nombres que se le pasen). |
 | `tools/gdevelop/lib/ffmpeg.mjs` | Encuentra FFmpeg (variable `FFMPEG`, el PATH o la carpeta de winget) para codificar los MP3. |
-| `build/steps/08-audio.mjs` | Declara los 24 archivos, precarga los efectos y engancha música y efectos a los eventos. Si el navegador bloqueó la música al abrir, el menú la arranca con el primer clic o tecla. |
+| `build/steps/08-audio.mjs` | Declara los 26 archivos, precarga los efectos y engancha música y efectos a los eventos. Si el navegador bloqueó la música al abrir, el menú la arranca con el primer clic o tecla. |
 | `build/steps/20-sound-design.mjs` | Los sonidos de lo que vino después: dash, reflejo, espectros, cristales perdidos, puntos de control, nivel superado, oleadas y selector. |
 | `test/unit/synth.test.mjs` | Afinación de la cuerda y la flauta, el bending, el filtro, la calibración de sonoridad (1 kHz a −20 dBFS = −20 LUFS), el limitador, la reverb, el loop sin costura y la reproducibilidad. |
 
@@ -62,6 +62,7 @@ cuenta qué investigamos, qué decidimos y cómo está hecho el sonido nuevo.
 | `hechizo`, `reflejo`, `espectro` | La maga lanza un hechizo; Kaito lo refleja; aparecen espectros. |
 | `checkpoint`, `portal`, `completado` | Punto de control; se abre el portal; nivel superado. |
 | `oleada` | Empieza una oleada en la supervivencia. |
+| `shuriken`, `sombra` | Un ninja tira un shuriken; el ninja sombra desaparece y aparece detrás de Kaito. |
 | `menu_mover`, `menu_ok` | Moverse en el selector de niveles; reiniciar el progreso. |
 | `victoria`, `derrota` | La Victoria (después suena el tema del menú bajo los créditos); el Game Over. |
 | `musica_menu`, `musica_nivel` (1 y Tutorial), `musica_nivel2`, `musica_nivel3`, `musica_jefe` | Menú y créditos; cada nivel; la Maga Oscura y la supervivencia. |
