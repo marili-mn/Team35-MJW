@@ -44,6 +44,10 @@ venderse, y qué se aplicó al juego a partir de eso.
 | 2 | Jump buffer (0,15 s) y coyote time (0,1 s) | El punto más flojo del playtest: los controles. |
 | 3 | Pausa con P/Esc (M vuelve al menú) | Básico en cualquier juego a la venta. |
 | 4 | Reloj en el HUD y tarjeta de resultados por nivel (tiempo, cristales, golpes, rango S/A/B/C, récord guardado) | Rejugabilidad: invita a mejorar el tiempo y el rango. |
+| 5 | Cámara que se adelanta hacia donde corre Kaito; aviso al pasar un punto de control | Ver antes lo que viene (a 450 px/s es un tercio de segundo más para reaccionar) y saber dónde se reaparece. |
+| 6 | "Continuar" en el menú (el juego recuerda el último nivel alcanzado) | Cerrar la pestaña ya no obliga a empezar desde el tutorial. |
+
+Material para itch.io armado (en `GravityRunnerDash-Final/itch/`): portada de 630×500 y 5 capturas de juego.
 
 Antes de estas iteraciones: escala coherente de personajes y la maga que persigue a Kaito por todo el
 Nivel 3.
@@ -51,8 +55,9 @@ Nivel 3.
 ## 3. Hoja de ruta para venderlo
 
 **Para la entrega del 10/11 (itch.io)**
-- Portada 630×500 con Kaito invirtiendo la gravedad y el título legible en chico.
-- 3–5 capturas de juego (la maga, la inversión, la tarjeta de resultados) y un GIF corto.
+- Portada 630×500 con Kaito invirtiendo la gravedad y el título legible en chico (hecha).
+- 3–5 capturas de juego (hechas: la maga, el templo, la inversión, un combate y la tarjeta de
+  resultados) y un GIF corto.
 - Descripción con el gancho en la primera línea: *"Un ninja que corre por los techos: invertí la
   gravedad, juntá cristales y escapá de la maga que te persigue por todo el templo."*
 - "Pagá lo que quieras" con mínimo 0, etiquetas específicas.
@@ -62,7 +67,7 @@ Nivel 3.
 - Mando (gamepad) y controles táctiles (en itch muchos entran desde el celular).
 - Volumen por separado en vez de solo ON/OFF, remapeo de teclas.
 - Modo asistido (más vidas o menos velocidad): la crítica a *VVVVVV* fue la dificultad.
-- "Continuar" y selector de niveles con el récord y el rango de cada uno.
+- Selector de niveles con el récord y el rango de cada uno (el "Continuar" ya está).
 - Más variedad: plataformas móviles, zonas de gravedad, una fase extra de la maga.
 
 **A más largo plazo**

@@ -42,6 +42,8 @@ node tools/gdevelop/build.mjs --export   # además exporta un HTML5 a tools/gdev
 | `10-forgiving-jump` | Jump buffer (0,15 s) y coyote time (0,1 s). |
 | `11-pause` | Pausa con P o Esc; M vuelve al menú. |
 | `12-level-results` | Reloj en el HUD y tarjeta de resultados por nivel (tiempo, cristales, golpes, rango y récord). |
+| `13-camera-and-checkpoints` | La cámara se adelanta 150 px hacia donde mira Kaito; los puntos de control se anuncian. |
+| `14-continue` | Cada nivel se guarda al empezar y el menú ofrece "Continuar" (clic o C). |
 
 Por qué cada mejora y la hoja de ruta para venderlo: `docs/potencial-comercial.md`.
 
