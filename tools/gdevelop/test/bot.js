@@ -51,6 +51,11 @@
         lastLives = lives;
         crystals = `${v.get("Gemas").getAsNumber()}/${v.get("Requeridas").getAsNumber()}`;
         if (x > maxX + 2) { maxX = x; lastProgressFrame = frames; }
+        if (v.has("Completado") && v.get("Completado").getAsNumber() === 1) { // results card: Space goes on
+          for (const key of [KEY.left, KEY.right, KEY.f]) hold(im, key, false);
+          hold(im, KEY.space, frames % 20 < 10);
+          return;
+        }
 
         if (!map) {
           const spikes = rs.getObjects("pinchos").map((p) => ({ x0: p.getX() + 8, x1: p.getX() + p.getWidth() - 8, up: p.isFlippedY() }));

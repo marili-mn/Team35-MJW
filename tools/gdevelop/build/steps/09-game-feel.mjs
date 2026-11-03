@@ -18,7 +18,7 @@ const EMITTERS = [
 ];
 
 export default function gameFeel({ gd, project }) {
-  const { I, NOT, ev, numIs, setNum, timer, resetTimer } = makeEventHelpers(gd);
+  const { I, NOT, ev, q, numIs, setNum, timer, resetTimer } = makeEventHelpers(gd);
   const has = (list, type, ...params) => list.some((x) => x.type === type && params.every((p, i) => p === undefined || x.params[i] === p));
   const report = [];
 
@@ -80,9 +80,9 @@ export default function gameFeel({ gd, project }) {
 
     // ---- Kaito gets hurt (spikes, enemies, spells, falls) ----
     const hurts = findAll((c, a) => has(a, "SetNumberVariable", "Vidas", "-"), "damage", 3);
-    for (const { event } of hurts) appendAll(event, [...kick(11, 6), I("ChangeColor", ["kaito", "255;90;90"])]);
+    for (const { event } of hurts) appendAll(event, [...kick(11, 6), I("ChangeColor", ["kaito", q("255;90;90")])]);
     const healed = find((c, a) => has(a, "SetNumberVariable", "Invulnerable", "=", "0"), "invulnerability ends");
-    appendAll(healed.event, [I("ChangeColor", ["kaito", "255;255;255"])]);
+    appendAll(healed.event, [I("ChangeColor", ["kaito", q("255;255;255")])]);
 
     // ---- crystals ----
     const crystal = find((c) => has(c, "CollisionNP", "kaito", "cristal"), "crystal pickup");
@@ -112,10 +112,10 @@ export default function gameFeel({ gd, project }) {
       const magaHits = findAll((c, a) => has(a, "SetNumberVariable", "MagaVida", "-"), "boss hits", 2);
       for (const { event } of magaHits) {
         prepend(event, [...burst("fxMagia", "maga.X()", "maga.Y() - 70"), ...kick(8, 5)]);
-        appendAll(event, [...burst("fxMagia", "maga.X()", "maga.Y() - 70"), I("ChangeColor", ["maga", "255;130;130"])]);
+        appendAll(event, [...burst("fxMagia", "maga.X()", "maga.Y() - 70"), I("ChangeColor", ["maga", q("255;130;130")])]);
       }
       const recovered = find((c, a) => has(a, "SetNumberVariable", "MagaHerida", "=", "0"), "boss recovers");
-      appendAll(recovered.event, [I("ChangeColor", ["maga", "255;255;255"])]);
+      appendAll(recovered.event, [I("ChangeColor", ["maga", q("255;255;255")])]);
       const defeat = find((c, a) => has(a, "SetNumberVariable", "MagaDerrotada", "=", "1"), "boss defeated");
       appendAll(defeat.event, [...burst("fxMagia", "maga.X()", "maga.Y() - 70"), ...kick(16, 10)]);
       const dash = find((c, a) => has(a, "SetNumberVariable", "MagaEstado", "=", "4"), "boss dash");

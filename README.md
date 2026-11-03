@@ -14,7 +14,7 @@ invirtiendo la gravedad para caminar por los techos.
 | `assets/` | Imágenes de la landing: galería, animaciones de Kaito, katana, shuriken y la maga (`assets/wizard/`). |
 | `GravityRunnerDash/` | El juego: proyecto de GDevelop (`GravityRunnerDash.json`) y sus recursos en `assets/`. |
 | `tools/gdevelop/` | Scripts que construyen el juego a partir del proyecto original del equipo. |
-| `docs/` | Documentación del desarrollo (`hallazgos.md`). |
+| `docs/` | Documentación del desarrollo (`hallazgos.md`, `potencial-comercial.md`). |
 
 ## Cómo se construye el juego
 
@@ -38,6 +38,12 @@ node tools/gdevelop/build.mjs --export   # además exporta un HTML5 a tools/gdev
 | `06-levels` | Niveles 1, 2 y 3 (16 640, 23 040 y 26 880 px) armados por segmentos, con enemigos que se sortean en cada reinicio y portal que se abre con cristales. |
 | `07-victory-credits` | Pantalla de Victoria con los créditos del equipo. |
 | `08-audio` | Música y efectos de sonido (respetan las opciones del menú). |
+| `09-game-feel` | Sacudida de cámara, pausa de impacto, destello rojo al recibir daño y partículas. |
+| `10-forgiving-jump` | Jump buffer (0,15 s) y coyote time (0,1 s). |
+| `11-pause` | Pausa con P o Esc; M vuelve al menú. |
+| `12-level-results` | Reloj en el HUD y tarjeta de resultados por nivel (tiempo, cristales, golpes, rango y récord). |
+
+Por qué cada mejora y la hoja de ruta para venderlo: `docs/potencial-comercial.md`.
 
 La lógica compartida está en `tools/gdevelop/lib/` (`level.mjs` genera los niveles y `boss.mjs` hace a la maga, jefa final del Nivel 3). La maga aparece al salir del inicio del Nivel 3 y persigue a Kaito por todo el mapa: lanza hechizos por el piso y lo embiste (se saltan o se cortan con la katana), no ataca cerca de pinchos ni cuando Kaito va por el techo, y en el templo del final suma el dragón de humo. Todos los personajes están en la misma escala: Kaito 120 px de alto, ninjas 118–125 px y la maga 141 px. Los recursos que se generan por script están en `tools/gdevelop/assets/`: `slice-maga.mjs` recorta los sprites de la maga y `make-audio.mjs` sintetiza la música y los efectos.
 
@@ -55,4 +61,4 @@ La versión que se sube a itch.io se exporta desde el IDE de GDevelop (File → 
 
 ## Controles
 
-← → caminar (doble toque para correr) · Espacio saltar · Alt invertir la gravedad (bajo un techo, gasta energía) · F atacar
+← → caminar (doble toque para correr) · Espacio saltar · Alt invertir la gravedad (bajo un techo, gasta energía) · F atacar · P o Esc pausa
