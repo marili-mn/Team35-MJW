@@ -3057,6 +3057,14 @@
         "userAdded": false
       },
       {
+        "file": "assets/creditos/logo-uner.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/creditos/logo-uner.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
         "file": "assets/audio/salto.wav",
         "kind": "audio",
         "metadata": "",
@@ -157119,7 +157127,7 @@
           "persistentUuid": "f4ce01b5-724f-5d86-a2a1-cc6eb0d4e2fc",
           "width": 0,
           "x": 0,
-          "y": 615,
+          "y": 622,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -157136,6 +157144,22 @@
           "width": 0,
           "x": 0,
           "y": 660,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "logoUNER",
+          "persistentUuid": "0ebe9545-fc5d-5dd9-ae7a-d0f8a3408a83",
+          "width": 0,
+          "x": 0,
+          "y": 472,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -159169,7 +159193,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Universidad Nacional de Entre Ríos · 2026",
+          "string": "Multimedia y Juegos en Web · 2026",
           "font": "",
           "textAlignment": "center",
           "characterSize": 24,
@@ -159192,7 +159216,7 @@
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
-            "text": "Universidad Nacional de Entre Ríos · 2026",
+            "text": "Multimedia y Juegos en Web · 2026",
             "font": "",
             "textAlignment": "center",
             "verticalTextAlignment": "top",
@@ -159286,6 +159310,47 @@
             "lineHeight": 0,
             "color": "255;214;102"
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "logoUNER",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/creditos/logo-uner.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -159317,6 +159382,9 @@
           },
           {
             "objectName": "Volver"
+          },
+          {
+            "objectName": "logoUNER"
           }
         ]
       },
@@ -159402,6 +159470,16 @@
                 "Volver",
                 "=",
                 "640 - Volver.Width() / 2"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "logoUNER",
+                "=",
+                "640 - logoUNER.Width() / 2"
               ]
             },
             {

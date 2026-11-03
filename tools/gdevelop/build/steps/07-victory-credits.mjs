@@ -33,15 +33,17 @@ export default function victoryCredits({ gd, project, gameDir }) {
   addInst("kaito", 150, 470, 256, 256, { z: 2 });
   addInst("kaito", 1130, 470, 256, 256, { z: 2, flipX: true });
 
-  // Texts (style copied from the HUD), centered when the scene starts.
+  // Texts (style copied from the HUD), centered when the scene starts. With the logo, the university's name is
+  // already in it, so the line under the team names shows the course instead.
+  const hasLogo = existsSync(`${gameDir}/${LOGO}`);
   insertObjectFrom(gd, project, objects, "TextoGemas", serializeObject(gd, tutorial.getObject("TextoGemas")));
   const texts = [
     ["Titulo", "¡VICTORIA!", 84, GOLD, 40],
     ["Subtitulo", "Kaito venció a la Maga Oscura del Templo de la Luna Roja", 28, WHITE, 150],
     ["Equipo", "EQUIPO 35", 30, LILAC, 215],
     ["Integrantes", TEAM.map(([n, r]) => `${n} — ${r}`).join("\n"), 25, WHITE, 262],
-    ["Universidad", "Universidad Nacional de Entre Ríos · 2026", 24, LILAC, 435],
-    ["Motor", "Hecho con GDevelop", 20, WHITE, 615],
+    ["Universidad", hasLogo ? "Multimedia y Juegos en Web · 2026" : "Universidad Nacional de Entre Ríos · 2026", 24, LILAC, 435],
+    ["Motor", "Hecho con GDevelop", 20, WHITE, hasLogo ? 622 : 615],
     ["Volver", "ESPACIO para volver al menú", 26, GOLD, 660],
   ];
   for (const [name, text, size, color, y] of texts) {
@@ -49,11 +51,10 @@ export default function victoryCredits({ gd, project, gameDir }) {
     addInst(name, 0, y, 0, 0, { z: 5 });
   }
   objects.removeObject("TextoGemas");
-  const hasLogo = existsSync(`${gameDir}/${LOGO}`);
   if (hasLogo) {
     const logo = objects.insertNewObject(project, "Sprite", "logoUNER", objects.getObjectsCount());
     setAnimations(gd, logo, [{ name: "", images: [ensureImageResource(gd, project, LOGO)] }]);
-    addInst("logoUNER", 0, 480, 0, 0, { z: 5 });
+    addInst("logoUNER", 0, 472, 0, 0, { z: 5 });   // the white version of the logo on uner.edu.ar, 300 x 138
   }
 
   const events = victoria.getEvents();
