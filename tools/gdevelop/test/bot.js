@@ -16,7 +16,7 @@
       const held = new Set();
       // GDevelop counts every onKeyPressed as a new press: only send changes, like a real keyboard.
       const hold = (im, key, down) => { if (down && !held.has(key)) { im.onKeyPressed(key); held.add(key); } else if (!down && held.has(key)) { im.onKeyReleased(key); held.delete(key); } };
-      let lastLives = null, livesLost = 0, maxX = 0, lastProgressFrame = 0, crystals = "";
+      let lastLives = null, livesLost = 0, maxX = 0, lastX = 0, lastProgressFrame = 0, crystals = "";
       const log = [];
       const finish = (rs, result) => {
         if (done) return;
@@ -50,7 +50,11 @@
         if (lastLives !== null && lives < lastLives) { livesLost += lastLives - lives; log.push(`hit at x=${Math.round(x)} (${flipped ? "up" : "floor"})`); }
         lastLives = lives;
         crystals = `${v.get("Gemas").getAsNumber()}/${v.get("Requeridas").getAsNumber()}`;
-        if (x > maxX + 2) { maxX = x; lastProgressFrame = frames; }
+        // Progress is any step to the right (not only past the furthest point: after the arena fight Kaito
+        // walks back from behind it).
+        if (x > lastX + 0.5) lastProgressFrame = frames;
+        lastX = x;
+        if (x > maxX + 2) maxX = x;
         if (v.has("Completado") && v.get("Completado").getAsNumber() === 1) { // results card: Space goes on
           for (const key of [KEY.left, KEY.right, KEY.f]) hold(im, key, false);
           hold(im, KEY.space, frames % 20 < 10);
@@ -104,9 +108,11 @@
         if (magaOn && onFloor && !flipped) {
           const coming = magaState === 4 && v.get("MagaDir").getAsNumber() * (x - maga.getX()) > 0;
           if (coming && Math.abs(md) < 210 && Math.abs(md) > 60) jumpHold = 12;
+          // Spells get faster as she loses lives: jump by the time left before the impact, not by distance.
           for (const h of rs.getObjects("hechizo")) {
             const hd = h.getX() + 32 - x, vel = h.getVariables().get("Vel").getAsNumber();
-            if (hd * vel < 0 && Math.abs(hd) < 150 && Math.abs(hd) > 40) jumpHold = 12;
+            const closing = Math.abs(vel) + 150;
+            if (hd * vel < 0 && Math.abs(hd) < closing * 0.3 && Math.abs(hd) > 40) jumpHold = 12;
           }
         }
         if (magaOn && flipped) {
@@ -129,7 +135,7 @@
           }
           const saw = rs.getObjects("cierra").map((s) => s.getX() + 10 - front).filter((d) => d > -20).sort((a, b) => a - b)[0];
           if (onFloor && saw !== undefined && saw > 0 && saw < 45 && !ceil) jumpHold = 12;
-          const enemy = ["ninjapatrullero", "ninjapatrullero2", "enemigo"].flatMap((n) => rs.getObjects(n))
+          const enemy = ["ninjapatrullero", "ninjapatrullero2", "enemigo", "fantasma"].flatMap((n) => rs.getObjects(n))
             .map((e) => e.getX() + e.getWidth() / 2 - x).filter((d) => d > -40 && d < 150).sort((a, b) => a - b)[0];
           if ((enemy !== undefined || wantAttack) && attackCooldown <= 0) { hold(im, KEY.f, true); attackCooldown = 35; } else hold(im, KEY.f, false);
         } else {

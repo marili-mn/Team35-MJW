@@ -26,7 +26,7 @@ export const LEVELS = [
     portal: "assets/nivel1/assets de escena/puerta.png",
     topBorder: true,
     floorLine: 535, height: 1080,
-    crystalsToOpen: 0.5,
+    crystalsToOpen: 0.45,
     // Draw weights out of 100 (the rest: an empty zone), speeds in px/s.
     enemies: { perZone: 1, azul: 40, verde: 20, guardia: 10, sierra: 10, espectro: 8, speed: [70, 110], sawSpeed: [90, 140], wraithSpeed: [55, 75] },
   },
@@ -37,7 +37,7 @@ export const LEVELS = [
     portal: "assets/nivel1/assets de escena/puerta.png",
     floorSlabTop: 0.2,
     floorLine: 545, height: 1080,
-    crystalsToOpen: 0.6,
+    crystalsToOpen: 0.5,
     enemies: { perZone: 2, azul: 27, verde: 27, guardia: 10, sierra: 18, espectro: 18, speed: [90, 140], sawSpeed: [120, 180], wraithSpeed: [70, 95] },
   },
   {
@@ -46,7 +46,7 @@ export const LEVELS = [
     platform: "assets/nivel3/pisoflotante.png", platformBottom: 0.8,
     portal: "assets/nivel1/assets de escena/puerta.png",
     floorLine: 638, height: 1080,
-    crystalsToOpen: 0.65,
+    crystalsToOpen: 0.55,
     enemies: { perZone: 2, azul: 20, verde: 25, guardia: 15, sierra: 15, espectro: 25, speed: [110, 160], sawSpeed: [150, 210], wraithSpeed: [85, 115] },
   },
 ].map((def) => ({ ...def, segments: generateSequence(PROFILES[def.name]) }));
