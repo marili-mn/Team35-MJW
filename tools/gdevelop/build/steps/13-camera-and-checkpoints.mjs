@@ -30,7 +30,9 @@ export default function cameraAndCheckpoints({ gd, project }) {
     [
       ev([facingRight], [ease(LOOK_AHEAD)]),
       ev([facingLeft], [ease(-LOOK_AHEAD)]),
-      ev([], [I("CameraX", ["", "=", `clamp(CameraX("", 0) + Variable(Mirada), ${HALF_SCREEN}, ${width - HALF_SCREEN})`, "", "0"])]),
+      // From Kaito, not from the camera: near the ends of the level the camera is already held at the
+      // edge, and adding the look-ahead to it pushed Kaito off the screen (at the start he was at x=-50).
+      ev([], [I("CameraX", ["", "=", `clamp(kaito.X() + Variable(Mirada), ${HALF_SCREEN}, ${width - HALF_SCREEN})`, "", "0"])]),
     ].reverse().forEach((e) => events.insertEvent(e, camera.index + 1));
 
     // ---- checkpoints say so ----

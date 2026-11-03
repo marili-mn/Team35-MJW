@@ -53,7 +53,7 @@ export default function audio({ gd, project, gameDir }) {
     wake.event.getActions().insert(stopMusic(), wake.event.getActions().size());
     attach(wake.event, music("musica_jefe", 45));
     for (const spell of ["hechizo", "dragonSombra"]) hook(L.find((c, a) => has(a, "Create", undefined, spell), `${spell} cast`).event, "hechizo", 55);
-    for (const { event } of L.findAll((c, a) => has(a, "SetNumberVariable", "MagaVida", "-"), "boss hits", 2)) hook(event, "enemigo");
+    for (const { event } of L.findAll((c, a) => has(a, "SetNumberVariable", "MagaVida", "-"), "boss hits", 4)) hook(event, "enemigo");
     const defeat = L.find((c, a) => has(a, "SetNumberVariable", "MagaDerrotada", "=", "1"), "boss defeated");
     defeat.event.getActions().insert(stopMusic(), defeat.event.getActions().size());
     hook(defeat.event, "victoria");

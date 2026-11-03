@@ -88,12 +88,13 @@ export function captureOriginalObjects(gd, project) {
 }
 
 // Enemy kinds created at runtime: size on screen and how far above the floor line their top-left is.
-// Sized so every body (head to feet, transparent margins left out) matches Kaito's 120 px: azul 118,
-// verde 123, guardia 125 (the maga, 141, is in lib/boss.mjs).
+// Sized so every body (head to feet, transparent margins left out) is Kaito's 120 px, the sorceress too
+// (lib/boss.mjs). The wraith floats: it appears well above the floor line.
 const KINDS = {
-  azul: { object: "ninjapatrullero", w: 141, h: 141, top: 140 },
-  verde: { object: "ninjapatrullero2", w: 136, h: 148, top: 138 },
-  guardia: { object: "enemigo", w: 128, h: 128, top: 127 },
+  azul: { object: "ninjapatrullero", w: 144, h: 144, top: 143 },
+  verde: { object: "ninjapatrullero2", w: 133, h: 145, top: 135 },
+  guardia: { object: "enemigo", w: 123, h: 123, top: 122 },
+  espectro: { object: "fantasma", w: 130, h: 130, top: 240 },
   sierra: { object: "cierra", w: 96, h: 77, top: 58 },
 };
 
@@ -124,6 +125,12 @@ function setupEnemyObjects(gd, project, objects, captured) {
   }
   setSpriteMask(gd, objects.getObject("cierra"), saw);
   for (const n of ["ninjapatrullero", "ninjapatrullero2", "enemigo", "cierra"]) declareObjectNumbers(objects.getObject(n), PATROL_VARS);
+  // The dark-energy wraith: frames drawn by tools/gdevelop/assets/make-fantasma.mjs (it faces right).
+  const wraith = objects.insertNewObject(project, "Sprite", "fantasma", objects.getObjectsCount());
+  setAnimations(gd, wraith, [
+    { name: "flota", images: [0, 1, 2, 3, 4, 5].map((i) => ensureImageResource(gd, project, `assets/fantasma/fantasma_${i}.png`)), speed: 0.11 },
+  ], { mask: [[34, 12], [96, 12], [96, 118], [34, 118]] });
+  declareObjectNumbers(wraith, [...PATROL_VARS, "Fase"]);
 
   for (const zone of ["zonaEnemigo", "zonaSierra"]) {
     const obj = objects.insertNewObject(project, "Sprite", zone, objects.getObjectsCount());
@@ -135,9 +142,9 @@ function setupEnemyObjects(gd, project, objects, captured) {
     for (const m of members) g.addObject(m);
   };
   group("Patrulla", ["ninjapatrullero", "ninjapatrullero2", "enemigo", "cierra"]);
-  group("Enemigos", ["ninjapatrullero", "ninjapatrullero2", "enemigo"]);
+  group("Enemigos", ["ninjapatrullero", "ninjapatrullero2", "enemigo", "fantasma"]);
   group("Ninjas", ["ninjapatrullero", "ninjapatrullero2"]);
-  group("Peligro", ["pinchos", "ninjapatrullero", "ninjapatrullero2", "enemigo", "cierra"]);
+  group("Peligro", ["pinchos", "ninjapatrullero", "ninjapatrullero2", "enemigo", "cierra", "fantasma"]);
 }
 
 // ======================= LEVEL =======================
@@ -296,7 +303,9 @@ export function buildLevel({ gd, project }, def, captured) {
   add(ev([I("SceneJustBegins", [""])], ["zonaEnemigo", "zonaSierra", "piso", "techo"].map((o) => I("Cache", [o]))));
   add(spawner("zonaEnemigo", E.perZone, [
     ["azul", E.azul, speed(E.speed)], ["verde", E.verde, speed(E.speed)], ["guardia", E.guardia, "0"], ["sierra", E.sierra, speed(E.sawSpeed)],
+    ["espectro", E.espectro || 0, speed(E.wraithSpeed || [60, 90])],
   ]));
+  add(ev([I("SceneJustBegins", [""])], [I("SetNumberObjectVariable", ["fantasma", "Fase", "=", "RandomFloat(6.28)"])]));
   add(spawner("zonaSierra", 1, [["sierra", 100, speed(E.sawSpeed)]]));
 
   // ---- 8. Enemy behaviour: patrol their zone, chase Kaito when he is close on the floor ----
@@ -315,6 +324,16 @@ export function buildLevel({ gd, project }, def, captured) {
   add(ev([I("PosX", ["Patrulla", "<", "Patrulla.Variable(MinX)"])], [I("SetX", ["Patrulla", "=", "Patrulla.Variable(MinX)"]), objVar("Patrulla", "Dir", "=", "1")]));
   add(ev([I("PosX", ["Patrulla", ">", "Patrulla.Variable(MaxX)"])], [I("SetX", ["Patrulla", "=", "Patrulla.Variable(MaxX)"]), objVar("Patrulla", "Dir", "=", "-1")]));
   add(ev([], [I("Rotate", ["cierra", "360", ""])]));
+  // Wraiths glide straight at Kaito through everything, rising and sinking a little, also up to the
+  // ceiling when he walks upside down; they only wake up when he comes within 900 px.
+  const wraithCenter = "fantasma.X() + fantasma.Width() / 2";
+  add(ev([I("Distance", ["fantasma", "kaito", "900", ""]), numIs("Muerto", "=", "0")], [
+    I("SetX", ["fantasma", "+", `clamp(kaito.X() - (${wraithCenter}), -fantasma.Variable(Base) * TimeDelta(), fantasma.Variable(Base) * TimeDelta())`]),
+    I("SetY", ["fantasma", "+", `clamp(kaito.Y() - fantasma.Height() / 2 + 16 * sin(TimeFromStart() * 2 + fantasma.Variable(Fase)) - fantasma.Y(), -70 * TimeDelta(), 70 * TimeDelta())`]),
+  ]));
+  add(ev([I("PosX", ["fantasma", ">", "kaito.X() - fantasma.Width() / 2"])], [I("FlippableCapability::FlippableBehavior::FlipX", ["fantasma", "Flippable", "yes"])]));
+  add(ev([I("PosX", ["fantasma", "<=", "kaito.X() - fantasma.Width() / 2"])], [I("FlippableCapability::FlippableBehavior::FlipX", ["fantasma", "Flippable", "no"])]));
+  add(ev([], [I("OpacityCapability::OpacityBehavior::SetValue", ["fantasma", "Opacity", "=", "205 + 50 * sin(TimeFromStart() * 4 + fantasma.Variable(Fase))"])]));
   add(ev([], [anim("Ninjas", "walk")]));
   add(ev([I("NumberObjectVariable", ["Ninjas", "Vel", ">", "Ninjas.Variable(Base)"])], [anim("Ninjas", "run")]));
   add(ev([I("Distance", ["Ninjas", "kaito", "120", ""])], [anim("Ninjas", "attack")]));
@@ -342,7 +361,7 @@ export function buildLevel({ gd, project }, def, captured) {
   ]));
   add(ev([coll("kaito", "puerta"), numIs("Muerto", "=", "0"), numIs("PortalAbierto", "=", "1")], [I("Scene", ["", q(def.next), ""])]));
   if (lay.arena) {
-    add(ev([coll("kaito", "puerta"), numIs("MagaDerrotada", "=", "0"), timer("Aviso", ">", "1.6")], warn(q("Derrotá a la Maga para abrir el portal"))));
+    add(ev([coll("kaito", "puerta"), numIs("MagaDerrotada", "=", "0"), timer("Aviso", ">", "1.6")], warn(q("Derrotá a la Maga Oscura primero"))));
   }
   add(ev([coll("kaito", "puerta"), numIs("PortalAbierto", "=", "0"), numIs("Gemas", "<", "Variable(Requeridas)"), timer("Aviso", ">", "1.6")],
     warn('"Faltan " + ToString(Variable(Requeridas) - Variable(Gemas)) + " cristales para abrir el portal"')));

@@ -109,7 +109,7 @@ export default function gameFeel({ gd, project }) {
     }
     if (name === "Nivel3") {
       // ---- the sorceress: smoke where she is hit and where she reappears ----
-      const magaHits = findAll((c, a) => has(a, "SetNumberVariable", "MagaVida", "-"), "boss hits", 2);
+      const magaHits = findAll((c, a) => has(a, "SetNumberVariable", "MagaVida", "-"), "boss hits", 4);
       for (const { event } of magaHits) {
         prepend(event, [...burst("fxMagia", "maga.X()", "maga.Y() - 70"), ...kick(8, 5)]);
         appendAll(event, [...burst("fxMagia", "maga.X()", "maga.Y() - 70"), I("ChangeColor", ["maga", q("255;130;130")])]);

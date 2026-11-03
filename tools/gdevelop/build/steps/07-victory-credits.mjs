@@ -37,7 +37,7 @@ export default function victoryCredits({ gd, project, gameDir }) {
   insertObjectFrom(gd, project, objects, "TextoGemas", serializeObject(gd, tutorial.getObject("TextoGemas")));
   const texts = [
     ["Titulo", "¡VICTORIA!", 84, GOLD, 40],
-    ["Subtitulo", "Kaito venció a la Maga del Templo de la Luna Roja", 28, WHITE, 150],
+    ["Subtitulo", "Kaito venció a la Maga Oscura del Templo de la Luna Roja", 28, WHITE, 150],
     ["Equipo", "EQUIPO 35", 30, LILAC, 215],
     ["Integrantes", TEAM.map(([n, r]) => `${n} — ${r}`).join("\n"), 25, WHITE, 262],
     ["Universidad", "Universidad Nacional de Entre Ríos · 2026", 24, LILAC, 435],

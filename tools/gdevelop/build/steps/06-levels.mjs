@@ -15,7 +15,7 @@ export const LEVELS = [
     floorLine: 535,
     crystalsToOpen: 0.6,
     // Draw weights out of 100 (the rest: an empty zone), speeds in px/s.
-    enemies: { perZone: 1, azul: 40, verde: 20, guardia: 10, sierra: 10, speed: [70, 110], sawSpeed: [90, 140] },
+    enemies: { perZone: 1, azul: 40, verde: 20, guardia: 10, sierra: 10, espectro: 8, speed: [70, 110], sawSpeed: [90, 140], wraithSpeed: [55, 75] },
     segments: [
       ["start"], ["open", 500, 3], ["jump"], ["enemies", 900], ["flip", 3], ["open", 300, 2], ["enemies", 1000],
       ["jump2"], ["bonus", 900], ["enemies", 900], ["flip", 4], ["zigzag"], ["enemies", 1000], ["saw", 700],
@@ -30,7 +30,7 @@ export const LEVELS = [
     floorSlabTop: 0.2,
     floorLine: 545,
     crystalsToOpen: 0.6,
-    enemies: { perZone: 2, azul: 30, verde: 30, guardia: 10, sierra: 20, speed: [90, 140], sawSpeed: [120, 180] },
+    enemies: { perZone: 2, azul: 27, verde: 27, guardia: 10, sierra: 18, espectro: 18, speed: [90, 140], sawSpeed: [120, 180], wraithSpeed: [70, 95] },
     segments: [
       ["start"], ["jump"], ["enemies", 1000], ["flip", 4], ["saw", 800], ["zigzag"], ["enemies", 1100], ["jump2"],
       ["bonus", 1000], ["flip", 5], ["enemies", 1200], ["saw", 800], ["zigzag"], ["jump2"], ["enemies", 1200],
@@ -44,7 +44,7 @@ export const LEVELS = [
     portal: "assets/nivel1/assets de escena/puerta.png",
     floorLine: 638,
     crystalsToOpen: 0.6,
-    enemies: { perZone: 2, azul: 25, verde: 35, guardia: 15, sierra: 20, speed: [110, 160], sawSpeed: [150, 210] },
+    enemies: { perZone: 2, azul: 20, verde: 25, guardia: 15, sierra: 15, espectro: 25, speed: [110, 160], sawSpeed: [150, 210], wraithSpeed: [85, 115] },
     segments: [
       ["start"], ["enemies", 1000], ["zigzag"], ["jump2"], ["enemies", 1200], ["flip", 5], ["saw", 900], ["zigzag"],
       ["enemies", 1300], ["bonus", 1000], ["flip", 6], ["jump2"], ["enemies", 1300], ["zigzag"], ["saw", 900],

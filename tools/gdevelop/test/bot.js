@@ -81,8 +81,14 @@
         const inArena = magaOn && v.get("MagaArena").getAsNumber() === 1;
         const md = magaOn ? maga.getX() - x : null;   // her origin is her body's center
         const goLeft = inArena && md < -60;
+        // Flipping costs energy (step 15): before a spike run under a ceiling, wait on the floor for it.
+        const cost = v.has("CostoGravedad") ? v.get("CostoGravedad").getAsNumber() : 20;
+        const aheadSpike = map.floor.find((s) => s.x1 > x - 24);
+        const aheadUnderCeiling = aheadSpike && map.ceilings.some((c) => aheadSpike.x0 >= c.x0 && aheadSpike.x1 <= c.x1);
+        const waitEnergy = !flipped && onFloor && aheadUnderCeiling && aheadSpike.x0 - front > 0 && aheadSpike.x0 - front < 160 && energy < cost + 8;
+        if (waitEnergy) lastProgressFrame = frames;
         hold(im, KEY.left, goLeft);
-        hold(im, KEY.right, !goLeft);
+        hold(im, KEY.right, !goLeft && !waitEnergy);
         if (inArena) lastProgressFrame = frames;
         let wantAttack = false;
         if (magaOn && (goLeft ? md > -150 && md < 40 : md > -40 && md < 150)) wantAttack = true;
@@ -106,7 +112,7 @@
           if (onFloor && nextFloor) {
             const dist = nextFloor.x0 - front;
             const spikeUnderCeiling = map.ceilings.some((c) => nextFloor.x0 >= c.x0 && nextFloor.x1 <= c.x1);
-            if (spikeUnderCeiling && ceil && dist > 0 && dist < 160 && energy >= 20) tapAlt();
+            if (spikeUnderCeiling && ceil && dist > 0 && dist < 160 && energy >= cost + 8) tapAlt();
             else if (!spikeUnderCeiling && dist > 0 && dist <= 30) jumpHold = 9;
           }
           const saw = rs.getObjects("cierra").map((s) => s.getX() + 10 - front).filter((d) => d > -20).sort((a, b) => a - b)[0];
