@@ -88,10 +88,12 @@ export function captureOriginalObjects(gd, project) {
 }
 
 // Enemy kinds created at runtime: size on screen and how far above the floor line their top-left is.
+// Sized so every body (head to feet, transparent margins left out) matches Kaito's 120 px: azul 118,
+// verde 123, guardia 125 (the maga, 141, is in lib/boss.mjs).
 const KINDS = {
-  azul: { object: "ninjapatrullero", w: 128, h: 128, top: 127 },
+  azul: { object: "ninjapatrullero", w: 141, h: 141, top: 140 },
   verde: { object: "ninjapatrullero2", w: 136, h: 148, top: 138 },
-  guardia: { object: "enemigo", w: 140, h: 140, top: 139 },
+  guardia: { object: "enemigo", w: 128, h: 128, top: 127 },
   sierra: { object: "cierra", w: 96, h: 77, top: 58 },
 };
 
@@ -345,7 +347,7 @@ export function buildLevel({ gd, project }, def, captured) {
   add(ev([coll("kaito", "puerta"), numIs("PortalAbierto", "=", "0"), numIs("Gemas", "<", "Variable(Requeridas)"), timer("Aviso", ">", "1.6")],
     warn('"Faltan " + ToString(Variable(Requeridas) - Variable(Gemas)) + " cristales para abrir el portal"')));
 
-  if (lay.arena) addBoss({ gd, project }, level, { floorLine: F, ceilingLine: C, arena: lay.arena });
+  if (lay.arena) addBoss({ gd, project }, level, { floorLine: F, ceilingLine: C, arena: lay.arena, width: W });
 
   return { boss: !!lay.arena, width: W, length: lay.length, crystals: lay.floorGems.length + lay.ceilGems.length + lay.airGems.length, zones: lay.zones.length, checkpoints: lay.checkpoints.length };
 }

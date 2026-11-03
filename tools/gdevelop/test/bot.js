@@ -6,7 +6,7 @@
 // It walks right, jumps open-air spikes and saws, flips under ceilings before spike runs, drops before
 // hanging spikes or the ceiling's end, attacks enemies ahead, and reports lives lost, crystals and time.
 (function () {
-  const KEY = { right: 39, space: 32, alt: 18, f: 70 };
+  const KEY = { left: 37, right: 39, space: 32, alt: 18, f: 70 };
   const ALT_LOCATION = 1; // left Alt ("LAlt" in the events)
 
   function play(sceneName, { timeout = 300 } = {}) {
@@ -22,7 +22,7 @@
         if (done) return;
         done = true;
         const im = rs.getGame().getInputManager();
-        for (const k of [KEY.right, KEY.space, KEY.f]) im.onKeyReleased(k);
+        for (const k of [KEY.left, KEY.right, KEY.space, KEY.f]) im.onKeyReleased(k);
         im.onKeyReleased(KEY.alt, ALT_LOCATION);
         resolve({ scene: sceneName, crystals, ...result, seconds: Math.round(seconds), livesLost, maxX: Math.round(maxX), log: log.slice(-12) });
       };
@@ -68,7 +68,33 @@
 
         if (altUp) { im.onKeyReleased(KEY.alt, ALT_LOCATION); altUp = false; }
         altCooldown--; attackCooldown--;
-        hold(im, KEY.right, true);
+
+        // The sorceress (Nivel3): she follows Kaito all along; in her arena the bot turns to chase her.
+        const maga = rs.getObjects("maga")[0];
+        const magaState = v.has("MagaEstado") ? v.get("MagaEstado").getAsNumber() : 0;
+        const magaOn = !!maga && magaState >= 1 && magaState !== 3;
+        const inArena = magaOn && v.get("MagaArena").getAsNumber() === 1;
+        const md = magaOn ? maga.getX() - x : null;   // her origin is her body's center
+        const goLeft = inArena && md < -60;
+        hold(im, KEY.left, goLeft);
+        hold(im, KEY.right, !goLeft);
+        if (inArena) lastProgressFrame = frames;
+        let wantAttack = false;
+        if (magaOn && (goLeft ? md > -150 && md < 40 : md > -40 && md < 150)) wantAttack = true;
+        if (magaOn && onFloor && !flipped) {
+          const coming = magaState === 4 && v.get("MagaDir").getAsNumber() * (x - maga.getX()) > 0;
+          if (coming && Math.abs(md) < 210 && Math.abs(md) > 60) jumpHold = 12;
+          for (const h of rs.getObjects("hechizo")) {
+            const hd = h.getX() + 32 - x, vel = h.getVariables().get("Vel").getAsNumber();
+            if (hd * vel < 0 && Math.abs(hd) < 150 && Math.abs(hd) > 40) jumpHold = 12;
+          }
+        }
+        if (magaOn && flipped) {
+          for (const d of rs.getObjects("dragonSombra")) {
+            const dd = d.getX() + 24 - x, vel = d.getVariables().get("Vel").getAsNumber();
+            if (dd * vel < 0 && Math.abs(dd) < 220) tapAlt();
+          }
+        }
 
         if (!flipped) {
           const ceil = ceilingAt(x);
@@ -82,7 +108,7 @@
           if (onFloor && saw !== undefined && saw > 0 && saw < 45 && !ceil) jumpHold = 12;
           const enemy = ["ninjapatrullero", "ninjapatrullero2", "enemigo"].flatMap((n) => rs.getObjects(n))
             .map((e) => e.getX() + e.getWidth() / 2 - x).filter((d) => d > -40 && d < 150).sort((a, b) => a - b)[0];
-          if (enemy !== undefined && attackCooldown <= 0) { hold(im, KEY.f, true); attackCooldown = 35; } else hold(im, KEY.f, false);
+          if ((enemy !== undefined || wantAttack) && attackCooldown <= 0) { hold(im, KEY.f, true); attackCooldown = 35; } else hold(im, KEY.f, false);
         } else {
           const ceil = ceilingAt(x + 30);
           const landingSafe = !map.floor.some((s) => s.x1 > x - 40 && s.x0 < x + 110);

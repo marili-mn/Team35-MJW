@@ -24390,7 +24390,7 @@
                         "",
                         "ninjapatrullero",
                         "Variable(SpawnX)",
-                        "408",
+                        "395",
                         ""
                       ]
                     },
@@ -24402,7 +24402,7 @@
                         "ninjapatrullero",
                         "Resizable",
                         "=",
-                        "128"
+                        "141"
                       ]
                     },
                     {
@@ -24413,7 +24413,7 @@
                         "ninjapatrullero",
                         "Resizable",
                         "=",
-                        "128"
+                        "141"
                       ]
                     },
                     {
@@ -24435,7 +24435,7 @@
                         "ninjapatrullero",
                         "MaxX",
                         "=",
-                        "zonaEnemigo.X() + zonaEnemigo.Width() - 128"
+                        "zonaEnemigo.X() + zonaEnemigo.Width() - 141"
                       ]
                     },
                     {
@@ -24600,7 +24600,7 @@
                         "",
                         "enemigo",
                         "Variable(SpawnX)",
-                        "396",
+                        "408",
                         ""
                       ]
                     },
@@ -24612,7 +24612,7 @@
                         "enemigo",
                         "Resizable",
                         "=",
-                        "140"
+                        "128"
                       ]
                     },
                     {
@@ -24623,7 +24623,7 @@
                         "enemigo",
                         "Resizable",
                         "=",
-                        "140"
+                        "128"
                       ]
                     },
                     {
@@ -24645,7 +24645,7 @@
                         "enemigo",
                         "MaxX",
                         "=",
-                        "zonaEnemigo.X() + zonaEnemigo.Width() - 140"
+                        "zonaEnemigo.X() + zonaEnemigo.Width() - 128"
                       ]
                     },
                     {
@@ -39472,7 +39472,7 @@
                         "",
                         "ninjapatrullero",
                         "Variable(SpawnX)",
-                        "418",
+                        "405",
                         ""
                       ]
                     },
@@ -39484,7 +39484,7 @@
                         "ninjapatrullero",
                         "Resizable",
                         "=",
-                        "128"
+                        "141"
                       ]
                     },
                     {
@@ -39495,7 +39495,7 @@
                         "ninjapatrullero",
                         "Resizable",
                         "=",
-                        "128"
+                        "141"
                       ]
                     },
                     {
@@ -39517,7 +39517,7 @@
                         "ninjapatrullero",
                         "MaxX",
                         "=",
-                        "zonaEnemigo.X() + zonaEnemigo.Width() - 128"
+                        "zonaEnemigo.X() + zonaEnemigo.Width() - 141"
                       ]
                     },
                     {
@@ -39682,7 +39682,7 @@
                         "",
                         "enemigo",
                         "Variable(SpawnX)",
-                        "406",
+                        "418",
                         ""
                       ]
                     },
@@ -39694,7 +39694,7 @@
                         "enemigo",
                         "Resizable",
                         "=",
-                        "140"
+                        "128"
                       ]
                     },
                     {
@@ -39705,7 +39705,7 @@
                         "enemigo",
                         "Resizable",
                         "=",
-                        "140"
+                        "128"
                       ]
                     },
                     {
@@ -39727,7 +39727,7 @@
                         "enemigo",
                         "MaxX",
                         "=",
-                        "zonaEnemigo.X() + zonaEnemigo.Width() - 140"
+                        "zonaEnemigo.X() + zonaEnemigo.Width() - 128"
                       ]
                     },
                     {
@@ -41846,6 +41846,36 @@
           "name": "MagaHerida",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "MagaDir",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "MagaObjetivo",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MagaPuede",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MagaArena",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MagaMin",
+          "type": "number",
+          "value": 200
+        },
+        {
+          "name": "MagaMax",
+          "type": "number",
+          "value": 26680
         }
       ],
       "instances": [
@@ -45533,13 +45563,13 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 265,
+          "height": 189,
           "keepRatio": true,
           "layer": "",
           "name": "maga",
           "persistentUuid": "3eb33e2f-9e61-547d-a6c2-8a0e1f54cc74",
-          "width": 460,
-          "x": 25630,
+          "width": 328,
+          "x": 1500,
           "y": 638,
           "zOrder": 4,
           "numberProperties": [],
@@ -51457,6 +51487,90 @@
               ]
             },
             {
+              "name": "dash",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.12,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_14.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/maga/maga_13.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 200,
+                        "y": 222
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 172,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 60
+                          },
+                          {
+                            "x": 228,
+                            "y": 222
+                          },
+                          {
+                            "x": 172,
+                            "y": 222
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "name": "hurt",
               "useMultipleDirections": false,
               "directions": [
@@ -55021,7 +55135,7 @@
                         "",
                         "ninjapatrullero",
                         "Variable(SpawnX)",
-                        "511",
+                        "498",
                         ""
                       ]
                     },
@@ -55033,7 +55147,7 @@
                         "ninjapatrullero",
                         "Resizable",
                         "=",
-                        "128"
+                        "141"
                       ]
                     },
                     {
@@ -55044,7 +55158,7 @@
                         "ninjapatrullero",
                         "Resizable",
                         "=",
-                        "128"
+                        "141"
                       ]
                     },
                     {
@@ -55066,7 +55180,7 @@
                         "ninjapatrullero",
                         "MaxX",
                         "=",
-                        "zonaEnemigo.X() + zonaEnemigo.Width() - 128"
+                        "zonaEnemigo.X() + zonaEnemigo.Width() - 141"
                       ]
                     },
                     {
@@ -55231,7 +55345,7 @@
                         "",
                         "enemigo",
                         "Variable(SpawnX)",
-                        "499",
+                        "511",
                         ""
                       ]
                     },
@@ -55243,7 +55357,7 @@
                         "enemigo",
                         "Resizable",
                         "=",
-                        "140"
+                        "128"
                       ]
                     },
                     {
@@ -55254,7 +55368,7 @@
                         "enemigo",
                         "Resizable",
                         "=",
-                        "140"
+                        "128"
                       ]
                     },
                     {
@@ -55276,7 +55390,7 @@
                         "enemigo",
                         "MaxX",
                         "=",
-                        "zonaEnemigo.X() + zonaEnemigo.Width() - 140"
+                        "zonaEnemigo.X() + zonaEnemigo.Width() - 128"
                       ]
                     },
                     {
@@ -56993,6 +57107,14 @@
             },
             {
               "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "maga"
+              ]
+            },
+            {
+              "type": {
                 "value": "AnimatableCapability::AnimatableBehavior::SetName"
               },
               "parameters": [
@@ -57024,7 +57146,7 @@
               "parameters": [
                 "kaito",
                 ">",
-                "23910"
+                "900"
               ]
             }
           ],
@@ -57041,11 +57163,40 @@
             },
             {
               "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaLado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "maga",
+                "=",
+                "clamp(kaito.X() + Variable(MagaLado) * 420, Variable(MagaMin), Variable(MagaMax))"
+              ]
+            },
+            {
+              "type": {
                 "value": "ResetTimer"
               },
               "parameters": [
                 "",
                 "\"Maga\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "maga",
+                ""
               ]
             },
             {
@@ -57074,7 +57225,7 @@
                 "Aviso",
                 "Text",
                 "=",
-                "\"¡La Maga del Templo! Esquivá sus hechizos y atacala con F\""
+                "\"¡La Maga te persigue! Atacala con F\""
               ]
             },
             {
@@ -57146,6 +57297,169 @@
                 "value": "NumberVariable"
               },
               "parameters": [
+                "MagaArena",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "kaito",
+                ">",
+                "23910"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaArena",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaMin",
+                "=",
+                "23940"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaMax",
+                "=",
+                "25740"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "MagaEstado",
+                    ">=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "MagaDerrotada",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "maga",
+                    "=",
+                    "25630"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "MagaLado",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "MagaEstado",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Maga\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hechizo",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Aviso",
+                    "Text",
+                    "=",
+                    "\"¡Derrotá a la Maga en su templo!\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Montre"
+                  },
+                  "parameters": [
+                    "Aviso",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Aviso\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
                 "MagaEstado",
                 ">=",
                 "1"
@@ -57177,6 +57491,16 @@
                 "MagaEstado",
                 ">=",
                 "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "!=",
+                "4"
               ]
             },
             {
@@ -57218,6 +57542,16 @@
             },
             {
               "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "!=",
+                "4"
+              ]
+            },
+            {
+              "type": {
                 "value": "PosX"
               },
               "parameters": [
@@ -57252,15 +57586,296 @@
                 "=",
                 "1"
               ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaObjetivo",
+                "=",
+                "clamp(kaito.X() + Variable(MagaLado) * 420, Variable(MagaMin), Variable(MagaMax))"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "maga",
+                "<",
+                "Variable(MagaObjetivo) - 900"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "maga",
+                "=",
+                "Variable(MagaObjetivo)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "maga",
+                ">",
+                "Variable(MagaObjetivo) + 900"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "maga",
+                "=",
+                "Variable(MagaObjetivo)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "maga",
+                "+",
+                "clamp(Variable(MagaObjetivo) - maga.X(), -230 * TimeDelta(), 230 * TimeDelta())"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                ">=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetY"
+              },
+              "parameters": [
+                "maga",
+                "=",
+                "624 - 6 * sin(TimeFromStart() * 3)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaPuede",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaArena",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "kaito",
+                "pinchos",
+                "450",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaPuede",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaArena",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "FlippedY"
+              },
+              "parameters": [
+                "kaito"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaPuede",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Muerto",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaPuede",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
             },
             {
               "type": {
                 "value": "NumberVariable"
               },
               "parameters": [
-                "MagaVida",
-                ">",
-                "6"
+                "MagaPuede",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaArena",
+                "=",
+                "0"
               ]
             },
             {
@@ -57271,7 +57886,7 @@
                 "",
                 "\"Maga\"",
                 ">",
-                "1.6"
+                "2.4"
               ]
             }
           ],
@@ -57283,7 +57898,7 @@
               "parameters": [
                 "MagaAtaque",
                 "=",
-                "RandomInRange(1, 2)"
+                "RandomInRange(0, 1) * 2 + 1"
               ]
             },
             {
@@ -57325,6 +57940,113 @@
                 "value": "NumberVariable"
               },
               "parameters": [
+                "MagaPuede",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaArena",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaVida",
+                ">",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\"",
+                ">",
+                "1.6"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaAtaque",
+                "=",
+                "RandomInRange(1, 3)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaPuede",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaArena",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
                 "MagaVida",
                 "<=",
                 "6"
@@ -57350,7 +58072,7 @@
               "parameters": [
                 "MagaAtaque",
                 "=",
-                "RandomInRange(1, 2)"
+                "RandomInRange(1, 3)"
               ]
             },
             {
@@ -57446,6 +58168,44 @@
                 "Animation",
                 "=",
                 "\"summon\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaAtaque",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "maga",
+                "Animation",
+                "=",
+                "\"dash\""
               ]
             }
           ]
@@ -57816,6 +58576,467 @@
               "parameters": [
                 "MagaEstado",
                 "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaAtaque",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\"",
+                ">",
+                "0.55"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "maga",
+                    ">",
+                    "kaito.X()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "MagaDir",
+                    "=",
+                    "-1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "maga",
+                    "<=",
+                    "kaito.X()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "MagaDir",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "4"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "maga",
+                "+",
+                "Variable(MagaDir) * 650 * TimeDelta()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaDir",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "maga",
+                ">",
+                "kaito.X() + 250"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaLado",
+                "=",
+                "Variable(MagaDir)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaDir",
+                "=",
+                "-1"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "maga",
+                "<",
+                "kaito.X() - 250"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaLado",
+                "=",
+                "Variable(MagaDir)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\"",
+                ">",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaLado",
+                "=",
+                "Variable(MagaDir)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "maga",
+                "<",
+                "Variable(MagaMin)"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "maga",
+                "=",
+                "Variable(MagaMin)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaLado",
+                "=",
+                "Variable(MagaDir)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "maga",
+                ">",
+                "Variable(MagaMax)"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "maga",
+                "=",
+                "Variable(MagaMax)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaLado",
+                "=",
+                "Variable(MagaDir)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "MagaEstado",
+                "=",
                 "1"
               ]
             },
@@ -57926,7 +59147,7 @@
               "parameters": [
                 "hechizo",
                 "<",
-                "23590"
+                "kaito.X() - 1400"
               ]
             }
           ],
@@ -57952,7 +59173,7 @@
               "parameters": [
                 "hechizo",
                 ">",
-                "26090"
+                "kaito.X() + 1400"
               ]
             }
           ],
@@ -58050,7 +59271,7 @@
               "parameters": [
                 "dragonSombra",
                 "<",
-                "23590"
+                "kaito.X() - 1400"
               ]
             }
           ],
@@ -58076,7 +59297,7 @@
               "parameters": [
                 "dragonSombra",
                 ">",
-                "26090"
+                "kaito.X() + 1400"
               ]
             }
           ],
@@ -58120,6 +59341,16 @@
                 "value": "NumberVariable"
               },
               "parameters": [
+                "MagaEstado",
+                "!=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
                 "MagaHerida",
                 "=",
                 "0"
@@ -58142,7 +59373,7 @@
               "parameters": [
                 "maga",
                 "kaito",
-                "190",
+                "170",
                 ""
               ]
             },
@@ -58210,12 +59441,22 @@
             },
             {
               "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaLado",
+                "=",
+                "-Variable(MagaLado)"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetX"
               },
               "parameters": [
                 "maga",
                 "=",
-                "49680 - maga.X()"
+                "clamp(kaito.X() + Variable(MagaLado) * 420, Variable(MagaMin), Variable(MagaMax))"
               ]
             },
             {
@@ -58223,9 +59464,18 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "MagaLado",
+                "MagaEstado",
                 "=",
-                "-Variable(MagaLado)"
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
               ]
             }
           ],
@@ -58289,6 +59539,16 @@
                 "value": "NumberVariable"
               },
               "parameters": [
+                "MagaEstado",
+                "!=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
                 "MagaHerida",
                 "=",
                 "0"
@@ -58311,7 +59571,7 @@
               "parameters": [
                 "maga",
                 "kaito",
-                "190",
+                "170",
                 ""
               ]
             },
@@ -58378,12 +59638,22 @@
             },
             {
               "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MagaLado",
+                "=",
+                "-Variable(MagaLado)"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetX"
               },
               "parameters": [
                 "maga",
                 "=",
-                "49680 - maga.X()"
+                "clamp(kaito.X() + Variable(MagaLado) * 420, Variable(MagaMin), Variable(MagaMax))"
               ]
             },
             {
@@ -58391,9 +59661,18 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "MagaLado",
+                "MagaEstado",
                 "=",
-                "-Variable(MagaLado)"
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Maga\""
               ]
             }
           ],
@@ -58658,6 +59937,36 @@
                     "assets/audio/victoria.wav",
                     "no",
                     "70",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "MusicOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlayMusicCanal"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/audio/musica_nivel.wav",
+                    "1",
+                    "yes",
+                    "40",
                     "1"
                   ]
                 }

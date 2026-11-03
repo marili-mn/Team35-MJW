@@ -57,6 +57,7 @@ export default function audio({ gd, project, gameDir }) {
     const defeat = L.find((c, a) => has(a, "SetNumberVariable", "MagaDerrotada", "=", "1"), "boss defeated");
     defeat.event.getActions().insert(stopMusic(), defeat.event.getActions().size());
     hook(defeat.event, "victoria");
+    attach(defeat.event, music("musica_nivel", 40));   // she can fall before the arena: the level goes on
   }
 
   const victoria = at("Victoria");
